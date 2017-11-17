@@ -46,6 +46,10 @@ class NewerHomePage extends Component {
     };
 
 
+
+
+
+
     render() {
         return (
             <div className="container-fluid">
@@ -69,6 +73,41 @@ class NewerHomePage extends Component {
                 <Route exact path="/welcome" render={() => (
                     <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
                 )}/>
+
+                <Route exact path="/flights_list" render={() => (
+                   <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+
+                )}/>
+
+                <Route exact path="/cars__list" render={() => (
+                    <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+                )}/>
+                <Route exact path="/hotels_list" render={() => (
+                    <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+                )}/>
+                <Route exact path="/admin__list" render={() => (
+                    <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+                )}/>
+
+                <Route exact path="/flights" render={() => (
+                  //  <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+                    <Flights />
+                )}/>
+
+                <Route exact path="/cars" render={() => (
+                   // <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+                    <Cars />
+                )}/>
+                <Route exact path="/hotels" render={() => (
+                   // <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+                    <Hotels />
+                )}/>
+                <Route exact path="/admin" render={() => (
+                  //  <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+                    <Admin />
+                )}/>
+
+
             </div>
         );
     }
