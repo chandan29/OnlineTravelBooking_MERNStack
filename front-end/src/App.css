@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -21,4 +21,394 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+
+}
+li {
+  float: left;
+  margin-left: 4%;
+  color:white;
+  margin-top: 0.2%;
+}
+li>a {
+  color: white;
+}
+
+.logo {
+  float:left;
+  margin-left: 50px;
+}
+
+.body-header {
+  width: 90%;
+  padding-left: 2%;
+}
+
+.container-header {
+  height: 50px;
+  padding-top:0.7%;
+  background-color: black;
+}
+
+.container-mainbody {
+
+  height: 400px;
+  padding-top:1%;
+}
+
+.displayText {
+  text-align: center;
+}
+
+.tabs {
+  margin-left:25%;
+  text-align: center;
+}
+.tab {
+  float: left;
+  width: 140px;
+  height:43px;
+  background-color: white;
+  margin-left: 2px;
+  padding-left: 18px;
+  padding-top: 7px;
+}
+
+.main-content {
+  width: 90%;
+  height: 180px;
+  background-color: #D3D3D3;
+  margin-top:8px;
+  padding-left: 2%;
+  margin-top: 0.25%;
+  margin-left: 4%;
+}
+.dropoff {
+  float: left;
+  font-size: 13px;
+  margin-top: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.arrow {
+  width: 70%;
+  height: 30px;
+  background-color: black;
+  background-image: url('./arrow1.png');
+
+
+}
+
+.opener-image {
+  background-image: url('./0.jpeg');
+  background-size: cover;
+}
+
+.displayText {
+  font-size: 27px;
+  font-weight: bold;
+  color: white;
+}
+
+.container-stayUptoDate {
+  width:85%;
+  height: 184px;
+  background-color: #F8F8F8;
+  padding-top: 15px;
+  margin-top: 6.5%;
+  margin-left: 8%;
+}
+
+
+.text1 {
+  font-family: "HelveticaNeue-Bold", Helvetica, Arial, sans-serif!important;
+  font-size: 20px;
+  font-weight: 600!important;
+}
+
+.pic {
+    width:295px;
+    height: 200px;
+    background-color: red;
+}
+
+.description {
+    width: 295px;
+    height: 140px;
+
+    padding-left: 10px;
+    padding-top: 1px;
+}
+
+/* css for beautiful grid down the main page */
+
+.container-beautifuldown {
+    width: 80%;
+    height: auto;
+    margin-left: 14%
+}
+.first{
+    width: 88%;
+    height: 550px;
+
+}
+.second{
+    width: 88%;
+    height: 395px;
+
+}
+
+.first-left, .first-mid, .first-right {
+    width:33%;
+    height:400px;
+
+    float:left;
+    margin-left:0.30%;
+    padding: 2%;
+}
+.first-top {
+    width: 100%;
+    margin-top:2px;
+    height: 140px;
+
+    margin-bottom: 3px;
+    text-align: center;
+    padding-top:15px;
+
+}
+
+.second-left, .second-mid, .second-right {
+    width:32%;
+    height:290px;
+
+    float:left;
+    margin-left:0.90%;
+}
+.second-top {
+    width: 100%;
+    margin-top:2px;
+    height: 90px;
+
+    margin-bottom: 3px;
+    text-align: center;
+
+}
+
+.first-left-tabs {
+    width:90%;
+    height: 13%;
+
+}
+
+.first-left-tabs-text {
+    float: left;
+    width: 70%;
+    height: 60%;
+
+    text-align:left;
+    padding-left: 10%
+}
+
+.first-left-tabs-butt {
+    float:right;
+    margin-right:0px;
+    margin-top: 1.7%;
+
+    -webkit-appearance: none;
+    border: none;
+    background: none !important;
+    border-top: 0;
+    padding: 0! important;
+}
+
+.her {
+
+}
+.second-left {
+    background-image: url('./down1.png');
+}
+
+.second-mid {
+    background-image: url('./down2.png');
+}
+.second-right {
+    background-image: url('./down3.png');
+}
+.second-left:hover, .second-mid:hover, .second-right:hover {
+  -moz-transform: scale(1.1);
+
+  box-shadow: 0 0 15px gray;
+
+}
+/* css for beautiful grid down the main page ends here......*/
+
+.Well {
+   background-color: rgba(245, 245, 245, 0.4);
+}
+
+.first-left-tabs-text>h5 {
+    color: #1E90FF;
+}
+
+.left-pane {
+    width: 20%;
+    height: 600px;
+    border: 1px solid;
+    display: inline;
+    float:left;
+    margin-top: 5px;
+}
+.middle-pane {
+    width: 57%;
+    height: 600px;
+    border: 1px solid;
+    margin-left: 1%;
+    float: left;
+    margin-top: 5px;
+}
+.right-pane{
+    width: 21%;
+    height: 600px;
+
+    margin-left: 1%;
+    float: left;
+    margin-top: 5px;
+}
+
+.outerDiv {
+    width: 98%;
+    height: 180px;
+    border: 1px solid;
+    margin-left: 0.9%;
+    margin-top: 1%;
+    background-color: white;
+}
+
+.outerDiv-left {
+    width: 55%;
+    height: 98%;
+
+    display: inline;
+    float: left;
+}
+
+.outerDiv-mid {
+    width: 25%;
+    height: 98%;
+    padding-right: 10px;
+    float: left;
+    border-right: 1px solid;
+    border-color: #D3D3D3;
+}
+.outerDiv-right {
+    width: 20%;
+    height: 98%;
+
+    float: left;
+    text-align: center;
+}
+.outerDiv-left-top {
+    width: 100%;
+    height: 64%;
+    border-bottom: 1px  solid;
+    border-color: #D3D3D3;
+    margin-left: 10px;
+
+}
+.outerDiv-left-bottom {
+    width: 100%;
+    height: 34%;
+
+    margin-top: 1%;
+    margin-left: 8px;
+}
+
+.outerDiv-left-top-icons {
+    width: 100%;
+    height: 40%;
+
+}
+
+.mainBodyCar {
+    background-color: red;
+}
+
+.main-pane-carcheckout {
+    width: 60%;
+    height: auto;
+    float : left;
+    margin-left: 15%;
+}
+
+.right-pane-carcheckout {
+    width: 20%;
+    height: 600px;
+    border : 1px solid;
+    float : left;
+}
+.outerDiv-left-carCheckoutDetails {
+    width: 70%;
+    height: 98%;
+    margin-top: 0.3%;
+    border: 1px solid;
+    float: left;
+}
+
+.outerDiv-right-carCheckoutDetails {
+    width: 30%;
+    height: 98%;
+    margin-top: 0.3%;
+    border : 1px solid;
+    float: left;
+    padding:4%;
+    padding-left: 7%;
+}
+
+.outerDiv-left-carCheckoutDetails1 {
+    width: 35%;
+    height: 98%;
+    margin-top: 0.3%;
+    border: 1px solid;
+    float: left;
+    padding-left: 1%;
+}
+
+.outerDiv-right-carCheckoutDetails1 {
+    width: 30%;
+    height: 98%;
+    margin-top: 0.3%;
+    border : 1px solid;
+    float: left;
+    padding:4%;
+    padding-left: 7%;
+}
+
+.outerDiv-mid-carCheckoutDetails1 {
+    width: 35%;
+    height: 98%;
+    margin-top: 0.3%;
+    border : 1px solid;
+    float: left;
+    padding-left: 1%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    height: 30px;
+    border-left: none;
+    border-right: none;
+}
+
+table {
+    font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   border-top: none;
 }

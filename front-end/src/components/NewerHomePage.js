@@ -4,6 +4,10 @@ import * as API from '../api/API';
 import Login from "./Login";
 import Message from "./Message";
 import Welcome from "./Welcome";
+import Header from './Header';
+import MainBody from './MainBody';
+import MainBodyCar from './MainBodyCar';
+import MainBodyCarCheckout from './MainBodyCarCheckout';
 
 class NewerHomePage extends Component {
 
@@ -46,68 +50,38 @@ class NewerHomePage extends Component {
     };
 
 
-
-
-
-
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid" style={{backgroundColor:"#E8E8E8"}}>
                 <Route exact path="/" render={() => (
-                    <div>
-                        <Message message="You have landed on my App !!"/>
-                        <button className="btn btn-success" onClick={() => {
-                            this.props.history.push("/login");
-                        }}>
-                            Login
-                        </button>
+                    <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
+                          <Header />
+                          <MainBody />
+                          <Message message={this.state.message}/>
                     </div>
                 )}/>
-
-                <Route exact path="/login" render={() => (
+                <Route exact path="/searchCar" render={() => (
                     <div>
-                        <Login handleSubmit={this.handleSubmit}/>
-                        <Message message={this.state.message}/>
+                        <div className="header-xyz" style={{backgroundColor:"gray"}}>
+                          <Header />
+                         </div>
+                          <div className="mainBodyCar">
+                          <MainBodyCar />
+                          </div>
+                          <Message message={this.state.message}/>
                     </div>
                 )}/>
-                <Route exact path="/welcome" render={() => (
-                    <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
+                <Route exact path="/carCheckout" render={() => (
+                    <div>
+                        <div className="header-xyz" style={{backgroundColor:"gray"}}>
+                          <Header />
+                         </div>
+                          <div className="mainBodyCarCheckout">
+                            <MainBodyCarCheckout />
+                          </div>
+                          <Message message={this.state.message}/>
+                    </div>
                 )}/>
-
-                <Route exact path="/flights_list" render={() => (
-                   <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
-
-                )}/>
-
-                <Route exact path="/cars__list" render={() => (
-                    <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
-                )}/>
-                <Route exact path="/hotels_list" render={() => (
-                    <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
-                )}/>
-                <Route exact path="/admin__list" render={() => (
-                    <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
-                )}/>
-
-                <Route exact path="/flights" render={() => (
-                  //  <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
-                    <Flights />
-                )}/>
-
-                <Route exact path="/cars" render={() => (
-                   // <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
-                    <Cars />
-                )}/>
-                <Route exact path="/hotels" render={() => (
-                   // <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
-                    <Hotels />
-                )}/>
-                <Route exact path="/admin" render={() => (
-                  //  <Welcome handleLogout={this.handleLogout} username={this.state.username}/>
-                    <Admin />
-                )}/>
-
-
             </div>
         );
     }
