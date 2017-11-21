@@ -25,7 +25,7 @@ class MainBody extends Component {
   }
 
   state={
-
+        carsObj: []
   }
   render() {
     return (
@@ -38,7 +38,20 @@ class MainBody extends Component {
             </div>
             <br/>
             <br/>
-              {this.state.carsObj}
+              {/* listing logic goes here */}
+
+              {this.state.carsObj.map(car => (
+
+                  <div  style={{backgroundColor: "white", width:90}} className="DisplayCarDetails" key={car._id} cols={car.cols || 1}>
+                       car ID: {car.carId}
+
+                        <br/>
+                  </div>
+              ))}
+
+              {/* listing logic ends here......*/}
+
+
               <div className="tabs">
                 <div className="tab">
                  <span style={{float:"left"}}> <FontAwesome name='bed' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Hotels</span>
