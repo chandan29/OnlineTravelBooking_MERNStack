@@ -4,6 +4,7 @@ import Logo from './../logo.png';
 import StayUptoDate from './StayUptoDate';
 import Carousal1 from './Carousal1';
 import Carousal2 from './Carousal2';
+import * as API from '../api/API';
 import BeautifulDown from './BeautifulDown';
 var FontAwesome = require('react-fontawesome');
 
@@ -11,6 +12,18 @@ var FontAwesome = require('react-fontawesome');
 
 
 class MainBody extends Component {
+
+  componentWillMount(){
+    API.getCars()
+        .then((res) => {
+                this.setState({
+                    carsObj:res
+                });
+                console.log(this.state.carsObj);
+        });
+
+  }
+
   state={
 
   }
@@ -25,7 +38,7 @@ class MainBody extends Component {
             </div>
             <br/>
             <br/>
-
+              {this.state.carsObj}
               <div className="tabs">
                 <div className="tab">
                  <span style={{float:"left"}}> <FontAwesome name='bed' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Hotels</span>
@@ -61,7 +74,9 @@ class MainBody extends Component {
                   </div>
 
                   <div className="arrow" style={{marginLeft:4,width:"8%",height: 77.5,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}}>
+
                   </div>
+
 
                 </div>
                 <div className="stayUptoDate">

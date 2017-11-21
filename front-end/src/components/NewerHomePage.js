@@ -48,7 +48,7 @@ class NewerHomePage extends Component {
                 }
             });
     };
-
+    
 
     render() {
         return (

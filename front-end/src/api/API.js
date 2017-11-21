@@ -37,3 +37,18 @@ export const logout = () =>
             console.log("This is error");
             return error;
         });
+
+        export const getCars = () =>
+            fetch(`${api}/getCars`, {
+                method: 'GET',
+                headers: {
+                    ...headers
+                },
+                credentials:'include'
+            }).then(res => {
+                return res.json();
+            })
+                .catch(error => {
+                    console.log("This is error");
+                    return error;
+                });

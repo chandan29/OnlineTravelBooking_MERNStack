@@ -10,6 +10,10 @@ var FontAwesome = require('react-fontawesome');
 
 
 class MainBodyCar extends Component {
+
+  componentWillMount(){
+
+  }
   state={
 
   }
