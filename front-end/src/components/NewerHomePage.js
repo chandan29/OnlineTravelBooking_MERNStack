@@ -48,7 +48,18 @@ class NewerHomePage extends Component {
                 }
             });
     };
-    
+
+    handleCarFetch = (payload) => {
+      API.getCars(payload)
+          .then((res) => {
+                  this.setState({
+                      carsObj:res
+                  });
+                  this.props.history.push("/searchCar");
+          });
+
+    };
+
 
     render() {
         return (
@@ -56,7 +67,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
                           <Header />
-                          <MainBody />
+                          <MainBody handleCarFetch={this.handleCarFetch}/>
                           <Message message={this.state.message}/>
                     </div>
                 )}/>
@@ -66,7 +77,7 @@ class NewerHomePage extends Component {
                           <Header />
                          </div>
                           <div className="mainBodyCar">
-                          <MainBodyCar />
+                          <MainBodyCar cars={this.state.carsObj}/>
                           </div>
                           <Message message={this.state.message}/>
                     </div>

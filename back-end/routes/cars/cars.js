@@ -6,13 +6,13 @@ var mongoURL = "mongodb://localhost:27017/kayak";
 
 module.exports = carshandler;
 
-carshandler.get('/getCars',function(req,res){
+carshandler.post('/getCars',function(req,res){
   //Input parameters: from city, from date,to date
   mongo.connect(mongoURL, function(){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('car');
-
-            coll.find({"carCity":"New York"}).toArray(function(err, user){
+            console.log(req.body);
+            coll.find({"carCity":req.body.carCity}).toArray(function(err, user){
                 if (user) {
                   console.log(user);
                 	res.status(201).json(user);

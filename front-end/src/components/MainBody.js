@@ -13,19 +13,10 @@ var FontAwesome = require('react-fontawesome');
 
 class MainBody extends Component {
 
-  componentWillMount(){
-    API.getCars()
-        .then((res) => {
-                this.setState({
-                    carsObj:res
-                });
-                console.log(this.state.carsObj);
-        });
-
-  }
 
   state={
-        carsObj: []
+        carsObj: [],
+        city:''
   }
   render() {
     return (
@@ -38,16 +29,8 @@ class MainBody extends Component {
             </div>
             <br/>
             <br/>
-              {/* listing logic goes here */}
+              {/* listing logic goes here*/}
 
-              {this.state.carsObj.map(car => (
-
-                  <div  style={{backgroundColor: "white", width:90}} className="DisplayCarDetails" key={car._id} cols={car.cols || 1}>
-                       car ID: {car.carId}
-
-                        <br/>
-                  </div>
-              ))}
 
               {/* listing logic ends here......*/}
 
@@ -75,7 +58,11 @@ class MainBody extends Component {
                 </div>
                 <div className="car-booking">
                   <div style={{paddingTop:"4.5%"}}>
-                      <input type="text" style={{width:"43%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
+                      <input onChange type="text" value={this.state.city} onChange={(event) => {
+                          console.log(event.target.value);
+                    this.setState({
+                        city: event.target.value
+                    });}} style={{width:"43%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
                   </div>
 
                   <div>
@@ -86,7 +73,8 @@ class MainBody extends Component {
                       <input type="text" style={{marginLeft:4,width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28}}/>
                   </div>
 
-                  <div className="arrow" style={{marginLeft:4,width:"8%",height: 77.5,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}}>
+                  <div className="arrow"  style={{marginLeft:4,width:"8%",height: 77.5,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}}>
+                    <button onClick={()=>{this.props.handleCarFetch({carCity:this.state.city,fromDate:'11-12-2017',toDate:'12-12-2017'})}}/>
 
                   </div>
 

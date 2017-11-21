@@ -6,6 +6,9 @@ var FontAwesome = require('react-fontawesome');
 
 
 class CarTile extends Component {
+  componentWillMount(){
+    console.log(this.props.cars);
+  }
 
   state={
 
@@ -39,6 +42,14 @@ class CarTile extends Component {
             <h5>Total</h5>
             <button style={{width: "80%",backgroundColor: "orange",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
         </div>
+        {this.props.cars.map(car => (
+
+                  <div  style={{backgroundColor: "white", width:90}} className="DisplayCarDetails" key={car._id} cols={car.cols || 1}>
+                       car ID: {car.carId}
+
+                        <br/>
+                  </div>
+              ))}
       </div>
 );
   }

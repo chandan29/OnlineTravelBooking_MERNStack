@@ -38,13 +38,15 @@ export const logout = () =>
             return error;
         });
 
-        export const getCars = () =>
+        export const getCars = (payload) =>
             fetch(`${api}/getCars`, {
-                method: 'GET',
+                method: 'POST',
                 headers: {
-                    ...headers
+                    ...headers,
+                    'Content-Type': 'application/json'
                 },
-                credentials:'include'
+                credentials:'include',
+                body: JSON.stringify(payload)
             }).then(res => {
                 return res.json();
             })

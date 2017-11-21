@@ -12,7 +12,7 @@ var FontAwesome = require('react-fontawesome');
 class MainBodyCar extends Component {
 
   componentWillMount(){
-
+    console.log(this.props.cars);
   }
   state={
 
@@ -24,7 +24,7 @@ class MainBodyCar extends Component {
 
         </div>
         <div className="middle-pane">
-            <CarTile />
+            <CarTile cars={this.props.cars}/>
         </div>
         <div className="right-pane">
 
