@@ -16,20 +16,23 @@ class CarTile extends Component {
 
   render() {
     return (
-      <div className="outerDiv">
+<div>
+
+      {this.props.cars.map(car => (
+<div className="outerDiv">
         <div className="outerDiv-left">
             <div className="outerDiv-left-top">
-                <h4 style={{marginLeft: "2%"}}>Economy</h4>
-                <h6 style={{marginLeft: "2%"}}>Chevrolet Spark</h6>
+                <h4 style={{marginLeft: "2%"}}>{car.carType}</h4>
+                <h6 style={{marginLeft: "2%"}}>Toyota Corolla</h6>
                 <div className="outerDiv-left-top-icons" style={{paddingTop: "1%"}}>
-                    <span style={{display: "inline", float:"left",marginLeft:"2%"}}>abc<p style={{float:"left",marginRight:5}}><FontAwesome name='user' size='2x'/></p></span>
-                    <span style={{display:"inline", float:"left",marginLeft:"12%"}}>def<p style={{float:"left",marginRight:5}}><FontAwesome name='suitcase' size='2x'/></p></span>
-                    <span style={{display:"inline",float:"left",marginLeft:"12%"}}>ghi<p style={{float:"left",marginRight:5}}><FontAwesome name='folder' size='2x'/></p></span>
+                    <span style={{display: "inline", float:"left",marginLeft:"2%"}}>{car.carSpecs}<p style={{float:"left",marginRight:5}}><FontAwesome name='user' size='1x'/></p></span>
+                    <span style={{display:"inline", float:"left",marginLeft:"12%"}}>1<p style={{float:"left",marginRight:5}}><FontAwesome name='suitcase' size='1x'/></p></span>
+                    <span style={{display:"inline",float:"left",marginLeft:"12%"}}>4<p style={{float:"left",marginRight:5}}><FontAwesome name='folder' size='1x'/></p></span>
                 </div>
             </div>
             <div className="outerDiv-left-bottom">
                 <span style={{display: "inline", float:"left",marginLeft:"2%",marginTop:15}}><FontAwesome name='plane' size='2x'/></span>
-                <span style={{display: "inline", float:"left",marginLeft:"2%"}}><p style={{lineHeight:"70%",marginTop:10}}>Airport Terminal</p><p style={{lineheight:"70%"}}>SFO</p></span>
+                <span style={{display: "inline", float:"left",marginLeft:"2%"}}><p style={{lineHeight:"70%",marginTop:10}}>Airport Terminal</p><p style={{lineheight:"70%"}}>{car.carCity}</p></span>
             </div>
         </div>
         <div className="outerDiv-mid" style={{textAlign: "center"}}>
@@ -38,18 +41,13 @@ class CarTile extends Component {
         <img style={{marginLeft:"10%"}} src={Car1}/>
         </div>
         <div className="outerDiv-right">
-            <h4>$72</h4>
+            <h4>${car.carRate}</h4>
             <h5>Total</h5>
-            <button style={{width: "80%",backgroundColor: "orange",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
+            <button onClick={()=>{this.props.handleCartileFetch({cartile: car, fromDate: "11-21-2017", toDate: "11-23-2017"})}} style={{width: "80%",backgroundColor: "orange",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
         </div>
-        {this.props.cars.map(car => (
+    </div>
+    ))}
 
-                  <div  style={{backgroundColor: "white", width:90}} className="DisplayCarDetails" key={car._id} cols={car.cols || 1}>
-                       car ID: {car.carId}
-
-                        <br/>
-                  </div>
-              ))}
       </div>
 );
   }

@@ -54,3 +54,20 @@ export const logout = () =>
                     console.log("This is error");
                     return error;
                 });
+
+        export const getCartile = (payload) =>
+            fetch(`${api}/bookCar`, {
+                method: 'POST',
+                headers: {
+                    ...headers,
+                    'Content-Type': 'application/json'
+                },
+                credentials:'include',
+                body: JSON.stringify(payload)
+            }).then(res => {
+                return res.json();
+            })
+                .catch(error => {
+                    console.log("This is error");
+                    return error;
+                });

@@ -8,6 +8,7 @@ import Header from './Header';
 import MainBody from './MainBody';
 import MainBodyCar from './MainBodyCar';
 import MainBodyCarCheckout from './MainBodyCarCheckout';
+import BookingSuccessful from './BookingSuccessful';
 
 class NewerHomePage extends Component {
 
@@ -49,6 +50,10 @@ class NewerHomePage extends Component {
             });
     };
 
+    handleRedirectBooking = () => {
+        this.props.history.push("/bookingSuccessful");
+    }
+
     handleCarFetch = (payload) => {
       API.getCars(payload)
           .then((res) => {
@@ -57,6 +62,14 @@ class NewerHomePage extends Component {
                   });
                   this.props.history.push("/searchCar");
           });
+
+    };
+
+    handleCartileFetch = (payload) => {
+            this.setState({
+                carTile: payload
+            });
+            this.props.history.push("/carCheckout");
 
     };
 
@@ -77,7 +90,7 @@ class NewerHomePage extends Component {
                           <Header />
                          </div>
                           <div className="mainBodyCar">
-                          <MainBodyCar cars={this.state.carsObj}/>
+                          <MainBodyCar cars={this.state.carsObj} handleCartileFetch={this.handleCartileFetch}/>
                           </div>
                           <Message message={this.state.message}/>
                     </div>
@@ -88,9 +101,14 @@ class NewerHomePage extends Component {
                           <Header />
                          </div>
                           <div className="mainBodyCarCheckout">
-                            <MainBodyCarCheckout />
+                            <MainBodyCarCheckout carTile={this.state.carTile} handleRedirectBooking={this.handleRedirectBooking}/>
                           </div>
                           <Message message={this.state.message}/>
+                    </div>
+                )}/>
+                <Route exact path="/bookingSuccessful" render={() => (
+                    <div>
+                        <BookingSuccessful />
                     </div>
                 )}/>
             </div>

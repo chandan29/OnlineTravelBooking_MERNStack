@@ -412,3 +412,27 @@ table {
    width: 100%;
    border-top: none;
 }
+
+
+.body-success {
+    width: 60%;
+    height: 500px;
+    border: 1px solid;
+    margin-left: 20%;
+    margin-bottom: 20%;
+    background-color: gray;
+    margin-top: 120px;
+    padding-top: 15%;
+    padding-left: 20%;
+}
+
+.text-success {
+    color: Green;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.icon-success {
+    margin-left: 400px;
+}

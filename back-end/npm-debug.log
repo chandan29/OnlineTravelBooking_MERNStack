@@ -7,8 +7,8 @@
 6 silly lifecycle PassportJS@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle PassportJS@0.0.0~start: PassportJS@0.0.0
 8 verbose lifecycle PassportJS@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle PassportJS@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/shashanksingh/Desktop/Kayak Progress/Kayak_V1/back-end/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.6/bin
-10 verbose lifecycle PassportJS@0.0.0~start: CWD: /Users/shashanksingh/Desktop/Kayak Progress/Kayak_V1/back-end
+9 verbose lifecycle PassportJS@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/shashanksingh/Desktop/Kayak Progress/Kayak_V2/back-end/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.6/bin
+10 verbose lifecycle PassportJS@0.0.0~start: CWD: /Users/shashanksingh/Desktop/Kayak Progress/Kayak_V2/back-end
 11 silly lifecycle PassportJS@0.0.0~start: Args: [ '-c', 'node --harmony ./bin/www' ]
 12 silly lifecycle PassportJS@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle PassportJS@0.0.0~start: Failed to exec start script
@@ -23,7 +23,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:920:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid PassportJS@0.0.0
-16 verbose cwd /Users/shashanksingh/Desktop/Kayak Progress/Kayak_V1/back-end
+16 verbose cwd /Users/shashanksingh/Desktop/Kayak Progress/Kayak_V2/back-end
 17 error Darwin 17.2.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
 19 error node v6.11.5

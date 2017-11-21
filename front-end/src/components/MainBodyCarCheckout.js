@@ -16,7 +16,7 @@ class MainBodyCarCheckout extends Component {
     return (
       <div className="mainBodyCarCheckout">
         <div className="main-pane-carcheckout">
-            <CarCheckoutDetails />
+            <CarCheckoutDetails carTile={this.props.carTile} handleRedirectBooking={this.props.handleRedirectBooking}/>
         </div>
 
         <div className="right-pane-carcheckout">

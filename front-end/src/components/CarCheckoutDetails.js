@@ -11,20 +11,28 @@ class CarCheckoutDetails extends Component {
 
   }
 
+  static PropTypes={
+      handleRedirectBooking: PropTypes.func.isRequired
+  }
+
+  componentWillMount(){
+    console.log(this.props.carTile);
+  }
+
   render() {
     return (
         <div>
       <div className="outerDiv">
         <div className="outerDiv-left-carCheckoutDetails">
             <div className="outerDiv-left-carCheckoutDetails-top">
-              <h4>Intermediate (Toyota Corolla or similar)</h4>
+              <h4>{this.props.carTile.cartile.carType} (Toyota Corolla or similar)</h4>
               <h4>Automatic transmission, Air-conditioning</h4>
-              <h5>Thu, Nov 23 to Fri Nov 24 2017 (1 day)</h5>
+              <h5>{this.props.carTile.fromDate} to {this.props.carTile.toDate} (1 day)</h5>
             </div>
             <div className="outerDiv-right-carCheckoutDetails-bottom" style={{paddingTop: 10}}>
-                <span style={{display: "inline", float:"left",marginLeft:"2%"}}>abc<p style={{float:"left",marginRight:5}}><FontAwesome name='user' size='2x'/></p></span>
-                <span style={{display:"inline", float:"left",marginLeft:"12%"}}>def<p style={{float:"left",marginRight:5}}><FontAwesome name='suitcase' size='2x'/></p></span>
-                <span style={{display:"inline",float:"left",marginLeft:"12%"}}>ghi<p style={{float:"left",marginRight:5}}><FontAwesome name='folder' size='2x'/></p></span>
+                <span style={{display: "inline", float:"left",marginLeft:"2%"}}>{this.props.carTile.cartile.carSpecs}<p style={{float:"left",marginRight:5}}><FontAwesome name='user' size='1x'/></p></span>
+                <span style={{display:"inline", float:"left",marginLeft:"12%"}}>2 bags<p style={{float:"left",marginRight:5}}><FontAwesome name='suitcase' size='1x'/></p></span>
+                <span style={{display:"inline",float:"left",marginLeft:"12%"}}>4 doors<p style={{float:"left",marginRight:5}}><FontAwesome name='folder' size='1x'/></p></span>
             </div>
         </div>
         <div className="outerDiv-right-carCheckoutDetails">
@@ -34,20 +42,20 @@ class CarCheckoutDetails extends Component {
 
       <div className="outerDiv">
             <div className="outerDiv-left-carCheckoutDetails1">
-                <h6>Pick up: Thu Nov 23 2017 – 12:00PM</h6>
+                <h6>Pick up: {this.props.carTile.fromDate} – 12:00PM</h6>
                 <br/>
-                <h6>Agency name</h6>
+                <h6>Agency name: {this.props.carTile.cartile.carAgency}</h6>
                 <h6>2800 Leavenworth St, Suite A44</h6>
-                <h6>San Francisco, CA</h6>
+                <h6>{this.props.carTile.carCity}</h6>
 
                 <h5>Phone: +1 415 306 5289</h5>
             </div>
             <div className="outerDiv-mid-carCheckoutDetails1">
-                <h6>Drop Off: Thu Nov 23 2017 – 12:00PM</h6>
+                <h6>Drop Off: {this.props.carTile.toDate} – 12:00PM</h6>
                 <br/>
-                <h6>Agency name</h6>
+                <h6>Agency name: {this.props.carTile.cartile.carAgency}</h6>
                 <h6>2800 Leavenworth St, Suite A44</h6>
-                <h6>San Francisco, CA</h6>
+                <h6>{this.props.carTile.carCity}</h6>
 
                 <h5>Phone: +1 415 306 5289</h5>
             </div>
@@ -56,7 +64,7 @@ class CarCheckoutDetails extends Component {
             </div>
           </div>
           <div className="outerDiv">
-                <h4>Rental Car Price</h4>
+                <h4>Price: {this.props.carTile.cartile.carRate}</h4>
                 <table>
                   <tr>
                     <th style={{borderTop:"none"}}></th>
@@ -64,19 +72,19 @@ class CarCheckoutDetails extends Component {
                     <th style={{borderTop:"none"}}>Total</th>
                   </tr>
                   <tr>
-                    <td>Intermediate (Toyota Corolla or similar)</td>
-                    <td>$81.85</td>
-                    <td>$81.85</td>
+                    <td>{this.props.carTile.cartile.carType} (Toyota Corolla or similar)</td>
+                    <td>${this.props.carTile.cartile.carRate}</td>
+                    <td>${this.props.carTile.cartile.carRate}</td>
                   </tr>
                   <tr>
                     <td>Taxes and Fees</td>
-                    <td>$81.85</td>
-                    <td>$81.85</td>
+                    <td>${this.props.carTile.cartile.carRate/10}</td>
+                    <td>${this.props.carTile.cartile.carRate/10}</td>
                   </tr>
                   <tr>
                     <td><strong>Rental Car Total</strong></td>
-                    <td>$81.85</td>
-                    <td>$81.85</td>
+                    <td>${this.props.carTile.cartile.carRate + this.props.carTile.cartile.carRate/10}</td>
+                    <td>${this.props.carTile.cartile.carRate + this.props.carTile.cartile.carRate/10}</td>
                   </tr>
                 </table>
           </div>
@@ -118,8 +126,8 @@ class CarCheckoutDetails extends Component {
                     <img src={Cards}  style={{float:"right"}}/>
                 <hr/>
                     <div stylle={{height: 120,paddingBottom:10,marginBottom: 10}}>
-                        <h5 style={{display: "inline"}}>Pay $86.82 USD today. Pay $0.00 USD at pick-up.</h5>
-                        <button style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
+                        <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay $0 USD today.</span> Pay ${this.props.carTile.cartile.carRate + this.props.carTile.cartile.carRate/10} USD at pick-up.</h5>
+                        <button  onClick={this.props.handleRedirectBooking} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
                     </div>
 
           </div>

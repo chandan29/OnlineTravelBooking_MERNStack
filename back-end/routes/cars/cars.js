@@ -27,6 +27,7 @@ console.log(req.query.from);
 //  res.status(201).json({from:req.query.from,to:req.query.to,date:req.query.date});
 });
 
+
 carshandler.post('/bookCar',function(req,res){
   /*{
 	"_id" : ObjectId("5a0e91f4cda390e36cece396"),
@@ -43,7 +44,7 @@ carshandler.post('/bookCar',function(req,res){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('carTrip');
             console.log(req.body);
-            coll.insertOne({carId:req.body.carId,fromCity:req.body.carCity,toCity:req.body.carCity,fromDate:req.body.fromDate,toDate:req.body.toDate,fareDetails:req.body.carRate},function(err, user){
+            coll.insertOne({carId:req.body.cartile.carId,fromCity:req.body.cartile.carCity,toCity:req.body.cartile.carCity,fromDate:req.body.fromDate,toDate:req.body.toDate,fareDetails:req.body.cartile.carRate},function(err, user){
                 if (user) {
                 	res.status(201).json(user);
                 } else {
