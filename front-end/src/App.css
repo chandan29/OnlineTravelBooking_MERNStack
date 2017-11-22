@@ -508,5 +508,10 @@ table {
 
 
 .field {
-    
+
+}
+
+.tab:hover {
+    color: orange;
+    fill: orange;
 }

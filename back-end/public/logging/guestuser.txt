@@ -9,3 +9,8 @@ User booked a car from the city of New York on 10/22/2017 at 0:48
 User queried car listing for the city of New York on 10/22/2017 at 5:20
 User booked a car from the city of New York on 10/22/2017 at 5:20
 User queried car listing for the city of New York on 10/22/2017 at 7:26
+User queried car listing for the city of New York on 10/22/2017 at 7:58
+User booked a car from the city of New York on 10/22/2017 at 7:58
+User queried car listing for the city of San Jose on 10/22/2017 at 8:54
+User queried car listing for the city of San Jose on 10/22/2017 at 8:54
+User booked a car from the city of San Jose on 10/22/2017 at 8:54
