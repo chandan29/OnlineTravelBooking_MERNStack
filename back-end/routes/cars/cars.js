@@ -55,3 +55,33 @@ carshandler.post('/bookCar',function(req,res){
         });
 
 });
+
+carshandler.post('/receipt',function(req,res){
+  var email 	= require("emailjs/email");
+var server 	= email.server.connect({
+   user:    "automailerkayak@gmail.com",
+   password:"shashankui",
+   host:    "smtp.gmail.com",
+   ssl:     true
+});
+
+// send the message and get a callback with an error or details of the message that was sent
+server.send({
+   text:    "With attachment",
+   from:    "you <automailerkayak@gmail.com>",
+   to:      "Chandan <chandan.paranjape@gmail.com>, Shashank <shashank.singh9193@gmail.com>,Shripal <shripal555@gmail.com>,Anshit<anshit.sobti@gmail.com>",
+   subject: "testing emailjs",
+   attachment:
+  [
+     {data:"<html>i <i>hope</i> this works!</html>", alternative:true},
+     {path:"/Users/chandanparanjape/272/README.txt", type:"application/text", name:"README.txt"}
+  ]
+}, function(err, message) { console.log(err || message);
+  if(message){
+    res.json({1:1});
+  }
+  else{
+    res.json({0:0});
+  }
+});
+});

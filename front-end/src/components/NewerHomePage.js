@@ -51,7 +51,13 @@ class NewerHomePage extends Component {
     };
 
     handleRedirectBooking = () => {
-        this.props.history.push("/bookingSuccessful");
+      API.getCartile(this.state.carTile)
+          .then((res) => {
+              console.log(res);
+              this.props.history.push("/bookingSuccessful");
+
+          });
+
     }
 
     handleCarFetch = (payload) => {
@@ -108,7 +114,7 @@ class NewerHomePage extends Component {
                 )}/>
                 <Route exact path="/bookingSuccessful" render={() => (
                     <div>
-                        <BookingSuccessful />
+                        <BookingSuccessful carTile={this.state.carTile}/>
                     </div>
                 )}/>
             </div>

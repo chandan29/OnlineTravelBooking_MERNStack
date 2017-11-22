@@ -13,7 +13,7 @@ var FontAwesome = require('react-fontawesome');
 class BookingSuccessful extends Component {
 
   componentWillMount(){
-
+console.log(this.props.carTile);
   }
   state={
 
@@ -26,10 +26,11 @@ class BookingSuccessful extends Component {
         <i className="huge icons">
         <i aria-hidden="true" style={{color: "green"}}className="sun big loading icon"></i>
         <i aria-hidden="true" style={{color:"green"}}className="user icon"></i></i>
+        {this.props.carTile.fromDate}
         <h1>Booking Successful.</h1>
         <hr />
         <h1>Your Booking Details:</h1>
-        <h3>Name: </h3>
+        <h3>Name:{this.props.carTile.cartile.carType} </h3>
         <h3>Email Id:</h3>
         <h3>Booking Id:</h3>
         <h3>Booking Description: </h3>

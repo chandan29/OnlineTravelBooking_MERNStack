@@ -125,7 +125,7 @@ class CarCheckoutDetails extends Component {
                     <input type="text" style={{width: "12%",height:35,marginLeft: "3%"}} placeholder="Email Adress"/>
                     <img src={Cards}  style={{float:"right"}}/>
                 <hr/>
-                    <div stylle={{height: 120,paddingBottom:10,marginBottom: 10}}>
+                    <div style={{height: 120,paddingBottom:10,marginBottom: 10}}>
                         <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay $0 USD today.</span> Pay ${this.props.carTile.cartile.carRate + this.props.carTile.cartile.carRate/10} USD at pick-up.</h5>
                         <button  onClick={this.props.handleRedirectBooking} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
                     </div>
