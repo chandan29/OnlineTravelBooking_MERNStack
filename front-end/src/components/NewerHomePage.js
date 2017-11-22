@@ -4,6 +4,7 @@ import * as API from '../api/API';
 import Login from "./Login";
 import Message from "./Message";
 import Welcome from "./Welcome";
+import Footer from "./Footer";
 import Header from './Header';
 import MainBody from './MainBody';
 import MainBodyCar from './MainBodyCar';
@@ -87,7 +88,7 @@ class NewerHomePage extends Component {
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
                           <Header />
                           <MainBody handleCarFetch={this.handleCarFetch}/>
-                          <Message message={this.state.message}/>
+                          <Footer />
                     </div>
                 )}/>
                 <Route exact path="/searchCar" render={() => (

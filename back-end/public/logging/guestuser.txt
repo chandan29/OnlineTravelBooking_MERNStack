@@ -4,3 +4,5 @@ User queried car listing for the city ofNew York on 10/22/2017 at 0:30
 User booked a car from the city of New York on 10/22/2017 at 0:30
 User queried car listing for the city of New York on 10/22/2017 at 0:33
 User booked a car from the city of New York on 10/22/2017 at 0:33
+User queried car listing for the city of New York on 10/22/2017 at 0:48
+User booked a car from the city of New York on 10/22/2017 at 0:48
