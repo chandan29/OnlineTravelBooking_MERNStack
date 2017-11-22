@@ -151,3 +151,26 @@ carshandler.post('/receipt',function(req,res){
   });
 
 });
+
+carshandler.post('/adminAddCarToList',function(req,res){
+    console.log('Inside admin add car:');
+
+    mongo.connect(mongoURL, function(){
+        console.log('Connected to mongo at: ' + mongoURL);
+        var coll = mongo.collection('car');
+        console.log(req.body);
+        coll.insertOne({carID:req.body.carID,
+            carType:req.body.carType,carCity:req.body.carCity,
+            carAgency:req.body.carAgency,carSpecs:req.body.carSpecs,
+            carAvailability:req.body.carAvailability,carRating:req.body.carRating,
+            carRate:req.body.carRate},function(err, user){
+            if (user) {
+                res.status(201).json(user);
+            } else {
+
+                res.status(401).json({wrong:1});
+            }
+        });
+    });
+
+});

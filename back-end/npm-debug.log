@@ -1,14 +1,14 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
 2 info using npm@3.10.10
-3 info using node@v6.11.5
+3 info using node@v6.10.2
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle PassportJS@0.0.0~prestart: PassportJS@0.0.0
 6 silly lifecycle PassportJS@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle PassportJS@0.0.0~start: PassportJS@0.0.0
 8 verbose lifecycle PassportJS@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle PassportJS@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/shashanksingh/Desktop/Kayak Progress/Kayak_V2/back-end/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.6/bin
-10 verbose lifecycle PassportJS@0.0.0~start: CWD: /Users/shashanksingh/Desktop/Kayak Progress/Kayak_V2/back-end
+9 verbose lifecycle PassportJS@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/Santosh/Downloads/CMPE273_Team1-master_2211_0410hrs/back-end/node_modules/.bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+10 verbose lifecycle PassportJS@0.0.0~start: CWD: /Users/Santosh/Downloads/CMPE273_Team1-master_2211_0410hrs/back-end
 11 silly lifecycle PassportJS@0.0.0~start: Args: [ '-c', 'node --harmony ./bin/www' ]
 12 silly lifecycle PassportJS@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle PassportJS@0.0.0~start: Failed to exec start script
@@ -20,13 +20,13 @@
 14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
-14 verbose stack     at maybeClose (internal/child_process.js:920:16)
-14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
+14 verbose stack     at maybeClose (internal/child_process.js:886:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid PassportJS@0.0.0
-16 verbose cwd /Users/shashanksingh/Desktop/Kayak Progress/Kayak_V2/back-end
-17 error Darwin 17.2.0
+16 verbose cwd /Users/Santosh/Downloads/CMPE273_Team1-master_2211_0410hrs/back-end
+17 error Darwin 16.4.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
-19 error node v6.11.5
+19 error node v6.10.2
 20 error npm  v3.10.10
 21 error code ELIFECYCLE
 22 error PassportJS@0.0.0 start: `node --harmony ./bin/www`

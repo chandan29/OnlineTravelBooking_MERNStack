@@ -10,6 +10,10 @@ import MainBody from './MainBody';
 import MainBodyCar from './MainBodyCar';
 import MainBodyCarCheckout from './MainBodyCarCheckout';
 import BookingSuccessful from './BookingSuccessful';
+import Admin from "./Admin";
+import AdminDashboard from "./AdminDashboard";
+import Signup from './Signup';
+import Signin from './Signin';
 
 class NewerHomePage extends Component {
 
@@ -83,7 +87,7 @@ class NewerHomePage extends Component {
 
     render() {
         return (
-            <div className="container-fluid" style={{backgroundColor:"#E8E8E8"}}>
+            <div className="container-fluid" style={{backgroundColor:"white"}}>
                 <Route exact path="/" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
                           <Header />
@@ -116,6 +120,26 @@ class NewerHomePage extends Component {
                 <Route exact path="/bookingSuccessful" render={() => (
                     <div>
                         <BookingSuccessful carTile={this.state.carTile}/>
+                    </div>
+                )}/>
+                <Route exact path="/admin" render={() => (
+                    <div>
+                        <Admin handleSubmitAdmin={this.handleSubmitAdmin}/>
+                    </div>
+                )}/>
+                <Route exact path="/adminDashboard" render={() => (
+                    <div>
+                        <AdminDashboard />
+                    </div>
+                )}/>
+                <Route exact path="/signup" render={() => (
+                    <div>
+                      <Signup />
+                    </div>
+                )}/>
+                <Route exact path="/signin" render={() => (
+                    <div>
+                      <Signin />
                     </div>
                 )}/>
             </div>

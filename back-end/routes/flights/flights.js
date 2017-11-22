@@ -30,6 +30,29 @@ flightshandler.get('bookFlight',function(req,res){
 
 });
 
+flightshandler.post('/adminAddFlightToList',function(req,res){
+    console.log('Inside admin add flight:');
+
+    mongo.connect(mongoURL, function(){
+        console.log('Connected to mongo at: ' + mongoURL);
+        var coll = mongo.collection('flight');
+        console.log(req.body);
+        coll.insertOne({flightId:req.body.flightId,
+            flightClass:req.body.flightClass,fromCity:req.body.fromCity,
+            toCity:req.body.toCity,startTime:req.body.startTime,
+            endTime:req.body.endTime,flightAgency:req.body.flightAgency,
+            flightRating:req.body.flightRating,availableSeats:req.body.availableSeats,
+            fareDetails:req.body.fareDetails},function(err, user){
+            if (user) {
+                res.status(201).json(user);
+            } else {
+
+                res.status(401).json({wrong:1});
+            }
+        });
+    });
+
+});
 
 //mongodb atlas link-
 /*

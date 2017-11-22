@@ -8,9 +8,6 @@ import * as API from '../api/API';
 import BeautifulDown from './BeautifulDown';
 var FontAwesome = require('react-fontawesome');
 
-
-
-
 class MainBody extends Component {
 
 

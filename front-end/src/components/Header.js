@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+
 import Logo from './../logo.png';
 
 
@@ -22,7 +22,7 @@ class Header extends Component {
               <li><a href="contact.asp">Contact</a></li>
               <li><a href="about.asp">About</a></li>
             </ul>
-            <div style={{float: "right"}}>
+            <div style={{float: "right", color: "white"}}>
               <span className="glyphicon glyphicon-user"></span>
               <span style={{marginLeft: 10}}>My Account</span>
             </div>

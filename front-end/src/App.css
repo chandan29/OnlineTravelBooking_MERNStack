@@ -441,3 +441,72 @@ table {
   width: 100%;
   height: 100%;
 }
+
+.choose{
+    margin-left: 100px;
+    padding-left: 100px;
+}
+
+.createList{
+    height: 40px;
+    width: 100%;
+}
+
+.createListTitle{
+    float: center;
+    textAlign: center;
+    padding-right: 41%;
+    font-size: 16px;
+}
+
+.bgpage{
+    height: 100%;
+    background-repeat: no-repeat;
+    background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+    font-family: 'Oxygen', sans-serif;
+    background-size: cover;
+}
+
+.signup{
+
+    width: 260%;
+    background-color: #ff690f;
+}
+
+.singin{
+    width: 300%;
+    border:1px solid #ff690f;
+    background-color: white;
+    color: #ff690f;
+}
+
+.trips{
+    padding-top: 100px;
+}
+
+.closeModal{
+    float: right;
+}
+.footerModal{
+
+    background-color: rgb(225, 225, 229);
+    color: rgb(139, 139, 142);
+}
+.footerModalSignIn{
+
+    background-color: white;
+}
+.checkbox_label{
+    color: #558fe6;
+}
+
+.modal_signup{
+    background-color: rgb(84, 84, 86);
+    color: white;
+}
+
+
+
+.field {
+    
+}
