@@ -43,7 +43,7 @@ class CarTile extends Component {
         <div className="outerDiv-right">
             <h4>${car.carRate}</h4>
             <h5>Total</h5>
-            <button onClick={()=>{this.props.handleCartileFetch({cartile: car, fromDate: "11-21-2017", toDate: "11-23-2017"})}} style={{width: "80%",backgroundColor: "orange",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
+            <button onClick={()=>{this.props.handleCartileFetch({cartile: car, fromDate: "11-21-2017", toDate: "11-23-2017"})}} style={{width: "80%",backgroundColor: "#dd471a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
         </div>
     </div>
     ))}

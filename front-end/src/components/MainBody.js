@@ -29,34 +29,31 @@ class MainBody extends Component {
             </div>
             <br/>
             <br/>
-              {/* listing logic goes here*/}
-
-
-              {/* listing logic ends here......*/}
-
 
               <div className="tabs">
-                <div className="tab">
-                 <span style={{float:"left"}}> <FontAwesome name='bed' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Hotels</span>
-                 </div>
-                <div className="tab">
-              <span style={{float:"left"}}>  <FontAwesome name='plane' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Flights</span>
-                </div>
-                <div className="tab">
-                <span style={{float:"left"}}><FontAwesome name='car' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Cars</span>
-                </div>
-                <div className="tab">
-                <span style={{float:"left"}}><FontAwesome name='plane' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Packages</span>
-                </div>
+                    <div className="tab">
+                     <span style={{float:"left"}}> <FontAwesome name='bed' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Hotels</span>
+                     </div>
+                    <div className="tab">
+                        <span style={{float:"left"}}>  <FontAwesome name='plane' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Flights</span>
+                    </div>
+                    <div className="tab">
+                        <span style={{float:"left"}}><FontAwesome name='car' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Cars</span>
+                    </div>
+                    <div className="tab">
+                        <span style={{float:"left"}}><FontAwesome name='plane' size='2x'/></span><span style={{float:"left",marginLeft:10,marginTop:5}}>Packages</span>
+                    </div>
               </div>
+
               <br/>
               <br />
               <div className="main-content">
-                <div className="dropoff">
-                  <a href="#" style={{marginLeft:10,color:"black",fontSize:12}}>SAME DROP-OFF</a>
+
+                <div className="car-booking">
+                <div className="dropoff" style={{width: "100%", float: "left",marginTop:13,marginLeft: 8}}>
+                  <a href="#" style={{marginLeft:18,color:"black",fontSize:12}}>SAME DROP-OFF</a>
                   <a href="#" style={{marginLeft:18,color:"black",fontSize:12}}>DIFFERENT DROP-OFF</a>
                 </div>
-                <div className="car-booking">
                   <div style={{paddingTop:"4.5%"}}>
                       <input onChange type="text" value={this.state.city} onChange={(event) => {
                           console.log(event.target.value);
@@ -73,10 +70,11 @@ class MainBody extends Component {
                       <input type="text" style={{marginLeft:4,width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28}}/>
                   </div>
 
-                  <div className="arrow"  style={{marginLeft:4,width:"8%",height: 77.5,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}}>
-                    <button onClick={()=>{this.props.handleCarFetch({carCity:this.state.city,fromDate:'11-12-2017',toDate:'12-12-2017'})}}/>
 
-                  </div>
+                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleCarFetch({carCity:this.state.city,fromDate:'11-12-2017',toDate:'12-12-2017'})}}>
+                    </button>
+
+
 
 
                 </div>
