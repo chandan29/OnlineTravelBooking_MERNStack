@@ -72,7 +72,7 @@ class Signup extends Component {
                 <button className="ui orange button" onClick={()=>{this.props.registerUser({firstname:this.state.firstname,lastname:this.state.lastname,email:this.state.email,password:this.state.password})}}>Sign Up</button>
               </div>
               <div style={{marginTop: "4%", float: "left", marginLeft: "24%"}}>
-                <h5>Already have an account? <span style={{color:"orange"}} onClick={()=>{this.props.gotoSignin()}}>Sign In</span></h5>
+                <h5>Already have an account? <span style={{color:"orange",cursor: "pointer"}} onClick={()=>{this.props.gotoSignin()}}>&nbsp;&nbsp;Sign In</span></h5>
               </div>
         </div>
     </div>

@@ -113,13 +113,20 @@ class NewerHomePage extends Component {
 
     };
 
+    handleClickSignup = () => {
+        this.props.history.push('/signup');
+    }
+
+    handleClickSignin = () => {
+        this.props.history.push('/signin');
+    }
 
     render() {
         return (
             <div className="container-fluid" style={{backgroundColor:"white"}}>
                 <Route exact path="/" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
-                          <Header />
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                           <MainBody handleCarFetch={this.handleCarFetch}/>
                           <Footer />
                     </div>

@@ -601,4 +601,59 @@ table {
   text-shadow: 0 0 5px #09f;
 }
 
-/* css for start filter ends here */
+/* css for star filter ends here */
+
+/* css for My Account dropdown starts here */
+
+.dropbtn {
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: center;
+    width: 150px;
+}
+
+.dropdown-content button {
+    color: black;
+    width: 80%;
+    background-color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 10%;
+    border: 1 px solid;
+    border-color: orange;
+    border-radius: 0px;
+    margin-top: 5%;
+}
+
+.dropdown-content span {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-top: 5%;
+}
+
+.dropdown-content span:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* css for My Account dropdown ends here */

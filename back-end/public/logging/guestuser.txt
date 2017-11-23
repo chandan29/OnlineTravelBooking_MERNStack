@@ -24,3 +24,4 @@ User queried car listing for the city of Santa Clara on 10/22/2017 at 14:0
 User booked a car from the city of Santa Clara on 10/22/2017 at 14:0
 User queried car listing for the city of New York on 10/22/2017 at 19:4
 User booked a car from the city of New York on 10/22/2017 at 19:6
+User queried car listing for the city of New York on 10/23/2017 at 6:11
