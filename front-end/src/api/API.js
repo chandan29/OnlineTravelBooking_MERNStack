@@ -109,3 +109,39 @@ export const addFlightToList = (payload) =>
         });
 
                 
+
+        export const registerUser = (payload) =>
+            fetch(`${api}/registerUser`, {
+                method: 'POST',
+                headers: {
+                    ...headers,
+                    'Content-Type': 'application/json'
+                },
+                credentials:'include',
+                body: JSON.stringify(payload)
+            }).then(res => {
+                return res.json();
+            })
+                .catch(error => {
+                    console.log("This is error");
+                    return error;
+                });
+
+
+
+                export const loginUser = (payload) =>
+                    fetch(`${api}/loginUser`, {
+                        method: 'POST',
+                        headers: {
+                            ...headers,
+                            'Content-Type': 'application/json'
+                        },
+                        credentials:'include',
+                        body: JSON.stringify(payload)
+                    }).then(res => {
+                        return res.json();
+                    })
+                        .catch(error => {
+                            console.log("This is error");
+                            return error;
+                        });
