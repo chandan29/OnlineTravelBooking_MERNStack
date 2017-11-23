@@ -20,14 +20,8 @@ class MainBodyCar extends Component {
   render() {
     return (
       <div className="mainBodyCar">
-        <div className="left-pane">
-
-        </div>
         <div className="middle-pane">
             <CarTile cars={this.props.cars} handleCartileFetch={this.props.handleCartileFetch}/>
-        </div>
-        <div className="right-pane">
-
         </div>
       </div>
 );

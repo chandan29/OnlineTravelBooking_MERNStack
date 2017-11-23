@@ -7,9 +7,6 @@ import Carousal2 from './Carousal2';
 import BeautifulDown from './BeautifulDown';
 var FontAwesome = require('react-fontawesome');
 
-
-
-
 class MainBody extends Component {
 
 
