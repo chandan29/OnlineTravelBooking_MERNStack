@@ -65,6 +65,35 @@ class NewerHomePage extends Component {
 
     }
 
+    gotoSignin=()=>{
+      this.props.history.push('/signin');
+    };
+
+    loginUser=(payload)=>{
+      API.loginUser(payload)
+      .then((res) => {
+          if(res.status==201){
+          this.props.history.push("/");
+          }
+          else{
+            this.props.history.push("/signin");
+          }
+      });
+    }
+
+    gotoSignup=()=>{
+      this.props.history.push('/signup');
+    };
+
+    registerUser=(payload)=>{
+      API.registerUser(payload)
+      .then((res) => {
+          console.log(res.msg);
+          this.props.history.push("/signin");
+
+      });
+    }
+
     handleCarFetch = (payload) => {
       API.getCars(payload)
           .then((res) => {
@@ -134,12 +163,12 @@ class NewerHomePage extends Component {
                 )}/>
                 <Route exact path="/signup" render={() => (
                     <div>
-                      <Signup />
+                      <Signup gotoSignin={this.gotoSignin} registerUser={this.registerUser}/>
                     </div>
                 )}/>
                 <Route exact path="/signin" render={() => (
                     <div>
-                      <Signin />
+                      <Signin gotoSignup={this.gotoSignup} loginUser={this.loginUser}/>
                     </div>
                 )}/>
             </div>

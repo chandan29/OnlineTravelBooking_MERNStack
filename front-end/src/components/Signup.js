@@ -5,7 +5,10 @@ import Header from './Header';
 class Signup extends Component {
 
   state={
-
+    firstname:'',
+    lastname:'',
+    email:'',
+    password:''
   }
   render() {
     return (
@@ -21,7 +24,10 @@ class Signup extends Component {
             <div className="ui large form">
               <div className="ten wide field">
                 <label>First Name</label>
-                <input placeholder="First name" type="text" />
+                <input placeholder="First name" type="text" value={this.state.firstname} onChange={(event) => {
+              this.setState({
+                  firstname: event.target.value
+              });}}/>
               </div>
             </div>
 
@@ -29,21 +35,30 @@ class Signup extends Component {
             <div className="ui large form">
               <div className="ten wide field">
                 <label>Last Name</label>
-                <input placeholder="Last name" type="text" />
+                <input placeholder="Last name" type="text" value={this.state.lastname} onChange={(event) => {
+              this.setState({
+                  lastname: event.target.value
+              });}}/>
               </div>
             </div>
             <br/>
             <div className="ui large form">
               <div className="ten wide field">
                 <label>Email Id</label>
-                <input placeholder="Email address" type="text" />
+                <input placeholder="Email address" type="text" value={this.state.email} onChange={(event) => {
+              this.setState({
+                  email: event.target.value
+              });}}/>
               </div>
             </div>
             <br/>
             <div className="ui large form">
               <div className="ten wide field">
                 <label>Password</label>
-                <input placeholder="Password" type="password" />
+                <input placeholder="Password" type="password" value={this.state.password} onChange={(event) => {
+              this.setState({
+                  password: event.target.value
+              });}}/>
               </div>
             </div>
             <br/>
@@ -54,10 +69,10 @@ class Signup extends Component {
               </div>
             </div>
               <div style={{marginTop: "2%",float: "left"}}>
-                <button className="ui orange button">Sign Up</button>
+                <button className="ui orange button" onClick={()=>{this.props.registerUser({firstname:this.state.firstname,lastname:this.state.lastname,email:this.state.email,password:this.state.password})}}>Sign Up</button>
               </div>
               <div style={{marginTop: "4%", float: "left", marginLeft: "24%"}}>
-                <h5>Already have an account? <span style={{color:"orange"}}>Sign In</span></h5>
+                <h5>Already have an account? <span style={{color:"orange"}} onClick={()=>{this.props.gotoSignin()}}>Sign In</span></h5>
               </div>
         </div>
     </div>
