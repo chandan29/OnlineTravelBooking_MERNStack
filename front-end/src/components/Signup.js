@@ -13,7 +13,7 @@ class Signup extends Component {
   render() {
     return (
         <div style={{backgroundColor: "white"}}>
-        <Header />
+        <Header handleClickSignup={this.props.handleClickSignup} handleClickSignin={this.props.handleClickSignin}/>
     <div className="container" style={{marginTop: "3%"}}>
         <div style={{marginLeft: "30%"}}>
           <h2 style={{color: "orange"}}>Sign Up</h2>

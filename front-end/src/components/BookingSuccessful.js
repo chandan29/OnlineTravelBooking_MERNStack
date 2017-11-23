@@ -21,7 +21,7 @@ console.log(this.props.carTile);
   render() {
     return (
       <div style={{backgroundColor: "#E8E8E8", textAlign: "center", minHeight: 800}}>
-      <Header />
+      <Header handleClickSignup={this.props.handleClickSignup} handleClickSignin={this.props.handleClickSignin}/>
       <div style={{width: "40%", height: "auto",marginTop: 100,marginLeft: "30%"}}>
         <i className="huge icons">
         <i aria-hidden="true" style={{color: "green"}}className="sun big loading icon"></i>

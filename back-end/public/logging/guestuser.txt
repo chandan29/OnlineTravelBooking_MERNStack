@@ -25,3 +25,9 @@ User booked a car from the city of Santa Clara on 10/22/2017 at 14:0
 User queried car listing for the city of New York on 10/22/2017 at 19:4
 User booked a car from the city of New York on 10/22/2017 at 19:6
 User queried car listing for the city of New York on 10/23/2017 at 6:11
+User queried car listing for the city of New York on 10/23/2017 at 9:44
+User queried car listing for the city of New York on 10/23/2017 at 9:47
+User queried car listing for the city of San Jose on 10/23/2017 at 9:48
+User booked a car from the city of San Jose on 10/23/2017 at 9:48
+User queried car listing for the city of New York on 10/23/2017 at 9:49
+User booked a car from the city of New York on 10/23/2017 at 9:49

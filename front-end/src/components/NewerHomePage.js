@@ -134,7 +134,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/searchCar" render={() => (
                     <div>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
-                          <Header />
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyCar">
                           <MainBodyCar cars={this.state.carsObj} handleCartileFetch={this.handleCartileFetch}/>
@@ -145,7 +145,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/carCheckout" render={() => (
                     <div>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
-                          <Header />
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyCarCheckout">
                             <MainBodyCarCheckout carTile={this.state.carTile} handleRedirectBooking={this.handleRedirectBooking}/>
@@ -155,7 +155,7 @@ class NewerHomePage extends Component {
                 )}/>
                 <Route exact path="/bookingSuccessful" render={() => (
                     <div>
-                        <BookingSuccessful carTile={this.state.carTile}/>
+                        <BookingSuccessful carTile={this.state.carTile} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
                     </div>
                 )}/>
                 <Route exact path="/admin" render={() => (
@@ -170,12 +170,12 @@ class NewerHomePage extends Component {
                 )}/>
                 <Route exact path="/signup" render={() => (
                     <div>
-                      <Signup gotoSignin={this.gotoSignin} registerUser={this.registerUser}/>
+                      <Signup gotoSignin={this.gotoSignin} registerUser={this.registerUser} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                     </div>
                 )}/>
                 <Route exact path="/signin" render={() => (
                     <div>
-                      <Signin gotoSignup={this.gotoSignup} loginUser={this.loginUser}/>
+                      <Signin gotoSignup={this.gotoSignup} loginUser={this.loginUser} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                     </div>
                 )}/>
             </div>
