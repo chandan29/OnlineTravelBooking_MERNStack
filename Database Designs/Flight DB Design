@@ -1,0 +1,7 @@
+// Flight Trips Updated Table
+
+db.flightTrip.insert({"flightId":"AA3290", "flightFromCity":"San Jose", "flightToCity":"Chicago","flightCapacity":530, "flightDepTime":"8:30 AM", "flightArrivalTime":"11:30 AM","flightClass":"Economy","flightPassType":"Adult","flightNumberPass":2,"flightAirline":"American Airlines", "flightduration":"3 hours","flightStops":0,"flightTripType":"One way", "flightFromDate":"2017-11-10", "flightToDate":"2017-11-10","flightFareDetails":410});
+
+// Flights Table
+
+db.flight.insert({"flightId":"AA3290", "flightClass":"Economy", "flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Chicago", "flightStops":0, "flightDepTime":"8:30 AM", "flightArrivalTime":"11:30 AM", "flightFromDate":"2017-11-10", "flightToDate":"2017-11-10", "flightAirline":"American Airlines","flightDuration":"3 hours", "flightRating":4, "flighAvailableSeats":34,"flightCapacity":530, "flighFareDetails":410});
