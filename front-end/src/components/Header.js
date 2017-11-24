@@ -17,9 +17,10 @@ class Header extends Component {
             </div>
             <ul>
               <li style={{marginLeft:"7%"}}><a href="">Home</a></li>
-              <li><a href="news.asp">News</a></li>
-              <li><a href="contact.asp">Contact</a></li>
-              <li><a href="about.asp">About</a></li>
+              <li><a href="/flight">Flights</a></li>
+              <li><a href="/">Cars</a></li>
+              <li><a href="/hotel">Hotels</a></li>
+              <li><a href="/signin">Logout</a></li>
             </ul>
             <div style={{float: "right", color: "white"}}>
               <span className="glyphicon glyphicon-user"></span>

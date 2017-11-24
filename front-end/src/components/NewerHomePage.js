@@ -14,6 +14,7 @@ import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
 import Signup from './Signup';
 import Signin from './Signin';
+import alert from 'alert-node';
 
 class NewerHomePage extends Component {
 
@@ -76,6 +77,8 @@ class NewerHomePage extends Component {
           this.props.history.push("/");
           }
           else{
+            alert("Please check your username and password, and reenter!");
+            this.props.history.push('/');
             this.props.history.push("/signin");
           }
       });
@@ -89,7 +92,19 @@ class NewerHomePage extends Component {
       API.registerUser(payload)
       .then((res) => {
           console.log(res.msg);
+          if(res.status==201){
+          alert("User registration is successful!");
           this.props.history.push("/signin");
+          }
+          else if(res.status==401){
+            alert("User with this email id already exists. Please use another email id!");
+            this.props.history.push("/");
+            this.props.history.push("/signup");
+          }
+          else{
+            alert("Failed to register!Please check all the fields and try again");
+            this.props.history.push("/signup");
+          }
 
       });
     }

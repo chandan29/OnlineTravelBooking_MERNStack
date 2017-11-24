@@ -9,7 +9,17 @@ var FontAwesome = require('react-fontawesome');
 
 class MainBody extends Component {
 
+  componentWillMount(){
 
+    var today=new Date().toISOString().split('T')[0];
+  //  var arr=today.split('-');
+  //  arr[arr.length-1]-=1;
+  //  var min=arr.join('-');
+    this.setState({
+      minDate : today
+    })
+
+  }
         state = {
                 carsObj: [],
                 city:''
@@ -101,11 +111,11 @@ class MainBody extends Component {
                   </div>
 
                   <div>
-                      <input placeholder="From Date" type="date" style={{marginLeft:4,width:"22%",height:"10%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26,paddingLeft: "7%"}}/>
+                      <input placeholder="From Date" min={this.state.minDate} type="date" style={{marginLeft:4,width:"22%",height:"10%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26,paddingLeft: "7%"}}/>
                   </div>
 
                   <div>
-                      <input placeholder="To Date" type="date" style={{marginLeft:4,width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26, paddingLeft: "7%"}}/>
+                      <input placeholder="To Date" min={this.state.minDate} type="date" style={{marginLeft:4,width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26, paddingLeft: "7%"}}/>
                   </div>
 
 

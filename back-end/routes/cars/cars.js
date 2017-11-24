@@ -174,3 +174,8 @@ carshandler.post('/adminAddCarToList',function(req,res){
     });
 
 });
+
+carshandler.post('/getIp',function(req,res){
+
+         res.status(201).send({ip:req.ip});
+});
