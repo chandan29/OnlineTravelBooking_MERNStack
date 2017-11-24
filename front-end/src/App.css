@@ -105,8 +105,10 @@ li>a {
 }
 
 .opener-image {
-  background-image: url('./0.jpeg');
+  /*background-image: url('./0.jpeg');*/
+  background-image: url('./kbg1.png');
   background-size: cover;
+
 }
 
 .displayText {
