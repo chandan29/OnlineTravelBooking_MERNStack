@@ -40,7 +40,7 @@ class Signin extends Component {
             <br/>
 
               <div style={{marginTop: "2%",float: "left"}}>
-                <button className="ui orange button" onClick={()=>{this.props.loginUser({password:this.state.password,username:this.state.email})}}>Sign In</button>
+                <button className="ui orange button" onClick={()=>{this.props.loginUser({password:this.state.password,email:this.state.email})}}>Sign In</button>
               </div>
               <div style={{marginTop: "4%", float: "left", marginLeft: "24%"}}>
                 <h5>Dont have an account? <span style={{color:"orange",cursor:"pointer"}} onClick={()=>{this.props.gotoSignup()}}>&nbsp;&nbsp;Sign Up</span></h5>
