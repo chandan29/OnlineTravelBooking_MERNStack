@@ -1,9 +1,10 @@
 var path = require('path');
 var express = require('express');
 var signuphandler = express.Router();
+var mongoSessionURL = "mongodb://localhost:27017/login";
 var mysql      = require('mysql');
 var bcrypt= require('bcrypt');
-
+var passport = require('passport');
 var pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'localhost',
@@ -13,11 +14,10 @@ var pool  = mysql.createPool({
 });
 
 
-signuphandler.post('/logout', function(req,res) {
 
-});
 
-signuphandler.post('/loginUser', function(req, res) {
+/*
+signuphandler.post('/loginUser', function(req, res,next) {
   const saltRounds = 10;
   var salt=bcrypt.genSaltSync(saltRounds);
   var hash = bcrypt.hashSync(req.body.password, salt);
@@ -44,6 +44,8 @@ signuphandler.post('/loginUser', function(req, res) {
     });
   });
 });
+*/
+
 
 signuphandler.post('/registerUser',function(req,res){
   pool.getConnection(function(err, connection) {
