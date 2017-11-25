@@ -50,3 +50,5 @@ User queried car listing for the city of New York on 10/24/2017 at 2:27
 User queried car listing for the city of New York on 10/24/2017 at 2:28
 User queried car listing for the city of New York on 10/24/2017 at 2:28
 User queried car listing for the city of  on 10/24/2017 at 2:31
+User queried car listing for the city of New York on 10/24/2017 at 19:2
+User booked a car from the city of New York on 10/24/2017 at 19:2

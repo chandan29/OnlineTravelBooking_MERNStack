@@ -136,11 +136,11 @@ hotelhandler.post('/bookHotel',function(req,res){
 
 
 
-var redis = require("redis"),
-    client = redis.createClient();
 
 hotelhandler.post('/redis',function(req,res){
 
+  var redis = require("redis"),
+      client = redis.createClient();
   mongo.connect(mongoURL, function(){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('car');
