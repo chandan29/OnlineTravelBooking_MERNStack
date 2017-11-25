@@ -9,7 +9,7 @@ require('./routes/passport')(passport);
 var bcrypt= require('bcrypt');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var mongoSessionURL = "mongodb://localhost:27017/login";
+var mongoSessionURL = "mongodb://localhost:27017/sessions";
 var expressSessions = require("express-session");
 var mongoStore = require("connect-mongo/es5")(expressSessions);
 var mysql      = require('mysql');
