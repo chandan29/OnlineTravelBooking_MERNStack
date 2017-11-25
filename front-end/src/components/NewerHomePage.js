@@ -16,6 +16,7 @@ import Signup from './Signup';
 import Signin from './Signin';
 import alert from 'alert-node';
 import HotelsMainPage from './HotelsMainPage';
+import MainBodyHotel from './MainBodyHotel';
 
 class NewerHomePage extends Component {
 
@@ -204,7 +205,17 @@ class NewerHomePage extends Component {
                     </div>
                 )}/>
 
-
+                <Route exact path="/searchHotel" render={() => (
+                    <div>
+                        <div className="header-xyz" style={{backgroundColor:"gray"}}>
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                         </div>
+                          <div className="mainBodyHotel">
+                          <MainBodyHotel />
+                          </div>
+                          <Message message={this.state.message}/>
+                    </div>
+                )}/>
 
             </div>
         );
