@@ -7,7 +7,7 @@ import Carousal2 from './Carousal2';
 import BeautifulDown from './BeautifulDown';
 var FontAwesome = require('react-fontawesome');
 
-class HotelsMainPage extends Component {
+class FlightsMainPage extends Component {
 
   componentWillMount(){
 
@@ -40,21 +40,21 @@ class HotelsMainPage extends Component {
               <div className="tabs" style={{marginLeft: "30%"}}>
                     <div className="tab">
                      <span style={{float:"left",paddingTop:"6%",paddingLeft: "10%"}}>
-                        <svg className="svgs" width="30" height="30" fill="orange">
+                        <svg className="svgs" width="30" height="30" >
                         <path d="M2 14.77h21v2H2z"></path>
                           <path d="M6 7.07V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.07h1V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.07h2V0H4v7.07h2zM21 8.67H4a4.06 4.06 0 0 0-4 4.07v2.43h25v-2.43a4.06 4.06 0 0 0-4-4.07z"></path>
                         </svg>
                      </span>
-                     <span style={{float:"left",marginTop:5,fontSize:13, color: "orange"}}><strong>HOTELS</strong></span>
+                     <span style={{float:"left",marginTop:5,fontSize:13}}><strong>HOTELS</strong></span>
                      </div>
                      <div className="tab">
                       <span style={{float:"left",paddingTop:"5%",marginLeft:"5%"}}>
-                         <svg className="svgs" width="30" height="30">
+                         <svg className="svgs" width="30" height="30" fill="orange">
                          <path d="M16.79 7.83l-3.93 3.93 4.51 7.05.76-.76-1.34-10.22M12.24 3.15L1.62 1.76l-.75.76 7.32 4.69 4.05-4.06"></path>
                            <path d="M10.73 11.94l1.3-1.3 4.28-4.28 2.8-2.8s1.54-2.12.46-3.17-3.17.47-3.17.47l-2.62 2.62-4.4 4.4L8 9.24a20 20 0 0 0-2.23 3.2l-4.67-.89L0 12.62l3.79 2.65.92.92L7.41 20l1.07-1.1-.91-4.76a20.06 20.06 0 0 0 3.16-2.2z"></path>
                          </svg>
                       </span>
-                      <span style={{float:"left",marginTop:5,fontSize:13}}><strong>FLIGHTS</strong></span>
+                      <span style={{float:"left",marginTop:5,fontSize:13,color: "orange"}}><strong>FLIGHTS</strong></span>
                       </div>
                       <div className="tab">
                        <span style={{float:"left",paddingTop:"6%",paddingLeft:"13%"}}>
@@ -80,17 +80,38 @@ class HotelsMainPage extends Component {
 
               <br/>
               <br />
-              <div className="main-content">
+              <div className="main-content" style={{width: "80%"}}>
 
                 <div className="car-booking">
 
-                  <div style={{paddingTop:"4.5%"}}>
+                  <div style={{paddingTop:"4.5%",marginLeft: "4%"}}>
 
                   <input placeholder="San Jose, CA" list="cities" name="city" onChange  value={this.state.city} onChange={(event) => {
                       console.log(event.target.value);
                 this.setState({
                     city: event.target.value
-                });}} style={{width:"35%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
+                });}} style={{width:"16%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
+                        <datalist id="cities">
+                          <option value="San Jose" />
+                          <option value="New York" />
+                          <option value="Santa Clara" />
+                          <option value="Las Vegas" />
+                          <option value="Chicago" />
+                          <option value="Dallas" />
+                          <option value="Philadelphia" />
+                          <option value="San Francisco" />
+                          <option value="Oakland" />
+                          <option value="Denver" />
+                         </datalist>
+                  </div>
+
+                  <div style={{float: "left",display: "inline"}}>
+
+                  <input placeholder="San Jose, CA" list="cities" name="city" onChange  value={this.state.city} onChange={(event) => {
+                      console.log(event.target.value);
+                this.setState({
+                    city: event.target.value
+                });}} style={{width:"100%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
                         <datalist id="cities">
                           <option value="San Jose" />
                           <option value="New York" />
@@ -106,15 +127,11 @@ class HotelsMainPage extends Component {
                   </div>
 
                   <div>
-                      <input placeholder="From Date" min={this.state.minDate} type="date" style={{marginLeft:4,width:"18%",height:"10%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26,paddingLeft: "5%"}}/>
+                      <input placeholder="Date of Journey" min={this.state.minDate} type="date" style={{width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",paddingTop:27,paddingBottom: 24, paddingLeft:"5%",marginLeft:"1%"}}/>
                   </div>
 
                   <div>
-                      <input placeholder="To Date" min={this.state.minDate} type="date" style={{width:"18%",float:"left",display: "inline",paddingTop:"5%", border:"none",paddingTop:28,paddingBottom: 24, paddingLeft:"5%"}}/>
-                  </div>
-
-                  <div>
-                      <input placeholder="1 Room 2 guests" type="text" style={{marginLeft:4,width:"18%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28,paddingLeft: "3%"}}/>
+                      <input placeholder="1 Adult, Economy" type="text" style={{width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28,paddingLeft: "2%",marginLeft:"0.5%"}}/>
                   </div>
 
                     <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} >
@@ -137,4 +154,4 @@ class HotelsMainPage extends Component {
   }
 }
 
-export default HotelsMainPage;
+export default FlightsMainPage;
