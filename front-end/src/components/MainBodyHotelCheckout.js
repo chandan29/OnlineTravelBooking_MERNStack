@@ -5,27 +5,26 @@ import StayUptoDate from './StayUptoDate';
 import Carousal1 from './Carousal1';
 import Carousal2 from './Carousal2';
 import BeautifulDown from './BeautifulDown';
-import HotelTile from './HotelTile';
+import HotelCheckoutDetails from './HotelCheckoutDetails';
 var FontAwesome = require('react-fontawesome');
 
-
-class MainBodyHotel extends Component {
-
-  componentWillMount(){
-
-  }
+class MainBodyHotelCheckout extends Component {
   state={
 
   }
   render() {
     return (
-      <div className="mainBodyHotel" style={{backgroundColor:"#f1f1f1"}}>
-        <div className="middle-pane">
-            <HotelTile />
+      <div className="mainBodyHotelCheckout">
+        <div className="main-pane-hotelcheckout">
+            <HotelCheckoutDetails />
+        </div>
+
+        <div className="right-pane-carcheckout">
+
         </div>
       </div>
 );
   }
 }
 
-export default MainBodyHotel;
+export default MainBodyHotelCheckout;

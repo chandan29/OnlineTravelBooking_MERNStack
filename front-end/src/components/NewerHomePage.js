@@ -17,6 +17,8 @@ import Signin from './Signin';
 import alert from 'alert-node';
 import HotelsMainPage from './HotelsMainPage';
 import MainBodyHotel from './MainBodyHotel';
+import MainBodyHotelCheckout from './MainBodyHotelCheckout';
+import FlightsMainPage from './FlightsMainPage';
 
 class NewerHomePage extends Component {
 
@@ -217,6 +219,25 @@ class NewerHomePage extends Component {
                     </div>
                 )}/>
 
+                <Route exact path="/hotelCheckout" render={() => (
+                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
+                        <div className="header-xyz">
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                         </div>
+                          <div className="mainBodyHotelCheckout" style={{backgroundColor: "gray"}}>
+                            <MainBodyHotelCheckout />
+                          </div>
+                          <Message message={this.state.message}/>
+                    </div>
+                )}/>
+
+                <Route exact path="/flights" render={() => (
+                    <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <FlightsMainPage />
+                          <Footer />
+                    </div>
+                )}/>
             </div>
         );
     }
