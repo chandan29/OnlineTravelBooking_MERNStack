@@ -16,7 +16,7 @@ class MainBodyFlightCheckout extends Component {
     return (
       <div className="mainBodyFlightCheckout">
         <div className="main-pane-flightcheckout">
-            <FlightCheckoutDetails />
+            <FlightCheckoutDetails flightTile={this.props.flightTile}  handleRedirectBooking2={this.props.handleRedirectBooking2}/>
         </div>
 
         <div className="right-pane-carcheckout">

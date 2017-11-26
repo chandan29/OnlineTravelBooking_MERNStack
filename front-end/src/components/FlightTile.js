@@ -8,12 +8,16 @@ var FontAwesome = require('react-fontawesome');
 
 
 class HotelTile extends Component {
-  componentWillMount(){
-
-  }
+    componentWillMount(){
+      console.log(this.props.flights);
+      this.setState({
+          flights: this.props.flights,
+          flightsCopy: this.props.flights
+      });
+    }
 
   state={
-
+      flightsCopy: this.props.flights
   }
 
 
@@ -85,6 +89,7 @@ class HotelTile extends Component {
             </div>
 
 <div className="mid-hoteltile">
+{this.state.flightsCopy.map(flight => (
 <div className="outerDiv-flight">
     <div className="outerDiv-flight-left">
         <img src={Flight2}  style={{paddingLeft: "29%", paddingTop: "12%"}}/>
@@ -104,13 +109,14 @@ class HotelTile extends Component {
     <div className="outerDiv-hotel-right">
         <p style={{lineheight: "70%",marginTop: "2%"}}>$180</p>
         <p>KAYAK</p>
-        <button style={{width: "80%",backgroundColor: "#ff731a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
+        <button onClick={() => {this.props.handleFlighttileFetch({flighttile: flight, flightDate: "11-26-2017"})}}style={{width: "80%",backgroundColor: "#ff731a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
         <div style={{marginTop: "7%"}}>
             <i className="fa fa-share-alt" aria-hidden="true"></i>&nbsp;Share &nbsp;&nbsp;<i className="fa fa-bookmark" aria-hidden="true"></i>&nbsp;Watch
         </div>
     </div>
 
 </div>
+))};
 </div>
 </div>
 );

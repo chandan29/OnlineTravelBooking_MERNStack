@@ -40,8 +40,6 @@ hotelhandler.post('/getHotels',function(req,res){
 
                 	res.status(401).json({wrong:1});
                 }
-
-
             });
         });
 

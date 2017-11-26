@@ -11,6 +11,7 @@ import MainBodyCar from './MainBodyCar';
 import MainBodyCarCheckout from './MainBodyCarCheckout';
 import BookingSuccessful from './BookingSuccessful';
 import HotelBookingSuccessful from './HotelBookingSuccessful';
+import FlightBookingSuccessful from './FlightBookingSuccessful';
 import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
 import Signup from './Signup';
@@ -83,6 +84,16 @@ class NewerHomePage extends Component {
 
     }
 
+    handleRedirectBooking2 = () => {
+      API.getFlighttile(this.state.flightTile)
+          .then((res) => {
+              console.log(res);
+              this.props.history.push("/flightbookingSuccessful");
+
+          });
+
+    }
+
 
     gotoSignin=()=>{
       this.props.history.push('/signin');
@@ -150,6 +161,17 @@ class NewerHomePage extends Component {
 
     };
 
+    handleFlightFetch = (payload) => {
+        API.getFlights(payload)
+            .then((res) => {
+                console.log(res);
+                this.setState({
+                    flightsObj:res
+                });
+                this.props.history.push("/searchFlight");
+            });
+    }
+
     handleCartileFetch = (payload) => {
             this.setState({
                 carTile: payload
@@ -165,6 +187,13 @@ class NewerHomePage extends Component {
             this.props.history.push("/hotelCheckout");
 
     };
+
+    handleFlighttileFetch =(payload) => {
+        this.setState({
+            flightTile: payload
+        });
+        this.props.history.push("/flightCheckout");
+    }
     handleClickSignup = () => {
         this.props.history.push('/signup');
     }
@@ -190,6 +219,15 @@ class NewerHomePage extends Component {
                           <Footer />
                     </div>
                 )}/>
+
+                <Route exact path="/flights" render={() => (
+                    <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <FlightsMainPage handleFlightFetch={this.handleFlightFetch}/>
+                          <Footer />
+                    </div>
+                )}/>
+
                 <Route exact path="/searchCar" render={() => (
                     <div>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
@@ -213,6 +251,21 @@ class NewerHomePage extends Component {
                           <Message message={this.state.message}/>
                     </div>
                 )}/>
+
+
+                <Route exact path="/searchFlight" render={() => (
+                    <div>
+                        <div className="header-xyz" style={{backgroundColor:"gray"}}>
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                         </div>
+                          <div className="mainBodyHotel">
+                          <MainBodyFlight flights={this.state.flightsObj} handleFlighttileFetch={this.handleFlighttileFetch}/>
+                          </div>
+                          <Message message={this.state.message}/>
+                    </div>
+                )}/>
+
+
                 <Route exact path="/carCheckout" render={() => (
                     <div>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
@@ -236,6 +289,22 @@ class NewerHomePage extends Component {
                           <Message message={this.state.message}/>
                     </div>
                 )}/>
+
+
+                <Route exact path="/flightCheckout" render={() => (
+                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
+                        <div className="header-xyz">
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                         </div>
+                          <div className="mainBodyHotelCheckout" style={{backgroundColor: "gray"}}>
+                            <MainBodyFlightCheckout flightTile={this.state.flightTile} handleRedirectBooking2={this.handleRedirectBooking2}/>
+                          </div>
+                          <Message message={this.state.message}/>
+                    </div>
+                )}/>
+
+
+
                 <Route exact path="/bookingSuccessful" render={() => (
                     <div>
                         <BookingSuccessful carTile={this.state.carTile} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
@@ -246,6 +315,13 @@ class NewerHomePage extends Component {
                         <HotelBookingSuccessful hotelTile={this.state.hotelTile} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
                     </div>
                 )}/>
+
+                <Route exact path="/flightbookingSuccessful" render={() => (
+                      <div>
+                          <FlightBookingSuccessful flightTile={this.state.flightTile} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
+                      </div>
+                  )}/>
+
                 <Route exact path="/admin" render={() => (
                     <div>
                         <Admin handleSubmitAdmin={this.handleSubmitAdmin}/>
@@ -267,37 +343,7 @@ class NewerHomePage extends Component {
                     </div>
                 )}/>
 
-                <Route exact path="/flights" render={() => (
-                    <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
-                          <FlightsMainPage />
-                          <Footer />
-                    </div>
-                )}/>
 
-                <Route exact path="/searchFlight" render={() => (
-                    <div>
-                        <div className="header-xyz" style={{backgroundColor:"gray"}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
-                         </div>
-                          <div className="mainBodyHotel">
-                          <MainBodyFlight />
-                          </div>
-                          <Message message={this.state.message}/>
-                    </div>
-                )}/>
-
-                <Route exact path="/flightCheckout" render={() => (
-                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
-                        <div className="header-xyz">
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
-                         </div>
-                          <div className="mainBodyHotelCheckout" style={{backgroundColor: "gray"}}>
-                            <MainBodyFlightCheckout />
-                          </div>
-                          <Message message={this.state.message}/>
-                    </div>
-                )}/>
 
             </div>
         );

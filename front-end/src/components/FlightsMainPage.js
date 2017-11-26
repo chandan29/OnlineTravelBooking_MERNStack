@@ -12,9 +12,7 @@ class FlightsMainPage extends Component {
   componentWillMount(){
 
     var today=new Date().toISOString().split('T')[0];
-  //  var arr=today.split('-');
-  //  arr[arr.length-1]-=1;
-  //  var min=arr.join('-');
+
     this.setState({
       minDate : today
     })
@@ -86,10 +84,10 @@ class FlightsMainPage extends Component {
 
                   <div style={{paddingTop:"4.5%",marginLeft: "4%"}}>
 
-                  <input placeholder="San Jose, CA" list="cities" name="city" onChange  value={this.state.city} onChange={(event) => {
+                  <input placeholder="San Jose, CA" list="cities" name="city" onChange={(event) => {
                       console.log(event.target.value);
                 this.setState({
-                    city: event.target.value
+                    fromCity: event.target.value
                 });}} style={{width:"16%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
                         <datalist id="cities">
                           <option value="San Jose" />
@@ -107,10 +105,10 @@ class FlightsMainPage extends Component {
 
                   <div style={{float: "left",display: "inline"}}>
 
-                  <input placeholder="San Jose, CA" list="cities" name="city" onChange  value={this.state.city} onChange={(event) => {
+                  <input placeholder="San Jose, CA" list="cities" name="city" onChange={(event) => {
                       console.log(event.target.value);
                 this.setState({
-                    city: event.target.value
+                    toCity: event.target.value
                 });}} style={{width:"100%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
                         <datalist id="cities">
                           <option value="San Jose" />
@@ -134,7 +132,7 @@ class FlightsMainPage extends Component {
                       <input placeholder="1 Adult, Economy" type="text" style={{width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28,paddingLeft: "2%",marginLeft:"0.5%"}}/>
                   </div>
 
-                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} >
+                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleFlightFetch({flightFromCity:this.state.fromCity,flightToCity:this.state.toCity,flightDate:'11-12-2017',flightType:'1 Adult, Economy'})}}>
                     </button>
                 </div>
                 <div className="stayUptoDate">

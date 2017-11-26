@@ -71,6 +71,25 @@ export const logout = () =>
                             return error;
                         });
 
+
+        export const getFlights = (payload) =>
+            fetch(`${api}/getFlights`, {
+                method: 'POST',
+                headers: {
+                    ...headers,
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify(payload)
+            }).then(res => {
+                return res.json();
+            })
+                .catch(error => {
+                    console.log("This is Error in fetching flights");
+                    return error;
+                });
+
+
         export const getCartile = (payload) =>
             fetch(`${api}/bookCar`, {
                 method: 'POST',
@@ -106,6 +125,25 @@ export const logout = () =>
                             console.log("This is error");
                             return error;
                         });
+
+
+
+            export const getFlighttile = (payload) =>
+                fetch(`${api}/bookFlight`,{
+                    method: 'POST',
+                    headers: {
+                        ...headers,
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(payload)
+                }).then(res => {
+                    return res.json();
+                })
+                    .catch(error => {
+                        console.log("there is an error in getting Flight Tile");
+                        return error;
+                    })
 
 {/********************************************  Admin APIs below    ***************************************************/}
 

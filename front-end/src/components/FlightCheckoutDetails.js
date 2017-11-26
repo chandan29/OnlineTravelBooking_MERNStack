@@ -17,7 +17,7 @@ class FlightCheckoutDetails extends Component {
   }
 
   componentWillMount(){
-
+      console.log(this.props.flightTile);
   }
 
   render() {
@@ -121,7 +121,7 @@ class FlightCheckoutDetails extends Component {
                 <hr/>
                     <div style={{height: 120,paddingBottom:10,marginBottom: 10}}>
                         <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay $0 USD today.</span> Pay $200 USD at pick-up.</h5>
-                        <button  style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
+                        <button  onClick={this.props.handleRedirectBooking2} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
                     </div>
 
           </div>

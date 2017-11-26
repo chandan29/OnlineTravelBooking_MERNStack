@@ -12,9 +12,6 @@ class HotelsMainPage extends Component {
   componentWillMount(){
 
     var today=new Date().toISOString().split('T')[0];
-  //  var arr=today.split('-');
-  //  arr[arr.length-1]-=1;
-  //  var min=arr.join('-');
     this.setState({
       minDate : today
     })
@@ -24,6 +21,7 @@ class HotelsMainPage extends Component {
                 carsObj: [],
                 city:''
             };
+
 
   render() {
     return (
@@ -86,7 +84,7 @@ class HotelsMainPage extends Component {
 
                   <div style={{paddingTop:"4.5%"}}>
 
-                  <input placeholder="San Jose, CA" list="cities" name="city" onChange  value={this.state.hotel} onChange={(event) => {
+                  <input placeholder="San Jose, CA" list="cities" name="city" value={this.state.hotel} onChange={(event) => {
                       console.log(event.target.value);
                 this.setState({
                     hotel: event.target.value
