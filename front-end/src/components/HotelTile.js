@@ -87,6 +87,7 @@ hotelsCopy: this.props.hotels
             </div>
 
 <div className="mid-hoteltile">
+    {this.state.hotelsCopy.map(car => (
 <div className="outerDiv-hotel">
     <div className="outerDiv-hotel-left">
 
@@ -135,6 +136,7 @@ hotelsCopy: this.props.hotels
     </div>
 
 </div>
+))}
 </div>
 </div>
 );

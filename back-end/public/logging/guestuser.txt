@@ -61,3 +61,9 @@ User queried hotel listing for the city of San Jose on 10/25/2017 at 21:18
 User queried hotel listing for the city of New York on 10/25/2017 at 21:19
 User queried hotel listing for the city of New York on 10/25/2017 at 21:22
 User queried hotel listing for the city of New York on 10/25/2017 at 21:34
+User queried hotel listing for the city of New York on 10/25/2017 at 21:46
+User queried hotel listing for the city of New York on 10/25/2017 at 21:48
+User queried hotel listing for the city of New York on 10/25/2017 at 21:50
+User queried hotel listing for the city of New York on 10/25/2017 at 21:52
+User queried hotel listing for the city of New York on 10/25/2017 at 21:53
+User queried hotel listing for the city of San Jose on 10/25/2017 at 21:53
