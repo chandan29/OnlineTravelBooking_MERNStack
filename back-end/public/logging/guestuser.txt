@@ -67,3 +67,17 @@ User queried hotel listing for the city of New York on 10/25/2017 at 21:50
 User queried hotel listing for the city of New York on 10/25/2017 at 21:52
 User queried hotel listing for the city of New York on 10/25/2017 at 21:53
 User queried hotel listing for the city of San Jose on 10/25/2017 at 21:53
+User queried hotel listing for the city of San Jose on 10/25/2017 at 22:8
+User queried hotel listing for the city of New York on 10/25/2017 at 22:36
+User queried hotel listing for the city of New York on 10/25/2017 at 22:38
+User queried hotel listing for the city of New York on 10/25/2017 at 22:42
+User queried hotel listing for the city of New York on 10/25/2017 at 22:46
+User queried hotel listing for the city of New York on 10/25/2017 at 22:48
+User queried hotel listing for the city of New York on 10/25/2017 at 22:50
+User booked a hotel in the city of New York on 10/25/2017 at 22:50
+User queried hotel listing for the city of New York on 10/25/2017 at 22:53
+User booked a hotel in the city of New York on 10/25/2017 at 22:53
+User queried hotel listing for the city of New York on 10/25/2017 at 23:1
+User booked a hotel in the city of New York on 10/25/2017 at 23:1
+User queried hotel listing for the city of New York on 10/25/2017 at 23:2
+User booked a hotel in the city of New York on 10/25/2017 at 23:2

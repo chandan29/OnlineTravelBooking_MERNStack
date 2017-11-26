@@ -52,15 +52,15 @@ hotelhandler.post('/getHotels',function(req,res){
 
 
 hotelhandler.post('/bookHotel',function(req,res){
-
+  console.log(req.body.hoteltile);
   var hotelCity=req.body.hoteltile.hotelCity;
   var hotelId=req.body.hoteltile.hotelId;
-  var hotelRate=req.body.hoteltile.hotelRate;
+  var hotelRate=req.body.hoteltile.hotelOriginalPrice;
   mongo.connect(mongoURL, function(){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('hotelTrip');
             console.log(req.body);
-            coll.insertOne({hotelId:req.body.cartile.carId,fromCity:req.body.cartile.carCity,toCity:req.body.cartile.carCity,fromDate:req.body.fromDate,toDate:req.body.toDate,fareDetails:req.body.cartile.carRate},function(err, user){
+            coll.insertOne({hotelId:req.body.hoteltile.hotelId,fromCity:req.body.hoteltile.hotelCity,fromDate:req.body.fromDate,toDate:req.body.toDate,fareDetails:req.body.hoteltile.hotelOriginalPrice},function(err, user){
                 if (user) {
 
                 	res.status(201).json(user);
@@ -71,11 +71,11 @@ hotelhandler.post('/bookHotel',function(req,res){
 
 
 
-                City:  `+carCity+`
+                Hotel in:  `+hotelCity+`
 
-                  Price:`+carRate+`
+                  Price:`+hotelRate+`
                 `;
-                  fs.writeFile("./public/carbills/"+carId+".txt", bill, function(err) {
+                  fs.writeFile("./public/hotelbills/"+hotelId+".txt", bill, function(err) {
                     if(err) {
                         return console.log(err);
                     }
@@ -91,24 +91,24 @@ hotelhandler.post('/bookHotel',function(req,res){
                   });
                   // send the message and get a callback with an error or details of the message that was sent
                   server.send({
-                     text:    carCity,
+                     text:    hotelCity,
                      from:    "you <automailerkayak@gmail.com>",
                      to:      "Chandan <chandan.paranjape@gmail.com>, Shashank <shashank.singh9193@gmail.com>,Shripal <shripal555@gmail.com>,Anshit<anshit.sobti@gmail.com>",
-                     subject: carCity,
+                     subject: hotelCity,
                      attachment:
                     [
                        {data:"<html>i <i>hope</i> this works!</html>", alternative:true},
-                       {path:"./public/carbills/"+carId+".txt", type:"application/text", name:""+carId+".txt"}
+                       {path:"./public/hotelbills/"+hotelId+".txt", type:"application/text", name:""+hotelId+".txt"}
                     ]
                   }, function(err, message) { console.log(err || message);});
                 });
                 //write a logger
-                var city=carCity;
+                var city=hotelCity;
                 var t=time.localtime(Date.now()/1000);
                 var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                 var curTime=""+t.hours+":"+t.minutes;
 
-                fs.appendFile("./public/logging/guestuser.txt", "User booked a car from the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
+                fs.appendFile("./public/logging/guestuser.txt", "User booked a hotel in the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
                   if(err) {
                       res.send({0:0});
 

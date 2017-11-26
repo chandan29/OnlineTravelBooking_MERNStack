@@ -10,6 +10,7 @@ import MainBody from './MainBody';
 import MainBodyCar from './MainBodyCar';
 import MainBodyCarCheckout from './MainBodyCarCheckout';
 import BookingSuccessful from './BookingSuccessful';
+import HotelBookingSuccessful from './HotelBookingSuccessful';
 import Admin from "./Admin";
 import AdminDashboard from "./AdminDashboard";
 import Signup from './Signup';
@@ -65,6 +66,16 @@ class NewerHomePage extends Component {
           .then((res) => {
               console.log(res);
               this.props.history.push("/bookingSuccessful");
+
+          });
+
+    }
+
+    handleRedirectBooking1 = () => {
+      API.getHoteltile(this.state.hotelTile)
+          .then((res) => {
+              console.log(res);
+              this.props.history.push("/hotelbookingSuccessful");
 
           });
 
@@ -149,7 +160,7 @@ class NewerHomePage extends Component {
             this.setState({
                 hotelTile: payload
             });
-            this.props.history.push("/carCheckout");
+            this.props.history.push("/hotelCheckout");
 
     };
     handleClickSignup = () => {
@@ -218,7 +229,7 @@ class NewerHomePage extends Component {
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyHotelCheckout" style={{backgroundColor: "gray"}}>
-                            <MainBodyHotelCheckout hotelTile={this.state.hotelTile} handleRedirectBooking={this.handleRedirectBooking}/>
+                            <MainBodyHotelCheckout hotelTile={this.state.hotelTile} handleRedirectBooking1={this.handleRedirectBooking1}/>
                           </div>
                           <Message message={this.state.message}/>
                     </div>
@@ -226,6 +237,11 @@ class NewerHomePage extends Component {
                 <Route exact path="/bookingSuccessful" render={() => (
                     <div>
                         <BookingSuccessful carTile={this.state.carTile} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
+                    </div>
+                )}/>
+              <Route exact path="/hotelbookingSuccessful" render={() => (
+                    <div>
+                        <HotelBookingSuccessful hotelTile={this.state.hotelTile} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
                     </div>
                 )}/>
                 <Route exact path="/admin" render={() => (
