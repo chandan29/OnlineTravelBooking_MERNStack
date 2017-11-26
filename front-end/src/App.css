@@ -399,6 +399,13 @@ li>a {
     margin-left: 15%;
 }
 
+.main-pane-flightcheckout {
+    width: 60%;
+    height: auto;
+    float : left;
+    margin-left: 15%;
+}
+
 .right-pane-carcheckout {
     width: 20%;
     height: 600px;
@@ -723,6 +730,15 @@ table {
     background-color: white;
 }
 
+.outerDiv-flight {
+    width: 98%;
+    height: 140px;
+    border: 1px solid;
+    margin-left: 0.9%;
+    margin-top: 1%;
+    background-color: white;
+}
+
 .outerDiv-hotel-left {
     width: 28%;
     border: 1px solid;
@@ -734,7 +750,28 @@ table {
     background-size: cover;
 }
 
+.outerDiv-flight-left {
+    width: 20%;
+    border: 1px solid;
+    height: 99%;
+    margin-top: 1px;
+    display: inline;
+    float: left;
+    background-repeat: no-repeat;
+}
+
 .outerDiv-hotel-mid {
+    width: 52%;
+    border: 1px solid;
+    height: 99%;
+    margin-top: 1px;
+    float: left;
+    display: inline;
+    padding-left: 2%;
+    padding-top: 1%;
+}
+
+.outerDiv-flight-mid {
     width: 52%;
     border: 1px solid;
     height: 99%;
@@ -762,6 +799,15 @@ table {
     padding-left: 1%;
     padding-top: 1%;
     margin-top: 6%;
+}
+
+.flighttileStrap {
+    width: 97%;
+    height: 22%;
+    padding-left: 1%;
+    padding-top: 1%;
+    margin-top: 2%;
+
 }
 .rating-small {
     width: 9%;
@@ -928,4 +974,62 @@ table {
 }
 .first1 {
     padding: 3%;
+}
+
+.outerDiv-flightcheckout1 {
+    width: 98%;
+    height: 130px;
+    border: 1px solid;
+    margin-left: 0.9%;
+    margin-top: 1%;
+    background-color: white;
+}
+
+.outerDiv-flightcheckout2 {
+    width: 98%;
+    height: 40px;
+    border: 1px solid;
+    margin-left: 0.9%;
+
+    background-color: white;
+}
+
+.outerDiv-flightcheckout3 {
+    width: 98%;
+    height: 100px;
+    border: 1px solid;
+    margin-left: 0.9%;
+    margin-top: 0.7%;
+    background-color: white;
+}
+
+.outerDiv-flightcheckout4 {
+    width: 98%;
+    height: 50px;
+    border: 1px solid;
+    margin-left: 0.9%;
+    margin-top: 0.7%;
+    background-color: white;
+}
+.outerDiv-flightcheckout5 {
+    width: 98%;
+    height: 190px;
+    border: 1px solid;
+    margin-left: 0.9%;
+    background-color: white;
+}
+
+.outerDiv-flightcheckout6 {
+    width: 98%;
+    height: 100px;
+    border: 1px solid;
+    margin-left: 0.9%;
+    margin-top: 0.7%;
+    background-color: white;
+}
+
+.flightLogo {
+    float: right;
+    margin-top: 1%;
+    margin-right: 2%;
 }

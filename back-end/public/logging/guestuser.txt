@@ -81,3 +81,5 @@ User queried hotel listing for the city of New York on 10/25/2017 at 23:1
 User booked a hotel in the city of New York on 10/25/2017 at 23:1
 User queried hotel listing for the city of New York on 10/25/2017 at 23:2
 User booked a hotel in the city of New York on 10/25/2017 at 23:2
+User queried hotel listing for the city of New York on 10/26/2017 at 12:27
+User booked a hotel in the city of New York on 10/26/2017 at 12:27

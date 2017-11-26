@@ -20,6 +20,8 @@ import HotelsMainPage from './HotelsMainPage';
 import MainBodyHotel from './MainBodyHotel';
 import MainBodyHotelCheckout from './MainBodyHotelCheckout';
 import FlightsMainPage from './FlightsMainPage';
+import MainBodyFlightCheckout from './MainBodyFlightCheckout';
+import MainBodyFlight from './MainBodyFlight';
 
 class NewerHomePage extends Component {
 
@@ -265,13 +267,6 @@ class NewerHomePage extends Component {
                     </div>
                 )}/>
 
-
-
-
-
-
-
-
                 <Route exact path="/flights" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
@@ -279,6 +274,31 @@ class NewerHomePage extends Component {
                           <Footer />
                     </div>
                 )}/>
+
+                <Route exact path="/searchFlight" render={() => (
+                    <div>
+                        <div className="header-xyz" style={{backgroundColor:"gray"}}>
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                         </div>
+                          <div className="mainBodyHotel">
+                          <MainBodyFlight />
+                          </div>
+                          <Message message={this.state.message}/>
+                    </div>
+                )}/>
+
+                <Route exact path="/flightCheckout" render={() => (
+                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
+                        <div className="header-xyz">
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                         </div>
+                          <div className="mainBodyHotelCheckout" style={{backgroundColor: "gray"}}>
+                            <MainBodyFlightCheckout />
+                          </div>
+                          <Message message={this.state.message}/>
+                    </div>
+                )}/>
+
             </div>
         );
     }
