@@ -16,7 +16,7 @@ class MainBodyHotelCheckout extends Component {
     return (
       <div className="mainBodyHotelCheckout">
         <div className="main-pane-hotelcheckout">
-            <HotelCheckoutDetails />
+            <HotelCheckoutDetails hotelTile={this.props.hotelTile} handleRedirectBooking1={this.props.handleRedirectBooking1}/>
         </div>
 
         <div className="right-pane-carcheckout">

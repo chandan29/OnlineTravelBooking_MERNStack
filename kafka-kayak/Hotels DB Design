@@ -1,0 +1,6 @@
+//Hotel DB design
+
+db.hotel.insert({"hotelId":1, "hotelFromDate":"2017-11-11", "hotelToDate": "2017-11-13", "hotelNumberOfRooms":2,"hotelNumberOfGuests":4, "hotelCity": "San Jose", "hotelArea":"South San Jose", "hotelReviewType":"Excellent", "hotelNumberOfReviews":6782, "hotelRating":8, "hotelStars":4, "hotelAddress":"170 S Market St, San Jose, CA 95113", "hotelContact":4089981900,  "hotelCapacity": 300 , "hotelAvailability":"True", "hotelOldPrice":245, "hotelOriginalPrice":186, "hotelName":"Hayes Mansion", "dummy":"dummy"});
+
+// Hotel Trip DB Design
+db.hotelTrip.insert({""hotelId":1, "hotelFromDate":"2017-11-11", "hotelToDate": "2017-11-13","hotelRoomType": "Suite", "hotelNumberOfRooms":2,"hotelNumberOfGuests":4, "hotelCity": "San Jose", "hotelArea":"South San Jose", "hotelReviewType":"Excellent", "hotelNumberOfReviews":6782, "hotelRating":8, "hotelStars":4, "hotelAddress":"170 S Market St, San Jose, CA 95113", "hotelContact":4089981900,  "hotelCapacity": 300 , "hotelAvailability":"True", "hotelOldPrice":245, "hotelOriginalPrice":186, "hotelFair": 390, "hotelName":"Hayes Mansion", "dummy":"dummy""})
