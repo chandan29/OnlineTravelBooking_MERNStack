@@ -86,10 +86,10 @@ class HotelsMainPage extends Component {
 
                   <div style={{paddingTop:"4.5%"}}>
 
-                  <input placeholder="San Jose, CA" list="cities" name="city" onChange  value={this.state.city} onChange={(event) => {
+                  <input placeholder="San Jose, CA" list="cities" name="city" onChange  value={this.state.hotel} onChange={(event) => {
                       console.log(event.target.value);
                 this.setState({
-                    city: event.target.value
+                    hotel: event.target.value
                 });}} style={{width:"35%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
                         <datalist id="cities">
                           <option value="San Jose" />
@@ -117,8 +117,8 @@ class HotelsMainPage extends Component {
                       <input placeholder="1 Room 2 guests" type="text" style={{marginLeft:4,width:"18%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28,paddingLeft: "3%"}}/>
                   </div>
 
-                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} >
-                    </button>
+                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleHotelFetch({hotelCity:this.state.hotel,fromDate:'11-12-2017',toDate:'12-12-2017',typeHotel:'1 room 2 guests'})}}/>
+
                 </div>
                 <div className="stayUptoDate">
 

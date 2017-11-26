@@ -8,11 +8,15 @@ var FontAwesome = require('react-fontawesome');
 
 class HotelTile extends Component {
   componentWillMount(){
-
+    console.log(this.props.hotels);
+    this.setState({
+        hotels: this.props.hotels,
+        hotelsCopy: this.props.hotels
+    });
   }
 
   state={
-
+hotelsCopy: this.props.hotels
   }
 
 
@@ -25,7 +29,6 @@ class HotelTile extends Component {
   };
 
   handlestar3 = () => {
-
   };
 
   handlestar4 = () => {
@@ -120,10 +123,11 @@ class HotelTile extends Component {
             </div>
         </div>
     </div>
+
     <div className="outerDiv-hotel-right">
         <p style={{lineheight: "70%",marginTop: "2%"}}><span style={{color: "red", textDecoration: "line-through"}}>$200</span><br/>
         $180</p>
-        <p>Kayak.com</p>
+      <p>Kayak.com</p>{this.props.hotels[0]._id}
         <button style={{width: "80%",backgroundColor: "#ff731a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
         <div style={{marginTop: "7%"}}>
             <i className="fa fa-share-alt" aria-hidden="true"></i>&nbsp;Share &nbsp;&nbsp;<i className="fa fa-bookmark" aria-hidden="true"></i>&nbsp;Watch

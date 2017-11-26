@@ -54,6 +54,22 @@ export const logout = () =>
                     console.log("This is error");
                     return error;
                 });
+                export const getHotels = (payload) =>
+                    fetch(`${api}/getHotels`, {
+                        method: 'POST',
+                        headers: {
+                            ...headers,
+                            'Content-Type': 'application/json'
+                        },
+                        credentials:'include',
+                        body: JSON.stringify(payload)
+                    }).then(res => {
+                        return res.json();
+                    })
+                        .catch(error => {
+                            console.log("This is error");
+                            return error;
+                        });
 
         export const getCartile = (payload) =>
             fetch(`${api}/bookCar`, {
@@ -71,6 +87,25 @@ export const logout = () =>
                     console.log("This is error");
                     return error;
                 });
+
+
+                export const getHoteltile = (payload) =>
+                    fetch(`${api}/bookHotel
+                      `, {
+                        method: 'POST',
+                        headers: {
+                            ...headers,
+                            'Content-Type': 'application/json'
+                        },
+                        credentials:'include',
+                        body: JSON.stringify(payload)
+                    }).then(res => {
+                        return res.json();
+                    })
+                        .catch(error => {
+                            console.log("This is error");
+                            return error;
+                        });
 
 {/********************************************  Admin APIs below    ***************************************************/}
 
@@ -108,7 +143,7 @@ export const addFlightToList = (payload) =>
             return error;
         });
 
-                
+
 
         export const registerUser = (payload) =>
             fetch(`${api}/registerUser`, {

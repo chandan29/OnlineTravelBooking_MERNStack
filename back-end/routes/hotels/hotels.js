@@ -10,12 +10,12 @@ module.exports = hotelhandler;
 
 hotelhandler.post('/getHotels',function(req,res){
   //Input parameters: from city, from date,to date
-  var HotelCity=req.body.HotelCity;
+  var hotelCity=req.body.hotelCity;
   mongo.connect(mongoURL, function(){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('hotel');
             console.log(req.body);
-            coll.find({"HotelCity":req.body.HotelCity}).toArray(function(err, user){
+            coll.find({"hotelCity":req.body.hotelCity}).toArray(function(err, user){
                 if (user) {
                   console.log(user);
                 	res.status(201).json(user);
@@ -28,7 +28,7 @@ hotelhandler.post('/getHotels',function(req,res){
                   var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                   var curTime=""+t.hours+":"+t.minutes;
 
-                  fs.appendFile("./public/logging/guestuser.txt", "User queried hotel listing for the city of "+carCity+" on "+date+" at "+curTime+"\n", function(err) {
+                  fs.appendFile("./public/logging/guestuser.txt", "User queried hotel listing for the city of "+hotelCity+" on "+date+" at "+curTime+"\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -38,7 +38,7 @@ hotelhandler.post('/getHotels',function(req,res){
                   });
                 } else {
 
-                	res.status(201).json({wrong:1});
+                	res.status(401).json({wrong:1});
                 }
 
 

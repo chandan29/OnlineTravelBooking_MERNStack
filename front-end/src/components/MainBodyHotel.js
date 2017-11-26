@@ -21,7 +21,7 @@ class MainBodyHotel extends Component {
     return (
       <div className="mainBodyHotel" style={{backgroundColor:"#f1f1f1"}}>
         <div className="middle-pane">
-            <HotelTile />
+            <HotelTile hotels={this.props.hotels} handleHoteltileFetch={this.props.handleHoteltileFetch}/>
         </div>
       </div>
 );
