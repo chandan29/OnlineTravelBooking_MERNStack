@@ -38,12 +38,12 @@ class HotelsMainPage extends Component {
               <div className="tabs" style={{marginLeft: "30%"}}>
                     <div className="tab">
                      <span style={{float:"left",paddingTop:"6%",paddingLeft: "10%"}}>
-                        <svg className="svgs" width="30" height="30" fill="orange">
+                        <svg className="svgs" width="30" height="30" fill="#ff690f">
                         <path d="M2 14.77h21v2H2z"></path>
                           <path d="M6 7.07V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.07h1V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.07h2V0H4v7.07h2zM21 8.67H4a4.06 4.06 0 0 0-4 4.07v2.43h25v-2.43a4.06 4.06 0 0 0-4-4.07z"></path>
                         </svg>
                      </span>
-                     <span style={{float:"left",marginTop:5,fontSize:13, color: "orange"}}><strong>HOTELS</strong></span>
+                     <span style={{float:"left",marginTop:5,fontSize:13, color: "#ff690f"}}><strong>HOTELS</strong></span>
                      </div>
                      <div className="tab">
                       <span style={{float:"left",paddingTop:"5%",marginLeft:"5%"}}>

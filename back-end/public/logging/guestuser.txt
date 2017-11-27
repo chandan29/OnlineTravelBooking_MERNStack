@@ -101,3 +101,8 @@ User queried flight listing from the city of San Jose to the city of Los Angeles
 User booked a Flight from the city of San Joseto the city of Los Angeles on 10/26/2017 at 14:58
 User queried flight listing from the city of San Jose to the city of Los Angeles on 10/26/2017 at 15:1
 User booked a Flight from the city of San Joseto the city of Los Angeles on 10/26/2017 at 15:1
+User queried car listing for the city of San Jose on 10/26/2017 at 15:48
+User queried car listing for the city of New York on 10/26/2017 at 16:59
+User booked a car from the city of New York on 10/26/2017 at 17:1
+User queried hotel listing for the city of San Jose on 10/26/2017 at 17:2
+User booked a hotel in the city of San Jose on 10/26/2017 at 17:2

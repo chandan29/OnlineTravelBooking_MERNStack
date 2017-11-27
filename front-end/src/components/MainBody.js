@@ -41,7 +41,7 @@ class MainBody extends Component {
                     <div className="tab">
                      <span style={{float:"left",paddingTop:"6%",paddingLeft: "10%"}}>
                         <svg className="svgs" width="30" height="30">
-                        <path d="M2 14.77h21v2H2z"></path>
+                          <path d="M2 14.77h21v2H2z"></path>
                           <path d="M6 7.07V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.07h1V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.07h2V0H4v7.07h2zM21 8.67H4a4.06 4.06 0 0 0-4 4.07v2.43h25v-2.43a4.06 4.06 0 0 0-4-4.07z"></path>
                         </svg>
                      </span>
@@ -58,7 +58,7 @@ class MainBody extends Component {
                       </div>
                       <div className="tab">
                        <span style={{float:"left",paddingTop:"6%",paddingLeft:"13%"}}>
-                          <svg className="svgs" width="30" height="30" fill="orange">
+                          <svg className="svgs" width="30" height="30" fill="#ff690f">
                             <path d="M10.6 2.77L.61 1.2V0h9.99v2.77"></path>
                             <path fill="none" d="M12 1.84v3.33l8.14.11C18.29 3.56 16 1.87 14.72 1.84c-.96-.03-2.72 0-2.72 0z"></path>
                             <path d="M31 7.77c-.87-1.6-8.41-2.52-8.41-2.52S17.3.46 14.53 0H6.37h1.5A7.73 7.73 0 0 0 3 1.59a18.47 18.47 0 0 0-3 4.23v3.83c0 3.86 1.55 4.49 2.53 4.52v-.13A3.76 3.76 0 1 1 10 14v.07l9-.01a3.76 3.76 0 0 1 7.52 0h.79a7 7 0 0 0 3.9-.93A28.38 28.38 0 0 0 31 7.77zm-19-2.6V1.84h2.72c1.3 0 3.56 1.72 5.42 3.45z"></path>
@@ -66,7 +66,7 @@ class MainBody extends Component {
                             <circle cx="6.28" cy="14.04" r="2.36"></circle>
                           </svg>
                        </span>
-                       <span style={{float:"left",marginTop:5,marginLeft: 10,fontSize:13,color: "Orange"}}><strong>CARS</strong></span>
+                       <span style={{float:"left",marginTop:5,marginLeft: 10,fontSize:13,color: "#ff690f"}}><strong>CARS</strong></span>
                        </div>
                        <div className="tab">
                         <span style={{float:"left",paddingTop:"6%"}}>

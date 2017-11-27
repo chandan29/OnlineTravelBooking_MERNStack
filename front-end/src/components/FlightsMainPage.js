@@ -47,12 +47,12 @@ class FlightsMainPage extends Component {
                      </div>
                      <div className="tab">
                       <span style={{float:"left",paddingTop:"5%",marginLeft:"5%"}}>
-                         <svg className="svgs" width="30" height="30" fill="orange">
+                         <svg className="svgs" width="30" height="30" fill="#ff690f">
                          <path d="M16.79 7.83l-3.93 3.93 4.51 7.05.76-.76-1.34-10.22M12.24 3.15L1.62 1.76l-.75.76 7.32 4.69 4.05-4.06"></path>
                            <path d="M10.73 11.94l1.3-1.3 4.28-4.28 2.8-2.8s1.54-2.12.46-3.17-3.17.47-3.17.47l-2.62 2.62-4.4 4.4L8 9.24a20 20 0 0 0-2.23 3.2l-4.67-.89L0 12.62l3.79 2.65.92.92L7.41 20l1.07-1.1-.91-4.76a20.06 20.06 0 0 0 3.16-2.2z"></path>
                          </svg>
                       </span>
-                      <span style={{float:"left",marginTop:5,fontSize:13,color: "orange"}}><strong>FLIGHTS</strong></span>
+                      <span style={{float:"left",marginTop:5,fontSize:13,color: "#ff690f"}}><strong>FLIGHTS</strong></span>
                       </div>
                       <div className="tab">
                        <span style={{float:"left",paddingTop:"6%",paddingLeft:"13%"}}>

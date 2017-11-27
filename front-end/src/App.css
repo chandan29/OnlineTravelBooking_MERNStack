@@ -54,6 +54,12 @@ li>a {
   background-color: black;
 }
 
+.container-header1 {
+    height: 50px;
+    padding-top:0.7%;
+
+}
+
 .container-mainbody {
 
   height: 400px;
@@ -106,7 +112,7 @@ li>a {
 
 .opener-image {
   /*background-image: url('./0.jpeg');*/
-  background-image: url('./kbg1.png');
+  background-image: url('./kbg.png');
   background-size: cover;
 
 }
@@ -118,12 +124,12 @@ li>a {
 }
 
 .container-stayUptoDate {
-  width:85%;
+  width:73%;
   height: 184px;
   background-color: #F8F8F8;
   padding-top: 15px;
   margin-top: 6.5%;
-  margin-left: 8%;
+  margin-left: 13%;
 }
 
 
@@ -573,8 +579,8 @@ table {
 }
 
 .tab:hover {
-    color: orange;
-    fill: orange;
+    color: #ff690f;
+    fill: #ff690f;
 }
 
 .mainBodyLeftFilterCars {
@@ -1032,4 +1038,8 @@ table {
     float: right;
     margin-top: 1%;
     margin-right: 2%;
+}
+
+.body-header>ul>li>a:hover {
+    color: white;
 }

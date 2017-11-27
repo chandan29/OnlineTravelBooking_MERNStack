@@ -6,6 +6,9 @@ import Message from "./Message";
 import Welcome from "./Welcome";
 import Footer from "./Footer";
 import Header from './Header';
+import HeaderTransparent from './HeaderTransparent';
+import HeaderTransparentHotel from './HeaderTransparentHotel';
+import HeaderTransparentFlight from './HeaderTransparentFlight';
 import MainBody from './MainBody';
 import MainBodyCar from './MainBodyCar';
 import MainBodyCarCheckout from './MainBodyCarCheckout';
@@ -207,14 +210,16 @@ class NewerHomePage extends Component {
             <div className="container-fluid" style={{backgroundColor:"white"}}>
                 <Route exact path="/" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+
+                          <HeaderTransparent  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+
                           <MainBody handleCarFetch={this.handleCarFetch}/>
                           <Footer />
                     </div>
                 )}/>
                 <Route exact path="/hotels" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <HeaderTransparentHotel  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                           <HotelsMainPage handleHotelFetch={this.handleHotelFetch}/>
                           <Footer />
                     </div>
@@ -222,7 +227,7 @@ class NewerHomePage extends Component {
 
                 <Route exact path="/flights" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <HeaderTransparentFlight  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                           <FlightsMainPage handleFlightFetch={this.handleFlightFetch}/>
                           <Footer />
                     </div>
