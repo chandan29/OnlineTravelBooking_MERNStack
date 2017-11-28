@@ -106,3 +106,14 @@ User queried car listing for the city of New York on 10/26/2017 at 16:59
 User booked a car from the city of New York on 10/26/2017 at 17:1
 User queried hotel listing for the city of San Jose on 10/26/2017 at 17:2
 User booked a hotel in the city of San Jose on 10/26/2017 at 17:2
+User queried car listing for the city of New York on 10/28/2017 at 1:14
+User queried car listing for the city of New York on 10/28/2017 at 1:51
+User queried car listing for the city of New York on 10/28/2017 at 1:55
+User queried car listing for the city of New York on 10/28/2017 at 1:59
+User queried car listing for the city of New York on 10/28/2017 at 2:4
+User queried car listing for the city of New York on 10/28/2017 at 2:5
+User booked a car from the city of New York on 10/28/2017 at 2:6
+User queried car listing for the city of New York on 10/28/2017 at 2:8
+User queried car listing for the city of New York on 10/28/2017 at 2:16
+User booked a car from the city of New York on 10/28/2017 at 2:16
+User queried car listing for the city of New York on 10/28/2017 at 2:29

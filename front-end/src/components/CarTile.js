@@ -7,17 +7,28 @@ var FontAwesome = require('react-fontawesome');
 
 
 class CarTile extends Component {
-  componentWillMount(){
-    console.log(this.props.cars);
-    this.setState({
-        cars: this.props.cars,
-        carsCopy: this.props.cars
-    });
-  }
+    componentWillMount(){
+      console.log(this.props.cars);
+      this.setState({
+          cars: this.props.cars,
+          carsCopy: this.props.cars
+      });
 
-  state={
-      carsCopy: this.props.cars
-  }
+          //  localStorage.setItem(this.props.cars, JSON.stringify(this.props.cars));
+            /*this.setState({ cars: JSON.parse(cachedHits) });*/
+
+      const cachedHits = localStorage.getItem("cars");
+        if (cachedHits) {
+            this.setState({ carsCopy : JSON.parse(cachedHits),
+            cars: JSON.parse(cachedHits)});
+            console.log("cache data",cachedHits);
+        }
+    }
+
+    state={
+        carsCopy: this.props.cars
+    }
+
 
 
   handlestar1 = () => {
@@ -151,7 +162,7 @@ class CarTile extends Component {
                 <h4 style={{marginLeft: "2%"}}>{car.carType}</h4>
                 <h6 style={{marginLeft: "2%"}}>Toyota Corolla</h6>
                 <div className="outerDiv-left-top-icons" style={{paddingTop: "1%"}}>
-                    <span style={{display: "inline", float:"left",marginLeft:"2%"}}>{car.carSpecs}<p style={{float:"left",marginRight:5}}><FontAwesome name='user'/></p></span>
+                    <span style={{display: "inline", float:"left",marginLeft:"2%"}}>{car.carCapacity}&nbsp; people<p style={{float:"left",marginRight:5}}><FontAwesome name='user'/></p></span>
                     <span style={{display:"inline", float:"left",marginLeft:"12%"}}>1<p style={{float:"left",marginRight:5}}><FontAwesome name='suitcase'/></p></span>
                     <span style={{display:"inline",float:"left",marginLeft:"12%"}}>4<p style={{float:"left",marginRight:5}}><FontAwesome name='folder'/></p></span>
                 </div>
@@ -167,9 +178,9 @@ class CarTile extends Component {
         <img style={{marginLeft:"10%"}} src={Car1}/>
         </div>
         <div className="outerDiv-right">
-            <h4>${car.carRate}</h4>
+            <h4>${car.carOriginalPrice}</h4>
             <h5>Total</h5>
-            <button onClick={()=>{this.props.handleCartileFetch({cartile: car, fromDate: "11-21-2017", toDate: "11-23-2017"})}} style={{width: "80%",backgroundColor: "#dd471a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
+            <button onClick={()=>{this.props.handleCartileFetch({cartile: car})}} style={{width: "80%",backgroundColor: "#dd471a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
         </div>
     </div>
     ))}

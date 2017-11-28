@@ -86,7 +86,7 @@ class MainBody extends Component {
 
                   <div style={{paddingTop:"4.5%"}}>
 
-                  <input placeholder="San Jose, CA" list="cities" name="city" onChange  value={this.state.city} onChange={(event) => {
+                  <input placeholder="San Jose, CA" list="cities" name="city"  value={this.state.city} onChange={(event) => {
                       console.log(event.target.value);
                 this.setState({
                     city: event.target.value
@@ -106,14 +106,24 @@ class MainBody extends Component {
                   </div>
 
                   <div>
-                      <input placeholder="From Date" min={this.state.minDate} type="date" style={{marginLeft:4,width:"22%",height:"10%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26,paddingLeft: "7%"}}/>
+                      <input placeholder="From Date" min={this.state.minDate} type="date" onChange={(event) => {
+                          console.log(event.target.value);
+                    this.setState({
+                        fromDate: event.target.value
+                    });}}
+                     style={{marginLeft:4,width:"22%",height:"10%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26,paddingLeft: "7%"}}/>
                   </div>
 
                   <div>
-                      <input placeholder="To Date" min={this.state.minDate} type="date" style={{marginLeft:4,width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26, paddingLeft: "7%"}}/>
+                      <input placeholder="To Date" min={this.state.minDate} type="date" onChange={(event) => {
+                          console.log(event.target.value);
+                    this.setState({
+                        toDate: event.target.value
+                    });}}
+                     style={{marginLeft:4,width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26, paddingLeft: "7%"}}/>
                   </div>
 
-                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleCarFetch({carCity:this.state.city,fromDate:'11-12-2017',toDate:'12-12-2017'})}}>
+                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleCarFetch({carCity:this.state.city,fromDate:this.state.fromDate,toDate:this.state.toDate})}}>
                     </button>
 
 

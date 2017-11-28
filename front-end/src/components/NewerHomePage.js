@@ -147,6 +147,7 @@ class NewerHomePage extends Component {
                   this.setState({
                       carsObj:res
                   });
+                  localStorage.setItem("cars", JSON.stringify(this.state.carsObj));
                   this.props.history.push("/searchCar");
           });
 

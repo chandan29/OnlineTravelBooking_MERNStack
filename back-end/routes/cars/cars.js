@@ -52,7 +52,7 @@ carshandler.post('/bookCar',function(req,res){
   console.log(req.body);
   var carCity=req.body.cartile.carCity;
   var carId=req.body.cartile.carId;
-  var carRate=req.body.cartile.carRate
+  var carRate=req.body.cartile.carOriginalPrice;
   mongo.connect(mongoURL, function(){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('carTrip');
