@@ -26,13 +26,15 @@ import MainBodyHotelCheckout from './MainBodyHotelCheckout';
 import FlightsMainPage from './FlightsMainPage';
 import MainBodyFlightCheckout from './MainBodyFlightCheckout';
 import MainBodyFlight from './MainBodyFlight';
-
+import UserBills from './UserBills';
+import Graphs from './Graphs';
 class NewerHomePage extends Component {
 
     state = {
         isLoggedIn: false,
         message: '',
-        username: ''
+        username: '',
+        showUserBillFlag:false
     };
 
     handleSubmit = (userdata) => {
@@ -206,13 +208,21 @@ class NewerHomePage extends Component {
         this.props.history.push('/signin');
     }
 
+    handleShowTrips = () => {
+        console.log("called handleShowTrips")
+        this.setState({
+            showUserBillFlag:true
+        });
+    this.props.history.push('/showbills');
+}
+
     render() {
         return (
             <div className="container-fluid" style={{backgroundColor:"white"}}>
                 <Route exact path="/" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
 
-                          <HeaderTransparent  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <HeaderTransparent  handleShowTrips={this.handleShowTrips} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
 
                           <MainBody handleCarFetch={this.handleCarFetch}/>
                           <Footer />
@@ -348,6 +358,24 @@ class NewerHomePage extends Component {
                       <Signin gotoSignup={this.gotoSignup} loginUser={this.loginUser} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                     </div>
                 )}/>
+
+                <Route exact path="/showbills" render={() => (
+                    <div>
+                    {
+    this.state.showUserBillFlag
+    ?
+    <UserBills/>
+    :
+    null
+}
+                    </div>
+                )}/>
+
+                <Route exact path="/graphs" render={() => (
+              <div>
+                  <Graphs />
+              </div>
+          )}/>
 
 
 

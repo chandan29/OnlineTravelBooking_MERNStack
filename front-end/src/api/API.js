@@ -145,6 +145,22 @@ export const logout = () =>
                         return error;
                     })
 
+                    export const getAdminBills = (payload) =>
+                fetch(`${api}/getAdminBills`, {
+                    method: 'POST',
+                    headers: {
+                        ...headers,
+                        'Content-Type': 'application/json'
+                    },
+                    credentials:'include',
+                    body: JSON.stringify(payload)
+                }).then(res => {
+                    return res.json();
+                })
+                    .catch(error => {
+                        console.log("This is error");
+                        return error;
+                    });
 {/********************************************  Admin APIs below    ***************************************************/}
 
 export const addCarToList = (payload) =>

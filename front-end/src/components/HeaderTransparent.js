@@ -30,7 +30,7 @@ class HeaderTransparent extends Component {
                   <div className="dropdown-content">
                     <button style={{backgroundColor: "orange"}} onClick={this.props.handleClickSignup}>Sign Up</button>
                     <button onClick={this.props.handleClickSignin}>Sign In</button>
-                    <span>Trips</span>
+                    <button onClick={this.props.handleShowTrips}>Trips</button>
                     <span>Price Alerts</span>
                   </div>
               </div>

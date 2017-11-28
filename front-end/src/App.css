@@ -1,3 +1,5 @@
+html,body { height: 100%; margin: 0px; padding: 0px; }
+
 .App {
 
 }
@@ -1042,4 +1044,134 @@ table {
 
 .body-header>ul>li>a:hover {
     color: white;
+}
+.userbill{
+    margin-top: 20px;
+}
+
+
+.decrement{
+    height: 24px;
+    width: 24px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+    line-height: 22px;
+}
+.increment{
+    height: 24px;
+    width: 24px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+    line-height: 22px;
+}
+.quantity {
+    height: 24px;
+    width: 48px;
+    text-align: center;
+    margin-left:10px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+
+.addToCart{
+
+    margin-left: 10px;
+}
+
+.cartCheckout{
+    background-color: aliceblue;
+
+}
+.cartImage{
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.itemname{
+
+    width:33.3%;
+}
+
+.rowitem{
+    width:33.3%;
+
+}
+
+.itemImage{
+
+    height:30px;
+    width: 30px;
+}
+
+.tableHead{
+    text-align: center;
+    background-color: steelblue;
+}
+
+.itemImage1{
+    height:180px;
+    width: 180px;
+}
+
+.add{
+    background-color: aliceblue;
+}
+.tableData{
+    text-align: center;
+}
+
+.billTitle{
+    color: black;
+    margin-left: 5%;
+    width: auto;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.tableData1 .viewDetail{
+    visibility: hidden;
+}
+
+.tableData1:hover .viewDetail{
+    visibility: visible;
+    margin-left: 15px;
+}
+
+.uiNav{
+    display: inline;
+    float: left;
+}
+
+
+.table-bordered{
+    margin-top: 10px;
+}
+
+.Kpiechart{
+    width: 30%;
+    height: auto;
+    margin-left: 35%;
+
+}
+
+.filterUserBills {
+    width: 18%;
+    float:left;
+    height: 100%;
+    min-height: 600px;
+    border : 1px solid;
+    margin-left: 2%;
+    margin-top: 2.5%;
+    padding: 1%;
 }

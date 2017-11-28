@@ -17,6 +17,8 @@
     "react-responsive-carousel": "^3.1.28",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",
+    "react-svg-piechart": "^1.4.0",
+    "recharts": "^1.0.0-beta.5",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.76.0"
   },

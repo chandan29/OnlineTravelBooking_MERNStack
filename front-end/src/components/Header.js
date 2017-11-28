@@ -30,7 +30,7 @@ class Header extends Component {
                   <div className="dropdown-content">
                     <button style={{backgroundColor: "orange"}} onClick={this.props.handleClickSignup}>Sign Up</button>
                     <button onClick={this.props.handleClickSignin}>Sign In</button>
-                    <span>Trips</span>
+                    <span>Trips onClick={this.props.hadleShowTrips}</span>
                     <span>Price Alerts</span>
                   </div>
               </div>
