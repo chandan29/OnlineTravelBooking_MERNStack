@@ -4,3 +4,53 @@ User queried car listing for the city of San Jose on 10/28/2017 at 23:44
 User booked a car from the city of San Jose on 10/28/2017 at 23:44
 User queried car listing for the city of New York on 10/28/2017 at 23:50
 User booked a car from the city of New York on 10/28/2017 at 23:50
+User queried car listing for the city of New York,10/29/2017,0:46,listing
+User booked a car from the city of New York,10/29/2017,0:46,32,9,buying
+User queried car listing for the city of New York,10/29/2017,0:56,listing
+User booked a car from the city of New York,10/29/2017,0:56,32,9,buying
+User queried flight listing from the city of New York to the city of San Jose,10/29/2017,0:57,listing
+User queried flight listing from the city of New York to the city of Dallas,10/29/2017,0:57,listing
+User booked a Flight from the city of New Yorkto the city of Dallas,10/29/2017,0:58,350,AA1278,buying
+User queried hotel listing for the city of New York,10/29/2017,0:59,listing
+User booked a hotel in the city of New York,10/29/2017,0:59,376,6,buying
+User queried car listing for the city of San Jose,10/29/2017,1:0,listing
+User booked a car from the city of San Jose,10/29/2017,1:0,36,1,buying
+User queried car listing for the city of Santa Clara,10/29/2017,1:2,listing
+User queried car listing for the city of Chicago,10/29/2017,1:2,listing
+User queried car listing for the city of Las Vegas,10/29/2017,1:8,listing
+User queried hotel listing for the city of Santa Clara,10/29/2017,1:9,listing
+User queried hotel listing for the city of Oakland,10/29/2017,1:9,listing
+User queried hotel listing for the city of Philadelphia,10/29/2017,1:9,listing
+User queried flight listing from the city of Denver to the city of New York,10/29/2017,1:24,listing
+User queried flight listing from the city of undefined to the city of Las Vegas,10/29/2017,1:24,listing
+User queried flight listing from the city of Las Vegas to the city of New York,10/29/2017,1:24,listing
+User queried flight listing from the city of New York to the city of San Jose,10/29/2017,1:26,listing
+User queried flight listing from the city of Las Vegas to the city of New York,10/29/2017,1:34,listing
+User queried flight listing from the city of New York to the city of San Jose,10/29/2017,1:34,listing
+User queried flight listing from the city of San Francisco to the city of New York,10/29/2017,1:35,listing
+User booked a Flight from the city of San Franciscoto the city of undefined,10/29/2017,1:36,450,AA3123,buying
+User booked a Flight from the city of San Franciscoto the city of undefined,10/29/2017,1:38,500,VA2107,buying
+User booked a Flight from the city of San Franciscoto the city of undefined,10/29/2017,1:38,390,NK312,buying
+User queried flight listing from the city of Chicago to the city of Dallas,10/29/2017,1:39,listing
+User booked a Flight from the city of Chicagoto the city of undefined,10/29/2017,1:39,370,NK296,buying
+User booked a Flight from the city of Chicagoto the city of undefined,10/29/2017,1:39,420,UA348,buying
+User queried flight listing from the city of Dallas to the city of San Jose,10/29/2017,1:40,listing
+User booked a Flight from the city of Dallasto the city of undefined,10/29/2017,1:40,500,VA1923,buying
+User booked a Flight from the city of Dallasto the city of undefined,10/29/2017,1:40,390,BA1230,buying
+User queried flight listing from the city of Los Angeles to the city of New York,10/29/2017,1:40,listing
+User booked a Flight from the city of Los Angelesto the city of undefined,10/29/2017,1:41,485,UA1923,buying
+User booked a Flight from the city of Los Angelesto the city of undefined,10/29/2017,1:41,485,UA1529,buying
+User queried flight listing from the city of Boston to the city of San Jose,10/29/2017,1:42,listing
+User booked a Flight from the city of Bostonto the city of undefined,10/29/2017,1:42,340,AA8761,buying
+User queried flight listing from the city of Boston to the city of San Jose,10/29/2017,1:42,listing
+User booked a Flight from the city of Bostonto the city of undefined,10/29/2017,1:42,340,AA8761,buying
+User queried flight listing from the city of Washington to the city of San Jose,10/29/2017,1:43,listing
+User booked a Flight from the city of Washingtonto the city of undefined,10/29/2017,1:43,415,UA1910,buying
+User booked a Flight from the city of Washingtonto the city of undefined,10/29/2017,1:43,415,UA1980,buying
+User booked a Flight from the city of Washingtonto the city of undefined,10/29/2017,1:43,430,VA1923,buying
+User queried flight listing from the city of Seattle to the city of Boston,10/29/2017,1:45,listing
+User booked a Flight from the city of Seattleto the city of undefined,10/29/2017,1:45,400,BA178,buying
+User booked a Flight from the city of Seattleto the city of undefined,10/29/2017,1:45,340,A4513,buying
+User queried flight listing from the city of Denver to the city of New York,10/29/2017,1:47,listing
+User booked a Flight from the city of Denverto the city of undefined,10/29/2017,1:47,350,AA3112,buying
+User booked a Flight from the city of Denverto the city of undefined,10/29/2017,1:47,450,BA170,buying

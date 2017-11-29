@@ -72,6 +72,17 @@ app.use('/',signup);
 module.exports = app;
 app.post('/logout', function(req,res) {
   console.log(req.session.user);
+  var t=time.localtime(Date.now()/1000);
+  var date=""+t.month+"/"+t.dayOfMonth+"/2017";
+  var curTime=""+t.hours+":"+t.minutes;
+
+  fs.appendFile("./public/logging/"+req.session.user+".txt", "User logged out on "+date+" at "+curTime+",login\n", function(err) {
+    if(err) {
+        res.send({0:0});
+
+    }
+    console.log("The file was saved!");
+  });
   req.session.destroy();
 
   console.log('Session Destroyed');

@@ -234,3 +234,25 @@ export const addFlightToList = (payload) =>
                             console.log("This is error");
                             return error;
                         });
+
+
+
+
+
+
+                        export const getRevenuepercity = (payload) =>
+                            fetch(`${api}/getRevenuepercity`, {
+                                method: 'POST',
+                                headers: {
+                                    ...headers,
+                                    'Content-Type': 'application/json'
+                                },
+                                credentials:'include',
+                                body: JSON.stringify(payload)
+                            }).then(res => {
+                                return res.json();
+                            })
+                                .catch(error => {
+                                    console.log("This is error");
+                                    return error;
+                                });
