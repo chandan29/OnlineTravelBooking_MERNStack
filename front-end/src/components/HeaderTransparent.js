@@ -20,7 +20,7 @@ class HeaderTransparent extends Component {
               <li style={{marginLeft:"3%"}}><a href="/flight">Flights</a></li>
               <li style={{marginLeft:"3%" , borderBottom: "2px solid"}}><a href="/">Cars</a></li>
               <li style={{marginLeft:"3%"}}><a href="/hotel">Hotels</a></li>
-              <li style={{marginLeft:"3%"}}><a href="/signin">Logout</a></li>
+              <li style={{marginLeft:"3%"}}><a href="/signin" onClick={this.props.handleLogout}>Logout</a></li>
             </ul>
             <div style={{float: "right", color: "white"}}>
               <span className="glyphicon glyphicon-user"></span>

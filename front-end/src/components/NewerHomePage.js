@@ -222,7 +222,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
 
-                          <HeaderTransparent  handleShowTrips={this.handleShowTrips} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <HeaderTransparent handleLogout={this.handleLogout}  handleShowTrips={this.handleShowTrips} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
 
                           <MainBody handleCarFetch={this.handleCarFetch}/>
                           <Footer />
@@ -230,7 +230,7 @@ class NewerHomePage extends Component {
                 )}/>
                 <Route exact path="/hotels" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
-                          <HeaderTransparentHotel  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <HeaderTransparentHotel handleLogout={this.handleLogout}  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                           <HotelsMainPage handleHotelFetch={this.handleHotelFetch}/>
                           <Footer />
                     </div>
@@ -238,7 +238,7 @@ class NewerHomePage extends Component {
 
                 <Route exact path="/flights" render={() => (
                     <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
-                          <HeaderTransparentFlight  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <HeaderTransparentFlight handleLogout={this.handleLogout}  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                           <FlightsMainPage handleFlightFetch={this.handleFlightFetch}/>
                           <Footer />
                     </div>
@@ -247,7 +247,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/searchCar" render={() => (
                     <div>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <Header handleLogout={this.handleLogout} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyCar">
                           <MainBodyCar cars={this.state.carsObj} handleCartileFetch={this.handleCartileFetch}/>
@@ -259,7 +259,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/searchHotel" render={() => (
                     <div>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <Header handleLogout={this.handleLogout} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyHotel">
                           <MainBodyHotel hotels={this.state.hotelsObj} handleHoteltileFetch={this.handleHoteltileFetch}/>
@@ -272,7 +272,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/searchFlight" render={() => (
                     <div>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <Header handleLogout={this.handleLogout} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyHotel">
                           <MainBodyFlight flights={this.state.flightsObj} handleFlighttileFetch={this.handleFlighttileFetch}/>
@@ -285,7 +285,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/carCheckout" render={() => (
                     <div>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <Header handleLogout={this.handleLogout} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyCarCheckout">
                             <MainBodyCarCheckout carTile={this.state.carTile} handleRedirectBooking={this.handleRedirectBooking}/>
@@ -297,7 +297,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/hotelCheckout" render={() => (
                     <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
                         <div className="header-xyz">
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <Header handleLogout={this.handleLogout} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyHotelCheckout" style={{backgroundColor: "gray"}}>
                             <MainBodyHotelCheckout hotelTile={this.state.hotelTile} handleRedirectBooking1={this.handleRedirectBooking1}/>
@@ -310,7 +310,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/flightCheckout" render={() => (
                     <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
                         <div className="header-xyz">
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <Header handleLogout={this.handleLogout} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyHotelCheckout" style={{backgroundColor: "gray"}}>
                             <MainBodyFlightCheckout flightTile={this.state.flightTile} handleRedirectBooking2={this.handleRedirectBooking2}/>

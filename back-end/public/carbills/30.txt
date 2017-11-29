@@ -5,5 +5,5 @@
 
                 City:  San Jose
 
-                  Price:34
+                  Price:undefined
                 

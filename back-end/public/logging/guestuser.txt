@@ -117,3 +117,12 @@ User queried car listing for the city of New York on 10/28/2017 at 2:8
 User queried car listing for the city of New York on 10/28/2017 at 2:16
 User booked a car from the city of New York on 10/28/2017 at 2:16
 User queried car listing for the city of New York on 10/28/2017 at 2:29
+User queried flight listing from the city of San Jose to the city of New York on 10/28/2017 at 23:30
+User queried car listing for the city of New York on 10/28/2017 at 23:30
+User booked a car from the city of New York on 10/28/2017 at 23:31
+User queried car listing for the city of New York on 10/28/2017 at 23:33
+User booked a car from the city of New York on 10/28/2017 at 23:34
+User queried car listing for the city of New York on 10/28/2017 at 23:37
+User booked a car from the city of New York on 10/28/2017 at 23:37
+User queried car listing for the city of New York on 10/28/2017 at 23:52
+User booked a car from the city of New York on 10/28/2017 at 23:52

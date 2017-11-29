@@ -28,8 +28,14 @@ flightshandler.post('/getFlights',function(req,res){
                   var t=time.localtime(Date.now()/1000);
                   var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                   var curTime=""+t.hours+":"+t.minutes;
-
-                  fs.appendFile("./public/logging/guestuser.txt", "User queried flight listing from the city of "+fromCity+" to the city of "+toCity+" on "+date+" at "+curTime+"\n", function(err) {
+                  var user="";
+                  if(req.session.user){
+                    user=req.session.user;
+                  }
+                  else{
+                    user="guestuser";
+                  }
+                  fs.appendFile("./public/logging/"+user+".txt", "User queried flight listing from the city of "+fromCity+" to the city of "+toCity+" on "+date+" at "+curTime+"\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -108,8 +114,14 @@ flightshandler.post('/bookFlight',function(req,res){
                 var t=time.localtime(Date.now()/1000);
                 var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                 var curTime=""+t.hours+":"+t.minutes;
-
-                fs.appendFile("./public/logging/guestuser.txt", "User booked a Flight from the city of "+fromCity+"to the city of "+toCity+" on "+date+" at "+curTime+"\n", function(err) {
+                var user="";
+                if(req.session.user){
+                  user=req.session.user;
+                }
+                else{
+                  user="guestuser";
+                }
+                fs.appendFile("./public/logging/"+user+".txt", "User booked a Flight from the city of "+fromCity+"to the city of "+toCity+" on "+date+" at "+curTime+"\n", function(err) {
                   if(err) {
                       res.send({0:0});
 

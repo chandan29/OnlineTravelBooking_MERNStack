@@ -5,5 +5,5 @@
 
                 City:  New York
 
-                  Price:22
+                  Price:undefined
                 

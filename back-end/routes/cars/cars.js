@@ -27,8 +27,15 @@ carshandler.post('/getCars',function(req,res){
                   var t=time.localtime(Date.now()/1000);
                   var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                   var curTime=""+t.hours+":"+t.minutes;
-
-                  fs.appendFile("./public/logging/guestuser.txt", "User queried car listing for the city of "+carCity+" on "+date+" at "+curTime+"\n", function(err) {
+                  var user="";
+                  if(req.session.user){
+                    user=req.session.user;
+                  }
+                  else{
+                    user="guestuser";
+                  }
+                  console.log(user);
+                  fs.appendFile("./public/logging/"+user+".txt", "User queried car listing for the city of "+carCity+" on "+date+" at "+curTime+"\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -104,8 +111,15 @@ carshandler.post('/bookCar',function(req,res){
                 var t=time.localtime(Date.now()/1000);
                 var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                 var curTime=""+t.hours+":"+t.minutes;
-
-                fs.appendFile("./public/logging/guestuser.txt", "User booked a car from the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
+                var user="";
+                if(req.session.user){
+                  user=req.session.user;
+                }
+                else{
+                  user="guestuser";
+                }
+                console.log(user);
+                fs.appendFile("./public/logging/"+user+".txt", "User booked a car from the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
                   if(err) {
                       res.send({0:0});
 
@@ -139,8 +153,15 @@ carshandler.post('/receipt',function(req,res){
   var t=time.localtime(Date.now()/1000);
   var date=""+t.month+"/"+t.dayOfMonth+"/2017";
   var curTime=""+t.hours+":"+t.minutes;
-
-  fs.appendFile("./public/logging/guestuser.txt", "User queried car listing for the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
+  var user="";
+  if(req.session.user){
+    user=req.session.user;
+  }
+  else{
+    user="guestuser";
+  }
+  console.log(user);
+  fs.appendFile("./public/logging/"+user+".txt", "User queried car listing for the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
     if(err) {
         res.send({0:0});
 
