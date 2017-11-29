@@ -34,7 +34,7 @@ hotelhandler.post('/getHotels',function(req,res){
                   else{
                     user="guestuser";
                   }
-                  fs.appendFile("./public/logging/"+user+".txt", "User queried hotel listing for the city of "+hotelCity+" on "+date+" at "+curTime+"\n", function(err) {
+                  fs.appendFile("./public/logging/"+user+".txt", "User queried hotel listing for the city of "+hotelCity+","+date+","+curTime+",listing\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -118,7 +118,7 @@ hotelhandler.post('/bookHotel',function(req,res){
                 else{
                   user="guestuser";
                 }
-                fs.appendFile("./public/logging/"+user+".txt", "User booked a hotel in the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
+                fs.appendFile("./public/logging/"+user+".txt", "User booked a hotel in the city of "+city+","+date+","+curTime+","+hotelRate+","+hotelId+",buying\n", function(err) {
                   if(err) {
                       res.send({0:0});
 

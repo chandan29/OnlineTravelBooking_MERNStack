@@ -59,7 +59,7 @@ signuphandler.post('/registerUser',function(req,res){
         const saltRounds = 10;
         var salt=bcrypt.genSaltSync(saltRounds);
         var hash = bcrypt.hashSync(req.body.password, salt);
-
+        var email=req.body.email;
         console.log(hash);
         pool.getConnection(function(err, connection) {
       console.log("insert into users (firstname,lastname,emailId,password) values ('"+req.body.firstname+"','"+req.body.lastname+"','"+req.body.email+"','"+hash+"')");
@@ -70,6 +70,24 @@ signuphandler.post('/registerUser',function(req,res){
             }
             else{
             res.status(201).send({status:201,msg:"User is successfully registered"});
+            var t=time.localtime(Date.now()/1000);
+            var date=""+t.month+"/"+t.dayOfMonth+"/2017";
+            var curTime=""+t.hours+":"+t.minutes;
+            var user="";
+            if(req.session.user){
+              user=req.session.user;
+            }
+            else{
+              user="guestuser";
+            }
+            fs.appendFile("./public/logging/"+email+".txt", "User logged in on "+date+" at "+curTime+",register\n", function(err) {
+              if(err) {
+                  res.send({0:0});
+
+              }
+              console.log("The file was saved!");
+            });
+
           }
 
           });

@@ -73,7 +73,7 @@ module.exports = app;
 app.post('/logout', function(req,res) {
   console.log(req.session.user);
   req.session.destroy();
-  
+
   console.log('Session Destroyed');
   res.status(201).send();
 });
@@ -137,6 +137,17 @@ app.post('/loginUser', function(req, res,next) {
               console.log(req.session.user);
               console.log("session initilized")
              return res.status(201).send({status:201,msg:"Password is right"});
+             var t=time.localtime(Date.now()/1000);
+             var date=""+t.month+"/"+t.dayOfMonth+"/2017";
+             var curTime=""+t.hours+":"+t.minutes;
+
+             fs.appendFile("./public/logging/"+req.session.user+".txt", "User logged in on "+date+" at "+curTime+",login\n", function(err) {
+               if(err) {
+                   res.send({0:0});
+
+               }
+               console.log("The file was saved!");
+             });
             })
           })(req, res, next);
 

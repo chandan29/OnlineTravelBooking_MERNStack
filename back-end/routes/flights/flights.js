@@ -35,7 +35,7 @@ flightshandler.post('/getFlights',function(req,res){
                   else{
                     user="guestuser";
                   }
-                  fs.appendFile("./public/logging/"+user+".txt", "User queried flight listing from the city of "+fromCity+" to the city of "+toCity+" on "+date+" at "+curTime+"\n", function(err) {
+                  fs.appendFile("./public/logging/"+user+".txt", "User queried flight listing from the city of "+fromCity+" to the city of "+toCity+","+date+","+curTime+",listing\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -121,7 +121,7 @@ flightshandler.post('/bookFlight',function(req,res){
                 else{
                   user="guestuser";
                 }
-                fs.appendFile("./public/logging/"+user+".txt", "User booked a Flight from the city of "+fromCity+"to the city of "+toCity+" on "+date+" at "+curTime+"\n", function(err) {
+                fs.appendFile("./public/logging/"+user+".txt", "User booked a Flight from the city of "+fromCity+"to the city of "+toCity+","+date+","+curTime+","+flightFare+","+flightId+",buying\n", function(err) {
                   if(err) {
                       res.send({0:0});
 

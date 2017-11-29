@@ -35,7 +35,7 @@ carshandler.post('/getCars',function(req,res){
                     user="guestuser";
                   }
                   console.log(user);
-                  fs.appendFile("./public/logging/"+user+".txt", "User queried car listing for the city of "+carCity+" on "+date+" at "+curTime+"\n", function(err) {
+                  fs.appendFile("./public/logging/"+user+".txt", "User queried car listing for the city of "+carCity+","+date+","+curTime+",listing\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -64,7 +64,7 @@ carshandler.post('/bookCar',function(req,res){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('carTrip');
             console.log(req.body);
-            coll.insertOne({carId:req.body.cartile.carId,fromCity:req.body.cartile.carCity,toCity:req.body.cartile.carCity,fromDate:req.body.fromDate,toDate:req.body.toDate,fareDetails:req.body.cartile.carRate},function(err, user){
+            coll.insertOne({carId:req.body.cartile.carId,fromCity:req.body.cartile.carCity,toCity:req.body.cartile.carCity,fromDate:req.body.fromDate,toDate:req.body.toDate,fareDetails:req.body.cartile.carOriginalPrice},function(err, user){
                 if (user) {
 
                 	res.status(201).json(user);
@@ -119,7 +119,7 @@ carshandler.post('/bookCar',function(req,res){
                   user="guestuser";
                 }
                 console.log(user);
-                fs.appendFile("./public/logging/"+user+".txt", "User booked a car from the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
+                fs.appendFile("./public/logging/"+user+".txt", "User booked a car from the city of "+city+","+date+","+curTime+","+carRate+","+carId+",buying\n", function(err) {
                   if(err) {
                       res.send({0:0});
 

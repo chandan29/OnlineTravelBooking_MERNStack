@@ -1,5 +1,5 @@
 User queried car listing for the city of New York on 10/28/2017 at 23:39
-User booked a car from the city of New York on 10/28/2017 at 23:40
+User booked a car from the city of New York on 10/28/2017 at 23:40 
 User queried car listing for the city of San Jose on 10/28/2017 at 23:44
 User booked a car from the city of San Jose on 10/28/2017 at 23:44
 User queried car listing for the city of New York on 10/28/2017 at 23:50
