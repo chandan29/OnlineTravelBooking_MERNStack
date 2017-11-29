@@ -1,0 +1,466 @@
+db.flight.insert({"flightId":"AA3290", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"San Jose", "flightDepartureTime":"10:50 AM","flighArrivalTime":"12:30 PM", flightAirline:"American Airlines", "flightRating":4, "flightAvailableSeats":34,"flightFareDetails":410,"flightFromDate":"2017-12-10", "flightToDate":"2017-12-10","flightCapacity":530,"flightDuration":"1:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA210", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Los Angeles", "flightDepartureTime":"9:05 PM","flightArrivalTime":"11:45 PM", flightAgency:"British Airlines", "flightRating":5, "flightAvailableSeats":10,"flightFareDetails":340,"flightFromDate":"2017-12-18", "flightToDate":"2017-12-18","flightCapacity":530,"flightDuration":"2:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA3113", "flightClass":"Economy", "flightTripType":"One way","flightFromCity":"San Jose", "flightToCity":"Los Angeles", "flightDepartureTime":"7:20 AM","flightArrivalTime":"10:30 AM", flightAgency:"United Airlines", "flightRating":3, "flightAvailableSeats":20,"flightFareDetails":300,"flightFromDate":"2017-12-11", "flightToDate":"2017-12-11","flightCapacity":530,"flightDuration":"3:10 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA1230", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"San Jose", "flightDepartureTime":"5:15 PM","flightArrivalTime":"9:10 PM", flightAgency:"British Airlines", "flightRating":5, "flightAvailableSeats":56,"flightFareDetails":390,"flightFromDate":"2017-12-06", "flightToDate":"2017-12-06","flightCapacity":530,"flightDuration":"3:55 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA348", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Dallas", "flightDepartureTime":"6:50 PM","flightArrivalTime":"10:50 PM", flightAgency:"United Airlines", "flightRating":5, "flightAvailableSeats":19,"flightFareDetails":420,"flightFromDate":"2017-12-12", "flightToDate":"2017-12-12","flightCapacity":530,"flightDuration":"4:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA2227", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"San Francisco", "flightDepartureTime":"6:45 AM","flightArrivalTime":"11:10 AM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":43,"flightFareDetails":550,"flightFromDate":"2017-12-23", "flightToDate":"2017-12-23","flightCapacity":530,"flightDuration":"4:25 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1529", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"New York", "flightDepartureTime":"2:10 PM","flightArrivalTime":"5:25 PM", flightAgency:"United Airlines", "flightRating":5, "flightAvailableSeats":67,"flightFareDetails":485,"flightFromDate":"2017-12-29", "flightToDate":"2017-12-29","flightCapacity":530,"flightDuration":"3:15 hours","flightStops":0});
+
+db.flight.insert({"flightId":"AA1278", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Dallas", "flightDepartureTime":"10:50 AM","flightArrivalTime":"12:40 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":34,"flightFareDetails":350,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":530,"flightDuration":"1:50 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK256", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Dallas", "flightDepartureTime":"12:30 PM","flightArrivalTime":"3:20 PM", flightAgency:"Spirit Airlines", "flightRating":3, "flightAvailableSeats":71,"flightFareDetails":270,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":530,"flightDuration":"2:50 hours","flightStops":0});
+
+db.flight.insert({"flightId":"AA3123", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"New York", "flightDepartureTime":"8:45 AM","flightArrivalTime":"11:30 AM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":23,"flightFareDetails":450,"flightFromDate":"2017-12-19", "flightToDate":"2017-12-19","flightCapacity":530,"flightDuration":"2:45 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"AA3112", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"New York", "flightDepartureTime":"8:45 PM","flightArrivalTime":"11:30 PM", flightAgency:"American Airlines", "flightRating":3, "flightAvailableSeats":123,"flightFareDetails":350,"flightFromDate":"2017-12-21", "flightToDate":"2017-12-21","flightCapacity":500,"flightDuration":"2:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA323", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Washington", "flightDepartureTime":"2:45 PM","flightArrivalTime":"5:30 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":73,"flightFareDetails":420,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":700,"flightDuration":"2:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA9923", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"New York", "flightDepartureTime":"8:45 AM","flightArrivalTime":"12:30 AM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":380,"flightFromDate":"2017-12-19", "flightToDate":"2017-12-19","flightCapacity":530,"flightDuration":"3:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK0903", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Seattle", "flightDepartureTime":"9:45 PM","flightArrivalTime":"11:40 PM", flightAgency:"Spirit Airlines", "flightRating":3, "flightAvailableSeats":100,"flightFareDetails":280,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":600,"flightDuration":"1:55 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA390", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Washington", "flightDepartureTime":"6:50 PM","flightArrivalTime":"9:50 PM", flightAgency:"United Airlines", "flightRating":5, "flightAvailableSeats":109,"flightFareDetails":500,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":720,"flightDuration":"3:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"VA178", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"San Francisco", "flightDepartureTime":"11:00 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":14,"flightFareDetails":430,"flightFromDate":"2017-12-28", "flightToDate":"2017-12-28","flightCapacity":500,"flightDuration":"2:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"NK256", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Denver", "flightDepartureTime":"12:30 PM","flightArrivalTime":"2:30 PM", flightAgency:"Spirit Airlines", "flightRating":3, "flightAvailableSeats":271,"flightFareDetails":300,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":400,"flightDuration":"2:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A323", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"New York", "flightDepartureTime":"10:45 AM","flightArrivalTime":"12:30 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":203,"flightFareDetails":490,"flightFromDate":"2017-12-02", "flightToDate":"2017-12-02","flightCapacity":500,"flightDuration":"1:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA100", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"San Jose", "flightDepartureTime":"5:15 PM","flightArrivalTime":"6:10 PM", flightAgency:"British Airlines", "flightRating":5, "flightAvailableSeats":50,"flightFareDetails":400,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":530,"flightDuration":"0:55 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA3223", "flightClass":"Economy", "flightTripType":"One way","flightFromCity":"Chicago", "flightToCity":"Los Angeles", "flightDepartureTime":"7:20 AM","flightArrivalTime":"10:20 AM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":200,"flightFareDetails":400,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":550,"flightDuration":"3:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"A4513", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Los Angeles", "flightDepartureTime":"10:45 AM","flightArrivalTime":"12:45 PM", flightAgency:"Alaska Airlines", "flightRating":5, "flightAvailableSeats":200,"flightFareDetails":490,"flightFromDate":"2017-12-21", "flightToDate":"2017-12-21","flightCapacity":500,"flightDuration":"2:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A9887", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"New York", "flightDepartureTime":"2:45 PM","flightArrivalTime":"5:30 PM", flightAgency:"Alaska Airlines", "flightRating":3, "flightAvailableSeats":100,"flightFareDetails":400,"flightFromDate":"2017-12-12", "flightToDate":"2017-12-12","flightCapacity":500,"flightDuration":"2:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A325", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Sn Francisco", "flightDepartureTime":"10:45 AM","flightArrivalTime":"12:30 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":230,"flightFareDetails":490,"flightFromDate":"2017-12-02", "flightToDate":"2017-12-02","flightCapacity":400,"flightDuration":"1:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA1700", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"San Jose", "flightDepartureTime":"10:00 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":400,"flightFromDate":"2017-12-28", "flightToDate":"2017-12-28","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA1881", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"Chicago", "flightDepartureTime":"10:30 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":5, "flightAvailableSeats":144,"flightFareDetails":470,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":500,"flightDuration":"2:30 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA123", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"Seattle", "flightDepartureTime":"8:00 AM","flightArrivalTime":"11:30 AM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":350,"flightFromDate":"2017-12-10", "flightToDate":"2017-12-10","flightCapacity":400,"flightDuration":"3:30 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA1923", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"San Jose", "flightDepartureTime":"10:00 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":3, "flightAvailableSeats":14,"flightFareDetails":430,"flightFromDate":"2017-12-18", "flightToDate":"2017-12-18","flightCapacity":600,"flightDuration":"3:00 hours","flightStops":0});
+
+
+
+
+
+db.flight.insert({"flightId":"AA300", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"New York", "flightDepartureTime":"10:50 AM","flighArrivalTime":"1:30 PM", flightAirline:"American Airlines", "flightRating":4, "flightAvailableSeats":109,"flightFareDetails":400,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":500,"flightDuration":"2:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"AA9776", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Denver", "flightDepartureTime":"10:50 AM","flighArrivalTime":"12:30 PM", flightAirline:"American Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":490,"flightFromDate":"2017-12-19", "flightToDate":"2017-12-19","flightCapacity":530,"flightDuration":"1:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"AA8761", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"San Jose", "flightDepartureTime":"11:50 AM","flighArrivalTime":"2:50 PM", flightAirline:"American Airlines", "flightRating":3, "flightAvailableSeats":90,"flightFareDetails":340,"flightFromDate":"2017-12-16", "flightToDate":"2017-12-16","flightCapacity":430,"flightDuration":"3 hours","flightStops":0});
+
+db.flight.insert({"flightId":"AA9887", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"Seattle", "flightDepartureTime":"10:00 AM","flighArrivalTime":"12:00 PM", flightAirline:"American Airlines", "flightRating":4, "flightAvailableSeats":30,"flightFareDetails":390,"flightFromDate":"2017-12-09", "flightToDate":"2017-12-09","flightCapacity":400,"flightDuration":"2 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"NK250", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"New York", "flightDepartureTime":"12:30 PM","flightArrivalTime":"5:20 PM", flightAgency:"Spirit Airlines", "flightRating":2, "flightAvailableSeats":371,"flightFareDetails":270,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":500,"flightDuration":"4:50 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK510", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Denver", "flightDepartureTime":"12:30 PM","flightArrivalTime":"3:30 PM", flightAgency:"Spirit Airlines", "flightRating":3, "flightAvailableSeats":271,"flightFareDetails":270,"flightFromDate":"2017-12-16", "flightToDate":"2017-12-16","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK256", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Dallas", "flightDepartureTime":"7:30 AM","flightArrivalTime":"11:20 AM", flightAgency:"Spirit Airlines", "flightRating":3, "flightAvailableSeats":147,"flightFareDetails":270,"flightFromDate":"2017-12-14", "flightToDate":"2017-12-14","flightCapacity":500,"flightDuration":"3:50 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK256", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Chicago", "flightDepartureTime":"2:30 PM","flightArrivalTime":"7:20 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":41,"flightFareDetails":270,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":410,"flightDuration":"4:50 hours","flightStops":0});
+
+
+
+
+db.flight.insert({"flightId":"BA219", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Los Angeles", "flightDepartureTime":"9:05 PM","flightArrivalTime":"11:10 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":450,"flightFromDate":"2017-12-10", "flightToDate":"2017-12-10","flightCapacity":490,"flightDuration":"2:05 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA240", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"Boston", "flightDepartureTime":"8:00 AM","flightArrivalTime":"11:45 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":140,"flightFareDetails":440,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":500,"flightDuration":"3:44 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA200", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"New York", "flightDepartureTime":"9:00 PM","flightArrivalTime":"11:45 PM", flightAgency:"British Airlines", "flightRating":5, "flightAvailableSeats":170,"flightFareDetails":450,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":500,"flightDuration":"2:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA110", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Seattle", "flightDepartureTime":"4:05 PM","flightArrivalTime":"7:45 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":210,"flightFareDetails":540,"flightFromDate":"2017-12-11", "flightToDate":"2017-12-11","flightCapacity":600,"flightDuration":"3:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA30", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Washington", "flightDepartureTime":"6:00 PM","flightArrivalTime":"9:45 PM", flightAgency:"British Airlines", "flightRating":3, "flightAvailableSeats":110,"flightFareDetails":490,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":630,"flightDuration":"3:45 hours","flightStops":0});
+
+
+
+
+db.flight.insert({"flightId":"UA313", "flightClass":"Economy", "flightTripType":"One way","flightFromCity":"Boston", "flightToCity":"Los Angeles", "flightDepartureTime":"8:20 AM","flightArrivalTime":"10:30 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":120,"flightFareDetails":400,"flightFromDate":"2017-12-09", "flightToDate":"2017-12-09","flightCapacity":500,"flightDuration":"2:10 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA2013", "flightClass":"Economy", "flightTripType":"One way","flightFromCity":"San Jose", "flightToCity":"Dallas", "flightDepartureTime":"7:20 AM","flightArrivalTime":"10:20 AM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":200,"flightFareDetails":420,"flightFromDate":"2017-12-04", "flightToDate":"2017-12-04","flightCapacity":530,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA2903", "flightClass":"Economy", "flightTripType":"One way","flightFromCity":"San Francisco", "flightToCity":"Seattle", "flightDepartureTime":"10:10 AM","flightArrivalTime":"1:20 PM", flightAgency:"United Airlines", "flightRating":5, "flightAvailableSeats":300,"flightFareDetails":520,"flightFromDate":"2017-12-29", "flightToDate":"2017-12-29","flightCapacity":650,"flightDuration":"3:10 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA345", "flightClass":"Business", "flightTripType":"One way","flightFromCity":"New York", "flightToCity":"Boston", "flightDepartureTime":"8:20 AM","flightArrivalTime":"10:20 AM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":480,"flightFromDate":"2017-12-14", "flightToDate":"2017-12-14","flightCapacity":530,"flightDuration":"2:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA2987", "flightClass":"Economy", "flightTripType":"One way","flightFromCity":"Denver", "flightToCity":"San Jose", "flightDepartureTime":"7:00 AM","flightArrivalTime":"10:20 AM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":250,"flightFareDetails":460,"flightFromDate":"2017-12-18", "flightToDate":"2017-12-18","flightCapacity":510,"flightDuration":"3:20 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"NK251", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Boston", "flightDepartureTime":"12:30 PM","flightArrivalTime":"3:30 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":171,"flightFareDetails":370,"flightFromDate":"2017-12-14", "flightToDate":"2017-12-14","flightCapacity":610,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK322", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"New York", "flightDepartureTime":"12:00 PM","flightArrivalTime":"3:20 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":222,"flightFareDetails":390,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":530,"flightDuration":"3:20 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK216", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"Washington", "flightDepartureTime":"6:30 PM","flightArrivalTime":"9:30 PM", flightAgency:"Spirit Airlines", "flightRating":3, "flightAvailableSeats":79,"flightFareDetails":398,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":580,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK300", "flightClass":Business","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Dallas", "flightDepartureTime":"1:30 PM","flightArrivalTime":"3:20 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":71,"flightFareDetails":270,"flightFromDate":"2017-12-21", "flightToDate":"2017-12-21","flightCapacity":340,"flightDuration":"1:50 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK296", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Dallas", "flightDepartureTime":"1:25 PM","flightArrivalTime":"3:25 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":231,"flightFareDetails":370,"flightFromDate":"2017-12-21", "flightToDate":"2017-12-21","flightCapacity":510,"flightDuration":"3:05 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK211", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"Los Angeles", "flightDepartureTime":"12:30 PM","flightArrivalTime":"3:00 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":211,"flightFareDetails":390,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":450,"flightDuration":"2:30 hours","flightStops":0});
+
+
+
+
+db.flight.insert({"flightId":"VA193", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"San Francisco", "flightDepartureTime":"10:00 AM","flightArrivalTime":"4:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":194,"flightFareDetails":520,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":600,"flightDuration":"6:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA243", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"San Jose", "flightDepartureTime":"11:00 AM","flightArrivalTime":"2:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":214,"flightFareDetails":450,"flightFromDate":"2017-12-08", "flightToDate":"2017-12-08","flightCapacity":650,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA2369", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"San Francisco", "flightDepartureTime":"8:00 AM","flightArrivalTime":"11:30 AM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":114,"flightFareDetails":420,"flightFromDate":"2017-12-13", "flightToDate":"2017-12-13","flightCapacity":500,"flightDuration":"3:30 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA4323", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"Dallas", "flightDepartureTime":"10:50 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":154,"flightFareDetails":480,"flightFromDate":"2017-12-11", "flightToDate":"2017-12-11","flightCapacity":490,"flightDuration":"2:10 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA223", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"New York", "flightDepartureTime":"10:30 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":3, "flightAvailableSeats":114,"flightFareDetails":400,"flightFromDate":"2017-12-19", "flightToDate":"2017-12-19","flightCapacity":500,"flightDuration":"2:30 hours","flightStops":0});
+
+
+
+
+
+db.flight.insert({"flightId":"A4913", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Washington", "flightDepartureTime":"10:45 AM","flightArrivalTime":"1:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":20,"flightFareDetails":440,"flightFromDate":"2017-12-08", "flightToDate":"2017-12-08","flightCapacity":520,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A9116", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"San Jose", "flightDepartureTime":"9:45 AM","flightArrivalTime":"12:00 PM", flightAgency:"Alaska Airlines", "flightRating":5, "flightAvailableSeats":220,"flightFareDetails":580,"flightFromDate":"2017-12-12", "flightToDate":"2017-12-12","flightCapacity":500,"flightDuration":"2:15 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A1313", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"Los Angeles", "flightDepartureTime":"11:00 AM","flightArrivalTime":"1:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":120,"flightFareDetails":400,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":520,"flightDuration":"2:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A4513", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Boston", "flightDepartureTime":"11:45 AM","flightArrivalTime":"2:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":340,"flightFromDate":"2017-12-31", "flightToDate":"2017-12-31","flightCapacity":570,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A4883", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"San Francisco", "flightDepartureTime":"1:45 PM","flightArrivalTime":"4:30 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":250,"flightFareDetails":470,"flightFromDate":"2017-12-16", "flightToDate":"2017-12-16","flightCapacity":430,"flightDuration":"2:45 hours","flightStops":0});
+
+
+
+
+db.flight.insert({"flightId":"BA669", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"Seattle", "flightDepartureTime":"9:05 PM","flightArrivalTime":"11:45 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":150,"flightFareDetails":470,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":460,"flightDuration":"2:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA119", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Los Angeles", "flightDepartureTime":"10:05 PM","flightArrivalTime":"12:00 AM", flightAgency:"British Airlines", "flightRating":3, "flightAvailableSeats":140,"flightFareDetails":450,"flightFromDate":"2017-12-03", "flightToDate":"2017-12-03","flightCapacity":450,"flightDuration":"1:55 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA219", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Dallas", "flightDepartureTime":"4:00 PM","flightArrivalTime":"8:00 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":140,"flightFareDetails":400,"flightFromDate":"2017-12-26", "flightToDate":"2017-12-26","flightCapacity":490,"flightDuration":"4:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA100", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Boston", "flightDepartureTime":"7:05 PM","flightArrivalTime":"10:10 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":450,"flightFromDate":"2017-12-04", "flightToDate":"2017-12-04","flightCapacity":500,"flightDuration":"3:05 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA112", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"Washington", "flightDepartureTime":"9:05 AM","flightArrivalTime":"11:55 AM", flightAgency:"British Airlines", "flightRating":3, "flightAvailableSeats":200,"flightFareDetails":400,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":480,"flightDuration":"2:50 hours","flightStops":0});
+
+
+
+
+db.flight.insert({"flightId":"UA1589", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"Chicago", "flightDepartureTime":"2:15 PM","flightArrivalTime":"5:15 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":167,"flightFareDetails":450,"flightFromDate":"2017-12-29", "flightToDate":"2017-12-29","flightCapacity":550,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1515", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"New York", "flightDepartureTime":"1:10 PM","flightArrivalTime":"4:50 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":157,"flightFareDetails":510,"flightFromDate":"2017-12-04", "flightToDate":"2017-12-04","flightCapacity":500,"flightDuration":"3:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1500", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"New York", "flightDepartureTime":"2:10 PM","flightArrivalTime":"5:25 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":67,"flightFareDetails":435,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":530,"flightDuration":"3:15 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1923", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"New York", "flightDepartureTime":"9:00 AM","flightArrivalTime":"3:25 PM", flightAgency:"United Airlines", "flightRating":5, "flightAvailableSeats":160,"flightFareDetails":485,"flightFromDate":"2017-12-23", "flightToDate":"2017-12-23","flightCapacity":600,"flightDuration":"6:25 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1910", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"San Jose", "flightDepartureTime":"11:00 AM","flightArrivalTime":"2:25 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":415,"flightFromDate":"2017-12-13", "flightToDate":"2017-12-13","flightCapacity":500,"flightDuration":"3:25 hours","flightStops":0});
+
+
+
+
+
+db.flight.insert({"flightId":"AA1178", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Denver", "flightDepartureTime":"10:50 AM","flightArrivalTime":"12:50 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":134,"flightFareDetails":410,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":500,"flightDuration":"2:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA1000", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Seattle", "flightDepartureTime":"7:00 AM","flightArrivalTime":"11:30 AM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":210,"flightFareDetails":450,"flightFromDate":"2017-12-02", "flightToDate":"2017-12-02","flightCapacity":500,"flightDuration":"4:30 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA1098", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Dallas", "flightDepartureTime":"10:50 AM","flightArrivalTime":"1:40 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":04,"flightFareDetails":350,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":550,"flightDuration":"2:50 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA0978", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"Chicago", "flightDepartureTime":"1:50 PM","flightArrivalTime":"3:50 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":134,"flightFareDetails":390,"flightFromDate":"2017-12-11", "flightToDate":"2017-12-11","flightCapacity":500,"flightDuration":"2:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA8778", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"San Jose", "flightDepartureTime":"10:50 AM","flightArrivalTime":"1:40 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":34,"flightFareDetails":350,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":530,"flightDuration":"2:50 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA9078", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Los Angeles", "flightDepartureTime":"10:50 AM","flightArrivalTime":"11:55 AM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":234,"flightFareDetails":350,"flightFromDate":"2017-12-06", "flightToDate":"2017-12-06","flightCapacity":530,"flightDuration":"1:05 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA2278", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Boston", "flightDepartureTime":"9:50 AM","flightArrivalTime":"12:40 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":54,"flightFareDetails":400,"flightFromDate":"2017-12-08", "flightToDate":"2017-12-08","flightCapacity":500,"flightDuration":"2:50 hours","flightStops":0});
+
+
+
+
+db.flight.insert({"flightId":"A4333", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"San Francisco", "flightDepartureTime":"1:55 PM","flightArrivalTime":"7:30 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":50,"flightFareDetails":480,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":550,"flightDuration":"5:35 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A7643", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Denver", "flightDepartureTime":"1:45 PM","flightArrivalTime":"4:45 PM", flightAgency:"Alaska Airlines", "flightRating":3, "flightAvailableSeats":150,"flightFareDetails":380,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":400,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A4103", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Los Angeles", "flightDepartureTime":"1:30 PM","flightArrivalTime":"4:00 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":150,"flightFareDetails":480,"flightFromDate":"2017-12-11", "flightToDate":"2017-12-11","flightCapacity":430,"flightDuration":"2:30 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A4883", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"San Jose", "flightDepartureTime":"1:30 PM","flightArrivalTime":"3:30 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":150,"flightFareDetails":400,"flightFromDate":"2017-12-07", "flightToDate":"2017-12-07","flightCapacity":400,"flightDuration":"2:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A4809", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"San Francisco", "flightDepartureTime":"1:45 PM","flightArrivalTime":"4:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":50,"flightFareDetails":500,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+
+
+
+db.flight.insert({"flightId":"VA1923", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"San Jose", "flightDepartureTime":"10:00 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":94,"flightFareDetails":500,"flightFromDate":"2017-12-12", "flightToDate":"2017-12-12","flightCapacity":650,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA1193", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Washington", "flightDepartureTime":"12:00 PM","flightArrivalTime":"4:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":450,"flightFromDate":"2017-12-19", "flightToDate":"2017-12-19","flightCapacity":500,"flightDuration":"4:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA2107", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"New York", "flightDepartureTime":"10:00 AM","flightArrivalTime":"4:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":500,"flightFromDate":"2017-12-10", "flightToDate":"2017-12-10","flightCapacity":500,"flightDuration":"6:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA0098", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"Boston", "flightDepartureTime":"8:30 AM","flightArrivalTime":"11:30 AM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":500,"flightFromDate":"2017-12-17", "flightToDate":"2017-12-17","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA9987", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Boston", "flightDepartureTime":"8:30 PM","flightArrivalTime":"12:30 AM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":14,"flightFareDetails":520,"flightFromDate":"2017-12-04", "flightToDate":"2017-12-04","flightCapacity":600,"flightDuration":"4:00 hours","flightStops":0});
+
+
+
+
+db.flight.insert({"flightId":"BA695", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"Denver", "flightDepartureTime":"9:05 PM","flightArrivalTime":"11:45 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":150,"flightFareDetails":470,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":460,"flightDuration":"2:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA192", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Los Angeles", "flightDepartureTime":"10:05 PM","flightArrivalTime":"12:00 AM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":240,"flightFareDetails":450,"flightFromDate":"2017-12-09", "flightToDate":"2017-12-09","flightCapacity":450,"flightDuration":"1:55 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA291", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"Chicago", "flightDepartureTime":"4:00 PM","flightArrivalTime":"8:00 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":140,"flightFareDetails":400,"flightFromDate":"2017-12-26", "flightToDate":"2017-12-26","flightCapacity":450,"flightDuration":"4:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA170", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"New York", "flightDepartureTime":"7:05 PM","flightArrivalTime":"10:05 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":190,"flightFareDetails":450,"flightFromDate":"2017-12-04", "flightToDate":"2017-12-04","flightCapacity":500,"flightDuration":"3:05 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA152", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Seattle", "flightDepartureTime":"9:05 AM","flightArrivalTime":"11:55 AM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":200,"flightFareDetails":400,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":480,"flightDuration":"2:50 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"AA0078", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Los Angeles", "flightDepartureTime":"10:50 AM","flightArrivalTime":"12:50 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":34,"flightFareDetails":410,"flightFromDate":"2017-12-26", "flightToDate":"2017-12-26","flightCapacity":500,"flightDuration":"2:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA1340", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Dallas", "flightDepartureTime":"7:00 AM","flightArrivalTime":"10:30 AM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":20,"flightFareDetails":450,"flightFromDate":"2017-12-02", "flightToDate":"2017-12-02","flightCapacity":500,"flightDuration":"3:30 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA9998", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Dallas", "flightDepartureTime":"10:50 AM","flightArrivalTime":"1:50 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":350,"flightFromDate":"2017-12-09", "flightToDate":"2017-12-09","flightCapacity":550,"flightDuration":"3:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA4578", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"Boston", "flightDepartureTime":"12:50 PM","flightArrivalTime":"3:50 PM", flightAgency:"American Airlines", "flightRating":3, "flightAvailableSeats":134,"flightFareDetails":390,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA1278", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"New York", "flightDepartureTime":"10:50 AM","flightArrivalTime":"4:40 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":34,"flightFareDetails":350,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":530,"flightDuration":"5:50 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA2378", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Washington", "flightDepartureTime":"10:50 AM","flightArrivalTime":"2:55 AM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":234,"flightFareDetails":350,"flightFromDate":"2017-12-16", "flightToDate":"2017-12-16","flightCapacity":500,"flightDuration":"4:05 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA0978", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Boston", "flightDepartureTime":"9:50 AM","flightArrivalTime":"12:40 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":54,"flightFareDetails":400,"flightFromDate":"2017-12-08", "flightToDate":"2017-12-08","flightCapacity":500,"flightDuration":"2:50 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"UA1889", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Chicago", "flightDepartureTime":"2:15 PM","flightArrivalTime":"5:15 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":67,"flightFareDetails":450,"flightFromDate":"2017-12-29", "flightToDate":"2017-12-29","flightCapacity":550,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1125", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"San Francisco", "flightDepartureTime":"1:10 PM","flightArrivalTime":"4:50 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":157,"flightFareDetails":510,"flightFromDate":"2017-12-04", "flightToDate":"2017-12-04","flightCapacity":500,"flightDuration":"3:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1230", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Seattle", "flightDepartureTime":"2:10 PM","flightArrivalTime":"5:25 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":167,"flightFareDetails":435,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":530,"flightDuration":"3:15 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1873", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"New York", "flightDepartureTime":"9:00 AM","flightArrivalTime":"3:25 PM", flightAgency:"United Airlines", "flightRating":5, "flightAvailableSeats":160,"flightFareDetails":485,"flightFromDate":"2017-12-23", "flightToDate":"2017-12-23","flightCapacity":600,"flightDuration":"6:25 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1760", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"San Jose", "flightDepartureTime":"11:00 AM","flightArrivalTime":"2:25 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":415,"flightFromDate":"2017-12-13", "flightToDate":"2017-12-13","flightCapacity":500,"flightDuration":"3:25 hours","flightStops":0});
+
+
+
+
+
+db.flight.insert({"flightId":"BA008", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Denver", "flightDepartureTime":"9:05 PM","flightArrivalTime":"11:45 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":150,"flightFareDetails":470,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":460,"flightDuration":"2:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA999", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Washington", "flightDepartureTime":"10:05 PM","flightArrivalTime":"12:00 AM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":240,"flightFareDetails":450,"flightFromDate":"2017-12-22", "flightToDate":"2017-12-22","flightCapacity":450,"flightDuration":"1:55 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA292", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"Boston", "flightDepartureTime":"4:00 PM","flightArrivalTime":"8:00 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":140,"flightFareDetails":400,"flightFromDate":"2017-12-29", "flightToDate":"2017-12-29","flightCapacity":450,"flightDuration":"4:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA110", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Los Angeles", "flightDepartureTime":"7:05 PM","flightArrivalTime":"10:05 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":190,"flightFareDetails":450,"flightFromDate":"2017-12-24", "flightToDate":"2017-12-24","flightCapacity":500,"flightDuration":"3:05 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA195", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"San Jose", "flightDepartureTime":"9:05 AM","flightArrivalTime":"11:55 AM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":200,"flightFareDetails":400,"flightFromDate":"2017-12-23", "flightToDate":"2017-12-23","flightCapacity":480,"flightDuration":"2:50 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"A4223", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Denver", "flightDepartureTime":"10:45 AM","flightArrivalTime":"1:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":20,"flightFareDetails":440,"flightFromDate":"2017-12-08", "flightToDate":"2017-12-08","flightCapacity":520,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A9098", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"San Jose", "flightDepartureTime":"9:45 AM","flightArrivalTime":"12:00 PM", flightAgency:"Alaska Airlines", "flightRating":5, "flightAvailableSeats":220,"flightFareDetails":580,"flightFromDate":"2017-12-12", "flightToDate":"2017-12-12","flightCapacity":500,"flightDuration":"2:15 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A1993", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"Chicago", "flightDepartureTime":"11:00 AM","flightArrivalTime":"1:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":120,"flightFareDetails":400,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":520,"flightDuration":"2:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A8913", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Washinghton", "flightToCity":"Boston", "flightDepartureTime":"11:45 AM","flightArrivalTime":"2:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":340,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":570,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A4123", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"San Francisco", "flightDepartureTime":"1:45 PM","flightArrivalTime":"4:30 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":250,"flightFareDetails":470,"flightFromDate":"2017-12-16", "flightToDate":"2017-12-16","flightCapacity":430,"flightDuration":"2:45 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"VA1003", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"San Francisco", "flightDepartureTime":"10:00 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":94,"flightFareDetails":500,"flightFromDate":"2017-12-12", "flightToDate":"2017-12-12","flightCapacity":650,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA1013", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Washington", "flightDepartureTime":"12:00 PM","flightArrivalTime":"3:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":450,"flightFromDate":"2017-12-19", "flightToDate":"2017-12-19","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA2027", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"New York", "flightDepartureTime":"10:00 AM","flightArrivalTime":"3:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":500,"flightFromDate":"2017-12-10", "flightToDate":"2017-12-10","flightCapacity":500,"flightDuration":"5:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA9901", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"Denver", "flightDepartureTime":"8:30 AM","flightArrivalTime":"11:30 AM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":500,"flightFromDate":"2017-12-17", "flightToDate":"2017-12-17","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA7866", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Los Angeles", "flightDepartureTime":"8:30 PM","flightArrivalTime":"11:30 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":114,"flightFareDetails":500,"flightFromDate":"2017-12-04", "flightToDate":"2017-12-04","flightCapacity":600,"flightDuration":"3:00 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"NK551", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Boston", "flightDepartureTime":"12:30 PM","flightArrivalTime":"3:30 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":171,"flightFareDetails":370,"flightFromDate":"2017-12-14", "flightToDate":"2017-12-14","flightCapacity":610,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK312", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"New York", "flightDepartureTime":"12:00 PM","flightArrivalTime":"3:20 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":222,"flightFareDetails":390,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":530,"flightDuration":"3:20 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK288", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"Washington", "flightDepartureTime":"6:30 PM","flightArrivalTime":"9:30 PM", flightAgency:"Spirit Airlines", "flightRating":3, "flightAvailableSeats":79,"flightFareDetails":398,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":580,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK320", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Dallas", "flightDepartureTime":"1:30 PM","flightArrivalTime":"3:20 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":71,"flightFareDetails":270,"flightFromDate":"2017-12-11", "flightToDate":"2017-12-11","flightCapacity":340,"flightDuration":"1:50 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK200", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Los Angeles", "flightDepartureTime":"1:25 PM","flightArrivalTime":"3:25 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":231,"flightFareDetails":370,"flightFromDate":"2017-12-11", "flightToDate":"2017-12-11","flightCapacity":510,"flightDuration":"3:05 hours","flightStops":0});
+
+db.flight.insert({"flightId":"NK287", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Los Angeles", "flightToCity":"New York", "flightDepartureTime":"12:30 PM","flightArrivalTime":"3:00 PM", flightAgency:"Spirit Airlines", "flightRating":4, "flightAvailableSeats":211,"flightFareDetails":390,"flightFromDate":"2017-12-28", "flightToDate":"2017-12-28","flightCapacity":450,"flightDuration":"2:30 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"BA708", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Los Angeles", "flightDepartureTime":"9:05 PM","flightArrivalTime":"11:45 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":150,"flightFareDetails":470,"flightFromDate":"2017-12-20", "flightToDate":"2017-12-20","flightCapacity":400,"flightDuration":"2:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA342", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"New York", "flightDepartureTime":"10:05 AM","flightArrivalTime":"12:00 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":240,"flightFareDetails":450,"flightFromDate":"2017-12-22", "flightToDate":"2017-12-22","flightCapacity":450,"flightDuration":"1:55 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA178", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Boston", "flightDepartureTime":"4:00 PM","flightArrivalTime":"8:00 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":140,"flightFareDetails":400,"flightFromDate":"2017-12-29", "flightToDate":"2017-12-29","flightCapacity":450,"flightDuration":"4:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA183", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Washington", "flightDepartureTime":"7:05 PM","flightArrivalTime":"10:05 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":190,"flightFareDetails":450,"flightFromDate":"2017-12-24", "flightToDate":"2017-12-24","flightCapacity":500,"flightDuration":"3:05 hours","flightStops":0});
+
+db.flight.insert({"flightId":"BA134", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Chicago", "flightDepartureTime":"9:05 PM","flightArrivalTime":"11:55 PM", flightAgency:"British Airlines", "flightRating":4, "flightAvailableSeats":200,"flightFareDetails":400,"flightFromDate":"2017-12-23", "flightToDate":"2017-12-23","flightCapacity":480,"flightDuration":"2:50 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"A4143", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"Denver", "flightDepartureTime":"10:45 AM","flightArrivalTime":"1:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":20,"flightFareDetails":440,"flightFromDate":"2017-12-09", "flightToDate":"2017-12-09","flightCapacity":520,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A9008", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Dallas", "flightDepartureTime":"9:45 AM","flightArrivalTime":"12:00 PM", flightAgency:"Alaska Airlines", "flightRating":5, "flightAvailableSeats":220,"flightFareDetails":580,"flightFromDate":"2017-12-11", "flightToDate":"2017-12-11","flightCapacity":500,"flightDuration":"2:15 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A1893", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Chicago", "flightDepartureTime":"11:00 AM","flightArrivalTime":"1:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":120,"flightFareDetails":400,"flightFromDate":"2017-12-01", "flightToDate":"2017-12-01","flightCapacity":520,"flightDuration":"2:45 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A8013", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Denver", "flightToCity":"Boston", "flightDepartureTime":"11:45 AM","flightArrivalTime":"2:45 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":340,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":570,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"A4223", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"San Francisco", "flightDepartureTime":"1:45 PM","flightArrivalTime":"4:30 PM", flightAgency:"Alaska Airlines", "flightRating":4, "flightAvailableSeats":250,"flightFareDetails":470,"flightFromDate":"2017-12-16", "flightToDate":"2017-12-16","flightCapacity":430,"flightDuration":"2:45 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"UA1679", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Chicago", "flightDepartureTime":"2:15 PM","flightArrivalTime":"5:15 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":67,"flightFareDetails":450,"flightFromDate":"2017-12-09", "flightToDate":"2017-12-09","flightCapacity":550,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1675", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"San Francisco", "flightDepartureTime":"1:10 PM","flightArrivalTime":"4:50 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":157,"flightFareDetails":510,"flightFromDate":"2017-12-14", "flightToDate":"2017-12-14","flightCapacity":500,"flightDuration":"3:40 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1110", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Seattle", "flightDepartureTime":"2:10 PM","flightArrivalTime":"5:25 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":167,"flightFareDetails":435,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":530,"flightDuration":"3:15 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1073", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"New York", "flightDepartureTime":"9:00 AM","flightArrivalTime":"3:25 PM", flightAgency:"United Airlines", "flightRating":5, "flightAvailableSeats":160,"flightFareDetails":485,"flightFromDate":"2017-12-23", "flightToDate":"2017-12-23","flightCapacity":600,"flightDuration":"6:25 hours","flightStops":0});
+
+db.flight.insert({"flightId":"UA1980", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"San Jose", "flightDepartureTime":"11:00 AM","flightArrivalTime":"2:25 PM", flightAgency:"United Airlines", "flightRating":4, "flightAvailableSeats":100,"flightFareDetails":415,"flightFromDate":"2017-12-13", "flightToDate":"2017-12-13","flightCapacity":500,"flightDuration":"3:25 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"AA8978", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Seattle", "flightToCity":"Los Angeles", "flightDepartureTime":"10:50 AM","flightArrivalTime":"12:50 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":34,"flightFareDetails":410,"flightFromDate":"2017-12-26", "flightToDate":"2017-12-26","flightCapacity":500,"flightDuration":"2:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA6755", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Francisco", "flightToCity":"Dallas", "flightDepartureTime":"7:00 AM","flightArrivalTime":"10:30 AM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":20,"flightFareDetails":450,"flightFromDate":"2017-12-02", "flightToDate":"2017-12-02","flightCapacity":500,"flightDuration":"3:30 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA0989", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Boston", "flightToCity":"Dallas", "flightDepartureTime":"10:50 AM","flightArrivalTime":"1:50 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":350,"flightFromDate":"2017-12-09", "flightToDate":"2017-12-09","flightCapacity":550,"flightDuration":"3:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA8854", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"Boston", "flightDepartureTime":"12:50 PM","flightArrivalTime":"3:50 PM", flightAgency:"American Airlines", "flightRating":3, "flightAvailableSeats":134,"flightFareDetails":390,"flightFromDate":"2017-12-15", "flightToDate":"2017-12-15","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA3478", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"New York", "flightDepartureTime":"10:50 AM","flightArrivalTime":"4:40 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":34,"flightFareDetails":350,"flightFromDate":"2017-12-30", "flightToDate":"2017-12-30","flightCapacity":530,"flightDuration":"5:50 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA0087", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Washington", "flightDepartureTime":"10:50 AM","flightArrivalTime":"2:55 AM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":234,"flightFareDetails":350,"flightFromDate":"2017-12-16", "flightToDate":"2017-12-16","flightCapacity":500,"flightDuration":"4:05 hours","flightStops":0});
+
+
+db.flight.insert({"flightId":"AA8961", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"New York", "flightToCity":"Boston", "flightDepartureTime":"9:50 AM","flightArrivalTime":"12:40 PM", flightAgency:"American Airlines", "flightRating":4, "flightAvailableSeats":54,"flightFareDetails":400,"flightFromDate":"2017-12-08", "flightToDate":"2017-12-08","flightCapacity":500,"flightDuration":"2:50 hours","flightStops":0});
+
+
+
+db.flight.insert({"flightId":"VA2003", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Dallas", "flightToCity":"San Francisco", "flightDepartureTime":"10:00 AM","flightArrivalTime":"1:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":94,"flightFareDetails":500,"flightFromDate":"2017-12-22", "flightToDate":"2017-12-22","flightCapacity":650,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA1031", "flightClass":"Business","flightTripType":"One way", "flightFromCity":"San Jose", "flightToCity":"Washington", "flightDepartureTime":"12:00 PM","flightArrivalTime":"3:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":450,"flightFromDate":"2017-12-19", "flightToDate":"2017-12-19","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA2081", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"Chicago", "flightToCity":"New York", "flightDepartureTime":"10:00 AM","flightArrivalTime":"3:00 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":500,"flightFromDate":"2017-12-18", "flightToDate":"2017-12-18","flightCapacity":500,"flightDuration":"5:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA0901", "flightClass":"First Class","flightTripType":"One way", "flightFromCity":"Washington", "flightToCity":"Denver", "flightDepartureTime":"8:30 AM","flightArrivalTime":"11:30 AM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":104,"flightFareDetails":500,"flightFromDate":"2017-12-17", "flightToDate":"2017-12-17","flightCapacity":500,"flightDuration":"3:00 hours","flightStops":0});
+
+db.flight.insert({"flightId":"VA7788", "flightClass":"Economy","flightTripType":"One way", "flightFromCity":"San Frnasisco", "flightToCity":"Los Angeles", "flightDepartureTime":"8:30 PM","flightArrivalTime":"11:30 PM", flightAgency:"Virgin America ", "flightRating":4, "flightAvailableSeats":114,"flightFareDetails":500,"flightFromDate":"2017-12-09", "flightToDate":"2017-12-09","flightCapacity":600,"flightDuration":"3:00 hours","flightStops":0});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
