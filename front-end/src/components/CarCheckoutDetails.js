@@ -106,23 +106,23 @@ class CarCheckoutDetails extends Component {
                 <hr/>
                     <h4>Enter Billing information </h4>
                     <p>Billing Address</p>
-                    <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Email Adress"/>
-                    <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Phone number"/>
+                    <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Apt Suite"/>
+                    <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Apt Number"/>
                     <p></p>
-                    <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Email Adress"/>
-                    <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Phone number"/>
+                    <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Street Address"/>
+                    <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="City"/>
                     <p></p>
-                    <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Email Adress"/>
-                    <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Phone number"/>
+                    <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="State"/>
+                    <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Country"/>
                 <hr/>
                     <h4>Card Details </h4>
                     <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Name on Card*"/>
                     <input type="text" style={{width: "40%",height:35,marginLeft: "10%"}} placeholder="Card Number*"/>
                     <p></p>
 
-                    <input type="text" style={{width: "13%",height:35,marginLeft: "1%"}} placeholder="Email Adress"/>
-                    <input type="text" style={{width: "9%",height:35,marginLeft: "3%"}} placeholder="Email Adress"/>
-                    <input type="text" style={{width: "12%",height:35,marginLeft: "3%"}} placeholder="Email Adress"/>
+                    <input type="text" style={{width: "11%",height:35,marginLeft: "1%"}} placeholder="Month of Exp"/>
+                    <input type="text" style={{width: "11%",height:35,marginLeft: "3%"}} placeholder="Year of Exp"/>
+                    <input type="text" style={{width: "12%",height:35,marginLeft: "3%"}} placeholder="CVV"/>
                     <img src={Cards}  style={{float:"right"}}/>
                 <hr/>
                     <div style={{height: 120,paddingBottom:10,marginBottom: 10}}>

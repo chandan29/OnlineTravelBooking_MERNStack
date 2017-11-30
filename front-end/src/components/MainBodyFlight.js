@@ -21,7 +21,7 @@ class MainBodyFlight extends Component {
     return (
       <div className="mainBodyHotel" style={{backgroundColor:"#f1f1f1"}}>
         <div className="middle-pane">
-            <FlightTile flights={this.props.flights} handleFlighttileFetch={this.props.handleFlighttileFetch}/>
+            <FlightTile flights={this.props.flights} seats={this.props.seats} handleFlighttileFetch={this.props.handleFlighttileFetch}/>
         </div>
       </div>
 );

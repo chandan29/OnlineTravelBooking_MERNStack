@@ -18,6 +18,7 @@ class HotelCheckoutDetails extends Component {
 
   componentWillMount(){
     console.log(this.props.hotelTile);
+    console.log(this.props.room);
   }
 
   render() {
@@ -29,10 +30,10 @@ class HotelCheckoutDetails extends Component {
 
             </div>
             <div className="outerDiv-hotelcheckout-right">
-                <span style={{lineHeight: "70%",fontSize: 18}}>Hotel Whitcomb</span><p></p>
+                <span style={{lineHeight: "70%",fontSize: 18}}>{this.props.hotelTile.hotelName}</span><p></p>
                 <span style={{lineHeight: "180%", fontSize: 16}}>1 room, 2 adults, 1 night
-                <br/>Check-in: Tue Nov 28 2017
-                <br/>Check-out: Wed Nov 29 2017</span>
+                <br/>Check-in: {this.props.hotelTile.hotelFromDate}
+                <br/>Check-out: {this.props.hotelTile.hotelToDate}</span>
                 <div style={{width: "70%", color: "green", border: "1px solid #20bf7c",paddingLeft: "3%",marginTop: "3%"}}>
                   <h5 style={{color: "#20bf7c"}}>Stay flexible: FREE cancellation on certain rooms</h5>
                 </div>
@@ -126,7 +127,7 @@ Located in the San Francisco theater district with a BART and MUNI station at it
                 <img src={Cards}  style={{float:"right"}}/>
             <hr/>
                 <div style={{height: 120,paddingBottom:10,marginBottom: 10}}>
-                    <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay $0 USD today.</span> Pay $200 USD at pick-up.</h5>
+                    <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay ${this.props.hotelTile.hotelOriginalPrice * this.props.room} USD today.</span> Pay ${this.props.hotelTile.hotelOriginalPrice * this.props.room} USD at Check-In.</h5>
                     <button onClick={this.props.handleRedirectBooking1}  style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
                 </div>
 

@@ -15,7 +15,7 @@ carshandler.post('/getCars',function(req,res){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('car');
             console.log(req.body);
-            coll.find({"carCity":req.body.carCity}).toArray(function(err, user){
+            coll.find({"carCity":req.body.carCity, "carFromDate": req.body.fromDate, "carToDate": req.body.toDate}).toArray(function(err, user){
                 if (user) {
                   console.log(user);
                 	res.status(201).json(user);
@@ -27,15 +27,8 @@ carshandler.post('/getCars',function(req,res){
                   var t=time.localtime(Date.now()/1000);
                   var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                   var curTime=""+t.hours+":"+t.minutes;
-                  var user="";
-                  if(req.session.user){
-                    user=req.session.user;
-                  }
-                  else{
-                    user="guestuser";
-                  }
-                  console.log(user);
-                  fs.appendFile("./public/logging/"+user+".txt", "User queried car listing for the city of "+carCity+","+date+","+curTime+",listing\n", function(err) {
+
+                  fs.appendFile("./public/logging/guestuser.txt", "User queried car listing for the city of "+carCity+" on "+date+" at "+curTime+"\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -63,11 +56,33 @@ carshandler.post('/bookCar',function(req,res){
   mongo.connect(mongoURL, function(){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('carTrip');
+            var coll1 = mongo.collection('userTrips');
             console.log(req.body);
-            coll.insertOne({carId:req.body.cartile.carId,fromCity:req.body.cartile.carCity,toCity:req.body.cartile.carCity,fromDate:req.body.fromDate,toDate:req.body.toDate,fareDetails:req.body.cartile.carOriginalPrice},function(err, user){
+
+
+            coll1.insertOne({type: "car",carId:req.body.cartile.carId,fromCity:req.body.cartile.carCity,toCity:req.body.cartile.carCity,fromDate:req.body.cartile.carFromDate,toDate:req.body.cartile.carToDate,fareDetails:req.body.cartile.carOriginalPrice},function(err, user){
                 if (user) {
 
-                	res.status(201).json(user);
+                    console.log("Details Saved Successfuly into userTrips DB");
+
+
+                } else {
+
+                    console.log("Error in saving data into UserTrips---Flight details")
+                }
+                            //fs.writeStream('',func)
+
+
+
+                    });
+
+
+
+
+            coll.insertOne({carId:req.body.cartile.carId,fromCity:req.body.cartile.carCity,toCity:req.body.cartile.carCity,fromDate:req.body.cartile.carFromDate,toDate:req.body.cartile.carToDate,fareDetails:req.body.cartile.carOriginalPrice},function(err, user){
+                if (user) {
+
+                	res.status(201).json({user: user,username: req.session.user});
 
 
                   var bill = `                                                                                  Receipt
@@ -111,15 +126,8 @@ carshandler.post('/bookCar',function(req,res){
                 var t=time.localtime(Date.now()/1000);
                 var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                 var curTime=""+t.hours+":"+t.minutes;
-                var user="";
-                if(req.session.user){
-                  user=req.session.user;
-                }
-                else{
-                  user="guestuser";
-                }
-                console.log(user);
-                fs.appendFile("./public/logging/"+user+".txt", "User booked a car from the city of "+city+","+date+","+curTime+","+carRate+","+carId+",buying\n", function(err) {
+
+                fs.appendFile("./public/logging/guestuser.txt", "User booked a car from the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
                   if(err) {
                       res.send({0:0});
 
@@ -153,15 +161,8 @@ carshandler.post('/receipt',function(req,res){
   var t=time.localtime(Date.now()/1000);
   var date=""+t.month+"/"+t.dayOfMonth+"/2017";
   var curTime=""+t.hours+":"+t.minutes;
-  var user="";
-  if(req.session.user){
-    user=req.session.user;
-  }
-  else{
-    user="guestuser";
-  }
-  console.log(user);
-  fs.appendFile("./public/logging/"+user+".txt", "User queried car listing for the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
+
+  fs.appendFile("./public/logging/guestuser.txt", "User queried car listing for the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
     if(err) {
         res.send({0:0});
 
@@ -200,6 +201,3 @@ carshandler.post('/getIp',function(req,res){
 
          res.status(201).send({ip:req.ip});
 });
-
-
-

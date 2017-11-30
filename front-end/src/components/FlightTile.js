@@ -10,9 +10,17 @@ var FontAwesome = require('react-fontawesome');
 class HotelTile extends Component {
     componentWillMount(){
       console.log(this.props.flights);
+
+      console.log("seats count", this.props.seats)
+      var seat = this.props.seats[0];
+      seat = parseInt(seat);
+      console.log("Seats count Integer", seat);
+
+
       this.setState({
           flights: this.props.flights,
-          flightsCopy: this.props.flights
+          flightsCopy: this.props.flights,
+          seat: seat
       });
     }
 
@@ -96,20 +104,22 @@ class HotelTile extends Component {
     </div>
     <div className="outerDiv-flight-mid">
         <div className="flighttileStrap" style={{height: "43%",paddingTop: "3%"}}>
-        <span style={{float: "left",marginLeft:"2%", fontWeight: "bold"}}>2:10 Pm<br/>DEL</span>
+        <span style={{float: "left",marginLeft:"2%", fontWeight: "bold"}}>{flight.flightDepartureTime}<br/>DEL</span>
         <span style={{float: "left",marginLeft: "10%", fontWeight: "bold"}}>-----*------<br/><span style={{marginLeft: 12}}>TPE</span></span>
-        <span style={{float: "left",marginLeft: "10%",fontWeight: "bold"}}>12:10 pm</span>
+        <span style={{float: "left",marginLeft: "10%",fontWeight: "bold"}}>{flight.flightArrivalTime}</span>
         <span style={{float: "left",marginLeft: "10%",fontWeight: "bold"}}>35 hr 30 mins</span>
         </div>
 
-        <div className="flighttileStrap" style={{marginTop: "3%",height: "22%"}}>
+        <div className="flighttileStrap" style={{marginTop: "3%",height: "22%",display: "inline",marginTop: "10%"}}>
+        <p></p>
+            <span style={{float: "left"}}>Available Seats: {flight.flightAvailableSeats}</span>
             <span style={{float: "right",marginRight: 5}}>₹41302 book easily on KAYAK</span><span style={{float: "right",marginRight: 10}}><img src={FlightLogo} alt="flight logo" /></span>
         </div>
     </div>
     <div className="outerDiv-hotel-right">
-        <p style={{lineheight: "70%",marginTop: "2%"}}>$180</p>
+        <p style={{lineheight: "70%",marginTop: "2%"}}>${flight.flightFareDetails * this.state.seat}</p>
         <p>KAYAK</p>
-        <button onClick={() => {this.props.handleFlighttileFetch({flighttile: flight, flightDate: "11-26-2017"})}}style={{width: "80%",backgroundColor: "#ff731a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
+        <button onClick={() => {this.props.handleFlighttileFetch({flighttile: flight, seat: this.state.seat})}}style={{width: "80%",backgroundColor: "#ff731a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
         <div style={{marginTop: "7%"}}>
             <i className="fa fa-share-alt" aria-hidden="true"></i>&nbsp;Share &nbsp;&nbsp;<i className="fa fa-bookmark" aria-hidden="true"></i>&nbsp;Watch
         </div>

@@ -15,10 +15,11 @@ flightshandler.post('/getFlights',function(req,res){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('flight');
             console.log(req.body);
-            coll.find({ $and: [ { "flightFromCity": req.body.flightFromCity }, { "flighttoCity": req.body.flightToCity } ] }).toArray(function(err, user){
+            var seats = req.body.seats;
+            coll.find({"flightFromCity": req.body.flightFromCity, "flighttoCity": req.body.flightToCity, "flightFromDate": req.body.flightDate }).toArray(function(err, user){
                 if (user) {
                   console.log(user);
-                	res.status(201).json(user);
+                	res.status(201).json({user:user,seats:req.body.seats});
 
 
                   //logger
@@ -28,14 +29,8 @@ flightshandler.post('/getFlights',function(req,res){
                   var t=time.localtime(Date.now()/1000);
                   var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                   var curTime=""+t.hours+":"+t.minutes;
-                  var user="";
-                  if(req.session.user){
-                    user=req.session.user;
-                  }
-                  else{
-                    user="guestuser";
-                  }
-                  fs.appendFile("./public/logging/"+user+".txt", "User queried flight listing from the city of "+fromCity+" to the city of "+toCity+","+date+","+curTime+",listing\n", function(err) {
+
+                  fs.appendFile("./public/logging/guestuser.txt", "User queried flight listing from the city of "+fromCity+" to the city of "+toCity+" on "+date+" at "+curTime+"\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -56,20 +51,71 @@ console.log(req.query.from);
 
 
 flightshandler.post('/bookFlight',function(req,res){
-  console.log(req.body.flighttile);
-  var flightFromCity=req.body.flighttile.flightFromCity;
-  var flightToCity=req.body.flighttile.flighttoCity;
-  var flightId=req.body.flighttile.flightId;
-  var flightDate = req.body.flighttile.flightFromDate;
-  var flightFare=req.body.flighttile.flightFareDetails;
+  console.log(req.body);
+  var flightFromCity=req.body.flightFromCity;
+  var flightToCity=req.body.flighttoCity;
+  var flightId=req.body.flightId;
+  var flightDate = req.body.flightFromDate;
+  var flightFare=req.body.flightFareDetails * req.body.seat;
   mongo.connect(mongoURL, function(){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('flightTrip');
             console.log(req.body);
-            coll.insertOne({flightId:req.body.flighttile.flightId,flightFromCity:req.body.flighttile.flightFromCity,flightToCity:req.body.flighttile.flighttoCity,flightDate:req.body.flightFromDate,fareDetails:req.body.flighttile.flightFareDetails},function(err, user){
+            var coll1 = mongo.collection('flight');
+            var coll2 = mongo.collection('userTrips');
+
+            coll1.find({flightId: req.body.flightId}, function(err, user){
+                if(user) {
+                            var changedSeatCount = req.body.flightAvailableSeats - req.body.seat;
+
+                    coll1.update(
+                       { flightId: req.body.flightId },
+                       {
+                          flightId: req.body.flightId,
+                          flightClass: req.body.flightClass,
+                          flightTripType: req.body.flightTripType,
+                          flightFromCity: req.body.flightFromCity,
+                          flighttoCity: req.body.flighttoCity,
+                          flightDepartureTime: req.body.flightDepartureTime,
+                          flightArrivalTime: req.body.flightArrivalTime,
+                          flightAgency: req.body.flightAgency,
+                          flightRating: req.body.flightRating,
+                          flightAvailableSeats: changedSeatCount,
+                          flightFareDetails: req.body.flightFareDetails,
+                           flightFromDate: req.body.flightFromDate,
+                           flightToDate: req.body.flightToDate,
+                           flightCapacity: req.body.flightCapacity,
+                           flightDuration: req.body.flightDuration,
+                           flightStops: req.body.flightStops
+                       }
+                    )
+
+                }
+                else {
+                    console.log("Failed in updating the document");
+                }
+            });
+
+            coll2.insertOne({type: "flight",flightId:req.body.flightId,flightFromCity:req.body.flightFromCity,flightToCity:req.body.flighttoCity,flightDate:req.body.flightFromDate,fareDetails:req.body.flightFareDetails * req.body.seat},function(err, user){
                 if (user) {
 
-                	res.status(201).json(user);
+                    console.log("Details Saved Successfuly into userTrips DB");
+
+
+                } else {
+
+                    console.log("Error in saving data into UserTrips---Flight details")
+                }
+                            //fs.writeStream('',func)
+
+
+
+                    });
+
+            coll.insertOne({flightId:req.body.flightId,flightFromCity:req.body.flightFromCity,flightToCity:req.body.flighttoCity,flightDate:req.body.flightFromDate,fareDetails:req.body.flightFareDetails * req.body.seat},function(err, user){
+                if (user) {
+
+                	res.status(201).json({user: user,username: req.session.user});
 
 
                   var bill = `                                                                                  Receipt
@@ -114,14 +160,8 @@ flightshandler.post('/bookFlight',function(req,res){
                 var t=time.localtime(Date.now()/1000);
                 var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                 var curTime=""+t.hours+":"+t.minutes;
-                var user="";
-                if(req.session.user){
-                  user=req.session.user;
-                }
-                else{
-                  user="guestuser";
-                }
-                fs.appendFile("./public/logging/"+user+".txt", "User booked a Flight from the city of "+fromCity+"to the city of "+toCity+","+date+","+curTime+","+flightFare+","+flightId+",buying\n", function(err) {
+
+                fs.appendFile("./public/logging/guestuser.txt", "User booked a Flight from the city of "+fromCity+"to the city of "+toCity+" on "+date+" at "+curTime+"\n", function(err) {
                   if(err) {
                       res.send({0:0});
 
@@ -140,6 +180,11 @@ flightshandler.post('/bookFlight',function(req,res){
 
 
                     });
+
+
+
+
+
         });
 
 

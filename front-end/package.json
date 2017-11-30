@@ -10,6 +10,7 @@
     "material-ui": "^0.19.4",
     "prop-types": "^15.5.10",
     "pure-react-carousel": "^1.9.9",
+    "rangeslider-js": "^3.0.2",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^15.6.1",

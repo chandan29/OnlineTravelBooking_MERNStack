@@ -15,11 +15,10 @@ hotelhandler.post('/getHotels',function(req,res){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('hotel');
             console.log(req.body);
-            coll.find({"hotelCity":req.body.hotelCity}).toArray(function(err, user){
+            var rooms = req.body.rooms;
+            coll.find({"hotelCity":req.body.hotelCity, "hotelFromDate": req.body.fromDate, "hotelToDate": req.body.toDate}).toArray(function(err, user){
                 if (user) {
-                  console.log(user);
-                	res.status(201).json(user);
-
+                	res.status(201).json({user:user,rooms:req.body.rooms});
 
                   //logger
 
@@ -27,14 +26,8 @@ hotelhandler.post('/getHotels',function(req,res){
                   var t=time.localtime(Date.now()/1000);
                   var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                   var curTime=""+t.hours+":"+t.minutes;
-                  var user="";
-                  if(req.session.user){
-                    user=req.session.user;
-                  }
-                  else{
-                    user="guestuser";
-                  }
-                  fs.appendFile("./public/logging/"+user+".txt", "User queried hotel listing for the city of "+hotelCity+","+date+","+curTime+",listing\n", function(err) {
+
+                  fs.appendFile("./public/logging/guestuser.txt", "User queried hotel listing for the city of "+hotelCity+" on "+date+" at "+curTime+"\n", function(err) {
                     if(err) {
                         res.send({0:0});
 
@@ -56,18 +49,75 @@ hotelhandler.post('/getHotels',function(req,res){
 
 
 hotelhandler.post('/bookHotel',function(req,res){
-  console.log(req.body.hoteltile);
-  var hotelCity=req.body.hoteltile.hotelCity;
-  var hotelId=req.body.hoteltile.hotelId;
-  var hotelRate=req.body.hoteltile.hotelOriginalPrice;
+  console.log(" we have to check this",req.body);
+  var hotelCity=req.body["hotelCity"];
+  var hotelId=req.body.hotelId;
+  var hotelRate=req.body.hotelOriginalPrice * req.body.room;
   mongo.connect(mongoURL, function(){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('hotelTrip');
             console.log(req.body);
-            coll.insertOne({hotelId:req.body.hoteltile.hotelId,fromCity:req.body.hoteltile.hotelCity,fromDate:req.body.fromDate,toDate:req.body.toDate,fareDetails:req.body.hoteltile.hotelOriginalPrice},function(err, user){
+
+            var coll1 = mongo.collection('hotel');
+            var coll2 = mongo.collection('userTrips');
+
+            coll1.find({hotelId: req.body.hotelId}, function(err, user){
+                if(user) {
+                            var changedRoomCount = req.body.hotelNumberOfRooms - req.body.room;
+
+                    coll1.update(
+                       { hotelId: req.body.hotelId },
+                       {
+                          hotelId: req.body.hotelId,
+                           hotelFromDate: req.body.hotelFromDate,
+                           hotelToDate: req.body.hotelToDate,
+                           hotelNumberOfRooms: changedRoomCount,
+                           hotelNumberOfGuests: req.body.hotelNumberOfGuests,
+                           hotelCity: req.body.hotelCity,
+                           hotelArea: req.body.hotelArea,
+                           hotelReviewType: req.body.hotelReviewType,
+                           hotelNumberOfReviews: req.body.hotelNumberOfReviews,
+                           hotelRating: req.body.hotelRating,
+                           hotelStars: req.body.hotelStars,
+                           hotelAddress: req.body.hotelAddress,
+                           hotelContact: req.body.hotelContact,
+                           hotelCapacity: req.body.hotelCapacity,
+                           hotelAvailability: req.body.hotelAvailability,
+                           hotelOldPrice: req.body.hotelOldPrice,
+                           hotelOriginalPrice: req.body.hotelOriginalPrice,
+                           hotelName: req.body.hotelName,
+                           dummy: "dummy"
+
+                       },
+                       { upsert: true }
+                    )
+
+                }
+                else {
+                    console.log("Failed in updating the document");
+                }
+            });
+
+            coll2.insertOne({type: "hotel",hotelId:req.body.hotelId,fromCity:req.body.hotelCity,fromDate:req.body.hotelFromDate,toDate:req.body.hotelToDate,fareDetails:req.body.hotelOriginalPrice * req.body.room},function(err, user){
                 if (user) {
 
-                	res.status(201).json(user);
+                    console.log("Details Saved Successfuly into userTrips DB");
+
+
+                } else {
+
+                    console.log("Error in saving data into UserTrips---Flight details")
+                }
+                            //fs.writeStream('',func)
+
+
+
+                    });
+
+            coll.insertOne({hotelId:req.body.hotelId,fromCity:req.body.hotelCity,fromDate:req.body.hotelFromDate,toDate:req.body.hotelToDate,fareDetails:req.body.hotelOriginalPrice * req.body.room},function(err, user){
+                if (user) {
+
+                	res.status(201).json({user: user,username: req.session.user});
 
 
                   var bill = `                                                                                  Receipt
@@ -111,14 +161,8 @@ hotelhandler.post('/bookHotel',function(req,res){
                 var t=time.localtime(Date.now()/1000);
                 var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                 var curTime=""+t.hours+":"+t.minutes;
-                var user="";
-                if(req.session.user){
-                  user=req.session.user;
-                }
-                else{
-                  user="guestuser";
-                }
-                fs.appendFile("./public/logging/"+user+".txt", "User booked a hotel in the city of "+city+","+date+","+curTime+","+hotelRate+","+hotelId+",buying\n", function(err) {
+
+                fs.appendFile("./public/logging/guestuser.txt", "User booked a hotel in the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
                   if(err) {
                       res.send({0:0});
 
@@ -138,6 +182,8 @@ hotelhandler.post('/bookHotel',function(req,res){
 
 
                     });
+
+
         });
 
 

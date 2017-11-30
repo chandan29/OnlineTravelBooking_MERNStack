@@ -5,5 +5,5 @@
 
                 Hotel in:  San Jose
 
-                  Price:1144
+                  Price:858
                 

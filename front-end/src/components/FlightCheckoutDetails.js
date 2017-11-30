@@ -18,6 +18,7 @@ class FlightCheckoutDetails extends Component {
 
   componentWillMount(){
       console.log(this.props.flightTile);
+      console.log(this.props.seat);
   }
 
   render() {
@@ -120,7 +121,7 @@ class FlightCheckoutDetails extends Component {
                     <img src={Cards}  style={{float:"right"}}/>
                 <hr/>
                     <div style={{height: 120,paddingBottom:10,marginBottom: 10}}>
-                        <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay $0 USD today.</span> Pay $200 USD at pick-up.</h5>
+                        <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay ${this.props.flightTile.flightFareDetails * this.props.seat} USD today.</span></h5>
                         <button  onClick={this.props.handleRedirectBooking2} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
                     </div>
 

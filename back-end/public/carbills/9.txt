@@ -3,7 +3,7 @@
 
 
 
-                Hotel in:  San Jose
+                City:  New York
 
-                  Price:1144
+                  Price:32
                 

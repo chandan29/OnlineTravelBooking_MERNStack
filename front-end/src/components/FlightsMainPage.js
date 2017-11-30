@@ -91,6 +91,7 @@ class FlightsMainPage extends Component {
                 });}} style={{width:"16%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
                         <datalist id="cities">
                           <option value="San Jose" />
+                          <option value="Los Angeles" />
                           <option value="New York" />
                           <option value="Santa Clara" />
                           <option value="Las Vegas" />
@@ -112,6 +113,7 @@ class FlightsMainPage extends Component {
                 });}} style={{width:"100%", paddingTop: "5%",float:"left",marginLeft:7, border:"none",padding:28}} />
                         <datalist id="cities">
                           <option value="San Jose" />
+                          <option value="Los Angeles" />
                           <option value="New York" />
                           <option value="Santa Clara" />
                           <option value="Las Vegas" />
@@ -125,14 +127,28 @@ class FlightsMainPage extends Component {
                   </div>
 
                   <div>
-                      <input placeholder="Date of Journey" min={this.state.minDate} type="date" style={{width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",paddingTop:27,paddingBottom: 24, paddingLeft:"5%",marginLeft:"1%"}}/>
+                      <input placeholder="Date of Journey" min={this.state.minDate} type="date" onChange={(event) => {
+                          console.log(event.target.value);
+                    this.setState({
+                        fromDate: event.target.value
+                    });}} style={{width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",paddingTop:27,paddingBottom: 24, paddingLeft:"5%",marginLeft:"1%"}}/>
                   </div>
 
                   <div>
-                      <input placeholder="1 Adult, Economy" type="text" style={{width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28,paddingLeft: "2%",marginLeft:"0.5%"}}/>
+                      <input placeholder="1 Seat" type="text" onChange={(event) => {
+                          console.log(event.target.value);
+                    this.setState({
+                        seats: event.target.value
+                    });}} list="seats" style={{width:"22%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28,paddingLeft: "2%",marginLeft:"0.5%"}}/>
+                      <datalist id="seats">
+                        <option value="1 Seat" />
+                        <option value="2 Seat" />
+                        <option value="3 Seat" />
+                        <option value="4 Seat" />
+                        <option value="5 Seat" />
+                       </datalist>
                   </div>
-
-                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleFlightFetch({flightFromCity:this.state.fromCity,flightToCity:this.state.toCity,flightDate:'11-12-2017',flightType:'1 Adult, Economy'})}}>
+                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleFlightFetch({flightFromCity:this.state.fromCity,flightToCity:this.state.toCity,flightDate:this.state.fromDate,seats:this.state.seats})}}>
                     </button>
                 </div>
                 <div className="stayUptoDate">

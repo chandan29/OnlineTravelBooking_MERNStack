@@ -14,6 +14,7 @@ class BookingSuccessful extends Component {
 
   componentWillMount(){
 console.log(this.props.carTile);
+
   }
   state={
 
@@ -25,17 +26,48 @@ console.log(this.props.carTile);
       <div style={{width: "40%", height: "auto",marginTop: 100,marginLeft: "30%"}}>
         <i className="huge icons">
         <i aria-hidden="true" style={{color: "green"}}className="sun big loading icon"></i>
-        <i aria-hidden="true" style={{color:"green"}}className="user icon"></i></i>
+        <i aria-hidden="true" style={{color:"green"}}className="checkmark icon"></i></i>
         {this.props.carTile.fromDate}
         <h1>Booking Successful.</h1>
         <hr />
-        <h1>Your Booking Details:</h1>
-        <h3>Name:{this.props.carTile.cartile.carType} </h3>
-        <h3>Email Id:</h3>
-        <h3>Booking Id:</h3>
-        <h3>Booking Description: </h3>
     </div>
 
+
+    <table className="table table-hover" style={{width: "60%", marginLeft: "20%"}}>
+<thead>
+  <tr>
+    <th style={{width: "50%"}}>Your Booking Details</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Email Id:</td>
+    <td>{this.props.username}</td>
+
+  </tr>
+  <tr>
+    <td>Booking type</td>
+    <td>Car Booking</td>
+  </tr>
+  <tr>
+    <td>Booking Id:</td>
+    <td>123</td>
+  </tr>
+  <tr>
+    <td>Car type</td>
+    <td>{this.props.carTile.cartile.carType}</td>
+  </tr>
+  <tr>
+    <td>Car Agency</td>
+    <td>{this.props.carTile.cartile.carAgency}</td>
+  </tr>
+  <tr>
+    <td>Total fare</td>
+    <td>${this.props.carTile.cartile.carOriginalPrice + this.props.carTile.cartile.carOriginalPrice/10}</td>
+  </tr>
+</tbody>
+</table>
 
       </div>
 );

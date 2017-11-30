@@ -528,6 +528,13 @@ table {
     font-size: 16px;
 }
 
+.bgpage{
+    height: 100%;
+    background-repeat: no-repeat;
+    background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+    font-family: 'Oxygen', sans-serif;
+    background-size: cover;
+}
 
 
 .signup{
@@ -817,17 +824,18 @@ table {
     border: 1px solid;
     border-radius: 3px;
     background-color: #09f;
-    padding-left: 1.8%;
+    padding-left: 3.1%;
     padding-top: 1%;
     float: left;
     display: inline;
+    font-weight: bold;
 }
 
 
 .reviews-hotel{
     float: left;
     display: inline;
-    width: 40%;
+    width: 20%;
     height: 85%;
 
     margin-left: 5%;
@@ -838,7 +846,17 @@ table {
 .location-hotel {
     float: left;
     display: inline;
-    width: 40%;
+    width: 20%;
+    height: 85%;
+
+    margin-left: 3%;
+    padding-left: 1%;
+    padding-top: 0.1%;
+}
+
+.available-rooms {
+    float: left;
+    width: 30%;
     height: 85%;
 
     margin-left: 3%;
@@ -1189,9 +1207,11 @@ table {
 }
 
 .billTitle{
-    color: darkslateblue;
-    text-align: center;
+    color: black;
+    margin-left: 5%;
     width: auto;
+    font-size: 18px;
+    padding-top: 20px;
 
 }
 
@@ -1234,4 +1254,15 @@ table {
 .userProfileMain{
     margin-left: 25%;
     margin-top: 10%;
+}
+
+.filterUserBills {
+    width: 18%;
+    float:left;
+    height: 100%;
+    min-height: 600px;
+    border : 1px solid;
+    margin-left: 2%;
+    margin-top: 2.5%;
+    padding: 1%;
 }

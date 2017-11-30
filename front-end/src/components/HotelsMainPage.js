@@ -104,18 +104,36 @@ class HotelsMainPage extends Component {
                   </div>
 
                   <div>
-                      <input placeholder="From Date" min={this.state.minDate} type="date" style={{marginLeft:4,width:"18%",height:"10%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26,paddingLeft: "5%"}}/>
+                      <input placeholder="From Date" min={this.state.minDate} type="date" style={{marginLeft:4,width:"18%",height:"10%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:26,paddingLeft: "5%"}} onChange={(event) => {
+                          console.log(event.target.value);
+                    this.setState({
+                        fromDate: event.target.value
+                    });}}/>
                   </div>
 
                   <div>
-                      <input placeholder="To Date" min={this.state.minDate} type="date" style={{width:"18%",float:"left",display: "inline",paddingTop:"5%", border:"none",paddingTop:28,paddingBottom: 24, paddingLeft:"5%"}}/>
+                      <input placeholder="To Date" min={this.state.minDate} type="date" style={{width:"18%",float:"left",display: "inline",paddingTop:"5%", border:"none",paddingTop:28,paddingBottom: 24, paddingLeft:"5%"}} onChange={(event) => {
+                          console.log(event.target.value);
+                    this.setState({
+                        toDate: event.target.value
+                    });}}/>
                   </div>
 
                   <div>
-                      <input placeholder="1 Room 2 guests" type="text" style={{marginLeft:4,width:"18%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28,paddingLeft: "3%"}}/>
+                      <input placeholder="1 Room" list="rooms" type="text" onChange={(event) => {
+                          console.log(event.target.value);
+                    this.setState({
+                        rooms: event.target.value
+                    });}} style={{marginLeft:4,width:"18%",float:"left",display: "inline",paddingTop:"5%", border:"none",padding:28,paddingLeft: "3%"}}/>
+                      <datalist id="rooms">
+                        <option value="2 Rooms" />
+                        <option value="3 Rooms" />
+                        <option value="4 Rooms" />
+                        <option value="5 Rooms" />
+                       </datalist>
                   </div>
 
-                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleHotelFetch({hotelCity:this.state.hotel,fromDate:'11-12-2017',toDate:'12-12-2017',typeHotel:'1 room 2 guests'})}}/>
+                    <button  className="arrow" style={{marginLeft:4,width:"6.5%",height: 74,float:"left",display: "inline",paddingTop:"5%",border:"none",padding:28}} onClick={()=>{this.props.handleHotelFetch({hotelCity:this.state.hotel,fromDate:this.state.fromDate,toDate:this.state.toDate,rooms:this.state.rooms})}}/>
 
                 </div>
                 <div className="stayUptoDate">
