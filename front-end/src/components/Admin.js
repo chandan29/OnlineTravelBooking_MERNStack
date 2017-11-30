@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import '../App.css';
+import Header from './Header';
 import * as API from '../api/API';
 
-class Admin extends Component{
+class Admin extends Component {
 
     static propTypes = {
-        handleSubmitAdmin: PropTypes.func.isRequired
+        reDirectToAdminDashboard: PropTypes.func.isRequired
     };
+
+
+    handleAdminSignIn = (payload) => {
+        this.props.reDirectToAdminDashboard();
+
+    };
+
 
     constructor(props) {
         super(props);
@@ -20,94 +28,62 @@ class Admin extends Component{
     }
 
 
+    render() {
 
 
-    render(){
-
-
-        return(
-
-
-            <div className="col-md-4">
-
-                <form>
-                    <div className="form-group">
-                        <div className="login-register-header"><h2>Sign in for Admin</h2></div>
+        return (
+            <div style={{backgroundColor: "white"}}>
+                <Header/>
+                <div className="container" style={{marginTop: "3%"}}>
+                    <div style={{marginLeft: "30%"}}>
+                        <h2 style={{color: "orange"}}>Sign In For Admin</h2>
                     </div>
-                    <div className="login-register-switch">
-                        <label className="login-register-switch-link"
-                               onClick={()=>{
-                                   this.setState({
-                                       signIn: false
-                                   });
-                               }
-                               }
-                        >
-                        </label>
-
-
-                    </div>
-
-                    <br/>
-                    <div className="form-group">
-
-                        <input
-                            className="form-control"
-                            type="text"
-                            label="Username"
-                            placeholder="Email"
-                            value={this.state.username}
-                            onChange={(event) => {
-                                this.setState({
-                                    username: event.target.value
-                                });
-                            }}
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            type="password"
-                            label="password"
-                            placeholder="Password"
-                            value={this.state.password}
-                            onChange={(event) => {
-                                this.setState({
-                                    password: event.target.value
-                                });
-                            }}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <br/>
-                                <input className="checkbox_label" type="checkbox" id="cb" name="remember me"/>
-
-                                <label className="checkbox_label">Remember me</label>
-                            </div>
-                            <div className="col-md-6">
-                                <br/>
-                                <button
-                                    className="btn btn-primary Sign-in-button"
-                                    type="button"
-                                    onClick={this.props.handleSubmitAdmin.bind(this,(this.state))}
-                                >
-                                    Sign in
-                                </button>
+                    <p></p>
+                    <div style={{marginLeft: "30%"}}>
+                        <div className="ui large form">
+                            <div className="ten wide field">
+                                <label>Admin ID</label>
+                                <input placeholder="Admin ID" type="text" value={this.state.username}
+                                       onChange={(event) => {
+                                           this.setState({
+                                               username: event.target.value
+                                           });
+                                       }}/>
                             </div>
                         </div>
+                        <br/>
+                        <div className="ui large form">
+                            <div className="ten wide field">
+                                <label>Password</label>
+                                <input placeholder="Password" type="password" value={this.state.password}
+                                       onChange={(event) => {
+                                           this.setState({
+                                               password: event.target.value
+                                           });
+                                       }}/>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div style={{marginTop: "2%", float: "left"}}>
+                            <button className="ui orange button" onClick={() => {
+                                this.handleAdminSignIn({
+                                    username: this.state.username,
+                                    password: this.state.password
+                                })
+                            }}>Sign In
+                            </button>
+                        </div>
+
+                        <div style={{marginTop: "4%", float: "left", marginLeft: "29%"}}>
+                            <a><span style={{color: "orange", cursor: "pointer"}}>&nbsp;&nbsp;Reset Admin Password</span></a>
+                        </div>
+
                     </div>
-                </form>
+                </div>
             </div>
-
-
-
-
         );
     }
-
 
 
 }

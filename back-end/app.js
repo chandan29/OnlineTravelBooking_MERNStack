@@ -72,17 +72,6 @@ app.use('/',signup);
 module.exports = app;
 app.post('/logout', function(req,res) {
   console.log(req.session.user);
-  var t=time.localtime(Date.now()/1000);
-  var date=""+t.month+"/"+t.dayOfMonth+"/2017";
-  var curTime=""+t.hours+":"+t.minutes;
-
-  fs.appendFile("./public/logging/"+req.session.user+".txt", "User logged out on "+date+" at "+curTime+",login\n", function(err) {
-    if(err) {
-        res.send({0:0});
-
-    }
-    console.log("The file was saved!");
-  });
   req.session.destroy();
 
   console.log('Session Destroyed');
@@ -146,7 +135,7 @@ app.post('/loginUser', function(req, res,next) {
               console.log(user);
               req.session.user = user.username;
               console.log(req.session.user);
-              console.log("session initilized")
+              console.log("session initilized");
              return res.status(201).send({status:201,msg:"Password is right"});
              var t=time.localtime(Date.now()/1000);
              var date=""+t.month+"/"+t.dayOfMonth+"/2017";

@@ -42,7 +42,7 @@ class UserBills extends Component {
         this.setState({
             viewBillFlag: true
         });
-        API.getAdminBills({dummy: this.state.message})
+        API.getAdminBills2({dummy: this.state.message})
             .then((res) => {
 
                 if (res.wrong === 1) {

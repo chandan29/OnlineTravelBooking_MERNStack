@@ -127,14 +127,6 @@ hotelhandler.post('/bookHotel',function(req,res){
                   console.log("The file was saved!");
                 });
 
-                fs.appendFile("./public/city/"+city+".txt",hotelRate+"\n", function(err) {
-                  if(err) {
-                      res.send({0:0});
-
-                  }
-
-                  console.log("Entry for city saved!");
-                });
 
 
                 } else {

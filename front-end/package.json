@@ -5,7 +5,9 @@
   "dependencies": {
     "alert-node": "^0.2.1",
     "bootstrap": "^3.3.7",
+    "glyphicons": "^0.2.0",
     "lodash": "^4.17.4",
+    "material-ui": "^0.19.4",
     "prop-types": "^15.5.10",
     "pure-react-carousel": "^1.9.9",
     "react": "^15.6.1",
@@ -14,6 +16,7 @@
     "react-fontawesome": "^1.6.1",
     "react-items-carousel": "^2.2.1",
     "react-modal": "^3.1.2",
+    "react-navbar": "^1.0.0",
     "react-responsive-carousel": "^3.1.28",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",

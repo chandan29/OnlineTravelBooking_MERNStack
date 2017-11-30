@@ -528,13 +528,7 @@ table {
     font-size: 16px;
 }
 
-.bgpage{
-    height: 100%;
-    background-repeat: no-repeat;
-    background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
-    font-family: 'Oxygen', sans-serif;
-    background-size: cover;
-}
+
 
 .signup{
 
@@ -1045,6 +1039,63 @@ table {
 .body-header>ul>li>a:hover {
     color: white;
 }
+
+
+
+.Kpiechart{
+    width: 30%;
+    height: auto;
+    margin-left: 35%;
+
+}
+
+.filterUserBills {
+    width: 18%;
+    float:left;
+    height: 100%;
+    min-height: 600px;
+    border : 1px solid;
+    margin-left: 2%;
+    margin-top: 2.5%;
+    padding: 1%;
+}
+
+.choose{
+    margin-left: 100px;
+    padding-left: 100px;
+}
+
+.createList{
+    height: 40px;
+    width: 100%;
+}
+
+.createListTitle{
+    float: center;
+    textAlign: center;
+    padding-right: 41%;
+    font-size: 16px;
+}
+
+
+
+.editListButton{
+
+    margin-left: 10px;
+}
+
+.labelAddModify{
+    margin-right: 10px;
+}
+
+.modifyCar{
+    margin-top: 10px;
+}
+
+.submitModify{
+    margin-top: 7px;
+}
+
 .userbill{
     margin-top: 20px;
 }
@@ -1114,9 +1165,15 @@ table {
     width: 30px;
 }
 
+.itemImage123{
+
+    height:25px;
+    width: 25px;
+}
+
 .tableHead{
     text-align: center;
-    background-color: steelblue;
+    background-color: #ff690f;
 }
 
 .itemImage1{
@@ -1132,11 +1189,10 @@ table {
 }
 
 .billTitle{
-    color: black;
-    margin-left: 5%;
+    color: darkslateblue;
+    text-align: center;
     width: auto;
-    font-size: 18px;
-    padding-top: 20px;
+
 }
 
 .tableData1 .viewDetail{
@@ -1158,20 +1214,24 @@ table {
     margin-top: 10px;
 }
 
-.Kpiechart{
-    width: 30%;
-    height: auto;
-    margin-left: 35%;
+.iconBriefcase{
+    height:20px;
+    width: 20px;
+    float:left;
+    margin-right: 15px;
 
 }
-
-.filterUserBills {
-    width: 18%;
+.iconBriefcase1{
+    height:20px;
+    width: 20px;
     float:left;
-    height: 100%;
-    min-height: 600px;
-    border : 1px solid;
-    margin-left: 2%;
-    margin-top: 2.5%;
-    padding: 1%;
+    margin-right: 15px;
+}
+.trips{
+    text-align: left;
+}
+
+.userProfileMain{
+    margin-left: 25%;
+    margin-top: 10%;
 }

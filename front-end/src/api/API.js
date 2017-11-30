@@ -161,41 +161,11 @@ export const logout = () =>
                         console.log("This is error");
                         return error;
                     });
+
+{/********************************************  Admin SWAPNIL APIs START below    ***************************************************/}
+
 {/********************************************  Admin APIs below    ***************************************************/}
 
-export const addCarToList = (payload) =>
-    fetch(`${api}/adminAddCarToList`, {
-        method: 'POST',
-        headers: {
-            ...headers,
-            'Content-Type': 'application/json'
-        },
-        credentials:'include',
-        body: JSON.stringify(payload)
-    }).then(res => {
-        return res.json();
-    })
-        .catch(error => {
-            console.log("This is error");
-            return error;
-        });
-
-export const addFlightToList = (payload) =>
-    fetch(`${api}/adminAddFlightToList`, {
-        method: 'POST',
-        headers: {
-            ...headers,
-            'Content-Type': 'application/json'
-        },
-        credentials:'include',
-        body: JSON.stringify(payload)
-    }).then(res => {
-        return res.json();
-    })
-        .catch(error => {
-            console.log("This is error");
-            return error;
-        });
 
 
 
@@ -234,25 +204,442 @@ export const addFlightToList = (payload) =>
                             console.log("This is error");
                             return error;
                         });
+{/********************************************  Admin Add List APIs below    ***************************************************/}
+export const addCarToList = (payload) =>
+    fetch(`${api}/adminAddCarToList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const addFlightToList = (payload) =>
+    fetch(`${api}/adminAddFlightToList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
 
 
 
+export const addHotelToList = (payload) =>
+    fetch(`${api}/adminAddHotelToList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
 
 
 
-                        export const getRevenuepercity = (payload) =>
-                            fetch(`${api}/getRevenuepercity`, {
-                                method: 'POST',
-                                headers: {
-                                    ...headers,
-                                    'Content-Type': 'application/json'
-                                },
-                                credentials:'include',
-                                body: JSON.stringify(payload)
-                            }).then(res => {
-                                return res.json();
-                            })
-                                .catch(error => {
-                                    console.log("This is error");
-                                    return error;
-                                });
+{/********************************************  Admin Fetch List APIs below    ***************************************************/}
+
+export const getAdminCars = (payload) =>
+    fetch(`${api}/getAdminCars`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const getAdminFlights = (payload) =>
+    fetch(`${api}/getAdminFlights`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const getAdminHotels = (payload) =>
+    fetch(`${api}/getAdminHotels`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
+
+export const getAdminBills2 = (payload) =>
+    fetch(`${api}/getAdminBills2`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
+
+export const getAdminBillDetail = (payload) =>
+    fetch(`${api}/getAdminBillDetail`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const getAdminUsers = (payload) =>
+    fetch(`${api}/getAdminUsers`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
+export const getAdminCarArray = (payload) =>
+    fetch(`${api}/getAdminCarArray`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
+export const getAdminFlightArray = (payload) =>
+    fetch(`${api}/getAdminFlightArray`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const getAdminHotelArray = (payload) =>
+    fetch(`${api}/getAdminHotelArray`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const getAdminUserDetail = (payload) =>
+    fetch(`${api}/getAdminUserDetail`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+{/********************************************  Admin Modify List APIs below    ***************************************************/}
+
+export const modifyCarToList = (payload) =>
+    fetch(`${api}/adminModifyCarToList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const modifyFlightToList = (payload) =>
+    fetch(`${api}/adminModifyFlightToList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
+
+export const modifyHotelToList = (payload) =>
+    fetch(`${api}/adminModifyHotelToList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
+export const modifyAdminUserDetail = (payload) =>
+    fetch(`${api}/modifyAdminUserDetail`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+{/********************************************  Admin Delete  APIs below    ***************************************************/}
+
+
+export const deleteAdminUser = (payload) =>
+    fetch(`${api}/deleteAdminUser`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const deleteCarFromList = (payload) =>
+    fetch(`${api}/deleteCarFromList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
+export const deleteFlightFromList = (payload) =>
+    fetch(`${api}/deleteFlightFromList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const deleteHotelFromList = (payload) =>
+    fetch(`${api}/deleteHotelFromList`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+{/********************************************  UserProfile  APIs below    ***************************************************/}
+
+/*export const uploadFile = (payload) =>
+    fetch(`${api}/upload`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.status;
+    }).catch(error => {
+        console.log("This is error");
+        return error;
+    });*/
+/*export const getImages = (payload) =>
+    fetch(`${api}/getImg`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => res.json())
+        .catch(error => {
+            console.log("This is error.");
+            return error;
+        })*/
+
+export const uploadFile = (payload) =>
+    fetch(`${api}/upload`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.status;
+    }).catch(error => {
+        console.log("This is error");
+        return error;
+    });
+export const getImages = () =>
+    fetch(`${api}/getImg`,{
+    method: 'GET',
+        headers: {
+    ...headers,
+            'Content-Type': 'application/json'
+    },
+    credentials:'include'
+    }).then(res => res.json())
+        .catch(error => {
+            console.log("This is error.");
+            return error;
+        });
+{/********************************************  Admin SWAPNIL APIs END below    ***************************************************/}

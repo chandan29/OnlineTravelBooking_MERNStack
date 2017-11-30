@@ -15,7 +15,7 @@ flightshandler.post('/getFlights',function(req,res){
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('flight');
             console.log(req.body);
-            coll.find({ $and: [ { "flightFromCity": req.body.flightFromCity }, { "flightToCity": req.body.flightToCity } ] }).toArray(function(err, user){
+            coll.find({ $and: [ { "flightFromCity": req.body.flightFromCity }, { "flighttoCity": req.body.flightToCity } ] }).toArray(function(err, user){
                 if (user) {
                   console.log(user);
                 	res.status(201).json(user);
@@ -43,7 +43,6 @@ flightshandler.post('/getFlights',function(req,res){
 
                     console.log("The file was saved!");
                   });
-
                 } else {
 
                 	res.status(401).json({wrong:1});
@@ -128,16 +127,6 @@ flightshandler.post('/bookFlight',function(req,res){
 
                   }
                   console.log("The file was saved!");
-                });
-
-
-                fs.appendFile("./public/city/"+fromCity+".txt",flightFare+"\n", function(err) {
-                  if(err) {
-                      res.send({0:0});
-
-                  }
-
-                  console.log("Entry for city saved!");
                 });
 
 

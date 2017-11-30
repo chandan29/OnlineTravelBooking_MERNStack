@@ -5,11 +5,13 @@ var mongoSessionURL = "mongodb://localhost:27017/login";
 var mysql      = require('mysql');
 var bcrypt= require('bcrypt');
 var passport = require('passport');
+var time = require('time');
+var fs = require('fs');
 var pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'localhost',
   user            : 'root',
-  password        : 'password',
+  password        : '',
   database        : 'kayak'
 });
 
@@ -87,8 +89,23 @@ signuphandler.post('/registerUser',function(req,res){
               }
               console.log("The file was saved!");
             });
+                var folder = "./public/Userfiles/" + email;
+                console.log('email:', email);
+                console.log('folder:', folder);
 
-          }
+                fs.mkdir(folder, function (err) {
+
+                    if (!err) {
+                        console.log('Directory created');
+
+                    }
+                    else {
+
+                        console.log('Directory can’t be created');
+                    }
+                });
+
+            }
 
           });
         });
