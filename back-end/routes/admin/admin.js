@@ -603,62 +603,62 @@ adminhandler.get('/getImg', function (req, res, next) {
 
 
 adminhandler.post('/getRevenuepercity',function(req,res){
-    var sj=fs.readFileSync('../Kafka-backend/public/city/San Jose.txt','utf8').split('\n');
+    var sj=fs.readFileSync('./public/city/San Jose.txt','utf8').split('\n');
     var sj1=0;
     for(var i=0;i<sj.length-1;i++){
 
       sj1+=parseInt(sj[i]);
     }
 
-    var sf=fs.readFileSync('../Kafka-backend/public/city/San Francisco.txt','utf8').split('\n');
+    var sf=fs.readFileSync('./public/city/San Francisco.txt','utf8').split('\n');
     var sf1=0;
     for(var i=0;i<sf.length-1;i++){
       sf1+=parseInt(sf[i]);
     }
 
-    var bs=fs.readFileSync('../Kafka-backend/public/city/Boston.txt','utf8').split('\n');
+    var bs=fs.readFileSync('./public/city/Boston.txt','utf8').split('\n');
     var bs1=0;
     for(var i=0;i<bs.length-1;i++){
       bs1+=parseInt(bs[i]);
     }
 
-    var ch=fs.readFileSync('../Kafka-backend/public/city/Chicago.txt','utf8').split('\n');
+    var ch=fs.readFileSync('./public/city/Chicago.txt','utf8').split('\n');
     var ch1=0;
     for(var i=0;i<ch.length-1;i++){
       ch1+=parseInt(ch[i]);
     }
 
-    var da=fs.readFileSync('../Kafka-backend/public/city/Dallas.txt','utf8').split('\n');
+    var da=fs.readFileSync('./public/city/Dallas.txt','utf8').split('\n');
     var da1=0;
     for(var i=0;i<da.length-1;i++){
       da1+=parseInt(da[i]);
     }
 
-    var de=fs.readFileSync('../Kafka-backend/public/city/Denver.txt','utf8').split('\n');
+    var de=fs.readFileSync('./public/city/Denver.txt','utf8').split('\n');
     var de1=0;
     for(var i=0;i<de.length-1;i++){
       de1+=parseInt(de[i]);
     }
 
-    var la=fs.readFileSync('../Kafka-backend/public/city/Los Angeles.txt','utf8').split('\n');
+    var la=fs.readFileSync('./public/city/Los Angeles.txt','utf8').split('\n');
     var la1=0;
     for(var i=0;i<la.length-1;i++){
       la1+=parseInt(la[i]);
     }
 
-    var ny=fs.readFileSync('../Kafka-backend/public/city/New York.txt','utf8').split('\n');
+    var ny=fs.readFileSync('./public/city/New York.txt','utf8').split('\n');
     var ny1=0;
     for(var i=0;i<ny.length-1;i++){
       ny1+=parseInt(ny[i]);
     }
 
-    var se=fs.readFileSync('../Kafka-backend/public/city/Seattle.txt','utf8').split('\n');
+    var se=fs.readFileSync('./public/city/Seattle.txt','utf8').split('\n');
     var se1=0;
     for(var i=0;i<se.length-1;i++){
       se1+=parseInt(se[i]);
     }
 
-    var wa=fs.readFileSync('../Kafka-backend/public/city/Washington.txt','utf8').split('\n');
+    var wa=fs.readFileSync('./public/city/Washington.txt','utf8').split('\n');
     var wa1=0;
     for(var i=0;i<wa.length-1;i++){
       wa1+=parseInt(wa[i]);
@@ -715,7 +715,7 @@ adminhandler.post('/getTrace',function(req,res){
   else{
     user="guestuser";
   }
-  var file=fs.readFileSync('../Kafka-backend/public/logging/'+user+'.txt','utf8').split('\n');
+  var file=fs.readFileSync('./public/logging/'+user+'.txt','utf8').split('\n');
   var index=0;
   for(var i=file.length-1;i>=0;i--){
     console.log(i+"=>"+file[i]);
@@ -818,45 +818,5 @@ adminhandler.post('/getUserDetails',function(req,res){
   else{
     res.status(300).send({msg:"You need to be signed in to view user details"});
   }
-});
-
-
-var parser = require('multer')({dest: 'temp/'}); // temp directory create kardena
-var fs = require('fs');
-var path = require('path');
-
-
-adminhandler.post('/profilepicture', parser.single('profile-picture'), function (req,res) {
-   // var destination = path.join(process.cwd(), "public", Userfiles, req.session.username , req.session.username + ".jpg");
-    var destination = path.join(process.cwd(), "public","Userfiles", req.session.user , req.session.user + ".jpg");
-    fs.createReadStream(req.file.path).pipe(fs.createWriteStream(destination));
-    fs.unlink(req.file.path, function(err) {
-        if(err) {
-            res.status("500");
-            res.send("An error occured");
-        }
-        res.send("cool");
-    })
-});
-
-adminhandler.post('/getUsername',function(req,res){
-  console.log(req.session.user);
-  res.status(201).send({username:req.session.user});
-})
-adminhandler.post('/profileUpload',function(req,res){
-  console.log('Hitting profileUpload');
-  console.log(req.body);
-  pool.getConnection(function(err, connection) {
-    connection.query("update users set firstName='"+req.body.firstName+"',lastName='"+req.body.lastName+"',creditCard='"+req.body.creditCard+"',gender='"+req.body.gender+"',contact='"+req.body.contact+"',middleName='"+req.body.middleName+"',dateOfBirth='"+req.body.dateOfBirth+"',userCountry='"+req.body.userCountry+"',userCity='"+req.body.userCity+"',userAddress='"+req.body.userAddress+"',userZip='"+parseInt(req.body.userZip)+"' where userId="+parseInt(req.body.userId), function (error, results,fields) {
-      connection.release();
-      if (results.length>=1){
-        res.status(201).send({msg:"Successfully updated user profile"});
-      }
-      else{
-        res.status(201).send({msg:"Successfully updated user profile"});
-      }
-    });
-  });
-  //res.status(201).send({1:1});
 })
 module.exports = adminhandler;

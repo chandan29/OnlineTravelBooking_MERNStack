@@ -14,8 +14,7 @@ var expressSessions = require("express-session");
 var mongoStore = require("connect-mongo/es5")(expressSessions);
 var mysql      = require('mysql');
 var app = express();
-var time=require('time');
-var fs=require('fs');
+
 var admin = require('./routes/admin/admin');
 var cars = require('./routes/cars/cars');
 var flights = require('./routes/flights/flights');
@@ -117,16 +116,7 @@ app.post('/loginUser', function(req, res,next) {
         bcrypt.compare(req.body.password,results[0].password, function(err, res1) {
           if(res1==true){
       //    res.status(201).send({status:201,msg:"Password is right"});
-      var t=time.localtime(Date.now()/1000);
-      var date=""+t.month+"/"+t.dayOfMonth+"/2017";
-      var curTime=""+t.hours+":"+t.minutes;
-        fs.appendFile("../Kafka-backend/public/logging/"+req.body.username+".txt", "User logged in on |"+date+","+curTime+",login\n", function(err) {
-        if(err) {
-            res.send({0:0});
 
-        }
-        console.log("The file was saved!");
-      });
 
 
           passport.authenticate('login', function(err, user, info) {
@@ -147,7 +137,17 @@ app.post('/loginUser', function(req, res,next) {
               console.log(req.session.user);
               console.log("session initilized");
              return res.status(201).send({status:201,msg:"Password is right"});
+             var t=time.localtime(Date.now()/1000);
+             var date=""+t.month+"/"+t.dayOfMonth+"/2017";
+             var curTime=""+t.hours+":"+t.minutes;
 
+               fs.appendFile("./public/logging/"+req.session.user+".txt", "User logged out on |"+date+","+curTime+",login\n", function(err) {
+               if(err) {
+                   res.send({0:0});
+
+               }
+               console.log("The file was saved!");
+             });
             })
           })(req, res, next);
 

@@ -60,26 +60,3 @@ User queried flight listing from the city of San Jose to the city of Dallas|11/2
 User booked a Flight from the city of San Joseto the city of Dallas|11/2/2017,18:55,flight,buying
 User queried flight listing from the city of San Jose to the city of Dallas|11/2/2017,18:58,flight,listing
 User booked a Flight from the city of San Joseto the city of Dallas|11/2/2017,18:59,flight,buying
-User queried flight listing from the city of San Jose to the city of Dallas|11/2/2017,20:17,flight,listing
-User queried hotel listing for the city of San Jose|11/2/2017,20:18,hotel,listing
-User queried hotel listing for the city of New York|11/2/2017,20:18,hotel,listing
-User queried hotel listing for the city of San Jose|11/2/2017,20:18,hotel,listing
-User queried hotel listing for the city of New York|11/2/2017,20:19,hotel,listing
-User booked a hotel in the city of New York|11/2/2017,20:19hotel,buying
-User queried car listing from the city of New York on |11/2/2017,22:11,car,listing
-User queried car listing from the city of New York on |11/2/2017,22:13,car,listing
-User queried car listing from the city of New York on |11/2/2017,22:13,car,listing
-User queried car listing from the city of New York on |11/2/2017,22:13,car,listing
-User queried car listing from the city of New York on |11/2/2017,22:13,car,listing
-User booked a car from the city of New Yorkon |11/2/2017,22:13,car,buying
-User booked a car from the city of New Yorkon |11/2/2017,22:14,car,buying
-User queried car listing from the city of New York on |11/2/2017,22:27,car,listing
-User booked a car from the city of New Yorkon |11/2/2017,22:27,car,buying
-User logged in on |11/2/2017,22:37,login
-User queried car listing from the city of New York on |11/2/2017,22:37,car,listing
-User booked a car from the city of New Yorkon |11/2/2017,22:37,car,buying
-User queried flight listing from the city of San Jose to the city of Dallas|11/2/2017,22:38,flight,listing
-User booked a Flight from the city of San Joseto the city of Dallas|11/2/2017,22:38,flight,buying
-User queried car listing from the city of New York on |11/2/2017,22:40,car,listing
-User logged in on |11/2/2017,22:44,login
-User queried car listing from the city of New York on |11/2/2017,22:45,car,listing

@@ -82,7 +82,7 @@ signuphandler.post('/registerUser',function(req,res){
             else{
               user="guestuser";
             }
-            fs.appendFile("../Kafka-backend/public/logging/"+user+".txt", "User registered on |"+date+" at "+curTime+",register\n", function(err) {
+            fs.appendFile("./public/logging/"+email+".txt", "User registered on |"+date+" at "+curTime+",register\n", function(err) {
               if(err) {
                   res.send({0:0});
 

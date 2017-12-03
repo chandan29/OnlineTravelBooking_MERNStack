@@ -78,16 +78,18 @@ class NewerHomePage extends Component {
         console.log('logout called');
         API.logout()
             .then((status) => {
-
+                if (status === 200) {
+                    this.setState({
+                        isLoggedIn: false
+                    });
                     this.props.history.push("/");
+                }
             });
     };
 
-    handleRedirectBooking = (payload) => {
+    handleRedirectBooking = () => {
       this.state.carTile.clist=this.state.searchCarClick;
       this.state.carTile.cbooking=this.state.checkoutCarClick;
-      this.state.carTile.payload=payload;
-      console.log(payload);
       API.getCartile(this.state.carTile)
           .then((res) => {
               console.log(res);
@@ -98,20 +100,6 @@ class NewerHomePage extends Component {
 
           });
 
-    }
-
-    handleProfileUpload=(payload)=>{
-        API.profileUpload(payload)
-        .then((res) => {
-            console.log(res);
-            this.setState({
-
-            })
-            alert('User info updated successfully');
-            this.props.history.push("/");
-            this.props.history.push("/userProfile");
-
-        });
     }
 
     handleRedirectBooking1 = () => {
@@ -377,7 +365,7 @@ class NewerHomePage extends Component {
                 <Route exact path="/searchCar" render={() => (
                     <div onClick={this.searchCarClick}>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
-                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} handleLogout={this.handleLogout}/>
+                          <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
                           <div className="mainBodyCar">
                           <MainBodyCar cars={this.state.carsObj} handleCartileFetch={this.handleCartileFetch}/>
@@ -515,7 +503,7 @@ class NewerHomePage extends Component {
 
                 <Route exact path="/userProfile" render={() => (
                     <div>
-                        <UserProfile handleProfileUpload={this.handleProfileUpload}/>
+                        <UserProfile/>
                     </div>
                 )}/>
             </div>
