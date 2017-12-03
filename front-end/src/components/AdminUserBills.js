@@ -39,7 +39,6 @@ class AdminUserBills extends Component {
         var yearMonth = payload.slice(0, 4);
         console.log('yearMonth: ', yearMonth);
 
-
         for (var i = 0; i < this.state.billsObj.length; i++) {
             if (yearMonth === this.state.billsObj[i].date.slice(0, 4)) {
                 console.log('year matched');

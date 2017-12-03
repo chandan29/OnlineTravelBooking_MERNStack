@@ -1,0 +1,23 @@
+User logged in on |11/3/2017,5:21,login
+User queried flight listing from the city of San Jose to the city of Denver|11/3/2017,5:22,flight,listing
+User queried flight listing from the city of San Jose to the city of Denver|11/3/2017,5:25,flight,listing
+User booked a Flight from the city of San Joseto the city of Denver|11/3/2017,5:25,flight,buying
+User queried flight listing from the city of San Jose to the city of Denver|11/3/2017,5:38,flight,listing
+User queried flight listing from the city of San Jose to the city of Denver|11/3/2017,5:55,flight,listing
+User booked a Flight from the city of San Joseto the city of Denver|11/3/2017,5:55,flight,buying
+User queried hotel listing for the city of San Francisco|11/3/2017,5:59,hotel,listing
+User booked a hotel in the city of San Francisco|11/3/2017,6:0hotel,buying
+User queried car listing from the city of San Jose on |11/3/2017,6:30,car,listing
+User queried car listing from the city of New York on |11/3/2017,6:31,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,6:31,car,buying
+User queried car listing from the city of New York on |11/3/2017,6:33,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,6:33,car,buying
+User queried car listing from the city of New York on |11/3/2017,7:2,car,listing
+User queried car listing from the city of New York on |11/3/2017,7:4,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,7:5,car,buying
+User queried car listing from the city of New York on |11/3/2017,7:10,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,7:10,car,buying
+User queried car listing from the city of New York on |11/3/2017,7:12,car,listing
+User queried car listing from the city of New York on |11/3/2017,8:20,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,8:20,car,buying
+User registered on |11/3/2017 at 8:21,register

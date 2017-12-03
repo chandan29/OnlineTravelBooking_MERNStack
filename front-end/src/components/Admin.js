@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import '../App.css';
 import Header from './Header';
+import Message from './Message';
 import * as API from '../api/API';
 
 class Admin extends Component {
@@ -12,7 +13,20 @@ class Admin extends Component {
 
 
     handleAdminSignIn = (payload) => {
-        this.props.reDirectToAdminDashboard();
+        API.doAdminLogin(payload)
+            .then((res) => {
+                if (res.status === 201) {
+                    this.setState({
+                        message: "Welcome to Admin..!!",
+                    });
+                    this.props.reDirectToAdminDashboard();
+                } else if (res.status === 401) {
+                    this.setState({
+                        message: "Wrong username or password. Try again..!!"
+                    });
+                }
+            });
+
 
     };
 
@@ -22,7 +36,8 @@ class Admin extends Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            message:''
         };
 
     }
@@ -34,6 +49,7 @@ class Admin extends Component {
         return (
             <div style={{backgroundColor: "white"}}>
                 <Header/>
+                <Message message={this.state.message}/>
                 <div className="container" style={{marginTop: "3%"}}>
                     <div style={{marginLeft: "30%"}}>
                         <h2 style={{color: "orange"}}>Sign In For Admin</h2>

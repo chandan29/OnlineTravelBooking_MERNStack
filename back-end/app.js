@@ -173,3 +173,143 @@ app.post('/loginUser', function(req, res,next) {
     });
   });
 });
+
+app.post('/adminLogin', function(req, res,next) {
+
+    pool.getConnection(function (err, connection) {
+        connection.query("select * from admin where username='" + req.body.username + "' and password='" + req.body.password + "'", function (err, results) {
+            if (err) {
+
+                throw err;
+            }
+            else {
+                if (results.length == 0) {
+                    console.log('inside length 0');
+                    res.send({message: "Login failed", status: 401});
+
+                }
+                else {
+                    connection.release();
+                    console.log("Login Success");
+                    res.send({status: 201});
+                }
+
+
+            }
+        });
+    });
+});
+
+app.post('/getAdminUsers', function(req, res,next) {
+
+    pool.getConnection(function (err, connection) {
+        connection.query("select * from users", function (err, results) {
+            if (err) {
+
+                throw err;
+            }
+            else {
+                if (results.length == 0) {
+                    console.log('inside length 0');
+                    res.status(401).json({wrong:1});
+
+                }
+                else {
+                    console.log("results",results);
+                    connection.release();
+                    console.log("Login Success");
+                    res.json({status:201,user:results});
+                }
+
+
+            }
+        });
+    });
+});
+
+app.post('/getAdminUserDetail', function(req, res,next) {
+
+    pool.getConnection(function (err, connection) {
+        connection.query("select * from users where userId='"+req.body.userId+"'", function (err, results) {
+            console.log("req body:",req.body);
+            if (err) {
+
+                throw err;
+            }
+            else {
+                if (results.length == 0) {
+                    console.log('inside length 0');
+                    res.status(401).json({wrong:1});
+
+                }
+                else {
+                    console.log("results",results);
+                    connection.release();
+                    console.log("Login Success");
+                    res.json({status:201,user:results[0]});
+                }
+
+
+            }
+        });
+    });
+});
+
+
+app.post('/modifyAdminUserDetail', function(req, res,next) {
+
+    pool.getConnection(function (err, connection) {
+        connection.query("UPDATE users SET firstName='"+req.body.firstName+"',middleName='"+req.body.firstName+"',lastName='"+req.body.lastName+"',creditCard='"+req.body.creditCard+"',contact='"+req.body.contact+"',gender='"+req.body.gender+"',dateOfBirth='"+req.body.dateOfBirth+"',userAddress='"+req.body.userAddress+"',userCity='"+req.body.userCity+"',userState='"+req.body.userState+"',userCountry='"+req.body.userCountry+"',userZip='"+req.body.userZip+"',userPhone='"+req.body.userPhone+"',userAgeCategory='"+req.body.userAgeCategory+"'  where userId='"+req.body.userId+"'", function (err, results) {
+            console.log("req body:",req.body);
+            if (err) {
+
+                throw err;
+            }
+            else {
+                if (results.length == 0) {
+                    console.log('inside length 0');
+                    res.status(401).json({wrong:1});
+
+                }
+                else {
+                    console.log("results",results);
+                    connection.release();
+                    console.log("Login Success");
+                    res.status(201).json({status:201});
+                }
+
+
+            }
+        });
+    });
+});
+
+
+app.post('/deleteAdminUser', function(req, res,next) {
+
+    pool.getConnection(function (err, connection) {
+        connection.query("DELETE from users where userId='"+req.body.userId+"'", function (err, results) {
+            console.log("req body:",req.body);
+            if (err) {
+
+                throw err;
+            }
+            else {
+                if (results.length == 0) {
+                    console.log('inside length 0');
+                    res.status(401).json({wrong:1});
+
+                }
+                else {
+                    console.log("results",results);
+                    connection.release();
+                    console.log("Login Success");
+                    res.status(201).json({status:201});
+                }
+
+
+            }
+        });
+    });
+});
+

@@ -15,7 +15,7 @@ var FontAwesome = require('react-fontawesome');
 class AdminDashboard extends Component {
 
     static propTypes = {
-        handleLogout: PropTypes.func.isRequired
+        handleAdminLogout: PropTypes.func.isRequired
     };
 
 //ADD TO LIST FUNCTIONS
@@ -267,14 +267,28 @@ class AdminDashboard extends Component {
                 }
                 else {
                     this.setState({
-                        modifiedCarId: res.carId,
-                        modifiedCarType: res.carType,
-                        modifiedCarCity: res.carCity,
-                        modifiedCarAgency: res.carAgency,
-                        modifiedCarSpecs: res.carSpecs,
-                        modifiedCarAvailability: res.carAvailability,
-                        modifiedCarRating: res.carRating,
-                        modifiedCarRate: res.carRate,
+                        modifiedcarId: res.carId,
+                        modifiedcarType: res.carType,
+                        modifiedcarCity: res.carCity,
+                        modifiedcarFromDate:res.carFromDate,
+                        modifiedcarToDate:res.carToDate,
+                        modifiedcarAgency: res.carAgency,
+                        modifiedcarAgencyAddress: res.carAgencyAddress,
+                        modifiedcarAgencyContact:res.carAgencyContact,
+                        modifiedcarCapacity: res.carCapacity,
+                        modifiedcarAvailability: res.carAvailability,
+                        modifiedcarRating: res.carRating,
+                        modifiedcarOldPrice:res.carOldPrice,
+                        modifiedcarOriginalPrice:res.carOriginalPrice,
+                        modifiedcarName:res.carName,
+                        modifiedcarBags:res.carBags,
+                        modifiedcarDoors:res.carDoors,
+                        modifiedcarColor:res.carColor,
+                        modifiedcarClass:res.carClass,
+                        modifiedcarMode:res.carMode,
+                        modifiedpickUpLocation:res.pickUpLocation,
+                        modifieddropOffLocation:res.dropOffLocation,
+                        modifiedcarNumber:res.carNumber,
                         messageFlag: false,
                         editCarFormFlag: true
                     });
@@ -300,16 +314,22 @@ class AdminDashboard extends Component {
                 else {
                     this.setState({
                         flightObj: res,
-                        modifiedFlightId: res.flightId,
-                        modifiedFlightClass: res.flightClass,
-                        modifiedFromCity: res.fromCity,
-                        modifiedToCity: res.toCity,
-                        modifiedStartTime: res.startTime,
-                        modifiedEndTime: res.endTime,
-                        modifiedFlightAgency: res.flightAgency,
-                        modifiedFlightRating: res.flightRating,
-                        modifiedAvailableSeats: res.availableSeats,
-                        modifiedFareDetails: res.fareDetails,
+                        modifiedflightId: res.flightId,
+                        modifiedflightClass: res.flightClass,
+                        modifiedflightTripType:res.flightTripType,
+                        modifiedflightFromCity:res.flightFromCity,
+                        modifiedflightToCity:res.flightToCity,
+                        modifiedflightDepartureTime:res.flightDepartureTime,
+                        modifiedflightArrivalTime:res.flightArrivalTime,
+                        modifiedflightAgency:res.flightAgency,
+                        modifiedflightRating:res.flightRating,
+                        modifiedflightAvailableSeats:res.flightAvailableSeats,
+                        modifiedflightFareDetails:res.flightFareDetails,
+                        modifiedflightFromDate:res.flightFromDate,
+                        modifiedflightToDate:res.flightToDate,
+                        modifiedflightCapacity:res.flightCapacity,
+                        modifiedflightDuration:res.flightDuration,
+                        modifiedflightStops:res.flightStops,
                         messageFlag: true,
                         message: 'Flight fetched successfully',
                         editFlightFormFlag: !this.state.editFlightFormFlag
@@ -352,6 +372,9 @@ class AdminDashboard extends Component {
                         modifiedHotelName: res.hotelName,
                         modifiedHotelReviewType: res.hotelReviewType,
                         modifiedHotelNumberOfReviews: res.hotelNumberOfReviews,
+                        modifiedHotelAgency:res.hotelAgency,
+                        modifiedHotelAgencyAddress :res.hotelAgencyAddress,
+                        modifiedHotelAgencyContact:res.hotelAgencyContact,
                         messageFlag: true,
                         message: 'Hotel fetched successfully',
                         editHotelFormFlag: !this.state.editHotelFormFlag
@@ -396,42 +419,83 @@ class AdminDashboard extends Component {
             carId: null,
             carType: '',
             carCity: '',
+            carFromDate:'',
+            carToDate:'',
             carAgency: '',
-            carSpecs: '',
-            carAvailability: true,
+            carAgencyAddress: '',
+            carAgencyContact: null,
+            carCapacity: null,
+            carAvailability: '',
             carRating: null,
-            carRate: null,
+            carOldPrice:null,
+            carOriginalPrice:null,
+            carName:'',
+            carBags:null,
+            carDoors:null,
+            carColor:'',
+            carClass:'',
+            carMode:'',
+            pickUpLocation:'',
+            dropOffLocation:'',
+            carNumber:'',
 
-            modifiedCarId: null,
-            modifiedCarType: '',
-            modifiedCarCity: '',
-            modifiedCarAgency: '',
-            modifiedCarSpecs: '',
-            modifiedCarAvailability: true,
-            modifiedCarRating: null,
-            modifiedCarRate: null,
+            modifiedcarId: null,
+            modifiedcarType: '',
+            modifiedcarCity: '',
+            modifiedcarFromDate:'',
+            modifiedcarToDate:'',
+            modifiedcarAgency: '',
+            modifiedcarAgencyAddress: '',
+            modifiedcarAgencyContact: null,
+            modifiedcarCapacity: null,
+            modifiedcarAvailability: '',
+            modifiedcarRating: null,
+            modifiedcarOldPrice:null,
+            modifiedcarOriginalPrice:null,
+            modifiedcarName:'',
+            modifiedcarBags:null,
+            modifiedcarDoors:null,
+            modifiedcarColor:'',
+            modifiedcarClass:'',
+            modifiedcarMode:'',
+            modifiedpickUpLocation:'',
+            modifieddropOffLocation:'',
+            modifiedcarNumber:null,
 
-            flightId: null,
+
+            flightId: '',
             flightClass: '',
-            fromCity: '',
-            toCity: '',
-            startTime: null,
-            endTime: null,
-            flightAgency: '',
-            flightRating: null,
-            availableSeats: null,
-            fareDetails: '',
+            flightTripType:'',
+            flightFromCity:'',
+            flightToCity:'',
+            flightDepartureTime:'',
+            flightArrivalTime:'',
+            flightAgency:'',
+            flightRating:null,
+            flightAvailableSeats:null,
+            flightFareDetails:null,
+            flightFromDate:'',
+            flightToDate:'',
+            flightCapacity:null,
+            flightDuration:'',
+            flightStops:null,
 
-            modifiedFlightId: null,
-            modifiedFlightClass: '',
-            modifiedFromCity: '',
-            modifiedToCity: '',
-            modifiedStartTime: null,
-            modifiedEndTime: null,
-            modifiedFlightAgency: '',
-            modifiedFlightRating: null,
-            modifiedAvailableSeats: null,
-            modifiedFareDetails: '',
+            modifiedflightId: '',
+            modifiedflightClass: '',
+            modifiedflightTripType:'',
+            modifiedflightFromCity:'',
+            modifiedflightToCity:'',
+            modifiedflightDepartureTime:'',
+            modifiedflightArrivalTime:'',
+            modifiedflightAgency:'',
+            modifiedflightRating:null,
+            modifiedflightAvailableSeats:null,
+            modifiedflightFareDetails:null,
+            modifiedflightFromDate:'',
+            modifiedflightToDate:'',
+            modifiedflightCapacity:null,
+            modifiedflightDuration:'',
+            modifiedflightStops:null,
 
             hotelId: null,
             hotelFromDate: '',
@@ -451,6 +515,10 @@ class AdminDashboard extends Component {
             hotelName: '',
             hotelReviewType: '',
             hotelNumberOfReviews: null,
+            hotelAgency:'',
+            hotelAgencyAddress:'',
+            hotelAgencyContact:null,
+
 
             modifiedHotelId: null,
             modifiedHotelFromDate: '',
@@ -470,6 +538,10 @@ class AdminDashboard extends Component {
             modifiedHotelName: '',
             modifiedHotelReviewType: '',
             modifiedHotelNumberOfReviews: null,
+            modifiedHotelAgency:'',
+            modifiedHotelAgencyAddress:'',
+            modifiedHotelAgencyContact:null,
+
 
             fetchCarId: null,
             fetchFlightId: null,
@@ -512,10 +584,38 @@ class AdminDashboard extends Component {
                             showListingFlag:false,showUserInfoFlag:false
                         })}><h3>Userbill</h3></a></li>
 
-                        <li><a onClick={()=> {this.props.handleLogout}}><h3><span className="glyphicon glyphicon-log-out"></span>Logout</h3></a></li>
+                        <li><a href="#" onClick={this.props.handleAdminLogout}><h3><span className="glyphicon glyphicon-log-out"></span>Logout</h3></a></li>
                     </ul>
 
                 </nav>
+                <div>
+                    {/*<div className="card card1">
+                    <img className="card-img-top" src="https://a1.r9cdn.net/rimg/dimg/4e/7e/38ac4f74-city-8127-153cb9580a1.jpg?s14=1&width=325&height=184&crop=true&xhint=1731&yhint=1245" alt="Card image cap"/>
+                        <div className="card-block">
+                            <h4 className="card-title">Listing</h4>
+                            <p className="card-text">Find Car, Flight and Hotel Listing. Crate and modify them.</p>
+                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                        </div>
+                </div>
+
+                <div className="card card1">
+                    <img className="card-img-top" src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2013/12/customer-people.jpg" alt="Card image cap"/>
+                    <div className="card-block">
+                        <h4 className="card-title">User Info</h4>
+                        <p className="card-text">Find info about existing users and modify their account. </p>
+                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+
+                <div className="card card1">
+                    <img className="card-img-top" src="https://a1.r9cdn.net/rimg/dimg/4e/7e/38ac4f74-city-8127-153cb9580a1.jpg?s14=1&width=325&height=184&crop=true&xhint=1731&yhint=1245" alt="Card image cap"/>
+                    <div className="card-block">
+                        <h4 className="card-title">User Bills</h4>
+                        <p className="card-text">Find bills and info about a particular bill.</p>
+                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>*/}
+                </div>
 
 
 
@@ -539,115 +639,156 @@ class AdminDashboard extends Component {
 
 
 
-                                                <h2 className="panel-title">
-                                                    <label className="createListTitle" style={{textAlign: 'center'}}
-                                                       href="#collapse1">Choose Type To Add/Edit Listing</label>
-                                                </h2>
+                                    <h2 className="panel-title">
+                                        <label className="createListTitle" style={{textAlign: 'center'}}
+                                               href="#collapse1">Choose Type To Add/Edit Listing</label>
+                                    </h2>
 
 
 
-                                            <div >
-                                                <ul className="list-group">
-                                                    <a onClick={() => {
-                                                        this.setState({
-                                                            chooseCarFlag: !this.state.chooseCarFlag, messageFlag: false,
-                                                            chooseHotelFlag: false, chooseFlightFlag: false,editCarFlag: false,
-                                                            carId: null,
-                                                            carType: '',
-                                                            carCity: '',
-                                                            carAgency: '',
-                                                            carSpecs: '',
-                                                            carAvailability: true,
-                                                            carRating: null,
-                                                            carRate: null,
+                                    <div >
+                                        <ul className="list-group">
+                                            <a onClick={() => {
+                                                this.setState({
+                                                    chooseCarFlag: !this.state.chooseCarFlag, messageFlag: false,
+                                                    chooseHotelFlag: false, chooseFlightFlag: false,editCarFlag: false,
+                                                    carId: null,
+                                                    carType: '',
+                                                    carCity: '',
+                                                    carFromDate:'',
+                                                    carToDate:'',
+                                                    carAgency: '',
+                                                    carAgencyAddress: '',
+                                                    carAgencyContact: null,
+                                                    carCapacity: null,
+                                                    carAvailability: '',
+                                                    carRating: null,
+                                                    carOldPrice:null,
+                                                    carOriginalPrice:null,
+                                                    carName:'',
+                                                    carBags:null,
+                                                    carDoors:null,
+                                                    carColor:'',
+                                                    carClass:'',
+                                                    carMode:'',
+                                                    pickUpLocation:'',
+                                                    dropOffLocation:'',
+                                                    carNumber:'',
 
-                                                            modifiedCarId: null,
-                                                            modifiedCarType: '',
-                                                            modifiedCarCity: '',
-                                                            modifiedCarAgency: '',
-                                                            modifiedCarSpecs: '',
-                                                            modifiedCarAvailability: true,
-                                                            modifiedCarRating: null,
-                                                            modifiedCarRate: null,
-                                                            fetchCarId: null
-                                                        });
-                                                    }} className="list-group-item">Cars
-                                                    </a>
-                                                    <a onClick={() => {
-                                                        this.setState({
-                                                            chooseFlightFlag: !this.state.chooseFlightFlag, messageFlag: false,
-                                                            chooseCarFlag: false, chooseHotelFlag: false, editFlightFlag: false,
-                                                            flightId: null,
-                                                            flightClass: '',
-                                                            fromCity: '',
-                                                            toCity: '',
-                                                            startTime: null,
-                                                            endTime: null,
-                                                            flightAgency: '',
-                                                            flightRating: null,
-                                                            availableSeats: null,
-                                                            fareDetails: '',
+                                                    modifiedcarId: null,
+                                                    modifiedcarType: '',
+                                                    modifiedcarCity: '',
+                                                    modifiedcarFromDate:'',
+                                                    modifiedcarToDate:'',
+                                                    modifiedcarAgency: '',
+                                                    modifiedcarAgencyAddress: '',
+                                                    modifiedcarAgencyContact: null,
+                                                    modifiedcarCapacity: null,
+                                                    modifiedcarAvailability: '',
+                                                    modifiedcarRating: null,
+                                                    modifiedcarOldPrice:null,
+                                                    modifiedcarOriginalPrice:null,
+                                                    modifiedcarName:'',
+                                                    modifiedcarBags:null,
+                                                    modifiedcarDoors:null,
+                                                    modifiedcarColor:'',
+                                                    modifiedcarClass:'',
+                                                    modifiedcarMode:'',
+                                                    modifiedpickUpLocation:'',
+                                                    modifieddropOffLocation:'',
+                                                    modifiedcarNumber:null
+                                                });
+                                            }} className="list-group-item">Cars
+                                            </a>
+                                            <a onClick={() => {
+                                                this.setState({
+                                                    chooseFlightFlag: !this.state.chooseFlightFlag, messageFlag: false,
+                                                    chooseCarFlag: false, chooseHotelFlag: false, editFlightFlag: false,
+                                                    flightId: '',
+                                                    flightClass: '',
+                                                    flightTripType:'',
+                                                    flightFromCity:'',
+                                                    flightToCity:'',
+                                                    flightDepartureTime:'',
+                                                    flightArrivalTime:'',
+                                                    flightAgency:'',
+                                                    flightRating:null,
+                                                    flightAvailableSeats:null,
+                                                    flightFareDetails:null,
+                                                    flightFromDate:'',
+                                                    flightToDate:'',
+                                                    flightCapacity:null,
+                                                    flightDuration:'',
+                                                    flightStops:null,
 
-                                                            modifiedFlightId: null,
-                                                            modifiedFlightType: '',
-                                                            modifiedFlightCity: '',
-                                                            modifiedFlightAgency: '',
-                                                            modifiedFlightSpecs: '',
-                                                            modifiedFlightAvailability: true,
-                                                            modifiedFlightRating: null,
-                                                            modifiedFlightRate: null,
-                                                            fetchFlightId: null
-                                                        });
-                                                    }} className="list-group-item">Flights
-                                                    </a><a onClick={() => {
-                                                    this.setState({
-                                                        chooseHotelFlag: !this.state.chooseHotelFlag, messageFlag: false,
-                                                        chooseFlightFlag: false, chooseCarFlag: false, editHotelFlag: false,
+                                                    modifiedflightId: '',
+                                                    modifiedflightClass: '',
+                                                    modifiedflightTripType:'',
+                                                    modifiedflightFromCity:'',
+                                                    modifiedflightToCity:'',
+                                                    modifiedflightDepartureTime:'',
+                                                    modifiedflightArrivalTime:'',
+                                                    modifiedflightAgency:'',
+                                                    modifiedflightRating:null,
+                                                    modifiedflightAvailableSeats:null,
+                                                    modifiedflightFareDetails:null,
+                                                    modifiedflightFromDate:'',
+                                                    modifiedflightToDate:'',
+                                                    modifiedflightCapacity:null,
+                                                    modifiedflightDuration:'',
+                                                    modifiedflightStops:null,
+                                                    modifiedfetchFlightId: null
+                                                });
+                                            }} className="list-group-item">Flights
+                                            </a><a onClick={() => {
+                                            this.setState({
+                                                chooseHotelFlag: !this.state.chooseHotelFlag, messageFlag: false,
+                                                chooseFlightFlag: false, chooseCarFlag: false, editHotelFlag: false,
 
-                                                        hotelId: null,
-                                                        hotelFromDate: '',
-                                                        hotelToDate: '',
-                                                        hotelNumberOfRooms: null,
-                                                        hotelNumberOfGuests: null,
-                                                        hotelCity: '',
-                                                        hotelArea: '',
-                                                        hotelRating: null,
-                                                        hotelStars: null,
-                                                        hotelAddress: '',
-                                                        hotelContact: '',
-                                                        hotelCapacity: null,
-                                                        hotelAvailability: '',
-                                                        hotelOldPrice: null,
-                                                        hotelOriginalPrice: null,
-                                                        hotelName: '',
-                                                        hotelReviewType: '',
-                                                        hotelNumberOfReviews: null,
+                                                hotelId: null,
+                                                hotelFromDate: '',
+                                                hotelToDate: '',
+                                                hotelNumberOfRooms: null,
+                                                hotelNumberOfGuests: null,
+                                                hotelCity: '',
+                                                hotelArea: '',
+                                                hotelRating: null,
+                                                hotelStars: null,
+                                                hotelAddress: '',
+                                                hotelContact: '',
+                                                hotelCapacity: null,
+                                                hotelAvailability: '',
+                                                hotelOldPrice: null,
+                                                hotelOriginalPrice: null,
+                                                hotelName: '',
+                                                hotelReviewType: '',
+                                                hotelNumberOfReviews: null,
 
-                                                        modifiedHotelId: null,
-                                                        modifiedHotelFromDate: '',
-                                                        modifiedHotelToDate: '',
-                                                        modifiedHotelNumberOfRooms: null,
-                                                        modifiedHotelNumberOfGuests: null,
-                                                        modifiedHotelCity: '',
-                                                        modifiedHotelArea: '',
-                                                        modifiedHotelRating: null,
-                                                        modifiedHotelStars: null,
-                                                        modifiedHotelAddress: '',
-                                                        modifiedHotelContact: '',
-                                                        modifiedHotelCapacity: null,
-                                                        modifiedHotelAvailability: true,
-                                                        modifiedHotelOldPrice: null,
-                                                        modifiedHotelOriginalPrice: null,
-                                                        modifiedHotelName: '',
-                                                        modifiedHotelReviewType: '',
-                                                        modifiedHotelNumberOfReviews: null,
-                                                        fetchHotelId: null
-                                                    });
-                                                }} className="list-group-item">Hotels
-                                                </a>
-                                                </ul>
+                                                modifiedHotelId: null,
+                                                modifiedHotelFromDate: '',
+                                                modifiedHotelToDate: '',
+                                                modifiedHotelNumberOfRooms: null,
+                                                modifiedHotelNumberOfGuests: null,
+                                                modifiedHotelCity: '',
+                                                modifiedHotelArea: '',
+                                                modifiedHotelRating: null,
+                                                modifiedHotelStars: null,
+                                                modifiedHotelAddress: '',
+                                                modifiedHotelContact: '',
+                                                modifiedHotelCapacity: null,
+                                                modifiedHotelAvailability: true,
+                                                modifiedHotelOldPrice: null,
+                                                modifiedHotelOriginalPrice: null,
+                                                modifiedHotelName: '',
+                                                modifiedHotelReviewType: '',
+                                                modifiedHotelNumberOfReviews: null,
+                                                fetchHotelId: null
+                                            });
+                                        }} className="list-group-item">Hotels
+                                        </a>
+                                        </ul>
 
-                                            </div>
+                                    </div>
 
 
                                     {/******************* Form for adding/editing Car is displayed after clicking Car in above Dropdown List**********/}
@@ -690,7 +831,7 @@ class AdminDashboard extends Component {
                                                                 <br/>
                                                                 <div className="form-group">
                                                                     <hr/>
-
+                                                                    <label>Car Id</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="number"
@@ -706,6 +847,7 @@ class AdminDashboard extends Component {
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Car Type</label>
                                                                     <input
                                                                         type="text"
                                                                         className="form-control"
@@ -721,6 +863,7 @@ class AdminDashboard extends Component {
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Car City</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -735,7 +878,41 @@ class AdminDashboard extends Component {
                                                                     />
                                                                 </div>
 
+
                                                                 <div className="form-group">
+                                                                    <label>Car From Date</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carSpecs"
+                                                                        placeholder="Car From Date"
+                                                                        value={this.state.carFromDate}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carFromDate: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car To Date</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carSpecs"
+                                                                        placeholder="Car To Date"
+                                                                        value={this.state.carToDate}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carToDate: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Agency</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -749,21 +926,73 @@ class AdminDashboard extends Component {
                                                                         }}
                                                                     />
                                                                 </div>
+
                                                                 <div className="form-group">
+                                                                    <label>Car Agency Address</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
                                                                         label="carSpecs"
-                                                                        placeholder="Car Specs"
-                                                                        value={this.state.carSpecs}
+                                                                        placeholder="Car Agency Address"
+                                                                        value={this.state.carAgencyAddress}
                                                                         onChange={(event) => {
                                                                             this.setState({
-                                                                                carSpecs: event.target.value
+                                                                                carAgencyAddress: event.target.value
                                                                             });
                                                                         }}
                                                                     />
                                                                 </div>
                                                                 <div className="form-group">
+                                                                    <label>Car Agency Contact</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="number"
+                                                                        label="carSpecs"
+                                                                        placeholder="Car Agency Contact"
+                                                                        value={this.state.carAgencyContact}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carAgencyContact: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Capacity</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="number"
+                                                                        label="carSpecs"
+                                                                        placeholder="Car Capacity"
+                                                                        value={this.state.carCapacity}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carCapacity: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Availability</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carSpecs"
+                                                                        placeholder="Car Availability"
+                                                                        value={this.state.carAvailability}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carAvailability: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+
+                                                                <div className="form-group">
+                                                                    <label>Car Rating</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="number"
@@ -777,20 +1006,186 @@ class AdminDashboard extends Component {
                                                                         }}
                                                                     />
                                                                 </div>
+
+
                                                                 <div className="form-group">
+                                                                    <label>Car Old Price</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="number"
-                                                                        label="carRate"
-                                                                        placeholder="Car Rate"
-                                                                        value={this.state.carRate}
+                                                                        label="carRating"
+                                                                        placeholder="Car Old Price"
+                                                                        value={this.state.carOldPrice}
                                                                         onChange={(event) => {
                                                                             this.setState({
-                                                                                carRate: event.target.value
+                                                                                carOldPrice: event.target.value
                                                                             });
                                                                         }}
                                                                     />
                                                                 </div>
+
+
+
+                                                                <div className="form-group">
+                                                                    <label>Car Original Price</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="number"
+                                                                        label="carRate"
+                                                                        placeholder="Car Original Price"
+                                                                        value={this.state.carOriginalPrice}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carOriginalPrice: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Name</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carRate"
+                                                                        placeholder="Car Name"
+                                                                        value={this.state.carName}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carName: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Bags</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="number"
+                                                                        label="carRate"
+                                                                        placeholder="Car Bags"
+                                                                        value={this.state.carBags}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carBags: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Doors</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="number"
+                                                                        label="carRate"
+                                                                        placeholder="Car Doors"
+                                                                        value={this.state.carDoors}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carDoors: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Color</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carRate"
+                                                                        placeholder="Car Color"
+                                                                        value={this.state.carColor}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carColor: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Class</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carRate"
+                                                                        placeholder="Car Class"
+                                                                        value={this.state.carClass}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carClass: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Mode</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carRate"
+                                                                        placeholder="Car Mode"
+                                                                        value={this.state.carMode}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carMode: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Pick Up Location</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carRate"
+                                                                        placeholder="Car Pick Up Location"
+                                                                        value={this.state.pickUpLocation}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                pickUpLocation: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Drop Off Location</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carRate"
+                                                                        placeholder="Car Drop Off Location"
+                                                                        value={this.state.dropOffLocation}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                dropOffLocation: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Car Number</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        label="carRate"
+                                                                        placeholder="Car Number"
+                                                                        value={this.state.carNumber}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                carNumber: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
                                                                 <div className="form-group">
                                                                     <div>
                                                                         <br/>
@@ -803,11 +1198,25 @@ class AdminDashboard extends Component {
                                                                                         carId: this.state.carId,
                                                                                         carType: this.state.carType,
                                                                                         carCity: this.state.carCity,
+                                                                                        carFromDate:this.state.carFromDate,
+                                                                                        carToDate:this.state.carToDate,
                                                                                         carAgency: this.state.carAgency,
-                                                                                        carSpecs: this.state.carSpecs,
+                                                                                        carAgencyAddress: this.state.carAgencyAddress,
+                                                                                        carAgencyContact: this.state.carAgencyContact,
+                                                                                        carCapacity: this.state.carCapacity,
                                                                                         carAvailability: this.state.carAvailability,
                                                                                         carRating: this.state.carRating,
-                                                                                        carRate: this.state.carRate
+                                                                                        carOldPrice:this.state.carOldPrice,
+                                                                                        carOriginalPrice:this.state.carOriginalPrice,
+                                                                                        carName:this.state.carName,
+                                                                                        carBags:this.state.carBags,
+                                                                                        carDoors:this.state.carDoors,
+                                                                                        carColor:this.state.carColor,
+                                                                                        carClass:this.state.carClass,
+                                                                                        carMode:this.state.carMode,
+                                                                                        pickUpLocation:this.state.pickUpLocation,
+                                                                                        dropOffLocation:this.state.dropOffLocation,
+                                                                                        carNumber:this.state.carNumber
                                                                                     }
                                                                                 );
                                                                                 this.setState({
@@ -836,14 +1245,17 @@ class AdminDashboard extends Component {
                                                                                 <thead>
                                                                                 <tr>
                                                                                     <th className={'tableHead'}>Car Id</th>
-                                                                                    <th className={'tableHead'}>Car Type</th>
-                                                                                    <th className={'tableHead'}>Car City</th>
-                                                                                    <th className={'tableHead'}>Car Agency</th>
-                                                                                    <th className={'tableHead'}>People</th>
-                                                                                    <th className={'tableHead'}>Car Availability</th>
-                                                                                    <th className={'tableHead'}>Car Rating</th>
-                                                                                    <th className={'tableHead'}>Car Rate</th>
-                                                                                    <th className={'tableHead'}>Car Name</th>
+                                                                                    <th className={'tableHead'}>Type</th>
+                                                                                    <th className={'tableHead'}>Name</th>
+                                                                                    <th className={'tableHead'}>City</th>
+                                                                                    <th className={'tableHead'}>Agency</th>
+                                                                                    <th className={'tableHead'}>Agency Address</th>
+                                                                                    <th className={'tableHead'}>Agency Contact</th>
+                                                                                    <th className={'tableHead'}>Availability</th>
+                                                                                    <th className={'tableHead'}>Rating</th>
+                                                                                    <th className={'tableHead'}>Fare</th>
+                                                                                    <th className={'tableHead'}>Number</th>
+
 
                                                                                 </tr>
                                                                                 </thead>
@@ -860,17 +1272,19 @@ class AdminDashboard extends Component {
                                                                                                         this.setState({
                                                                                                             editCarFlag:false
                                                                                                         });
-                                                                                                    }}>Modify Car
+                                                                                                    }}>Edit
                                                                                                     </button>
                                                                                                 </td>
                                                                                                 <td className={'tableData'}>{item.carType}</td>
+                                                                                                <td className={'tableData'}>{item.carName}</td>
                                                                                                 <td className={'tableData'}>{item.carCity}</td>
                                                                                                 <td className={'tableData'}>{item.carAgency}</td>
-                                                                                                <td className={'tableData'}>{item.people}</td>
+                                                                                                <td className={'tableData'}>{item.carAgencyAddress}</td>
+                                                                                                <td className={'tableData'}>{item.carAgencyContact}</td>
                                                                                                 <td className={'tableData'}>{item.carAvailability}</td>
                                                                                                 <td className={'tableData'}>{item.carRating}</td>
-                                                                                                <td className={'tableData'}>{item.carRate}</td>
-                                                                                                <td className={'tableData'}>{item.carName}</td>
+                                                                                                <td className={'tableData'}>{item.carOriginalPrice}</td>
+                                                                                                <td className={'tableData'}>{item.carNumber}</td>
                                                                                             </tr>
 
 
@@ -904,104 +1318,360 @@ class AdminDashboard extends Component {
 
 
                                                                                             <br/>
+
+
                                                                                             <div className="form-group">
                                                                                                 <hr/>
-
+                                                                                                <label>Car Id</label>
                                                                                                 <input
                                                                                                     className="form-control"
-                                                                                                    label="carID"
+                                                                                                    type="number"
+                                                                                                    label="carId"
                                                                                                     placeholder="Car ID"
-                                                                                                    value={this.state.modifiedCarId}
+                                                                                                    value={this.state.modifiedcarId}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedCarId: event.target.value
+                                                                                                            modifiedcarId: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                     readOnly/>
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Car Type</label>
                                                                                                 <input
                                                                                                     type="text"
                                                                                                     className="form-control"
                                                                                                     list="carType"
                                                                                                     placeholder="Car Type"
-                                                                                                    value={this.state.modifiedCarType}
+                                                                                                    value={this.state.modifiedcarType}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedCarType: event.target.value
+                                                                                                            modifiedcarType: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Car City</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
                                                                                                     label="carCity"
                                                                                                     placeholder="Car City"
-                                                                                                    value={this.state.modifiedCarCity}
+                                                                                                    value={this.state.modifiedcarCity}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedCarCity: event.target.value
+                                                                                                            modifiedcarCity: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car From Date</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carSpecs"
+                                                                                                    placeholder="Car From Date"
+                                                                                                    value={this.state.modifiedcarFromDate}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarFromDate: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
-                                                                                                <input
-                                                                                                    className="form-control"
-                                                                                                    type="text"
-                                                                                                    label="carAgency"
-                                                                                                    placeholder="Car Type"
-                                                                                                    value={this.state.modifiedCarAgency}
-                                                                                                    onChange={(event) => {
-                                                                                                        this.setState({
-                                                                                                            modifiedCarAgency: event.target.value
-                                                                                                        });
-                                                                                                    }}
-                                                                                                />
-                                                                                            </div>
-                                                                                            <div className="form-group">
+                                                                                                <label>Car To Date</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
                                                                                                     label="carSpecs"
-                                                                                                    placeholder="Car Specs"
-                                                                                                    value={this.state.modifiedCarSpecs}
+                                                                                                    placeholder="Car To Date"
+                                                                                                    value={this.state.modifiedcarToDate}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedCarSpecs: event.target.value
+                                                                                                            modifiedcarToDate: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Agency</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carAgency"
+                                                                                                    placeholder="Car Agency"
+                                                                                                    value={this.state.modifiedcarAgency}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarAgency: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Agency Address</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carSpecs"
+                                                                                                    placeholder="Car Agency Address"
+                                                                                                    value={this.state.modifiedcarAgencyAddress}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarAgencyAddress: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
                                                                                             <div className="form-group">
+                                                                                                <label>Car Agency Contact</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    label="carSpecs"
+                                                                                                    placeholder="Car Agency Contact"
+                                                                                                    value={this.state.modifiedcarAgencyContact}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarAgencyContact: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Capacity</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    label="carSpecs"
+                                                                                                    placeholder="Car Capacity"
+                                                                                                    value={this.state.modifiedcarCapacity}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarCapacity: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Availability</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carSpecs"
+                                                                                                    placeholder="Car Availability"
+                                                                                                    value={this.state.modifiedcarAvailability}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarAvailability: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Rating</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="number"
                                                                                                     label="carRating"
                                                                                                     placeholder="Car Rating"
-                                                                                                    value={this.state.modifiedCarRating}
+                                                                                                    value={this.state.modifiedcarRating}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedCarRating: event.target.value
+                                                                                                            modifiedcarRating: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
+
+
                                                                                             <div className="form-group">
+                                                                                                <label>Car Old Price</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    label="carRating"
+                                                                                                    placeholder="Car Old Price"
+                                                                                                    value={this.state.modifiedcarOldPrice}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarOldPrice: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Original Price</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="number"
                                                                                                     label="carRate"
-                                                                                                    placeholder="Car Rate"
-                                                                                                    value={this.state.modifiedCarRate}
+                                                                                                    placeholder="Car Original Price"
+                                                                                                    value={this.state.modifiedcarOriginalPrice}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedCarRate: event.target.value
+                                                                                                            modifiedcarOriginalPrice: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Name</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Name"
+                                                                                                    value={this.state.modifiedcarName}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarName: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Bags</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Bags"
+                                                                                                    value={this.state.modifiedcarBags}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarBags: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Doors</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Doors"
+                                                                                                    value={this.state.modifiedcarDoors}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarDoors: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Color</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Color"
+                                                                                                    value={this.state.modifiedcarColor}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarColor: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Class</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Class"
+                                                                                                    value={this.state.modifiedcarClass}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarClass: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Mode</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Mode"
+                                                                                                    value={this.state.modifiedcarMode}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarMode: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Pick Up Location</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Pick Up Location"
+                                                                                                    value={this.state.modifiedpickUpLocation}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedpickUpLocation: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Drop Off Location</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Drop Off Location"
+                                                                                                    value={this.state.modifieddropOffLocation}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifieddropOffLocation: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Car Number</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    label="carRate"
+                                                                                                    placeholder="Car Number"
+                                                                                                    value={this.state.modifiedcarNumber}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedcarNumber: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
@@ -1019,14 +1689,28 @@ class AdminDashboard extends Component {
                                                                                                         type="button"
                                                                                                         onClick={() => {
                                                                                                             this.modifyCarToList({
-                                                                                                                    carId: this.state.modifiedCarId,
-                                                                                                                    carType: this.state.modifiedCarType,
-                                                                                                                    carCity: this.state.modifiedCarCity,
-                                                                                                                    carAgency: this.state.modifiedCarAgency,
-                                                                                                                    carSpecs: this.state.modifiedCarSpecs,
-                                                                                                                    carAvailability: this.state.modifiedCarAvailability,
-                                                                                                                    carRating: this.state.modifiedCarRating,
-                                                                                                                    carRate: this.state.modifiedCarRate
+                                                                                                                    carId: this.state.modifiedcarId,
+                                                                                                                    carType:this.state.modifiedcarType,
+                                                                                                                    carCity:this.state.modifiedcarCity,
+                                                                                                                    carFromDate:this.state.modifiedcarFromDate,
+                                                                                                                    carToDate:this.state.modifiedcarToDate,
+                                                                                                                    carAgency:this.state.modifiedcarAgency,
+                                                                                                                    carAgencyAddress: this.state.modifiedcarAgencyAddress,
+                                                                                                                    carAgencyContact: this.state.modifiedcarAgencyContact,
+                                                                                                                    carCapacity: this.state.modifiedcarCapacity,
+                                                                                                                    carAvailability: this.state.modifiedcarAvailability,
+                                                                                                                    carRating: this.state.modifiedcarRating,
+                                                                                                                    carOldPrice:this.state.modifiedcarOldPrice,
+                                                                                                                    carOriginalPrice:this.state.modifiedcarOriginalPrice,
+                                                                                                                    carName:this.state.modifiedcarName,
+                                                                                                                    carBags:this.state.modifiedcarBags,
+                                                                                                                    carDoors:this.state.modifiedcarDoors,
+                                                                                                                    carColor:this.state.modifiedcarColor,
+                                                                                                                    carClass:this.state.modifiedcarClass,
+                                                                                                                    carMode:this.state.modifiedcarMode,
+                                                                                                                    pickUpLocation:this.state.modifiedpickUpLocation,
+                                                                                                                    dropOffLocation:this.state.modifieddropOffLocation,
+                                                                                                                    carNumber:this.state.modifiedcarNumber
                                                                                                                 }
                                                                                                             );
                                                                                                             this.setState({
@@ -1047,14 +1731,7 @@ class AdminDashboard extends Component {
                                                                                                         type="button"
                                                                                                         onClick={() => {
                                                                                                             this.deleteCarFromList({
-                                                                                                                    carId: this.state.modifiedCarId,
-                                                                                                                    carType: this.state.modifiedCarType,
-                                                                                                                    carCity: this.state.modifiedCarCity,
-                                                                                                                    carAgency: this.state.modifiedCarAgency,
-                                                                                                                    carSpecs: this.state.modifiedCarSpecs,
-                                                                                                                    carAvailability: this.state.modifiedCarAvailability,
-                                                                                                                    carRating: this.state.modifiedCarRating,
-                                                                                                                    carRate: this.state.modifiedCarRate
+                                                                                                                    carId: this.state.modifiedcarId
                                                                                                                 }
                                                                                                             );
                                                                                                             this.setState({
@@ -1126,9 +1803,10 @@ class AdminDashboard extends Component {
                                                                 <br/>
                                                                 <div className="form-group">
                                                                     <hr/>
+                                                                    <label>Flight ID</label>
                                                                     <input
                                                                         className="form-control"
-                                                                        type="number"
+                                                                        type="text"
                                                                         placeholder="Flight ID"
                                                                         value={this.state.flightId}
                                                                         onChange={(event) => {
@@ -1140,6 +1818,7 @@ class AdminDashboard extends Component {
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Flight Class</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -1154,62 +1833,82 @@ class AdminDashboard extends Component {
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Flight Trip Type</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
-                                                                        placeholder="From City"
-                                                                        value={this.state.fromCity}
+                                                                        placeholder="Flight Trip Type"
+                                                                        value={this.state.flightTripType}
                                                                         onChange={(event) => {
                                                                             this.setState({
-                                                                                fromCity: event.target.value
+                                                                                flightTripType: event.target.value
                                                                             });
                                                                         }}
                                                                     />
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Flight From City</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
-                                                                        placeholder="To City"
-                                                                        value={this.state.toCity}
+                                                                        placeholder="Flight To  City"
+                                                                        value={this.state.flightFromCity}
                                                                         onChange={(event) => {
                                                                             this.setState({
-                                                                                toCity: event.target.value
+                                                                                flightFromCity: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+                                                                <div className="form-group">
+                                                                    <label>Flight To City</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Flight To  City"
+                                                                        value={this.state.flightToCity}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                flightToCity: event.target.value
                                                                             });
                                                                         }}
                                                                     />
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Flight Departure Time</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
-                                                                        placeholder="Start Time"
-                                                                        value={this.state.startTime}
+                                                                        placeholder="Flight Departure Time"
+                                                                        value={this.state.flightDepartureTime}
                                                                         onChange={(event) => {
                                                                             this.setState({
-                                                                                startTime: event.target.value
+                                                                                flightDepartureTime: event.target.value
                                                                             });
                                                                         }}
                                                                     />
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Flight Arrival Time</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
-                                                                        placeholder="End Time"
-                                                                        value={this.state.endTime}
+                                                                        placeholder="Flight Arrival Time "
+                                                                        value={this.state.flightArrivalTime}
                                                                         onChange={(event) => {
                                                                             this.setState({
-                                                                                endTime: event.target.value
+                                                                                flightArrivalTime: event.target.value
                                                                             });
                                                                         }}
                                                                     />
                                                                 </div>
 
+
                                                                 <div className="form-group">
+                                                                    <label>Flight Agency</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="text"
@@ -1224,6 +1923,7 @@ class AdminDashboard extends Component {
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Flight Rating</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="number"
@@ -1238,32 +1938,112 @@ class AdminDashboard extends Component {
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Flight Available Seats</label>
                                                                     <input
                                                                         className="form-control"
                                                                         type="number"
-                                                                        placeholder="Available Seats"
-                                                                        value={this.state.availableSeats}
+                                                                        placeholder="Flight Available Seats"
+                                                                        value={this.state.flightAvailableSeats}
                                                                         onChange={(event) => {
                                                                             this.setState({
-                                                                                availableSeats: event.target.value
+                                                                                flightAvailableSeats: event.target.value
                                                                             });
                                                                         }}
                                                                     />
                                                                 </div>
 
                                                                 <div className="form-group">
+                                                                    <label>Flight Fare Details</label>
                                                                     <input
                                                                         className="form-control"
-                                                                        type="text"
-                                                                        placeholder="Fare Details"
-                                                                        value={this.state.fareDetails}
+                                                                        type="number"
+                                                                        placeholder="Flight Fare Details"
+                                                                        value={this.state.flightFareDetails}
                                                                         onChange={(event) => {
                                                                             this.setState({
-                                                                                fareDetails: event.target.value
+                                                                                flightFareDetails: event.target.value
                                                                             });
                                                                         }}
                                                                     />
                                                                 </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Flight From Date</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Flight From Date "
+                                                                        value={this.state.flightFromDate}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                flightFromDate: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+
+                                                                <div className="form-group">
+                                                                    <label>Flight To Date</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Flight To Date "
+                                                                        value={this.state.flightToDate}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                flightToDate: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Flight Capacity</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="number"
+                                                                        placeholder="Flight Capacity "
+                                                                        value={this.state.flightCapacity}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                flightCapacity: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+
+                                                                <div className="form-group">
+                                                                    <label>Flight Duration</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Flight Duration "
+                                                                        value={this.state.flightDuration}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                flightDuration: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <label>Flight Stops</label>
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="number"
+                                                                        placeholder="Flight Stops "
+                                                                        value={this.state.flightStops}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                flightStops: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
 
                                                                 <div className="form-group">
                                                                     <div>
@@ -1274,18 +2054,28 @@ class AdminDashboard extends Component {
                                                                             type="button"
                                                                             onClick={() => {
                                                                                 this.handleAddFlightToList({
-                                                                                        flightId: this.state.flightId,
-                                                                                        flightClass: this.state.flightClass,
-                                                                                        fromCity: this.state.fromCity,
-                                                                                        toCity: this.state.toCity,
-                                                                                        startTime: this.state.startTime,
-                                                                                        endTime: this.state.endTime,
-                                                                                        flightAgency: this.state.flightAgency,
-                                                                                        flightRating: this.state.flightRating,
-                                                                                        availableSeats: this.state.availableSeats,
-                                                                                        fareDetails: this.state.fareDetails
-                                                                                    }
-                                                                                );
+                                                                                    flightId: this.state.flightId,
+                                                                                    flightClass: this.state.flightClass,
+                                                                                    flightAgency: this.state.flightAgency,
+                                                                                    flightRating: this.state.flightRating,
+                                                                                    flightAvailableSeats: this.state.flightAvailableSeats,
+                                                                                    flightFareDetails: this.state.flightFareDetails,
+                                                                                    flightTripType:this.state.flightTripType,
+                                                                                    flightFromCity:this.state.flightFromCity,
+                                                                                    flightToCity:this.state.flightToCity,
+                                                                                    flightDepartureTime:this.state.flightDepartureTime,
+                                                                                    flightArrivalTime:this.state.flightArrivalTime,
+                                                                                    flightFromDate:this.state.flightFromDate,
+                                                                                    flightToDate:this.state.flightToDate,
+                                                                                    flightCapacity:this.state.flightCapacity,
+                                                                                    flightDuration:this.state.flightDuration,
+                                                                                    flightStops:this.state.flightStops
+                                                                                });
+                                                                                this.setState({
+                                                                                    chooseFlightFlag: false,
+                                                                                    createFlightFlag: !this.state.createFlightFlag
+                                                                                });
+
                                                                             }}
                                                                         >
                                                                             Add to Flight List
@@ -1307,16 +2097,21 @@ class AdminDashboard extends Component {
                                                                             <table className="table table-bordered table-striped">
                                                                                 <thead>
                                                                                 <tr>
-                                                                                    <th className={'tableHead'}>Flight Id</th>
-                                                                                    <th className={'tableHead'}>Flight Class</th>
+                                                                                    <th className={'tableHead'}>Id</th>
+                                                                                    <th className={'tableHead'}>Agency</th>
+                                                                                    <th className={'tableHead'}>Class</th>
                                                                                     <th className={'tableHead'}>From City</th>
                                                                                     <th className={'tableHead'}>To City</th>
-                                                                                    <th className={'tableHead'}>Start TIme</th>
-                                                                                    <th className={'tableHead'}>End Time</th>
-                                                                                    <th className={'tableHead'}>Flight Agency</th>
-                                                                                    <th className={'tableHead'}>Flight Rating</th>
+                                                                                    <th className={'tableHead'}>Departure</th>
+                                                                                    <th className={'tableHead'}>Arrival</th>
+                                                                                    <th className={'tableHead'}>Rating</th>
                                                                                     <th className={'tableHead'}>Available Seats</th>
-                                                                                    <th className={'tableHead'}>Fare Details</th>
+                                                                                    <th className={'tableHead'}>From Date</th>
+                                                                                    <th className={'tableHead'}>To Date</th>
+                                                                                    <th className={'tableHead'}>Capacity</th>
+                                                                                    <th className={'tableHead'}>Duration</th>
+                                                                                    <th className={'tableHead'}>Stops</th>
+
 
                                                                                 </tr>
                                                                                 </thead>
@@ -1336,15 +2131,19 @@ class AdminDashboard extends Component {
                                                                                                     }}>Modify
                                                                                                     </button>
                                                                                                 </td>
-                                                                                                <td className={'tableData'}>{item.flightClass}</td>
-                                                                                                <td className={'tableData'}>{item.fromCity}</td>
-                                                                                                <td className={'tableData'}>{item.toCity}</td>
-                                                                                                <td className={'tableData'}>{item.startTime}</td>
-                                                                                                <td className={'tableData'}>{item.endTime}</td>
                                                                                                 <td className={'tableData'}>{item.flightAgency}</td>
+                                                                                                <td className={'tableData'}>{item.flightClass}</td>
+                                                                                                <td className={'tableData'}>{item.flightFromCity}</td>
+                                                                                                <td className={'tableData'}>{item.flightToCity}</td>
+                                                                                                <td className={'tableData'}>{item.flightDepartureTime}</td>
+                                                                                                <td className={'tableData'}>{item.flightArrivalTime}</td>
                                                                                                 <td className={'tableData'}>{item.flightRating}</td>
-                                                                                                <td className={'tableData'}>{item.availableSeats}</td>
-                                                                                                <td className={'tableData'}>{item.fareDetails}</td>
+                                                                                                <td className={'tableData'}>{item.flightAvailableSeats}</td>
+                                                                                                <td className={'tableData'}>{item.flightFromDate}</td>
+                                                                                                <td className={'tableData'}>{item.flightToDate}</td>
+                                                                                                <td className={'tableData'}>{item.flightCapacity}</td>
+                                                                                                <td className={'tableData'}>{item.flightDuration}</td>
+                                                                                                <td className={'tableData'}>{item.flightStops}</td>
                                                                                             </tr>
 
 
@@ -1380,140 +2179,242 @@ class AdminDashboard extends Component {
                                                                                             <br/>
                                                                                             <div className="form-group">
                                                                                                 <hr/>
+                                                                                                <label>Flight ID</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
                                                                                                     placeholder="Flight ID"
-                                                                                                    value={this.state.modifiedFlightId}
+                                                                                                    value={this.state.modifiedflightId}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedFlightId: event.target.value
+                                                                                                            modifiedflightId: event.target.value
                                                                                                         });
                                                                                                     }}
-                                                                                                readOnly/>
+                                                                                                />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Flight Class</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
                                                                                                     placeholder="Flight Class"
-                                                                                                    value={this.state.modifiedFlightClass}
+                                                                                                    value={this.state.modifiedflightClass}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedFlightClass: event.target.value
+                                                                                                            modifiedflightClass: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Flight Trip Type</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
-                                                                                                    placeholder="From City"
-                                                                                                    value={this.state.modifiedFromCity}
+                                                                                                    placeholder="Flight Trip Type"
+                                                                                                    value={this.state.modifiedflightTripType}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedFromCity: event.target.value
+                                                                                                            modifiedflightTripType: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Flight From City</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
-                                                                                                    placeholder="To City"
-                                                                                                    value={this.state.modifiedToCity}
+                                                                                                    placeholder="Flight To  City"
+                                                                                                    value={this.state.modifiedflightFromCity}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedToCity: event.target.value
+                                                                                                            modifiedflightFromCity: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
-
                                                                                             <div className="form-group">
+                                                                                                <label>Flight To City</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
-                                                                                                    placeholder="Start Time"
-                                                                                                    value={this.state.modifiedStartTime}
+                                                                                                    placeholder="Flight To  City"
+                                                                                                    value={this.state.modifiedflightToCity}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedStartTime: event.target.value
+                                                                                                            modifiedflightToCity: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Flight Departure Time</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
-                                                                                                    placeholder="End Time"
-                                                                                                    value={this.state.modifiedEndTime}
+                                                                                                    placeholder="Flight Departure Time"
+                                                                                                    value={this.state.modifiedflightDepartureTime}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedEndTime: event.target.value
+                                                                                                            modifiedflightDepartureTime: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Flight Arrival Time</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    placeholder="Flight Arrival Time "
+                                                                                                    value={this.state.modifiedflightArrivalTime}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedflightArrivalTime: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Flight Agency</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
                                                                                                     placeholder="Flight Agency"
-                                                                                                    value={this.state.modifiedFlightAgency}
+                                                                                                    value={this.state.modifiedflightAgency}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedFlightAgency: event.target.value
+                                                                                                            modifiedflightAgency: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Flight Rating</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="number"
                                                                                                     placeholder="Flight Rating"
-                                                                                                    value={this.state.modifiedFlightRating}
+                                                                                                    value={this.state.modifiedflightRating}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedFlightRating: event.target.value
+                                                                                                            modifiedflightRating: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Flight Available Seats</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="number"
-                                                                                                    placeholder="Available Seats"
-                                                                                                    value={this.state.modifiedAvailableSeats}
+                                                                                                    placeholder="Flight Available Seats"
+                                                                                                    value={this.state.modifiedflightAvailableSeats}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedAvailableSeats: event.target.value
+                                                                                                            modifiedflightAvailableSeats: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
 
                                                                                             <div className="form-group">
+                                                                                                <label>Flight Fare Details</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    placeholder="Flight Fare Details"
+                                                                                                    value={this.state.modifiedflightFareDetails}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedflightFareDetails: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Flight From Date</label>
                                                                                                 <input
                                                                                                     className="form-control"
                                                                                                     type="text"
-                                                                                                    placeholder="Fare Details"
-                                                                                                    value={this.state.modifiedFareDetails}
+                                                                                                    placeholder="Flight From Date "
+                                                                                                    value={this.state.modifiedflightFromDate}
                                                                                                     onChange={(event) => {
                                                                                                         this.setState({
-                                                                                                            modifiedFareDetails: event.target.value
+                                                                                                            modifiedflightFromDate: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Flight To Date</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    placeholder="Flight To Date "
+                                                                                                    value={this.state.modifiedflightToDate}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedflightToDate: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Flight Capacity</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    placeholder="Flight Capacity "
+                                                                                                    value={this.state.modifiedflightCapacity}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedflightCapacity: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Flight Duration</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    placeholder="Flight Duration "
+                                                                                                    value={this.state.modifiedflightDuration}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedflightDuration: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <label>Flight Stops</label>
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    placeholder="Flight Stops "
+                                                                                                    value={this.state.modifiedflightStops}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedflightStops: event.target.value
                                                                                                         });
                                                                                                     }}
                                                                                                 />
@@ -1532,16 +2433,22 @@ class AdminDashboard extends Component {
                                                                                                         type="button"
                                                                                                         onClick={() => {
                                                                                                             this.modifyFlightToList({
-                                                                                                                    flightId: this.state.modifiedFlightId,
-                                                                                                                    flightClass: this.state.modifiedFlightClass,
-                                                                                                                    fromCity: this.state.modifiedFromCity,
-                                                                                                                    toCity: this.state.modifiedToCity,
-                                                                                                                    startTime: this.state.modifiedStartTime,
-                                                                                                                    endTime: this.state.modifiedEndTime,
-                                                                                                                    flightAgency: this.state.modifiedFlightAgency,
-                                                                                                                    flightRating: this.state.modifiedFlightRating,
-                                                                                                                    availableSeats: this.state.modifiedAvailableSeats,
-                                                                                                                    fareDetails: this.state.modifiedFareDetails
+                                                                                                                    flightId: this.state.modifiedflightId,
+                                                                                                                    flightClass: this.state.modifiedflightClass,
+                                                                                                                    flightAgency: this.state.modifiedflightAgency,
+                                                                                                                    flightRating: this.state.modifiedflightRating,
+                                                                                                                    flightAvailableSeats: this.state.modifiedflightAvailableSeats,
+                                                                                                                    flightFareDetails: this.state.modifiedflightFareDetails,
+                                                                                                                    flightTripType:this.state.modifiedflightTripType,
+                                                                                                                    flightFromCity:this.state.modifiedflightFromCity,
+                                                                                                                    flightToCity:this.state.modifiedflightToCity,
+                                                                                                                    flightDepartureTime:this.state.modifiedflightDepartureTime,
+                                                                                                                    flightArrivalTime:this.state.modifiedflightArrivalTime,
+                                                                                                                    flightFromDate:this.state.modifiedflightFromDate,
+                                                                                                                    flightToDate:this.state.modifiedflightToDate,
+                                                                                                                    flightCapacity:this.state.modifiedflightCapacity,
+                                                                                                                    flightDuration:this.state.modifiedflightDuration,
+                                                                                                                    flightStops:this.state.modifiedflightStops
                                                                                                                 }
                                                                                                             );
                                                                                                             this.setState({
@@ -1562,7 +2469,7 @@ class AdminDashboard extends Component {
                                                                                                         type="button"
                                                                                                         onClick={() => {
                                                                                                             this.deleteFlightFromList({
-                                                                                                                    flightId: this.state.modifiedFlightId
+                                                                                                                    flightId: this.state.modifiedflightId
                                                                                                                 }
                                                                                                             );
                                                                                                             this.setState({
@@ -1654,6 +2561,48 @@ class AdminDashboard extends Component {
                                                                         onChange={(event) => {
                                                                             this.setState({
                                                                                 hotelName: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Hotel Agency "
+                                                                        value={this.state.hotelAgency}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                hotelAgency: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="text"
+                                                                        placeholder="Hotel Agency Address "
+                                                                        value={this.state.hotelAgencyAddress}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                hotelAgencyAddress: event.target.value
+                                                                            });
+                                                                        }}
+                                                                    />
+                                                                </div>
+
+                                                                <div className="form-group">
+                                                                    <input
+                                                                        className="form-control"
+                                                                        type="number"
+                                                                        placeholder="Hotel Contact "
+                                                                        value={this.state.hotelAgencyContact}
+                                                                        onChange={(event) => {
+                                                                            this.setState({
+                                                                                hotelAgencyContact: event.target.value
                                                                             });
                                                                         }}
                                                                     />
@@ -1892,6 +2841,11 @@ class AdminDashboard extends Component {
                                                                             onClick={() => {
                                                                                 this.handleAddHotelToList({
                                                                                         hotelId: this.state.hotelId,
+                                                                                        hotelAgency: this.state.hotelAgency,
+                                                                                        hotelAgencyAddress: this.state.hotelAgencyAddress,
+                                                                                        hotelFromDate:this.state.hotelFromDate,
+                                                                                        hotelToDate:this.state.hotelToDate,
+                                                                                        hotelAgencyContact:this.state.hotelAgencyContact,
                                                                                         hotelName: this.state.hotelName,
                                                                                         hotelNumberOfGuests: this.state.hotelNumberOfGuests,
                                                                                         hotelNumberOfRooms: this.state.hotelNumberOfRooms,
@@ -1911,7 +2865,7 @@ class AdminDashboard extends Component {
                                                                                 );
                                                                             }}
                                                                         >
-                                                                            Add to Flight List
+                                                                            Add to Hotel List
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -1932,6 +2886,7 @@ class AdminDashboard extends Component {
                                                                                 <tr>
                                                                                     <th className={'tableHead'}>Hotel Id</th>
                                                                                     <th className={'tableHead'}>Name</th>
+                                                                                    <th className={'tableHead'}>Agency</th>
                                                                                     <th className={'tableHead'}>Address</th>
                                                                                     <th className={'tableHead'}>Contact</th>
                                                                                     <th className={'tableHead'}>Capacity</th>
@@ -1964,6 +2919,7 @@ class AdminDashboard extends Component {
                                                                                                     </button>
                                                                                                 </td>
                                                                                                 <td className={'tableData'}>{item.hotelName}</td>
+                                                                                                <td className={'tableData'}>{item.hotelAgency}</td>
                                                                                                 <td className={'tableData'}>{item.hotelAddress}</td>
                                                                                                 <td className={'tableData'}>{item.hotelContact}</td>
                                                                                                 <td className={'tableData'}>{item.hotelCapacity}</td>
@@ -2036,6 +2992,49 @@ class AdminDashboard extends Component {
                                                                                                     }}
                                                                                                 />
                                                                                             </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    placeholder="Hotel Agency "
+                                                                                                    value={this.state.modifiedHotelAgency}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedHotelAgency: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="text"
+                                                                                                    placeholder="Hotel Agency Address "
+                                                                                                    value={this.state.modifiedHotelAgencyAddress}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedHotelAgencyAddress: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
+                                                                                            <div className="form-group">
+                                                                                                <input
+                                                                                                    className="form-control"
+                                                                                                    type="number"
+                                                                                                    placeholder="Hotel Contact "
+                                                                                                    value={this.state.modifiedHotelAgencyContact}
+                                                                                                    onChange={(event) => {
+                                                                                                        this.setState({
+                                                                                                            modifiedHotelAgencyContact: event.target.value
+                                                                                                        });
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+
 
                                                                                             <div className="form-group">
                                                                                                 <input
@@ -2274,6 +3273,11 @@ class AdminDashboard extends Component {
                                                                                                             this.modifyHotelToList({
                                                                                                                     hotelId: this.state.modifiedHotelId,
                                                                                                                     hotelName: this.state.modifiedHotelName,
+                                                                                                                    hotelFromDate:this.state.modifiedHotelFromDate,
+                                                                                                                    hotelToDate:this.state.modifiedHotelToDate,
+                                                                                                                    hotelAgency: this.state.modifiedHotelAgency,
+                                                                                                                    hotelAgencyContact: this.state.modifiedHotelAgencyContact,
+                                                                                                                    hotelAgencyAddress: this.state.modifiedHotelAgencyAddress,
                                                                                                                     hotelNumberOfGuests: this.state.modifiedHotelNumberOfGuests,
                                                                                                                     hotelNumberOfRooms: this.state.modifiedHotelNumberOfRooms,
                                                                                                                     hotelCity: this.state.modifiedHotelCity,

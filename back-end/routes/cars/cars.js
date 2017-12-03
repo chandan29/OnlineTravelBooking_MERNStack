@@ -6,6 +6,15 @@ var mongoURL = "mongodb://localhost:27017/kayak";
 var fs=require('fs');
 var time = require('time');
 var kafka = require('../kafka/client');
+var mysql      = require('mysql');
+var pool  = mysql.createPool({
+    connectionLimit : 10,
+    host            : 'localhost',
+    user            : 'root',
+    password        : '',
+    database        : 'kayak'
+});
+
 
 module.exports = carshandler;
 
@@ -88,8 +97,27 @@ carshandler.post('/bookCar',function(req,res){
                     user="guestuser";
                   }
 
+    //    connection.query("insert into users (firstName,lastName,emailId,password) values ('"+req.body.firstname+"','"+req.body.lastname+"','"+req.body.email+"','"+hash+"')", function (error, results, fields) {
+//}
+  //  var address = req.body.userAddress
 
-    kafka.make_request('cars_topic', {type: "bookCar", body: req.body,session:user}, function(err, results){
+    if(req.session.user) {
+        user = req.session.user;
+        console.log("user session: ",req.session.user);
+        console.log("credit card:",req.body.payload.creditCard, "contact:",req.body.payload.contact,"country: ",req.body.payload.userCountry,"city:", req.body.payload.userCity);
+
+        pool.getConnection(function (err, connection) {
+            connection.query("update users set creditCard='" + req.body.payload.creditCard + "',contact='" + req.body.payload.contact + "',userAddress='" + req.body.payload.userAddress + "', userCountry='" + req.body.payload.userCountry + "',userState='" + req.body.payload.userState + "', userCity='" + req.body.payload.userCity + "' where emailId = '"+ req.session.user +"'", function (error, results, fields) {
+//            connection.query("update users set creditCard='" + req.body.creditCard + "',contact='" + req.body.contact + "',dateOfBirth='" + req.body.dateOfBirth + "',userCountry='" + req.body.userCountry + "',userCity='" + req.body.userCity + "' where emailId = '"+ req.session.user +"'", function (error, results, fields) {
+                if(results.length >= 0)
+                    console.log("success");                                                                                                                             //userAddress
+                connection.release();
+
+            });
+        });
+    }
+
+        kafka.make_request('cars_topic', {type: "bookCar", body: req.body,session:user}, function(err, results){
 
         if(results){
             console.log("Booking done through kafka cars");

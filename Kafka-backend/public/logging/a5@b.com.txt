@@ -1,0 +1,4 @@
+User queried flight listing from the city of Chicago to the city of Los Angeles|11/3/2017,1:47,flight,listing
+User queried car listing from the city of New York on |11/3/2017,2:18,car,listing
+User queried car listing from the city of New York on |11/3/2017,2:21,car,listing
+User registered on |11/3/2017 at 2:22,register

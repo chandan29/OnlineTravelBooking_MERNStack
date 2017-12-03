@@ -6,6 +6,14 @@ var mongoURL = "mongodb://localhost:27017/kayak";
 var time = require('time');
 var fs=require('fs');
 var kafka = require('../kafka/client');
+var mysql      = require('mysql');
+var pool  = mysql.createPool({
+    connectionLimit : 10,
+    host            : 'localhost',
+    user            : 'root',
+    password        : '',
+    database        : 'kayak'
+});
 
 module.exports = flightshandler;
 
@@ -27,6 +35,8 @@ flightshandler.post('/getFlights',function(req,res){
           }
 
         });
+
+
 
   //Input parameters: from city, to city, date, class, adults, seniors, children, infants
   kafka.make_request('flights_topic', {type: "getFlights", body: req.body, session: req.session}, function (err, results) {
@@ -66,6 +76,23 @@ flightshandler.post('/bookFlight',function(req,res) {
             console.log("Checking redis booking:" + x);
         }
     });
+
+
+    if(req.session.user) {
+        user = req.session.user;
+        console.log("user session: ",req.session.user);
+        console.log("credit card:",req.body.payload.creditCard, "contact:",req.body.payload.contact,"country: ",req.body.payload.userCountry,"city:", req.body.payload.userCity);
+
+        pool.getConnection(function (err, connection) {
+            connection.query("update users set creditCard='" + req.body.payload.creditCard + "',contact='" + req.body.payload.contact + "',userAddress='" + req.body.payload.userAddress + "', userCountry='" + req.body.payload.userCountry + "',userState='" + req.body.payload.userState + "', userCity='" + req.body.payload.userCity + "' where emailId = '"+ req.session.user +"'", function (error, results, fields) {
+//            connection.query("update users set creditCard='" + req.body.creditCard + "',contact='" + req.body.contact + "',dateOfBirth='" + req.body.dateOfBirth + "',userCountry='" + req.body.userCountry + "',userCity='" + req.body.userCity + "' where emailId = '"+ req.session.user +"'", function (error, results, fields) {
+                if(results.length >= 0)
+                    console.log("success");                                                                                                                             //userAddress
+                connection.release();
+
+            });
+        });
+    }
 
     kafka.make_request('flights_topic', {type: "bookFlight", body: req.body, session: req.session}, function (err, results) {
 

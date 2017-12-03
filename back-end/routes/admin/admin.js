@@ -6,11 +6,11 @@ var adminhandler = express.Router();
 var mongo=require('../mongo.js');
 var mysql      = require('mysql');
 var pool  = mysql.createPool({
-  connectionLimit : 10,
-  host            : 'localhost',
-  user            : 'root',
-  password        : '',
-  database        : 'kayak'
+    connectionLimit : 10,
+    host            : 'localhost',
+    user            : 'root',
+    password        : '',
+    database        : 'kayak'
 });
 
 var mongoURL = "mongodb://localhost:27017/kayak";
@@ -89,6 +89,7 @@ adminhandler.post('/getAdminBillDetail',function(req,res){
 {/********************************************  ADMIN USER APIs   ***************************************************/}
 
 
+/*
 adminhandler.post('/getAdminUsers',function(req,res){
     //Input parameters: from city, from date,to date
     mongo.connect(mongoURL, function(){
@@ -109,8 +110,10 @@ adminhandler.post('/getAdminUsers',function(req,res){
     console.log(req.query.from);
 //  res.status(201).json({from:req.query.from,to:req.query.to,date:req.query.date});
 });
+*/
 
 
+/*
 adminhandler.post('/getAdminUserDetail',function(req,res){
     //Input parameters: from city, from date,to date
 
@@ -131,7 +134,9 @@ adminhandler.post('/getAdminUserDetail',function(req,res){
     });
 
 });
+*/
 
+/*
 adminhandler.post('/modifyAdminUserDetail',function(req,res){
     console.log('Inside admin modify user:');
 
@@ -152,8 +157,10 @@ adminhandler.post('/modifyAdminUserDetail',function(req,res){
     });
 
 });
+*/
 
 
+/*
 adminhandler.post('/deleteAdminUser',function(req,res){
     console.log('Inside admin delete user:');
 
@@ -172,6 +179,7 @@ adminhandler.post('/deleteAdminUser',function(req,res){
     });
 
 });
+*/
 
 {/******************************************** ADMIN CAR APIs   ***************************************************/}
 
@@ -248,9 +256,9 @@ adminhandler.post('/adminModifyCarToList',function(req,res){
         var coll = mongo.collection('car');
         console.log(req.body);
         coll.updateOne({carId:parseInt(req.body.carId)},{$set: {carType:req.body.carType,carCity:req.body.carCity,
-            carAgency:req.body.carAgency,carSpecs:req.body.carSpecs,
-            carAvailability:req.body.carAvailability,carRating:req.body.carRating,
-            carRate:req.body.carRate}},function(err, user){
+                carAgency:req.body.carAgency,carSpecs:req.body.carSpecs,
+                carAvailability:req.body.carAvailability,carRating:req.body.carRating,
+                carRate:req.body.carRate}},function(err, user){
             if (user) {
                 res.status(201).json({status:201,user:user});
             } else {
@@ -382,10 +390,10 @@ adminhandler.post('/adminModifyFlightToList',function(req,res){
         var coll = mongo.collection('flight');
         console.log(req.body);
         coll.updateOne({flightId:req.body.flightId},{$set: {flightClass:req.body.flightClass,fromCity:req.body.fromCity,
-            toCity:req.body.toCity,startTime:req.body.startTime,
-            endTime:req.body.endTime,flightAgency:req.body.flightAgency,
-            flightRating:req.body.flightRating,availableSeats:req.body.availableSeats,
-            fareDetails:req.body.fareDetails}},function(err, user){
+                toCity:req.body.toCity,startTime:req.body.startTime,
+                endTime:req.body.endTime,flightAgency:req.body.flightAgency,
+                flightRating:req.body.flightRating,availableSeats:req.body.availableSeats,
+                fareDetails:req.body.fareDetails}},function(err, user){
             if (user) {
                 res.status(201).json({status:201,user:user});
             } else {
@@ -504,22 +512,22 @@ adminhandler.post('/adminModifyHotelToList',function(req,res){
         var coll = mongo.collection('hotel');
         console.log(req.body);
         coll.updateOne({hotelId:parseInt(req.body.hotelId)},{$set: {hotelName: req.body.hotelName,
-            hotelFromDate:req.body.hotelFromDate,
-            hotelToDate:req.body.hotelToDate,
-            hotelNumberOfGuests: req.body.hotelNumberOfGuests,
-            hotelNumberOfRooms: req.body.hotelNumberOfRooms,
-            hotelCity: req.body.hotelCity,
-            hotelArea: req.body.hotelArea,
-            hotelRating: req.body.hotelRating,
-            hotelStars: req.body.hotelStars,
-            hotelAddress: req.body.hotelAddress,
-            hotelContact: req.body.hotelContact,
-            hotelCapacity: req.body.hotelCapacity,
-            hotelAvailability:req.body.hotelAvailability,
-            hotelOldPrice:req.body.hotelOldPrice,
-            hotelReviewType:req.body.hotelReviewType,
-            hotelNumberOfReviews:req.body.hotelNumberOfReviews,
-            hotelOriginalPrice: req.body.hotelOriginalPrice}},function(err, user){
+                hotelFromDate:req.body.hotelFromDate,
+                hotelToDate:req.body.hotelToDate,
+                hotelNumberOfGuests: req.body.hotelNumberOfGuests,
+                hotelNumberOfRooms: req.body.hotelNumberOfRooms,
+                hotelCity: req.body.hotelCity,
+                hotelArea: req.body.hotelArea,
+                hotelRating: req.body.hotelRating,
+                hotelStars: req.body.hotelStars,
+                hotelAddress: req.body.hotelAddress,
+                hotelContact: req.body.hotelContact,
+                hotelCapacity: req.body.hotelCapacity,
+                hotelAvailability:req.body.hotelAvailability,
+                hotelOldPrice:req.body.hotelOldPrice,
+                hotelReviewType:req.body.hotelReviewType,
+                hotelNumberOfReviews:req.body.hotelNumberOfReviews,
+                hotelOriginalPrice: req.body.hotelOriginalPrice}},function(err, user){
             if (user) {
                 res.status(201).json({status:201,user:user});
             } else {
@@ -536,7 +544,7 @@ adminhandler.post('/adminModifyHotelToList',function(req,res){
 var storage = multer.diskStorage({
 
     destination: function (req, file, cb) {
-         var userPath=req.session.user;
+        var userPath=req.session.user;
         console.log('inside multer=>userpath=>',userPath);
         cb(null, './public/Userfiles/' + userPath + '/');
     },
@@ -551,7 +559,7 @@ var upload = multer({storage: storage});
 
 
 adminhandler.post('/upload', upload.single('mypic'), function (req, res, next) {
-  //  var userPath = 'q@q.com';
+    //  var userPath = 'q@q.com';
     console.log("user is:",req.session.user);
     var userPath = req.session.user;
     console.log('In upload router call=>Req.body=> backend upload file session Userpath=>', userPath);
@@ -607,61 +615,61 @@ adminhandler.post('/getRevenuepercity',function(req,res){
     var sj1=0;
     for(var i=0;i<sj.length-1;i++){
 
-      sj1+=parseInt(sj[i]);
+        sj1+=parseInt(sj[i]);
     }
 
     var sf=fs.readFileSync('../Kafka-backend/public/city/San Francisco.txt','utf8').split('\n');
     var sf1=0;
     for(var i=0;i<sf.length-1;i++){
-      sf1+=parseInt(sf[i]);
+        sf1+=parseInt(sf[i]);
     }
 
     var bs=fs.readFileSync('../Kafka-backend/public/city/Boston.txt','utf8').split('\n');
     var bs1=0;
     for(var i=0;i<bs.length-1;i++){
-      bs1+=parseInt(bs[i]);
+        bs1+=parseInt(bs[i]);
     }
 
     var ch=fs.readFileSync('../Kafka-backend/public/city/Chicago.txt','utf8').split('\n');
     var ch1=0;
     for(var i=0;i<ch.length-1;i++){
-      ch1+=parseInt(ch[i]);
+        ch1+=parseInt(ch[i]);
     }
 
     var da=fs.readFileSync('../Kafka-backend/public/city/Dallas.txt','utf8').split('\n');
     var da1=0;
     for(var i=0;i<da.length-1;i++){
-      da1+=parseInt(da[i]);
+        da1+=parseInt(da[i]);
     }
 
     var de=fs.readFileSync('../Kafka-backend/public/city/Denver.txt','utf8').split('\n');
     var de1=0;
     for(var i=0;i<de.length-1;i++){
-      de1+=parseInt(de[i]);
+        de1+=parseInt(de[i]);
     }
 
     var la=fs.readFileSync('../Kafka-backend/public/city/Los Angeles.txt','utf8').split('\n');
     var la1=0;
     for(var i=0;i<la.length-1;i++){
-      la1+=parseInt(la[i]);
+        la1+=parseInt(la[i]);
     }
 
     var ny=fs.readFileSync('../Kafka-backend/public/city/New York.txt','utf8').split('\n');
     var ny1=0;
     for(var i=0;i<ny.length-1;i++){
-      ny1+=parseInt(ny[i]);
+        ny1+=parseInt(ny[i]);
     }
 
     var se=fs.readFileSync('../Kafka-backend/public/city/Seattle.txt','utf8').split('\n');
     var se1=0;
     for(var i=0;i<se.length-1;i++){
-      se1+=parseInt(se[i]);
+        se1+=parseInt(se[i]);
     }
 
     var wa=fs.readFileSync('../Kafka-backend/public/city/Washington.txt','utf8').split('\n');
     var wa1=0;
     for(var i=0;i<wa.length-1;i++){
-      wa1+=parseInt(wa[i]);
+        wa1+=parseInt(wa[i]);
     }
 
     res.status(201).send({arr:[sj1,sf1,bs1,ch1,da1,de1,la1,ny1,se1,wa1]});
@@ -674,150 +682,150 @@ adminhandler.post('/getRevenuepercity',function(req,res){
 
 
 adminhandler.post('/getClicksPerPage',function(req,res){
-  var redis = require("redis"),
-      client = redis.createClient();
+    var redis = require("redis"),
+        client = redis.createClient();
     client.get('chome',function(err,reply){
-       var chome=parseInt(reply);
-       client.get('clist',function(err1,reply1){
-         var clist=parseInt(reply1);
-         client.get('cbooking',function(err2,reply2){
-           var cbooking=parseInt(reply2);
-           client.get('hhome',function(err3,reply3){
-              var hhome=parseInt(reply3);
-              client.get('hlist',function(err4,reply4){
-                 var hlist=parseInt(reply4);
-                 client.get('hbooking',function(err5,reply5){
-                    var hbooking=parseInt(reply5);
-                    client.get('fhome',function(err6,reply6){
-                       var fhome=parseInt(reply6);
-                       client.get('flist',function(err7,reply7){
-                          var flist=parseInt(reply7);
-                          client.get('fbooking',function(err8,reply8){
-                             var fbooking=parseInt(reply8);
-                             res.status(201).send({arr:[chome,hhome,fhome,clist,hlist,flist,cbooking,hbooking,fbooking]});
-                           });
+        var chome=parseInt(reply);
+        client.get('clist',function(err1,reply1){
+            var clist=parseInt(reply1);
+            client.get('cbooking',function(err2,reply2){
+                var cbooking=parseInt(reply2);
+                client.get('hhome',function(err3,reply3){
+                    var hhome=parseInt(reply3);
+                    client.get('hlist',function(err4,reply4){
+                        var hlist=parseInt(reply4);
+                        client.get('hbooking',function(err5,reply5){
+                            var hbooking=parseInt(reply5);
+                            client.get('fhome',function(err6,reply6){
+                                var fhome=parseInt(reply6);
+                                client.get('flist',function(err7,reply7){
+                                    var flist=parseInt(reply7);
+                                    client.get('fbooking',function(err8,reply8){
+                                        var fbooking=parseInt(reply8);
+                                        res.status(201).send({arr:[chome,hhome,fhome,clist,hlist,flist,cbooking,hbooking,fbooking]});
+                                    });
+                                })
+                            })
                         })
-                     })
-                  })
-               })
+                    })
+                })
             })
-         })
-       })
+        })
     })
 });
 
 
 adminhandler.post('/getTrace',function(req,res){
-  var user="";
-  if(req.session.user){
-    user=req.session.user;
-  }
-  else{
-    user="guestuser";
-  }
-  var file=fs.readFileSync('../Kafka-backend/public/logging/'+user+'.txt','utf8').split('\n');
-  var index=0;
-  for(var i=file.length-1;i>=0;i--){
-    console.log(i+"=>"+file[i]);
-    var x=file[i].split(',');
-    x=x[x.length-1];
-    if(x.includes('login')){
-      index=i;
-      break;
+    var user="";
+    if(req.session.user){
+        user=req.session.user;
     }
-  }
-  var payload=[];
-  for(var i=index;i<file.length-1;i++){
+    else{
+        user="guestuser";
+    }
+    var file=fs.readFileSync('../Kafka-backend/public/logging/'+user+'.txt','utf8').split('\n');
+    var index=0;
+    for(var i=file.length-1;i>=0;i--){
+        console.log(i+"=>"+file[i]);
+        var x=file[i].split(',');
+        x=x[x.length-1];
+        if(x.includes('login')){
+            index=i;
+            break;
+        }
+    }
+    var payload=[];
+    for(var i=index;i<file.length-1;i++){
 
-    var x=file[i].split('|');
-    payload.push(x[x.length-1]);
-  }
-  res.status(201).send({arr:payload});
+        var x=file[i].split('|');
+        payload.push(x[x.length-1]);
+    }
+    res.status(201).send({arr:payload});
 
 });
 
 adminhandler.post('/getTenProperties',function(req,res){
-  mongo.connect(mongoURL, function(){
-            console.log('Connected to mongo at: ' + mongoURL);
-            var coll = mongo.collection('car');
+    mongo.connect(mongoURL, function(){
+        console.log('Connected to mongo at: ' + mongoURL);
+        var coll = mongo.collection('car');
 
-            coll.find({},{carAgency:1,carRating:1,_id:0}).sort({carRating:-1}).limit(10).toArray(function(err, user){
-                  var cars=user;
-                  coll1=mongo.collection('flight');
-                  coll1.find({},{flightAgency:1,flightRating:1,_id:0}).sort({flightRating:-1}).limit(10).toArray(function(err1, user1){
-                    var flights=user1;
-                    coll2=mongo.collection('hotel');
-                    coll2.find({},{hotelName:1,hotelRating:1,_id:0}).sort({hotelRating:-1}).limit(10).toArray(function(err2, user2){
-                      var hotels=user2;
-                      res.status(201).send({cars:cars,hotels:hotels,flights:flights});
-                    });
-                  });
+        coll.find({},{carAgency:1,carRating:1,_id:0}).sort({carRating:-1}).limit(10).toArray(function(err, user){
+            var cars=user;
+            coll1=mongo.collection('flight');
+            coll1.find({},{flightAgency:1,flightRating:1,_id:0}).sort({flightRating:-1}).limit(10).toArray(function(err1, user1){
+                var flights=user1;
+                coll2=mongo.collection('hotel');
+                coll2.find({},{hotelName:1,hotelRating:1,_id:0}).sort({hotelRating:-1}).limit(10).toArray(function(err2, user2){
+                    var hotels=user2;
+                    res.status(201).send({cars:cars,hotels:hotels,flights:flights});
+                });
             });
-});
+        });
+    });
 });
 
 adminhandler.post('/getCityWiseRatings',function(req,res){
-  mongo.connect(mongoURL, function(){
-            console.log('Connected to mongo at: ' + mongoURL);
-            var coll = mongo.collection('car');
+    mongo.connect(mongoURL, function(){
+        console.log('Connected to mongo at: ' + mongoURL);
+        var coll = mongo.collection('car');
 
-            coll.find({"carCity":"San Jose"},{carRating:1,_id:0}).toArray(function(err, user){
-              var car=user;
-              var coll1=mongo.collection('hotel');
-              coll1.find({"hotelCity":"San Jose"},{hotelRating:1,_id:0}).toArray(function(err1,user1){
+        coll.find({"carCity":"San Jose"},{carRating:1,_id:0}).toArray(function(err, user){
+            var car=user;
+            var coll1=mongo.collection('hotel');
+            coll1.find({"hotelCity":"San Jose"},{hotelRating:1,_id:0}).toArray(function(err1,user1){
                 var hotel=user1;
                 var coll2=mongo.collection('flight');
                 coll2.find({"flightFromCity":"San Jose"},{flightRating:1,_id:0}).toArray(function(err2,user2){
-                  var flight=user2;
-                  var flightavgsj=0;
-                  for(var i=0;i<flight.length;i++){
-                    flightavgsj+=flight[0].flightRating;
-                  }
-                  flightavgsj=Math.floor(flightavgsj/flight.length);
+                    var flight=user2;
+                    var flightavgsj=0;
+                    for(var i=0;i<flight.length;i++){
+                        flightavgsj+=flight[0].flightRating;
+                    }
+                    flightavgsj=Math.floor(flightavgsj/flight.length);
 
-                  var hotelavgsj=0;
-                  for(var i=0;i<hotel.length;i++){
-                    hotelavgsj+=hotel[0].hotelRating;
-                  }
-                  hotelavgsj=Math.floor(hotelavgsj/hotel.length)/2;
+                    var hotelavgsj=0;
+                    for(var i=0;i<hotel.length;i++){
+                        hotelavgsj+=hotel[0].hotelRating;
+                    }
+                    hotelavgsj=Math.floor(hotelavgsj/hotel.length)/2;
 
-                  var caravgsj=0;
-                  for(var i=0;i<car.length;i++){
-                    caravgsj+=car[0].carRating;
-                  }
-                  caravgsj=Math.floor(caravgsj/car.length);
+                    var caravgsj=0;
+                    for(var i=0;i<car.length;i++){
+                        caravgsj+=car[0].carRating;
+                    }
+                    caravgsj=Math.floor(caravgsj/car.length);
 
-                  //res.status(201).send(flightavgsj,caravgsj,hotelavgsj});
+                    //res.status(201).send(flightavgsj,caravgsj,hotelavgsj});
                 })
-              })
-            });
+            })
         });
+    });
 
 });
 
 
 adminhandler.post('/getUserDetails',function(req,res){
-  var user="";
-  if(req.session.user){
-    user=req.session.user;
-    pool.getConnection(function(err, connection) {
-      connection.query("select * from users where emailId='"+req.session.user+"'", function (error, results, fields) {
-        connection.release();
-        if (results.length>=1){
-          console.log(JSON.stringify(results));
-          res.status(201).send({msg:results[0]});
-        }
-        else{
-          res.status(401).send({status:401,msg:"User details not found"});
-        }
+    var user="";
+    if(req.session.user){
+        user=req.session.user;
+        pool.getConnection(function(err, connection) {
+            connection.query("select * from users where emailId='"+req.session.user+"'", function (error, results, fields) {
+                connection.release();
+                if (results.length>=1){
+                    console.log(JSON.stringify(results));
+                    res.status(201).send({msg:results[0]});
+                }
+                else{
+                    res.status(401).send({status:401,msg:"User details not found"});
+                }
 
-      })
+            })
 
-  })
-}
-  else{
-    res.status(300).send({msg:"You need to be signed in to view user details"});
-  }
+        })
+    }
+    else{
+        res.status(300).send({msg:"You need to be signed in to view user details"});
+    }
 });
 
 
@@ -827,7 +835,7 @@ var path = require('path');
 
 
 adminhandler.post('/profilepicture', parser.single('profile-picture'), function (req,res) {
-   // var destination = path.join(process.cwd(), "public", Userfiles, req.session.username , req.session.username + ".jpg");
+    // var destination = path.join(process.cwd(), "public", Userfiles, req.session.username , req.session.username + ".jpg");
     var destination = path.join(process.cwd(), "public","Userfiles", req.session.user , req.session.user + ".jpg");
     fs.createReadStream(req.file.path).pipe(fs.createWriteStream(destination));
     fs.unlink(req.file.path, function(err) {
@@ -840,23 +848,23 @@ adminhandler.post('/profilepicture', parser.single('profile-picture'), function 
 });
 
 adminhandler.post('/getUsername',function(req,res){
-  console.log(req.session.user);
-  res.status(201).send({username:req.session.user});
+    console.log(req.session.user);
+    res.status(201).send({username:req.session.user});
 })
 adminhandler.post('/profileUpload',function(req,res){
-  console.log('Hitting profileUpload');
-  console.log(req.body);
-  pool.getConnection(function(err, connection) {
-    connection.query("update users set firstName='"+req.body.firstName+"',lastName='"+req.body.lastName+"',creditCard='"+req.body.creditCard+"',gender='"+req.body.gender+"',contact='"+req.body.contact+"',middleName='"+req.body.middleName+"',dateOfBirth='"+req.body.dateOfBirth+"',userCountry='"+req.body.userCountry+"',userCity='"+req.body.userCity+"',userAddress='"+req.body.userAddress+"',userZip='"+parseInt(req.body.userZip)+"' where userId="+parseInt(req.body.userId), function (error, results,fields) {
-      connection.release();
-      if (results.length>=1){
-        res.status(201).send({msg:"Successfully updated user profile"});
-      }
-      else{
-        res.status(201).send({msg:"Successfully updated user profile"});
-      }
+    console.log('Hitting profileUpload');
+    console.log(req.body);
+    pool.getConnection(function(err, connection) {
+        connection.query("update users set firstName='"+req.body.firstName+"',lastName='"+req.body.lastName+"',creditCard='"+req.body.creditCard+"',gender='"+req.body.gender+"',contact='"+req.body.contact+"',middleName='"+req.body.middleName+"',dateOfBirth='"+req.body.dateOfBirth+"',userCountry='"+req.body.userCountry+"',userCity='"+req.body.userCity+"',userAddress='"+req.body.userAddress+"',userZip='"+parseInt(req.body.userZip)+"' where userId="+parseInt(req.body.userId), function (error, results,fields) {
+            connection.release();
+            if (results.length>=1){
+                res.status(201).send({msg:"Successfully updated user profile"});
+            }
+            else{
+                res.status(201).send({msg:"Successfully updated user profile"});
+            }
+        });
     });
-  });
-  //res.status(201).send({1:1});
+    //res.status(201).send({1:1});
 })
 module.exports = adminhandler;

@@ -24,16 +24,26 @@ class UserInfo extends Component {
                 else {
                     this.setState({
                         userId: res.user.userId,
-                        address: res.user.address,
-                        city: res.user.city,
-                        zipCode: res.user.zipCode,
-                        state: res.user.state,
-                        phoneNumber: res.user.phoneNumber,
+                        firstName: res.user.firstName,
+                        middleName: res.user.middleName,
+                        lastName: res.user.lastName,
+                        emailId: res.user.emailId,
+                        creditCard: res.user.creditCard,
+                        contact: res.user.contact,
+                        gender: res.user.gender,
+                        dateOfBirth: res.user.dateOfBirth,
+                        userAddress: res.user.userAddress,
+                        userCity: res.user.userCity,
+                        userState: res.user.userState,
+                        userCountry: res.user.userCountry,
+                        userZip: res.user.userZip,
+                        userPhone: res.user.userPhone,
+                        userAgeCategory: res.user.userAgeCategory,
                         messageFlag: true,
                         message: 'User fetched successfully',
                         editUserFormFlag: !this.state.editUserFormFlag
                     });
-                    console.log('admin user object fetched:', res);
+                    console.log('admin user object fetched:', res.user);
                 }
             });
 
@@ -72,7 +82,7 @@ class UserInfo extends Component {
                 } else if (res.status === 401) {
                     this.setState({
                         messageFlag: true,
-                        message: "Car can not be updated.",
+                        message: "User can not be updated.",
                         editUserFormFlag:false
 
                     });
@@ -94,12 +104,13 @@ class UserInfo extends Component {
                     });
                 }
                 else if (res.status === 201) {
+                    console.log('res for userinfo', res.user);
                     this.setState({
                         usersObj: res.user,
                         messageFlag: false
                     });
 
-                    console.log('admin users object fetched:', res);
+
                 }
             });
 
@@ -114,11 +125,21 @@ class UserInfo extends Component {
             userDetailsObj: [],
             viewUserFlag: false,
             userId:null,
-            address:'',
-            city:'',
-            zipCode:null,
-            state:'',
-            phoneNumber:null,
+            firstName: '',
+            middleName: '',
+            lastName: '',
+            emailId: null,
+            creditCard: 0,
+            contact: 0,
+            gender: '',
+            dateOfBirth: '',
+            userAddress: '',
+            userCity: '',
+            userState: '',
+            userCountry: '',
+            userZip: 0,
+            userPhone: 0,
+            userAgeCategory: '',
             editUserFormFlag:false
         };
 
@@ -177,17 +198,20 @@ class UserInfo extends Component {
                                 <thead>
                                 <tr>
                                     <th className={'tableHead'}>User Id</th>
+                                    <th className={'tableHead'}>Name</th>
+                                    <th className={'tableHead'}>Email</th>
+                                    <th className={'tableHead'}>Credit Card</th>
+                                    <th className={'tableHead'}>Gender</th>
+                                    <th className={'tableHead'}>Contact</th>
+                                    <th className={'tableHead'}>Date of Birth</th>
                                     <th className={'tableHead'}>Address</th>
-                                    <th className={'tableHead'}>City</th>
-                                    <th className={'tableHead'}>Zip Code</th>
-                                    <th className={'tableHead'}>State</th>
-                                    <th className={'tableHead'}>Phone Number</th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {
                                     this.state.usersObj.map(item => (
-                                            <tr key={item._id}>
+                                            <tr key={item.userId}>
                                                 <td className={'tableData tableData1'}><img
                                                     className={'itemImage'}
                                                     src={'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'}/> {item.userId}
@@ -200,14 +224,16 @@ class UserInfo extends Component {
                                                     }}>View Details
                                                     </button>
                                                 </td>
-                                                <td className={'tableData'}>{item.address}</td>
-                                                <td className={'tableData'}>{item.city}</td>
-                                                <td className={'tableData'}>{item.zipCode}</td>
+                                                <td className={'tableData'}>{item.firstName+' '+item.lastName}</td>
+                                                <td className={'tableData'}>{item.emailId}</td>
+                                                <td className={'tableData'}>{item.creditCard}</td>
                                                 <td className={'tableData tableData1'}>
                                                     <a href={'#'}
-                                                    >{item.state}</a>
+                                                    >{item.gender}</a>
                                                 </td>
-                                                <td className={'tableData'}>{item.phoneNumber}</td>
+                                                <td className={'tableData'}>{item.contact}</td>
+                                                <td className={'tableData'}>{item.dateOfBirth}</td>
+                                                <td className={'tableData'}>{item.userAddress+', '+ item.userCity+', '+item.userState+', '+item.userCountry}</td>
                                             </tr>
                                         )
                                     )
@@ -247,19 +273,147 @@ class UserInfo extends Component {
                                                             userId: event.target.value
                                                         });
                                                     }}
+                                                    readOnly/>
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>First Name</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    placeholder="First Name"
+                                                    value={this.state.firstName}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            firstName: event.target.value
+                                                        });
+                                                    }}
+                                                    required/>
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>Middle Name</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="text"
+                                                    label="city"
+                                                    placeholder="Middle Name"
+                                                    value={this.state.middleName}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            middleName: event.target.value
+                                                        });
+                                                    }}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>Last Name</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="text"
+                                                    label="city"
+                                                    placeholder="Last Name"
+                                                    value={this.state.lastName}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            lastName: event.target.value
+                                                        });
+                                                    }}
+                                                    required/>
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>Email Id</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="email"
+                                                    label="city"
+                                                    placeholder="Email Id"
+                                                    value={this.state.emailId}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            emailId: event.target.value
+                                                        });
+                                                    }}
+                                                    readOnly/>
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>Credit Card</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="number"
+                                                    label="city"
+                                                    placeholder="Credit Card"
+                                                    value={this.state.creditCard}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            creditCard: event.target.value
+                                                        });
+                                                    }}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>Contact</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="number"
+                                                    label="city"
+                                                    placeholder="Contact"
+                                                    value={this.state.contact}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            contact: event.target.value
+                                                        });
+                                                    }}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>Gender</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="text"
+                                                    label="city"
+                                                    placeholder="Gender"
+                                                    value={this.state.gender}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            gender: event.target.value
+                                                        });
+                                                    }}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>Date of Birth</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="text"
+                                                    label="Zipcode"
+                                                    placeholder="Date of Birth"
+                                                    value={this.state.dateOfBirth}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            dateOfBirth: event.target.value
+                                                        });
+                                                    }}
                                                 />
                                             </div>
 
                                             <div className="form-group">
                                                 <label>Address</label>
                                                 <input
-                                                    type="text"
                                                     className="form-control"
+                                                    type="text"
+                                                    label="state"
                                                     placeholder="Address"
-                                                    value={this.state.address}
+                                                    value={this.state.userAddress}
                                                     onChange={(event) => {
                                                         this.setState({
-                                                            address: event.target.value
+                                                            userAddress: event.target.value
                                                         });
                                                     }}
                                                 />
@@ -270,32 +424,17 @@ class UserInfo extends Component {
                                                 <input
                                                     className="form-control"
                                                     type="text"
-                                                    label="city"
+                                                    label="state"
                                                     placeholder="City"
-                                                    value={this.state.city}
+                                                    value={this.state.userCity}
                                                     onChange={(event) => {
                                                         this.setState({
-                                                            city: event.target.value
+                                                            userCity: event.target.value
                                                         });
                                                     }}
                                                 />
                                             </div>
 
-                                            <div className="form-group">
-                                                <label>ZipCode</label>
-                                                <input
-                                                    className="form-control"
-                                                    type="number"
-                                                    label="Zipcode"
-                                                    placeholder="Zip Code"
-                                                    value={this.state.zipCode}
-                                                    onChange={(event) => {
-                                                        this.setState({
-                                                            zipCode: event.target.value
-                                                        });
-                                                    }}
-                                                />
-                                            </div>
                                             <div className="form-group">
                                                 <label>State</label>
                                                 <input
@@ -303,25 +442,75 @@ class UserInfo extends Component {
                                                     type="text"
                                                     label="state"
                                                     placeholder="State"
-                                                    value={this.state.state}
+                                                    value={this.state.userState}
                                                     onChange={(event) => {
                                                         this.setState({
-                                                            state: event.target.value
+                                                            userState: event.target.value
                                                         });
                                                     }}
                                                 />
                                             </div>
+
+                                            <div className="form-group">
+                                                <label>Country</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="text"
+                                                    label="state"
+                                                    placeholder="Country"
+                                                    value={this.state.userCountry}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            userCountry: event.target.value
+                                                        });
+                                                    }}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>Zip</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="number"
+                                                    label="state"
+                                                    placeholder="Zip"
+                                                    value={this.state.userZip}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            userZip: event.target.value
+                                                        });
+                                                    }}
+                                                />
+                                            </div>
+
+
                                             <div className="form-group">
                                                 <label>Phone Number</label>
                                                 <input
                                                     className="form-control"
                                                     type="number"
                                                     label="Phone Number"
-                                                    placeholder="Car Rating"
-                                                    value={this.state.phoneNumber}
+                                                    placeholder="Phone Number"
+                                                    value={this.state.userPhone}
                                                     onChange={(event) => {
                                                         this.setState({
-                                                            phoneNumber: event.target.value
+                                                            userPhone: event.target.value
+                                                        });
+                                                    }}
+                                                />
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label>User Age Catagory</label>
+                                                <input
+                                                    className="form-control"
+                                                    type="text"
+                                                    label="Phone Number"
+                                                    placeholder="User Age Catagory "
+                                                    value={this.state.userAgeCategory}
+                                                    onChange={(event) => {
+                                                        this.setState({
+                                                            userAgeCategory: event.target.value
                                                         });
                                                     }}
                                                 />
@@ -339,12 +528,22 @@ class UserInfo extends Component {
                                                         type="button"
                                                         onClick={() => {
                                                             this.modifyAdminUserDetail({
-                                                                    userId: this.state.userId,
-                                                                    address: this.state.address,
-                                                                    city: this.state.city,
-                                                                    zipCode: this.state.zipCode,
-                                                                    state: this.state.state,
-                                                                    phoneNumber: this.state.phoneNumber
+                                                                    userId:this.state.userId,
+                                                                    firstName: this.state.firstName,
+                                                                    middleName: this.state.middleName,
+                                                                    lastName: this.state.lastName,
+                                                                    emailId: this.state.emailId,
+                                                                    creditCard: this.state.creditCard,
+                                                                    contact: this.state.contact,
+                                                                    gender: this.state.gender,
+                                                                    dateOfBirth: this.state.dateOfBirth,
+                                                                    userAddress: this.state.userAddress,
+                                                                    userCity: this.state.userCity,
+                                                                    userState: this.state.userState,
+                                                                    userCountry: this.state.userCountry,
+                                                                    userZip: this.state.userZip,
+                                                                    userPhone: this.state.userPhone,
+                                                                    userAgeCategory: this.state.userAgeCategory
                                                                 }
                                                             );
                                                             this.setState({
@@ -365,12 +564,7 @@ class UserInfo extends Component {
                                                         type="button"
                                                         onClick={() => {
                                                             this.deleteAdminUser({
-                                                                    userId: this.state.userId,
-                                                                    address: this.state.address,
-                                                                    city: this.state.city,
-                                                                    zipCode: this.state.zipCode,
-                                                                    state: this.state.state,
-                                                                    phoneNumber: this.state.phoneNumber
+                                                                    userId:this.state.userId
                                                                 }
                                                             );
                                                             this.setState({

@@ -34,6 +34,7 @@ class NewerHomePage extends Component {
 
     state = {
         isLoggedIn: false,
+        LoginInFlag:false,
         message: '',
         username: '',
         showUserBillFlag: false,
@@ -88,6 +89,7 @@ class NewerHomePage extends Component {
       this.state.carTile.cbooking=this.state.checkoutCarClick;
       this.state.carTile.payload=payload;
       console.log(payload);
+      alert(payload);
       API.getCartile(this.state.carTile)
           .then((res) => {
               console.log(res);
@@ -114,10 +116,11 @@ class NewerHomePage extends Component {
         });
     }
 
-    handleRedirectBooking1 = () => {
+    handleRedirectBooking1 = (payload) => {
       this.state.hotelTile.hlist=this.state.searchHotelClick;
       this.state.hotelTile.hbooking=this.state.checkoutHotelClick;
         this.state.hotelTile.room=this.state.room;
+        this.state.hotelTile.payload = payload
       API.getHoteltile(this.state.hotelTile)
           .then((res) => {
               console.log(res);
@@ -130,10 +133,11 @@ class NewerHomePage extends Component {
 
     }
 
-    handleRedirectBooking2 = () => {
+    handleRedirectBooking2 = (payload) => {
       this.state.flightTile.flist=this.state.searchFlightClick;
       this.state.flightTile.fbooking=this.state.checkoutFlightClick;
         this.state.flightTile.seat = this.state.seat;
+        this.state.flightTile.payload = payload
       API.getFlighttile(this.state.flightTile)
           .then((res) => {
               console.log(res);
@@ -152,18 +156,27 @@ class NewerHomePage extends Component {
     };
 
     loginUser = (payload) => {
-        API.loginUser(payload)
-            .then((res) => {
-                if (res.status == 201) {
-                    this.props.history.push("/");
-                }
-                else {
-                    alert("Please check your username and password, and reenter!");
-                    this.props.history.push('/');
-                    this.props.history.push("/signin");
-                }
-            });
-    }
+        if (!this.state.LoginInFlag){
+            API.loginUser(payload)
+                .then((res) => {
+                    if (res.status == 201) {
+                        this.setState({
+                            LoginInFlag:true
+                        });
+                        this.props.history.push("/");
+                    }
+                    else {
+                        alert("Please check your username and password, and reenter!");
+                        this.props.history.push('/');
+                        this.props.history.push("/signin");
+                    }
+                });
+        }
+        else{
+            alert("You are already logged in");
+            this.props.history.push('/');
+        }
+    };
 
     gotoSignup = () => {
         this.props.history.push('/signup');
@@ -280,7 +293,13 @@ class NewerHomePage extends Component {
         console.log("called reDirectToAdminDashboard ")
         this.props.history.push('/adminDashboard');
 
-    }
+    };
+
+    redirectToAdmin = () => {
+        console.log("called reDirectToAdmin ")
+        this.props.history.push('/admin');
+
+    };
 
     headerCarClick=()=>{
     //  console.log(this.state.headerCarClick++);
@@ -352,7 +371,8 @@ class NewerHomePage extends Component {
                 <Route exact path="/" render={() => (
                     <div onClick={this.homeCarClick} className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
 
-                          <HeaderTransparent  handleShowTrips={this.handleShowTrips} handleUserProfile={this.handleUserProfile} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <HeaderTransparent  handleShowTrips={this.handleShowTrips} handleUserProfile={this.handleUserProfile} handleClickSignup={this.handleClickSignup}
+                                              LoginInFlag={this.state.LoginInFlag} handleClickSignin={this.handleClickSignin} redirectToAdmin={this.redirectToAdmin}/>
 
                           <MainBody handleCarFetch={this.handleCarFetch}/>
                           <Footer />

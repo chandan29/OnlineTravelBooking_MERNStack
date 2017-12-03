@@ -1,0 +1,29 @@
+User logged in on |11/3/2017,2:22,login
+User queried car listing from the city of New York on |11/3/2017,2:22,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,2:23,car,buying
+User queried car listing from the city of New York on |11/3/2017,2:25,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,2:26,car,buying
+User logged in on |11/3/2017,2:29,login
+User queried car listing from the city of New York on |11/3/2017,2:29,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,2:30,car,buying
+User queried car listing from the city of New York on |11/3/2017,2:33,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,2:34,car,buying
+User logged in on |11/3/2017,2:36,login
+User queried car listing from the city of New York on |11/3/2017,2:37,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,2:37,car,buying
+User queried car listing from the city of New York on |11/3/2017,4:41,car,listing
+User logged in on |11/3/2017,4:41,login
+User queried car listing from the city of New York on |11/3/2017,4:42,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,4:42,car,buying
+User queried car listing from the city of New York on |11/3/2017,4:49,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,4:49,car,buying
+User queried car listing from the city of New York on |11/3/2017,4:51,car,listing
+User logged in on |11/3/2017,4:54,login
+User queried car listing from the city of New York on |11/3/2017,4:55,car,listing
+User queried car listing from the city of New York on |11/3/2017,5:2,car,listing
+User queried car listing from the city of New York on |11/3/2017,5:7,car,listing
+User queried car listing from the city of New York on |11/3/2017,5:8,car,listing
+User queried car listing from the city of New York on |11/3/2017,5:10,car,listing
+User queried car listing from the city of New York on |11/3/2017,5:18,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,5:19,car,buying
+User registered on |11/3/2017 at 5:21,register
