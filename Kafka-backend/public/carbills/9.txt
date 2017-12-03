@@ -2,7 +2,8 @@
 
 
 
-
+                Name: undefined undefined
+                Payment form: Credit Card
                 City:  New York
 
                   Price:32

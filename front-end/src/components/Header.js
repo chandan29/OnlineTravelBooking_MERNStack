@@ -20,7 +20,7 @@ class Header extends Component {
               <li><a href="/flight">Flights</a></li>
               <li><a href="/">Cars</a></li>
               <li><a href="/hotel">Hotels</a></li>
-              <li><a href="/signin" onClick={this.props.handleLogout}>Logout</a></li>
+              <li onClick={this.props.handleLogout}><span>Logout</span></li>
             </ul>
             <div style={{float: "right", color: "white"}}>
               <span className="glyphicon glyphicon-user"></span>
