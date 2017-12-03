@@ -3,7 +3,7 @@
 
 
 
-                City:  New York
+                                  City:  New York
 
-                  Price:32
-                
+                                    Price:32
+                                  

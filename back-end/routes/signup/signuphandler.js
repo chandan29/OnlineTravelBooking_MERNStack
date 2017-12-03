@@ -11,7 +11,7 @@ var pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'localhost',
   user            : 'root',
-  password        : 'password',
+  password        : '',
   database        : 'kayak'
 });
 
@@ -82,7 +82,7 @@ signuphandler.post('/registerUser',function(req,res){
             else{
               user="guestuser";
             }
-            fs.appendFile("./public/logging/"+email+".txt", "User logged in on "+date+" at "+curTime+",register\n", function(err) {
+            fs.appendFile("./public/logging/"+email+".txt", "User registered on |"+date+" at "+curTime+",register\n", function(err) {
               if(err) {
                   res.send({0:0});
 

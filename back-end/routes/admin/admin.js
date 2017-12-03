@@ -4,6 +4,15 @@ var multer = require('multer');
 var glob = require('glob');
 var adminhandler = express.Router();
 var mongo=require('../mongo.js');
+var mysql      = require('mysql');
+var pool  = mysql.createPool({
+  connectionLimit : 10,
+  host            : 'localhost',
+  user            : 'root',
+  password        : '',
+  database        : 'kayak'
+});
+
 var mongoURL = "mongodb://localhost:27017/kayak";
 var fs=require('fs');
 var time = require('time');
@@ -588,4 +597,226 @@ adminhandler.get('/getImg', function (req, res, next) {
 
 
 
+
+
+
+
+
+adminhandler.post('/getRevenuepercity',function(req,res){
+    var sj=fs.readFileSync('./public/city/San Jose.txt','utf8').split('\n');
+    var sj1=0;
+    for(var i=0;i<sj.length-1;i++){
+
+      sj1+=parseInt(sj[i]);
+    }
+
+    var sf=fs.readFileSync('./public/city/San Francisco.txt','utf8').split('\n');
+    var sf1=0;
+    for(var i=0;i<sf.length-1;i++){
+      sf1+=parseInt(sf[i]);
+    }
+
+    var bs=fs.readFileSync('./public/city/Boston.txt','utf8').split('\n');
+    var bs1=0;
+    for(var i=0;i<bs.length-1;i++){
+      bs1+=parseInt(bs[i]);
+    }
+
+    var ch=fs.readFileSync('./public/city/Chicago.txt','utf8').split('\n');
+    var ch1=0;
+    for(var i=0;i<ch.length-1;i++){
+      ch1+=parseInt(ch[i]);
+    }
+
+    var da=fs.readFileSync('./public/city/Dallas.txt','utf8').split('\n');
+    var da1=0;
+    for(var i=0;i<da.length-1;i++){
+      da1+=parseInt(da[i]);
+    }
+
+    var de=fs.readFileSync('./public/city/Denver.txt','utf8').split('\n');
+    var de1=0;
+    for(var i=0;i<de.length-1;i++){
+      de1+=parseInt(de[i]);
+    }
+
+    var la=fs.readFileSync('./public/city/Los Angeles.txt','utf8').split('\n');
+    var la1=0;
+    for(var i=0;i<la.length-1;i++){
+      la1+=parseInt(la[i]);
+    }
+
+    var ny=fs.readFileSync('./public/city/New York.txt','utf8').split('\n');
+    var ny1=0;
+    for(var i=0;i<ny.length-1;i++){
+      ny1+=parseInt(ny[i]);
+    }
+
+    var se=fs.readFileSync('./public/city/Seattle.txt','utf8').split('\n');
+    var se1=0;
+    for(var i=0;i<se.length-1;i++){
+      se1+=parseInt(se[i]);
+    }
+
+    var wa=fs.readFileSync('./public/city/Washington.txt','utf8').split('\n');
+    var wa1=0;
+    for(var i=0;i<wa.length-1;i++){
+      wa1+=parseInt(wa[i]);
+    }
+
+    res.status(201).send({arr:[sj1,sf1,bs1,ch1,da1,de1,la1,ny1,se1,wa1]});
+
+
+
+
+});
+
+
+
+adminhandler.post('/getClicksPerPage',function(req,res){
+  var redis = require("redis"),
+      client = redis.createClient();
+    client.get('chome',function(err,reply){
+       var chome=parseInt(reply);
+       client.get('clist',function(err1,reply1){
+         var clist=parseInt(reply1);
+         client.get('cbooking',function(err2,reply2){
+           var cbooking=parseInt(reply2);
+           client.get('hhome',function(err3,reply3){
+              var hhome=parseInt(reply3);
+              client.get('hlist',function(err4,reply4){
+                 var hlist=parseInt(reply4);
+                 client.get('hbooking',function(err5,reply5){
+                    var hbooking=parseInt(reply5);
+                    client.get('fhome',function(err6,reply6){
+                       var fhome=parseInt(reply6);
+                       client.get('flist',function(err7,reply7){
+                          var flist=parseInt(reply7);
+                          client.get('fbooking',function(err8,reply8){
+                             var fbooking=parseInt(reply8);
+                             res.status(201).send({arr:[chome,hhome,fhome,clist,hlist,flist,cbooking,hbooking,fbooking]});
+                           });
+                        })
+                     })
+                  })
+               })
+            })
+         })
+       })
+    })
+});
+
+
+adminhandler.post('/getTrace',function(req,res){
+  var user="";
+  if(req.session.user){
+    user=req.session.user;
+  }
+  else{
+    user="guestuser";
+  }
+  var file=fs.readFileSync('./public/logging/'+user+'.txt','utf8').split('\n');
+  var index=0;
+  for(var i=file.length-1;i>=0;i--){
+    console.log(i+"=>"+file[i]);
+    var x=file[i].split(',');
+    x=x[x.length-1];
+    if(x.includes('login')){
+      index=i;
+      break;
+    }
+  }
+  var payload=[];
+  for(var i=index;i<file.length-1;i++){
+
+    var x=file[i].split('|');
+    payload.push(x[x.length-1]);
+  }
+  res.status(201).send({arr:payload});
+
+});
+
+adminhandler.post('/getTenProperties',function(req,res){
+  mongo.connect(mongoURL, function(){
+            console.log('Connected to mongo at: ' + mongoURL);
+            var coll = mongo.collection('car');
+
+            coll.find({},{carAgency:1,carRating:1,_id:0}).sort({carRating:-1}).limit(10).toArray(function(err, user){
+                  var cars=user;
+                  coll1=mongo.collection('flight');
+                  coll1.find({},{flightAgency:1,flightRating:1,_id:0}).sort({flightRating:-1}).limit(10).toArray(function(err1, user1){
+                    var flights=user1;
+                    coll2=mongo.collection('hotel');
+                    coll2.find({},{hotelName:1,hotelRating:1,_id:0}).sort({hotelRating:-1}).limit(10).toArray(function(err2, user2){
+                      var hotels=user2;
+                      res.status(201).send({cars:cars,hotels:hotels,flights:flights});
+                    });
+                  });
+            });
+});
+});
+
+adminhandler.post('/getCityWiseRatings',function(req,res){
+  mongo.connect(mongoURL, function(){
+            console.log('Connected to mongo at: ' + mongoURL);
+            var coll = mongo.collection('car');
+
+            coll.find({"carCity":"San Jose"},{carRating:1,_id:0}).toArray(function(err, user){
+              var car=user;
+              var coll1=mongo.collection('hotel');
+              coll1.find({"hotelCity":"San Jose"},{hotelRating:1,_id:0}).toArray(function(err1,user1){
+                var hotel=user1;
+                var coll2=mongo.collection('flight');
+                coll2.find({"flightFromCity":"San Jose"},{flightRating:1,_id:0}).toArray(function(err2,user2){
+                  var flight=user2;
+                  var flightavgsj=0;
+                  for(var i=0;i<flight.length;i++){
+                    flightavgsj+=flight[0].flightRating;
+                  }
+                  flightavgsj=Math.floor(flightavgsj/flight.length);
+
+                  var hotelavgsj=0;
+                  for(var i=0;i<hotel.length;i++){
+                    hotelavgsj+=hotel[0].hotelRating;
+                  }
+                  hotelavgsj=Math.floor(hotelavgsj/hotel.length)/2;
+
+                  var caravgsj=0;
+                  for(var i=0;i<car.length;i++){
+                    caravgsj+=car[0].carRating;
+                  }
+                  caravgsj=Math.floor(caravgsj/car.length);
+
+                  //res.status(201).send(flightavgsj,caravgsj,hotelavgsj});
+                })
+              })
+            });
+        });
+
+});
+
+
+adminhandler.post('/getUserDetails',function(req,res){
+  var user="";
+  if(req.session.user){
+    user=req.session.user;
+    pool.getConnection(function(err, connection) {
+      connection.query("select * from users where emailId='"+req.session.user+"'", function (error, results, fields) {
+        connection.release();
+        if (results.length>=1){
+          console.log(JSON.stringify(results));
+          res.status(201).send({msg:results[0]});
+        }
+        else{
+          res.status(401).send({status:401,msg:"User details not found"});
+        }
+
+      })
+
+  })
+}
+  else{
+    res.status(300).send({msg:"You need to be signed in to view user details"});
+  }
+})
 module.exports = adminhandler;

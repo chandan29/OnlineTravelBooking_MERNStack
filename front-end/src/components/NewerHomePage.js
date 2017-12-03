@@ -36,7 +36,23 @@ class NewerHomePage extends Component {
         isLoggedIn: false,
         message: '',
         username: '',
-        showUserBillFlag: false
+        showUserBillFlag: false,
+        headerCarClick:0,
+        navCarClick:0,
+        midCarClick:0,
+        footerCarClick:0,
+        searchCarClick:0,
+        homeCarClick:0,
+        bookingCarClick:0,
+        checkoutCarClick:0,
+        searchHotelClick:0,
+        homeHotelClick:0,
+        bookingHotelClick:0,
+        checkoutHotelClick:0,
+        searchFlightClick:0,
+        homeFlightClick:0,
+        bookingFlightClick:0,
+        checkoutFlightClick:0
     };
 
     handleSubmit = (userdata) => {
@@ -72,6 +88,8 @@ class NewerHomePage extends Component {
     };
 
     handleRedirectBooking = () => {
+      this.state.carTile.clist=this.state.searchCarClick;
+      this.state.carTile.cbooking=this.state.checkoutCarClick;
       API.getCartile(this.state.carTile)
           .then((res) => {
               console.log(res);
@@ -85,6 +103,8 @@ class NewerHomePage extends Component {
     }
 
     handleRedirectBooking1 = () => {
+      this.state.hotelTile.hlist=this.state.searchHotelClick;
+      this.state.hotelTile.hbooking=this.state.checkoutHotelClick;
         this.state.hotelTile.room=this.state.room;
       API.getHoteltile(this.state.hotelTile)
           .then((res) => {
@@ -99,6 +119,8 @@ class NewerHomePage extends Component {
     }
 
     handleRedirectBooking2 = () => {
+      this.state.flightTile.flist=this.state.searchFlightClick;
+      this.state.flightTile.fbooking=this.state.checkoutFlightClick;
         this.state.flightTile.seat = this.state.seat;
       API.getFlighttile(this.state.flightTile)
           .then((res) => {
@@ -157,6 +179,7 @@ class NewerHomePage extends Component {
     }
 
     handleCarFetch = (payload) => {
+      payload.chome=this.state.homeCarClick;
         API.getCars(payload)
             .then((res) => {
                 this.setState({
@@ -169,6 +192,7 @@ class NewerHomePage extends Component {
     };
 
     handleHotelFetch = (payload) => {
+      payload.hhome=this.state.homeHotelClick;
       API.getHotels(payload)
           .then((res) => {
                   console.log(res);
@@ -182,9 +206,10 @@ class NewerHomePage extends Component {
     };
 
     handleFlightFetch = (payload) => {
+      payload.fhome=this.state.homeFlightClick;
         API.getFlights(payload)
             .then((res) => {
-                console.log(res);
+                console.log("PRINTING FLIGHT API RETURN:"+res.user);
                 this.setState({
                     flightsObj:res.user,
                     seats: res.seats
@@ -227,6 +252,7 @@ class NewerHomePage extends Component {
     };
 
     handleUserProfile = () => {
+      console.log("In handle user profile");
         this.props.history.push('/userProfile');
     };
 
@@ -243,20 +269,85 @@ class NewerHomePage extends Component {
         this.props.history.push('/adminDashboard');
 
     }
+
+    headerCarClick=()=>{
+    //  console.log(this.state.headerCarClick++);
+    }
+
+    navCarClick=()=>{
+    //  console.log(this.state.navCarClick++);
+    }
+
+    midCarClick=()=>{
+    //  console.log(this.state.midCarClick++);
+    }
+
+    footerCarClick=()=>{
+    //  console.log(this.state.footerCarClick++);
+    }
+
+    searchCarClick=()=>{
+      console.log(this.state.searchCarClick++);
+    }
+
+    homeCarClick=()=>{
+      console.log(this.state.homeCarClick++);
+    }
+
+    bookingCarClick=()=>{
+      console.log(this.state.bookingCarClick++);
+    }
+
+    checkoutCarClick=()=>{
+      console.log(this.state.checkoutCarClick++);
+    }
+
+    searchHotelClick=()=>{
+      console.log(this.state.searchHotelClick++);
+    }
+
+    homeHotelClick=()=>{
+      console.log(this.state.homeHotelClick++);
+    }
+
+    bookingHotelClick=()=>{
+      console.log(this.state.bookingHotelClick++);
+    }
+
+    checkoutHotelClick=()=>{
+      console.log(this.state.checkoutHotelClick++);
+    }
+
+    searchFlightClick=()=>{
+      console.log(this.state.searchFlightClick++);
+    }
+
+    homeFlightClick=()=>{
+      console.log(this.state.homeFlightClick++);
+    }
+
+    bookingFlightClick=()=>{
+      console.log(this.state.bookingFlightClick++);
+    }
+
+    checkoutFlightClick=()=>{
+      console.log(this.state.checkoutFlightClick++);
+    }
+
     render() {
         return (
             <div className="container-fluid" style={{backgroundColor:"white"}}>
                 <Route exact path="/" render={() => (
-                    <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
+                    <div onClick={this.homeCarClick} className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
 
-                          <HeaderTransparent  handleShowTrips={this.handleShowTrips} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
+                          <HeaderTransparent  handleShowTrips={this.handleShowTrips} handleUserProfile={this.handleUserProfile} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
 
                           <MainBody handleCarFetch={this.handleCarFetch}/>
                           <Footer />
                     </div>
                 )}/>
                 <Route exact path="/hotels" render={() => (
-                    <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
+                    <div onClick={this.homeHotelClick} className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
                           <HeaderTransparentHotel  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                           <HotelsMainPage handleHotelFetch={this.handleHotelFetch}/>
                           <Footer />
@@ -264,7 +355,7 @@ class NewerHomePage extends Component {
                 )}/>
 
                 <Route exact path="/flights" render={() => (
-                    <div className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
+                    <div onClick={this.homeFlightClick} className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
                           <HeaderTransparentFlight  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                           <FlightsMainPage handleFlightFetch={this.handleFlightFetch}/>
                           <Footer />
@@ -272,7 +363,7 @@ class NewerHomePage extends Component {
                 )}/>
 
                 <Route exact path="/searchCar" render={() => (
-                    <div>
+                    <div onClick={this.searchCarClick}>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -284,7 +375,7 @@ class NewerHomePage extends Component {
                 )}/>
 
                 <Route exact path="/searchHotel" render={() => (
-                    <div>
+                    <div onClick={this.searchHotelClick}>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -297,7 +388,7 @@ class NewerHomePage extends Component {
 
 
                 <Route exact path="/searchFlight" render={() => (
-                    <div>
+                    <div onClick={this.searchFlightClick}>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -310,7 +401,7 @@ class NewerHomePage extends Component {
 
 
                 <Route exact path="/carCheckout" render={() => (
-                    <div>
+                    <div onClick={this.checkoutCarClick}>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -322,7 +413,7 @@ class NewerHomePage extends Component {
                 )}/>
 
                 <Route exact path="/hotelCheckout" render={() => (
-                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
+                    <div onClick={this.checkoutHotelClick} className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
                         <div className="header-xyz">
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -335,7 +426,7 @@ class NewerHomePage extends Component {
 
 
                 <Route exact path="/flightCheckout" render={() => (
-                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
+                    <div onClick={this.checkoutFlightClick} className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
                         <div className="header-xyz">
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -349,23 +440,23 @@ class NewerHomePage extends Component {
 
 
                 <Route exact path="/bookingSuccessful" render={() => (
-                    <div>
+                    <div onClick={this.bookingCarClick}>
                         <BookingSuccessful carTile={this.state.carTile} username={this.state.username} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
                     </div>
                 )}/>
               <Route exact path="/hotelbookingSuccessful" render={() => (
-                    <div>
+                    <div onClick={this.bookingHotelClick}>
                         <HotelBookingSuccessful hotelTile={this.state.hotelTile} room={this.state.room} username={this.state.username} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
                     </div>
                 )}/>
 
                 <Route exact path="/flightbookingSuccessful" render={() => (
-                      <div>
+                      <div onClick={this.bookingFlightClick}>
                           <FlightBookingSuccessful flightTile={this.state.flightTile} seat={this.state.seat} username={this.state.username} handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} />
                       </div>
                   )}/>
 
-                  
+
 
                 <Route exact path="/signup" render={() => (
                     <div>

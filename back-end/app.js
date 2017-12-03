@@ -29,7 +29,7 @@ var pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'localhost',
   user            : 'root',
-  password        : 'password',
+  password        : '',
   database        : 'kayak'
 });
 // uncomment after placing your favicon in /public
@@ -141,7 +141,7 @@ app.post('/loginUser', function(req, res,next) {
              var date=""+t.month+"/"+t.dayOfMonth+"/2017";
              var curTime=""+t.hours+":"+t.minutes;
 
-             fs.appendFile("./public/logging/"+req.session.user+".txt", "User logged in on "+date+" at "+curTime+",login\n", function(err) {
+               fs.appendFile("./public/logging/"+req.session.user+".txt", "User logged out on |"+date+","+curTime+",login\n", function(err) {
                if(err) {
                    res.send({0:0});
 

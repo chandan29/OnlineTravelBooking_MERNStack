@@ -1,0 +1,7 @@
+{
+  "app.title": "React Intl Translations Example",
+  "app.locales_menu_heading": "Locales:",
+  "greeting.welcome_message": "Welcome {name}, you have received {unreadCount, plural, =0 {no new messages} one {{formattedUnreadCount} new message} other {{formattedUnreadCount} new messages}} since {formattedLastLoginTime}.",
+  "menu.item_en_us_description": "The default locale of this example app.",
+  "menu.item_en_upper_description": "The fake, all uppercase \"locale\" for this example app."
+}

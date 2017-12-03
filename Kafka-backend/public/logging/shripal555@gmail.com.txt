@@ -1,0 +1,35 @@
+User queried car listing for the city of San Jose|10/30/2017,19:3,car,listing
+User queried car listing for the city of New York|10/30/2017,19:4,car,listing
+User queried hotel listing for the city of New York|10/30/2017,19:4,hotel,listing
+User queried flight listing from the city of San Jose to the city of New York|10/30/2017,19:5,flight,listing
+User queried hotel listing for the city of San Jose|10/30/2017,19:6,hotel,listing
+User queried car listing for the city of New York|10/30/2017,19:10,car,listing
+User booked a car from the city of New York|10/30/2017,19:10,39,car,buying
+User queried flight listing from the city of New York to the city of San Jose|10/30/2017,19:12,flight,listing
+User queried flight listing from the city of San Jose to the city of New York|10/30/2017,19:13,flight,listing
+User queried flight listing from the city of Seattle to the city of New York|10/30/2017,19:16,flight,listing
+User booked a Flight from the city of Seattleto the city of undefined|10/30/2017,19:16,flight,buying
+User queried flight listing from the city of Seattle to the city of New York|10/30/2017,19:22,flight,listing
+User queried flight listing from the city of Los Angeles to the city of San Jose|10/30/2017,19:23,flight,listing
+User booked a Flight from the city of Los Angelesto the city of undefined|10/30/2017,19:23,flight,buying
+User queried flight listing from the city of Los Angeles to the city of San Jose|10/30/2017,19:23,flight,listing
+User queried flight listing from the city of Seattle to the city of San Jose|10/30/2017,20:6,flight,listing
+User queried flight listing from the city of Chicago to the city of Los Angeles|10/30/2017,20:7,flight,listing
+User queried flight listing from the city of Chicago to the city of Los Angeles|10/30/2017,20:8,flight,listing
+User queried flight listing from the city of Chicago to the city of Los Angeles|10/30/2017,20:11,flight,listing
+User queried flight listing from the city of San Jose to the city of New York|10/30/2017,21:55,flight,listing
+User queried flight listing from the city of New York to the city of San Jose|10/30/2017,21:56,flight,listing
+User queried flight listing from the city of Chicago to the city of Los Angeles|10/30/2017,21:56,flight,listing
+User queried flight listing from the city of Chicago to the city of Los Angeles|10/30/2017,21:58,flight,listing
+User booked a Flight from the city of San Joseto the city of undefined|10/30/2017,23:17,flight,buying
+User booked a Flight from the city of San Joseto the city of undefined|10/30/2017,23:18,flight,buying
+User booked a Flight from the city of San Joseto the city of undefined|10/30/2017,23:19,flight,buying
+User booked a Flight from the city of San Joseto the city of undefined|10/30/2017,23:21,flight,buying
+User queried flight listing from the city of San Jose to the city of Denver|10/30/2017,23:32,flight,listing
+User booked a Flight from the city of San Joseto the city of Denver|10/30/2017,23:33,flight,buying
+User queried hotel listing for the city of Dallas|11/1/2017,1:35,hotel,listing
+User booked a hotel in the city of Dallas|11/1/2017,1:35hotel,buying
+User booked a hotel in the city of Dallas|11/1/2017,1:36hotel,buying
+User queried hotel listing for the city of New York|11/1/2017,1:38,hotel,listing
+User booked a hotel in the city of New York|11/1/2017,1:38hotel,buying
+User booked a hotel in the city of New York|11/1/2017,1:38hotel,buying

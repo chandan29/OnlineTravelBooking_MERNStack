@@ -643,3 +643,91 @@ export const getImages = () =>
             return error;
         });
 {/********************************************  Admin SWAPNIL APIs END below    ***************************************************/}
+export const getRevenuepercity = (payload) =>
+    fetch(`${api}/getRevenuepercity`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        credentials:'include',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.json();
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+        export const getClicksPerPage = (payload) =>
+            fetch(`${api}/getClicksPerPage`, {
+                method: 'POST',
+                headers: {
+                    ...headers,
+                    'Content-Type': 'application/json'
+                },
+                credentials:'include',
+                body: JSON.stringify(payload)
+            }).then(res => {
+                return res.json();
+            })
+                .catch(error => {
+                    console.log("This is error");
+                    return error;
+                });
+
+
+                export const getTrace= (payload) =>
+                    fetch(`${api}/getTrace`, {
+                        method: 'POST',
+                        headers: {
+                            ...headers,
+                            'Content-Type': 'application/json'
+                        },
+                        credentials:'include',
+                        body: JSON.stringify(payload)
+                    }).then(res => {
+                        return res.json();
+                    })
+                        .catch(error => {
+                            console.log("This is error");
+                            return error;
+                        });
+
+
+                        export const getTenProperties= (payload) =>
+                            fetch(`${api}/getTenProperties`, {
+                                method: 'POST',
+                                headers: {
+                                    ...headers,
+                                    'Content-Type': 'application/json'
+                                },
+                                credentials:'include',
+                                body: JSON.stringify(payload)
+                            }).then(res => {
+                                return res.json();
+                            })
+                                .catch(error => {
+                                    console.log("This is error");
+                                    return error;
+                                });
+
+
+
+                                export const getUserDetails= (payload) =>
+                                    fetch(`${api}/getUserDetails`, {
+                                        method: 'POST',
+                                        headers: {
+                                            ...headers,
+                                            'Content-Type': 'application/json'
+                                        },
+                                        credentials:'include',
+                                        body: JSON.stringify(payload)
+                                    }).then(res => {
+                                        return res.json();
+                                    })
+                                        .catch(error => {
+                                            console.log("This is error");
+                                            return error;
+                                        });
