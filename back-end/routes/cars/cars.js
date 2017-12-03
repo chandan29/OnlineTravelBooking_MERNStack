@@ -11,7 +11,7 @@ module.exports = carshandler;
 
 carshandler.post('/getCars',function(req,res){
   //Input parameters: from city, from date,to date
-  /*var redis = require("redis"),
+  var redis = require("redis"),
       client = redis.createClient();
       client.get("chome", function(err, reply) {
         if(err){
@@ -24,7 +24,7 @@ carshandler.post('/getCars',function(req,res){
             console.log("Checking redis:"+x);
           }
 
-        });*/
+        });
     kafka.make_request('cars_topic',{type: "getCars", "carCity":req.body.carCity, "carFromDate": req.body.fromDate, "carToDate": req.body.toDate}, function(err,results){
 
         if (results) {
@@ -47,7 +47,7 @@ carshandler.post('/getCars',function(req,res){
 carshandler.post('/bookCar',function(req,res){
 
 
-/*
+
           var redis = require("redis"),
               client = redis.createClient();
 
@@ -73,7 +73,7 @@ carshandler.post('/bookCar',function(req,res){
                       console.log("Checking redis booking:"+x);
                     }
                   });
-*/
+
 
 
     kafka.make_request('cars_topic', {type: "bookCar", body: req.body}, function(err, results){
@@ -96,7 +96,7 @@ carshandler.post('/bookCar',function(req,res){
 
 
 carshandler.post('/receipt',function(req,res){
-/*
+
   var time = require('time');
   var city="San Jose";
   var t=time.localtime(Date.now()/1000);
@@ -112,7 +112,7 @@ carshandler.post('/receipt',function(req,res){
     console.log("The file was saved!");
     res.send({1:"User queried car listing for the city of "+city+" on "+date+" at "+curTime+"\n"});
   });
-*/
+
 
     kafka.make_request('cars_topic', {type: "receipt", body: req.body}, function(err, results){
 

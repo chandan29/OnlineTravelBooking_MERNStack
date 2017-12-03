@@ -11,18 +11,20 @@ module.exports = hotelhandler;
 
 hotelhandler.post('/getHotels',function(req,res){
   //Input parameters: from city, from date,to date
+  var redis = require("redis")
 
-      // client.get("hhome", function(err, reply) {
-      //   if(err){
-      //       client.set("hhome",parseInt(req.body.hhome));
-      //     }
-      //     else{
-      //       var x=parseInt(reply)+parseInt(req.body.hhome);
-      //       client.set("hhome",x);
-      //       console.log("Checking redis:"+x);
-      //     }
-      //
-      //   });
+      client = redis.createClient();
+      client.get("hhome", function(err, reply) {
+         if(err){
+            client.set("hhome",parseInt(req.body.hhome));
+        }
+          else{
+         var x=parseInt(reply)+parseInt(req.body.hhome);
+           client.set("hhome",x);
+          console.log("Checking redis:"+x);
+          }
+
+        });
 
     kafka.make_request('hotels_topic', {type: "getHotels", body: req.body, session: req.session}, function (err, results) {
 
@@ -40,7 +42,7 @@ hotelhandler.post('/getHotels',function(req,res){
 
 hotelhandler.post('/bookHotel',function(req,res){
 
-/*
+
   var redis = require("redis"),
       client = redis.createClient();
       client.get("hlist", function(err, reply) {
@@ -65,7 +67,7 @@ hotelhandler.post('/bookHotel',function(req,res){
               console.log("Checking redis booking:"+x);
             }
           });
-*/
+
 
 
 

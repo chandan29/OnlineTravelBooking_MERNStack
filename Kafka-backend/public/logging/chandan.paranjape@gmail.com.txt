@@ -54,3 +54,9 @@ User booked a Flight from the city of San Joseto the city of Dallas|11/1/2017,22
 User queried flight listing from the city of San Jose to the city of Dallas|11/1/2017,22:23,flight,listing
 User queried flight listing from the city of San Jose to the city of Dallas|11/1/2017,22:26,flight,listing
 User booked a Flight from the city of San Joseto the city of Dallas|11/1/2017,22:26,flight,buying
+User queried flight listing from the city of San Jose to the city of Dallas|11/2/2017,18:54,flight,listing
+User booked a Flight from the city of San Joseto the city of Dallas|11/2/2017,18:54,flight,buying
+User queried flight listing from the city of San Jose to the city of Dallas|11/2/2017,18:55,flight,listing
+User booked a Flight from the city of San Joseto the city of Dallas|11/2/2017,18:55,flight,buying
+User queried flight listing from the city of San Jose to the city of Dallas|11/2/2017,18:58,flight,listing
+User booked a Flight from the city of San Joseto the city of Dallas|11/2/2017,18:59,flight,buying

@@ -1355,3 +1355,8 @@ User queried car listing for the city of New York on 11/1/2017 at 18:55
 User queried car listing for the city of New York on 11/1/2017 at 18:55
 User queried car listing for the city of New York on 11/1/2017 at 18:55
 User queried car listing for the city of New York on 11/1/2017 at 18:55
+User queried car listing for the city of San Jose on 11/2/2017 at 18:47
+User queried car listing for the city of New York on 11/2/2017 at 18:47
+User booked a car from the city of New York on 11/2/2017 at 18:47
+User queried car listing for the city of New York on 11/2/2017 at 18:52
+User booked a car from the city of New York on 11/2/2017 at 18:52

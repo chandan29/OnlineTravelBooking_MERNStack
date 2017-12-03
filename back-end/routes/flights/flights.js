@@ -13,60 +13,20 @@ module.exports = flightshandler;
 setDummyEntry = true;
 flightshandler.post('/getFlights',function(req,res){
   var redis = require("redis")
-/*
+
       client = redis.createClient();
-  /!*if(client.get("fhome") == null) {
-      client.set("fhome", parseInt(0));
-  }
-  *!/
-
-  var promise = new Promise(function(resolve, reject){
-        if(setDummyEntry) {
-
-            client.set("fhome", 200, function(err, response){
-                if(err) {
-                    reject("some error occurred");
-                    return;
-                }
-
-        setDummyEntry = false;
-                resolve("cool");
-            })
-        } else {
-            resolve("cool");
-        }
-  });
-
-  promise.then(function(){
       client.get("fhome", function(err, reply) {
-          if(err){
-              client.set("fhome",parseInt(req.body.fhome));
+        if(err){
+            client.set("fhome",parseInt(req.body.fhome));
           }
           else{
-              var x=parseInt(reply)+parseInt(req.body.fhome);
-              //  var x = 2 + parseInt(req.body.fhome);
-              client.set("fhome",x);
-              console.log("Checking redis:"+x);
+           //var x=parseInt(reply)+parseInt(req.body.chome);
+            var x =  1 + parseInt(req.body.fhome);
+            client.set("fhome",x);
+            console.log("Checking redis:"+x);
           }
 
-      });
-  }, function(){
-      client.get("fhome", function(err, reply) {
-          if(err){
-              client.set("fhome",parseInt(req.body.fhome));
-          }
-          else{
-              var x=parseInt(reply)+parseInt(req.body.fhome);
-              //  var x = 2 + parseInt(req.body.fhome);
-              client.set("fhome",x);
-              console.log("Checking redis:"+x);
-              res.status(201).json({user: user, seats: req.body.seats});
-          }
-
-      });
-  });
-*/
-
+        });
 
   //Input parameters: from city, to city, date, class, adults, seniors, children, infants
   kafka.make_request('flights_topic', {type: "getFlights", body: req.body, session: req.session}, function (err, results) {
