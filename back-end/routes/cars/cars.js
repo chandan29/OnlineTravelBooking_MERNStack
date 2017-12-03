@@ -25,7 +25,15 @@ carshandler.post('/getCars',function(req,res){
           }
 
         });
-    kafka.make_request('cars_topic',{type: "getCars", "carCity":req.body.carCity, "carFromDate": req.body.fromDate, "carToDate": req.body.toDate}, function(err,results){
+
+        var user="";
+        if(req.session.user){
+          user=req.session.user;
+        }
+        else{
+          user="guestuser";
+        }
+    kafka.make_request('cars_topic',{type: "getCars", "carCity":req.body.carCity, "carFromDate": req.body.fromDate, "carToDate": req.body.toDate,session:user}, function(err,results){
 
         if (results) {
             console.log("sucess from kafka");
@@ -45,7 +53,6 @@ carshandler.post('/getCars',function(req,res){
 
 
 carshandler.post('/bookCar',function(req,res){
-
 
 
           var redis = require("redis"),
@@ -73,10 +80,16 @@ carshandler.post('/bookCar',function(req,res){
                       console.log("Checking redis booking:"+x);
                     }
                   });
+                  var user="";
+                  if(req.session.user){
+                    user=req.session.user;
+                  }
+                  else{
+                    user="guestuser";
+                  }
 
 
-
-    kafka.make_request('cars_topic', {type: "bookCar", body: req.body}, function(err, results){
+    kafka.make_request('cars_topic', {type: "bookCar", body: req.body,session:user}, function(err, results){
 
         if(results){
             console.log("Booking done through kafka cars");

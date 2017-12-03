@@ -43,8 +43,8 @@ function handle_request(msg, callback) {
                     var t=time.localtime(Date.now()/1000);
                     var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                     var curTime=""+t.hours+":"+t.minutes;
-
-                    fs.appendFile("./public/logging/guestuser.txt", "User queried car listing for the city of "+carCity+" on "+date+" at "+curTime+"\n", function(err) {
+                    var user=msg.session;
+                    fs.appendFile("./public/logging/"+user+".txt", "User queried car listing from the city of "+carCity+" on |"+date+","+curTime+",car,listing\n", function(err) {
                         if(err) {
                             //res.status({});
 
@@ -67,6 +67,7 @@ function handle_request(msg, callback) {
     {
 
         console.log("book car: ",msg.body);
+        var payload=JSON.stringify(msg.body.payload);
         var carCity=msg.body.cartile.carCity;
         var carId=msg.body.cartile.carId;
         var carRate=msg.body.cartile.carOriginalPrice;
@@ -108,7 +109,8 @@ function handle_request(msg, callback) {
 
 
 
-
+                Name: `+payload.firstName+` `+payload.lastName+`
+                Payment form: Credit Card
                 City:  `+carCity+`
 
                   Price:`+carRate+`
@@ -135,7 +137,7 @@ function handle_request(msg, callback) {
                             subject: carCity,
                             attachment:
                                 [
-                                    {data:"<html>i <i>hope</i> this works!</html>", alternative:true},
+                                    {data:"<html>"+carId+" booked by "+carCity+"</html>", alternative:true},
                                     {path:"./public/carbills/"+carId+".txt", type:"application/text", name:""+carId+".txt"}
                                 ]
                         }, function(err, message) { console.log(err || message);});
@@ -145,14 +147,23 @@ function handle_request(msg, callback) {
                     var t=time.localtime(Date.now()/1000);
                     var date=""+t.month+"/"+t.dayOfMonth+"/2017";
                     var curTime=""+t.hours+":"+t.minutes;
-
-                    fs.appendFile("./public/logging/guestuser.txt", "User booked a car from the city of "+city+" on "+date+" at "+curTime+"\n", function(err) {
+                    var user=msg.session;
+                    console.log("USER:"+user);
+                    fs.appendFile("./public/logging/"+user+".txt", "User booked a car from the city of "+carCity+"on |"+date+","+curTime+",car,buying\n", function(err) {
                         if(err) {
                           //  res.send({0:0});
 
                         }
 
                         console.log("The file was saved!");
+                    });
+                    fs.appendFile("./public/city/"+carCity+".txt",carRate+"\n", function(err) {
+                        if(err) {
+                            //    res.send({0:0});
+
+                        }
+
+                        console.log("Entry for city saved!");
                     });
 
 
