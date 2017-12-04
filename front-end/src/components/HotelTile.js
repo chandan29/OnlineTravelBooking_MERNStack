@@ -5,6 +5,8 @@ import Hotel1 from './../hotel1.jpg';
 import LeftFilterCars from './LeftFilterCars';
 import Slider from 'material-ui/Slider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import SideHotel1 from './../sidehotel1.png';
+import SideHotel2 from './../sidehotel2.png';
 var FontAwesome = require('react-fontawesome');
 
 
@@ -24,7 +26,7 @@ class HotelTile extends Component {
 
   state={
 hotelsCopy: this.props.hotels,
-val:50
+val:500
   }
 
 
@@ -129,8 +131,8 @@ val:50
         <div className="leftFilterCars">
             <div classNameName="mainBodyLeftFilterCars">
             <div>
-              <div style={{textAlign: "center",width: "100%",marginTop: "3%",fontSize: 22}}><strong >Filters</strong></div>
-              <div style={{textAlign: "center",width: "100%",marginTop: "8%",fontSize: 18}}><span style={{textDecoration: "underline"}}>Filter By Stars</span></div>
+              <div style={{textAlign: "center",width: "85%",marginTop: "3%",marginLeft: "5%",height: 40,fontSize: 22,border: "1px solid",paddingTop: 10}}><strong >Filters</strong></div><hr style={{backgroundColor: "#f00",width: 2}}/>
+              <div style={{textAlign: "center",width: "85%",marginTop: 10,marginLeft: "5%",height: 25,fontSize: 18,borderBottom: "1px solid"}}><span style={{float:"left", fontWeight: 700}}>Stars</span></div>
               <div classNameName="starFilter">
                   <form className="rating">
                       <label>
@@ -166,27 +168,47 @@ val:50
                   </form>
               </div>
             </div>
-            <div style={{textAlign: "center",width: "100%",marginTop: "3%",fontSize: 18}}><span style={{textDecoration:"underline"}}>Filter By Price</span></div>
-              <div classNameName="priceFilter" style={{marginTop: 30}}>
+            <hr/>
+            <div style={{textAlign: "center",width: "85%",marginTop: 10,marginLeft: "5%",height: 25,fontSize: 18,borderBottom: "1px solid"}}><span style={{float:"left", fontWeight: 700}}>Price</span></div>
+            <div classNameName="priceFilter" style={{marginTop: 30}}>
               <label style={{display: "inline", float: "left",marginLeft: "7%"}}>0</label>
               <MuiThemeProvider>
               <Slider
                 min={0}
-                max={500}
+                max={1000}
                 step={1}
-                style={{width: "70%",marginLeft: "2%",display:"inline", float: "left"}}
+                style={{width: "70%",marginLeft: "2%",display:"inline", float: "left",height: 60}}
                 value={this.state.val}
                 onChange={this.handlePriceFilterHotels}
               />
               </MuiThemeProvider>
-              <span style={{float: "left", display: "inline"}}>500</span>
+              <span style={{float: "left", display: "inline"}}>1000</span>
               </div>
-              <p style={{width: "90%", textAlign: "center"}}>Current Price range: 0 - {this.state.val}</p>
+              <p style={{width: "90%", textAlign: "center",marginTop: 0}}>Current Price range: 0 - {this.state.val}</p>
+              <hr/>
             </div>
+            <div style={{textAlign: "center",width: "85%",marginTop: 10,marginLeft: "5%",height: 25,fontSize: 18,borderBottom: "1px solid"}}><span style={{float:"left", fontWeight: 700}}>Review</span></div>
 
+            <div className="filter_hotel_review" style={{width: "100%", height: 150,padding: "5%",marginTop: 10}}>
+
+                    <input type="checkbox" name="carType"  onChange={(event) => {
+                  this.setState({
+                      Excellent: event.target.checked
+                  });}}/>&nbsp;Excellent<br/>
+
+                    <input type="checkbox" name="carType"  onChange={(event) => {
+                  this.setState({
+                      Average: event.target.checked
+                  });}} />&nbsp;Average<br/>
+                    <input type="checkbox" name="carType"  onChange={(event) => {
+                  this.setState({
+                      Good: event.target.checked
+                  });}} />&nbsp;Good<br/><p></p>
+                    <button  style={{width: "28%", height: 25,backgroundColor:"#558FE6"}} onClick={()=>{this.handleCarTypeFilter({HatchBack: this.state.HatchBack, Sedan: this.state.Sedan, SUV: this.state.SUV})}}>Filter</button>
+            </div>
         </div>
 
-<div className="mid-hoteltile">
+<div className="mid-hoteltile" style={{marginTop: 15}}>
     {this.state.hotelsCopy.map(hotel => (
 <div className="outerDiv-hotel">
     <div className="outerDiv-hotel-left">
@@ -232,7 +254,7 @@ val:50
 
     <div className="outerDiv-hotel-right">
         <p style={{lineheight: "70%",marginTop: "2%"}}><span style={{color: "red", textDecoration: "line-through"}}>${hotel.hotelOldPrice}</span><br/>
-        ${hotel.hotelOriginalPrice * this.state.room}</p>
+        ${hotel.hotelOriginalPrice}&nbsp; * &nbsp;{this.state.room}</p>
       <p>Kayak.com</p>
         <button onClick={()=>{this.props.handleHoteltileFetch({hoteltile: hotel, room: this.state.room})}} style={{width: "80%",backgroundColor: "#ff731a",height: "20%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0}}>View Deal</button>
         <div style={{marginTop: "7%"}}>
@@ -243,6 +265,14 @@ val:50
 </div>
 ))}
 </div>
+    <div className="rightFillers" style={{marginTop: 20}}>
+    <div>
+        <img src={SideHotel1} />
+    </div>
+    <div>
+        <img src={SideHotel2} />
+    </div>
+    </div>
 </div>
 );
   }

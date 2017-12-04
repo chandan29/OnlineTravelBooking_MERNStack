@@ -2,8 +2,9 @@
 
 
 
+                Name: undefined undefined
+                Payment form: Credit Card
+                City:  San Jose
 
-                                  City:  New York
-
-                                    Price:39
-                                  
+                  Price:39
+                

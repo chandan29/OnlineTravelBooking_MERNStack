@@ -1,0 +1,2 @@
+User queried car listing from the city of New York on |11/3/2017,8:48,car,listing
+User queried car listing from the city of New York on |11/3/2017,8:49,car,listing

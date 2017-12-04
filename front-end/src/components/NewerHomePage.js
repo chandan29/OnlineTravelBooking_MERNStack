@@ -396,7 +396,8 @@ class NewerHomePage extends Component {
 
                 <Route exact path="/searchCar" render={() => (
                     <div onClick={this.searchCarClick}>
-                        <div className="header-xyz" style={{backgroundColor:"gray"}}>
+                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
+                        <div className="header-xyz">
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin} handleLogout={this.handleLogout}/>
                          </div>
                           <div className="mainBodyCar">
@@ -404,10 +405,12 @@ class NewerHomePage extends Component {
                           </div>
                           <Message message={this.state.message}/>
                     </div>
+                    </div>
                 )}/>
 
                 <Route exact path="/searchHotel" render={() => (
                     <div onClick={this.searchHotelClick}>
+                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -415,12 +418,14 @@ class NewerHomePage extends Component {
                           <MainBodyHotel hotels={this.state.hotelsObj} rooms={this.state.rooms} handleHoteltileFetch={this.handleHoteltileFetch}/>
                           </div>
                           <Message message={this.state.message}/>
+                          </div>
                     </div>
                 )}/>
 
 
                 <Route exact path="/searchFlight" render={() => (
                     <div onClick={this.searchFlightClick}>
+                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -428,12 +433,14 @@ class NewerHomePage extends Component {
                           <MainBodyFlight flights={this.state.flightsObj} seats={this.state.seats} handleFlighttileFetch={this.handleFlighttileFetch}/>
                           </div>
                           <Message message={this.state.message}/>
+                          </div>
                     </div>
                 )}/>
 
 
                 <Route exact path="/carCheckout" render={() => (
                     <div onClick={this.checkoutCarClick}>
+                    <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
                         <div className="header-xyz" style={{backgroundColor:"gray"}}>
                           <Header  handleClickSignup={this.handleClickSignup} handleClickSignin={this.handleClickSignin}/>
                          </div>
@@ -441,6 +448,7 @@ class NewerHomePage extends Component {
                             <MainBodyCarCheckout carTile={this.state.carTile} handleRedirectBooking={this.handleRedirectBooking}/>
                           </div>
                           <Message message={this.state.message}/>
+                          </div>
                     </div>
                 )}/>
 

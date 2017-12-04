@@ -3,7 +3,7 @@
 
 
 
-                Flight From:  San Jose
+                                Flight From:  San Jose
 
-                  Price:900
-                
+                                  Price:1200
+                                

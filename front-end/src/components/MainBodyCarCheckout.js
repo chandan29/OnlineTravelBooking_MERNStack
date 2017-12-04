@@ -6,6 +6,8 @@ import Carousal1 from './Carousal1';
 import Carousal2 from './Carousal2';
 import BeautifulDown from './BeautifulDown';
 import CarCheckoutDetails from './CarCheckoutDetails';
+import SideCar1 from './../sidecar1.png';
+import SideCar2 from './../sidecar2.png';
 var FontAwesome = require('react-fontawesome');
 
 class MainBodyCarCheckout extends Component {
@@ -20,7 +22,7 @@ class MainBodyCarCheckout extends Component {
         </div>
 
         <div className="right-pane-carcheckout">
-
+        
         </div>
       </div>
 );

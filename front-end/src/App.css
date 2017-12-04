@@ -266,12 +266,15 @@ li>a {
 }
 
 .leftFilterCars {
-    width: 20%;
-    min-height: 600px;
+    width: 17%;
+    height: auto;
     border: 1px solid;
+    border-color: #D3D3D3;
     display: inline;
     float:left;
-    margin-top: 5px;
+    margin-top: 23px;
+    margin-left: 1.5%;
+    background-color: white;
 }
 
 .leftFilterHotels {
@@ -286,33 +289,42 @@ li>a {
 .middle-pane {
     width: 100%;
     min-height: 600px;
-    border: 1px solid;
 }
 
 .mid-cartile {
-    width: 57%;
-    min-height: 600px;
-    border: 1px solid;
+    width: 59%;
+    height: auto;
+
     float: left;
     display: inline;
-    margin-top: 5px;
+
+    padding-left: 0.5%;
+    padding-right: 1%;
+    padding-top: 0.3%;
+    margin-left: 1.5%;
 }
 
 .mid-hoteltile {
-    width: 67%;
-    min-height: 600px;
-    border: 1px solid;
+    width: 59%;
+    height: auto;
+
     float: left;
     display: inline;
-    margin-top: 5px;
+    padding-left: 0.5%;
+    padding-right: 1%;
+
+    margin-left: 1.5%;
 }
 .outerDiv {
     width: 98%;
     height: 180px;
-    border: 1px solid;
+
     margin-left: 0.9%;
     margin-top: 1%;
+    padding: 1%;
     background-color: white;
+
+    margin-top: 10px;
 }
 
 .outerDiv-left {
@@ -388,6 +400,7 @@ li>a {
 
 .mainBodyCar {
     background-color: #f1f1f1;
+
 }
 
 .mainBodyHotel {
@@ -417,14 +430,27 @@ li>a {
 .right-pane-carcheckout {
     width: 20%;
     height: 600px;
-    border : 1px solid;
+    border: 1px solid;
     float : left;
+    margin-top: 19px;
+    margin-left: 15px;
 }
+
+.right-pane-flightcheckout {
+    width: 20%;
+    height: 600px;
+    border: 1px solid;
+    float : left;
+    margin-top: 19px;
+    margin-left: 15px;
+}
+
 .outerDiv-left-carCheckoutDetails {
     width: 70%;
     height: 98%;
     margin-top: 0.3%;
-    border: 1px solid;
+    padding-left: 3%;
+    padding-top: 1%;
     float: left;
 }
 
@@ -432,7 +458,7 @@ li>a {
     width: 30%;
     height: 98%;
     margin-top: 0.3%;
-    border : 1px solid;
+
     float: left;
     padding:4%;
     padding-left: 7%;
@@ -442,7 +468,7 @@ li>a {
     width: 35%;
     height: 98%;
     margin-top: 0.3%;
-    border: 1px solid;
+
     float: left;
     padding-left: 1%;
 }
@@ -451,7 +477,7 @@ li>a {
     width: 30%;
     height: 98%;
     margin-top: 0.3%;
-    border : 1px solid;
+
     float: left;
     padding:4%;
     padding-left: 7%;
@@ -461,7 +487,7 @@ li>a {
     width: 35%;
     height: 98%;
     margin-top: 0.3%;
-    border : 1px solid;
+
     float: left;
     padding-left: 1%;
 }
@@ -473,6 +499,8 @@ td, th {
     height: 30px;
     border-left: none;
     border-right: none;
+    margin-left: 20px;
+    padding-left: 10px;
 }
 
 table {
@@ -591,9 +619,10 @@ table {
 }
 .starFilter {
     width: 90%;
-    height: 70px;
+    height: 60px;
     border: 1px solid;
     margin-top: 5%;
+    margin-left: 5%;
 }
 
 .priceFilter {
@@ -608,10 +637,10 @@ table {
 .rating {
   display: inline-block;
   position: relative;
-  height: 40px;
-  line-height: 30px;
-  font-size: 30px;
-  margin-left: 25%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 22px;
+  margin-left: 20%;
   margin-top: 10%;
 }
 
@@ -733,7 +762,7 @@ table {
 .outerDiv-hotel {
     width: 98%;
     height: 180px;
-    border: 1px solid;
+
     margin-left: 0.9%;
     margin-top: 1%;
     background-color: white;
@@ -742,15 +771,15 @@ table {
 .outerDiv-flight {
     width: 98%;
     height: 140px;
-    border: 1px solid;
+
     margin-left: 0.9%;
-    margin-top: 1%;
+    margin-top: 0.5%;
     background-color: white;
 }
 
 .outerDiv-hotel-left {
     width: 28%;
-    border: 1px solid;
+
     height: 99%;
     margin-top: 1px;
     display: inline;
@@ -761,7 +790,7 @@ table {
 
 .outerDiv-flight-left {
     width: 20%;
-    border: 1px solid;
+
     height: 99%;
     margin-top: 1px;
     display: inline;
@@ -770,8 +799,9 @@ table {
 }
 
 .outerDiv-hotel-mid {
-    width: 52%;
-    border: 1px solid;
+    width: 49%;
+    border-right: 1px solid;
+    border-color: #dddddd;
     height: 99%;
     margin-top: 1px;
     float: left;
@@ -781,24 +811,29 @@ table {
 }
 
 .outerDiv-flight-mid {
-    width: 52%;
-    border: 1px solid;
+    width: 54%;
+    border-right: 1px solid;
+    padding-right: 2%;
+    border-color: #dddddd;
     height: 99%;
     margin-top: 1px;
     float: left;
     display: inline;
     padding-left: 2%;
     padding-top: 1%;
+    padding-right: 2%;
 }
 
 .outerDiv-hotel-right {
     width: 20%;
-    border: 1px solid;
+    border-left: 1px;
+    border-color: #dddddd;
     height: 99%;
     margin-top: 1px;
     float: left;
     display: inline;
     text-align: center;
+    margin-left: 2%;
 }
 
 .hoteltileStrap {
@@ -876,8 +911,8 @@ table {
 
 .outerDiv-hotelcheckout1 {
     width: 98%;
-    height: 240px;
-    border: 1px solid;
+    height: 220px;
+
     margin-left: 0.9%;
     margin-top: 1%;
     background-color: white;
@@ -886,7 +921,7 @@ table {
 .outerDiv-hotelcheckout-left {
     width: 37%;
     height: 99%;
-    border: 1px solid;
+
     float: left;
     display: inline;
 }
@@ -894,7 +929,7 @@ table {
 .outerDiv-hotelcheckout-right {
     width: 62%;
     height: 99%;
-    border: 1px solid;
+
     float: left;
     display: inline;
     margin-left: 1%;
@@ -904,7 +939,7 @@ table {
 
 .outerDiv-hotelcheckout2 {
     width: 98%;
-    border: 1px solid;
+
     margin-left: 0.9%;
     margin-top: 1%;
     background-color: white;
@@ -913,33 +948,33 @@ table {
 .outerDiv-hotelcheckout2-top {
     width: 100%;
     height: 40px;
-    border: 1px solid;
+
     padding-top: 1%;
     text-align: center;
 }
 .outerDiv-hotelcheckout2-down {
     width: 100%;
     height: 240px;
-    border: 1px solid;
+
 }
 
 .outerDiv-hotelcheckout2-down-top {
     width: 100%;
-    border: 1px solid;
+
     height: 30%;
     padding: 1%;
 }
 
 .outerDiv-hotelcheckout2-down-down {
     width: 100%;
-    border: 1px solid;
+
     height: 70%;
     padding: 1%;
 }
 
 .outerDiv-hotelcheckout2-down-down-left, .outerDiv-hotelcheckout2-down-down-right {
     width: 40%;
-    border: 1px solid;
+
     height: 100%;
     float: left;
     display: inline;
@@ -949,7 +984,7 @@ table {
 .outerDiv-hotelcheckout3 {
     width: 98%;
     height: 170px;
-    border: 1px solid;
+
     margin-left: 0.9%;
 
     background-color: white;
@@ -959,7 +994,7 @@ table {
 .outerDiv-hotelcheckout3-left {
     width: 25%;
     height: 130px;
-    border: 1px solid;
+
     float: left;
     display: inline;
     margin-left: 2%;
@@ -968,7 +1003,7 @@ table {
 .outerDiv-hotelcheckout3-right {
     width: 70%;
     height: 130px;
-    border: 1px solid;
+
     float: left;
     display: inline;
 }
@@ -986,7 +1021,7 @@ table {
 {
     width: 32%;
     height: 100%;
-    border: 1px solid #20bf7c;
+
     display: inline;
     float : left;
     margin-left: 1%;
@@ -1012,15 +1047,22 @@ table {
     margin-left: 0.9%;
 
     background-color: white;
+    padding: 1%;
+    font-size: 15px;
+    font-weight: 450;
 }
 
 .outerDiv-flightcheckout3 {
     width: 98%;
-    height: 100px;
+    height: 50px;
     border: 1px solid;
     margin-left: 0.9%;
     margin-top: 0.7%;
     background-color: white;
+    padding: 2%;
+    background-color: #558fe6;
+    font-size: 18px;
+    color: white;
 }
 
 .outerDiv-flightcheckout4 {
@@ -1033,10 +1075,14 @@ table {
 }
 .outerDiv-flightcheckout5 {
     width: 98%;
-    height: 190px;
+    height: 140px;
     border: 1px solid;
     margin-left: 0.9%;
     background-color: white;
+    padding-top: 3%;
+    font-size: 15px;
+    font-weight: 600;
+
 }
 
 .outerDiv-flightcheckout6 {
@@ -1265,4 +1311,13 @@ table {
     margin-left: 2%;
     margin-top: 2.5%;
     padding: 1%;
+}
+
+.rightFillers {
+    width: 20%;
+    height: 600px;
+    float: left;
+    display: inline;
+
+    margin-top: 0.4%;
 }

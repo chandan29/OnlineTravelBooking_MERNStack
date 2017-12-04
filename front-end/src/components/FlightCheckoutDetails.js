@@ -30,26 +30,28 @@ class FlightCheckoutDetails extends Component {
 
     <div className="outerDiv-flightcheckout1" style={{paddingTop: "1%", paddingLeft: "1%"}}>
     <div style={{float: "left"}}>
-        <p style={{lineWidth: "140", fontSize: 18, fontWeight: "bold"}}>New Delhi, India (DEL) to San Francisco, CA (SFO)
-        <br/>China Airlines, one-way, economy, 1 adult</p>
-        <p style={{fontSize: 18}}>Depart: Tue Nov 28 2017</p>
+        <p style={{lineWidth: "140", fontSize: 18, fontWeight: "bold"}}>{this.props.flightTile.flightFromCity} to {this.props.flightTile.flightToCity}
+        <br/>{this.props.flightTile.flightAgency}, one-way, {this.props.flightTile.flightClass}</p>
+        <p style={{fontSize: 18}}>Depart: {this.props.flightTile.flightFromDate}</p>
         </div>
         <div className="flightLogo">
             <img src={Flight1} alt="Flight Logo"/>
         </div>
     </div>
     <div className="outerDiv-flightcheckout2">
-
+        The booking will be charged in USD. The average ticket price of ${this.props.flightTile.flightFareDetails * this.props.seat}.
     </div>
 
     <div className="outerDiv-flightcheckout3">
-
-    </div>
-    <div className="outerDiv-flightcheckout4">
-
+        <span style={{float: "left"}}>Flight Details</span><span style={{float: "right"}}><svg className="svgs" width="40" height="40" fill="white">
+        <path d="M16.79 7.83l-3.93 3.93 4.51 7.05.76-.76-1.34-10.22M12.24 3.15L1.62 1.76l-.75.76 7.32 4.69 4.05-4.06"></path>
+          <path d="M10.73 11.94l1.3-1.3 4.28-4.28 2.8-2.8s1.54-2.12.46-3.17-3.17.47-3.17.47l-2.62 2.62-4.4 4.4L8 9.24a20 20 0 0 0-2.23 3.2l-4.67-.89L0 12.62l3.79 2.65.92.92L7.41 20l1.07-1.1-.91-4.76a20.06 20.06 0 0 0 3.16-2.2z"></path>
+        </svg></span>
     </div>
     <div className="outerDiv-flightcheckout5">
-
+        <p><span style={{marginLeft: "1%"}}><i className="fa fa-plane" aria-hidden="true"></i>&nbsp;&nbsp;</span>&nbsp;{this.props.flightTile.flightAgency} - Flight 45 (Economy)</p>
+        <p><span style={{marginLeft: "1%"}}><i className="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;&nbsp;</span> {this.props.flightTile.flightDepartureTime}	<span style={{marginLeft: "8%"}}>{this.props.flightTile.flightFromDate}</span><span style={{marginLeft: "5%"}}>{this.props.flightTile.flightFromCity}</span></p>
+        <p><span style={{marginLeft: "1%"}}><i className="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;&nbsp;</span> {this.props.flightTile.flightArrivalTime}	<span style={{marginLeft: "8%"}}>{this.props.flightTile.flightToDate}</span><span style={{marginLeft: "5%"}}>{this.props.flightTile.flightToCity}</span></p>
     </div>
 
     <div className="outerDiv">
@@ -63,22 +65,17 @@ class FlightCheckoutDetails extends Component {
 
             </tr>
             <tr>
-              <td>carType (Toyota Corolla or similar)</td>
-              <td>$30</td>
-              <td>$40</td>
-              <td>$70</td>
+              <td>{this.props.flightTile.flightAgency}</td>
+              <td>${this.props.flightTile.flightFareDetails * this.props.seat}</td>
+              <td>${(this.props.flightTile.flightFareDetails * this.props.seat)/10}</td>
+              <td>${(this.props.flightTile.flightFareDetails* this.props.seat) + (this.props.flightTile.flightFareDetails * this.props.seat)/10 }</td>
             </tr>
-            <tr>
-              <td>Taxes and Fees</td>
-              <td>$50</td>
-              <td>$70</td>
-              <td>$90</td>
-            </tr>
+
             <tr>
               <td><strong>Rental Car Total</strong></td>
-              <td>$80</td>
-              <td>$90</td>
-              <td>$100</td>
+              <td></td>
+              <td></td>
+              <td>${(this.props.flightTile.flightFareDetails* this.props.seat) + (this.props.flightTile.flightFareDetails * this.props.seat)/10 }</td>
             </tr>
           </table>
     </div>
@@ -136,75 +133,49 @@ class FlightCheckoutDetails extends Component {
 
 
         <div className="outerDiv" style={{height: "auto"}}>
-            <h6>Renter Details Under 25? </h6>
-            <div style={{backgroundColor:"#f1f1f1"}}>
-                <h5 style={{height: 30,padding:"1%"}}><span style={{color:"blue"}}>Sign in if you have an account</span> to retrieve saved travelers and credit cards.</h5>
-            </div>
-            <div>
-                <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="First Name" onChange={(event) => {
-                    this.setState({
-                        firstName: event.target.value
-                    });
-                }}/>
-                <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Last Name" onChange={(event) => {
-                    this.setState({
-                        lastName: event.target.value
-                    });
-                }}/>
-            </div>
-            <br/>
-            <div>
-                <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Email Address"/>
-                <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Phone number" onChange={(event) => {
-                    this.setState({
-                        contact: event.target.value
-                    });
-                }}/>
-            </div>
-            <hr/>
             <h4>Enter Billing information </h4>
             <p>Billing Address</p>
-            <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Apt Suite"/>
-            <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Apt Number"/>
+            <input type="text" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Apt Suite"/>
+            <input type="text" style={{width: "40%",height:35,marginLeft: "10%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Apt Number"/>
             <p></p>
-            <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Street Address" onChange={(event) => {
+            <input type="text" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Street Address" onChange={(event) => {
                 this.setState({
                     userAddress: event.target.value
                 });
             }}/>
-            <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="City" onChange={(event) => {
+            <input type="text" style={{width: "40%",height:35,marginLeft: "10%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="City" onChange={(event) => {
                 this.setState({
                     userCity: event.target.value
                 });
             }}/>
             <p></p>
-            <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="State" onChange={(event) => {
+            <input type="text" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="State" onChange={(event) => {
                 this.setState({
                     userState: event.target.value
                 });
             }}/>
-            <input type="text" style={{width: "40%",height: 35,marginLeft: "10%"}} placeholder="Country" onChange={(event) => {
+            <input type="text" style={{width: "40%",height:35,marginLeft: "10%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Country" onChange={(event) => {
                 this.setState({
                     userCountry: event.target.value
                 });
             }}/>
             <hr/>
             <h4>Card Details </h4>
-            <input type="text" style={{width: "40%",height:35,marginLeft: "1%"}} placeholder="Name on Card*"/>
-            <input type="text" style={{width: "40%",height:35,marginLeft: "10%"}} placeholder="Card Number*" onChange={(event) => {
+            <input type="text" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Name on Card*"/>
+            <input type="text" style={{width: "40%",height:35,marginLeft: "10%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Card Number*" onChange={(event) => {
                 this.setState({
                     creditCard: event.target.value
                 });
             }}/>
             <p></p>
 
-            <input type="text" style={{width: "11%",height:35,marginLeft: "1%"}} placeholder="Month of Exp"/>
-            <input type="text" style={{width: "11%",height:35,marginLeft: "3%"}} placeholder="Year of Exp"/>
-            <input type="text" style={{width: "12%",height:35,marginLeft: "3%"}} placeholder="CVV"/>
+            <input type="text" style={{width: "11%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Month"/>
+            <input type="text" style={{width: "11%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Year"/>
+            <input type="text" style={{width: "11%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="CVV"/>
             <img src={Cards}  style={{float:"right"}}/>
             <hr/>
             <div style={{height: 120,paddingBottom:10,marginBottom: 10}}>
-                <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay ${this.props.flightTile.flightFareDetails * this.props.seat} USD today.</span></h5>
+                <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay ${(this.props.flightTile.flightFareDetails* this.props.seat) + (this.props.flightTile.flightFareDetails * this.props.seat)/10 } USD today.</span></h5>
                 <button  onClick={()=>{this.props.handleRedirectBooking2({firstName:this.state.firstName,lastName:this.state.lastName,contact:this.state.contact,userAddress:this.state.userAddress,userCity:this.state.userCity,userCountry:this.state.userCountry,userState:this.state.userState,creditCard:this.state.creditCard})}} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
             </div>
 

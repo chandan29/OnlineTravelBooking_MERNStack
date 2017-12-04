@@ -1,0 +1,111 @@
+User logged in on |11/3/2017,8:51,login
+User queried car listing from the city of New York on |11/3/2017,8:51,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,8:52,car,buying
+User queried car listing from the city of  on |11/3/2017,10:10,car,listing
+User queried car listing from the city of San Jose on |11/3/2017,10:11,car,listing
+User queried car listing from the city of New York on |11/3/2017,10:11,car,listing
+User queried car listing from the city of New York on |11/3/2017,10:11,car,listing
+User queried car listing from the city of  on |11/3/2017,11:15,car,listing
+User queried car listing from the city of  on |11/3/2017,11:22,car,listing
+User queried car listing from the city of  on |11/3/2017,13:0,car,listing
+User booked a car from the city of San Joseon |11/3/2017,13:24,car,buying
+User queried flight listing from the city of San Jose to the city of Santa Clara|11/3/2017,13:30,flight,listing
+User queried flight listing from the city of San Jose to the city of undefined|11/3/2017,13:33,flight,listing
+User queried car listing from the city of San Jose on |11/3/2017,13:33,car,listing
+User queried flight listing from the city of San Jose to the city of Santa Clara|11/3/2017,13:33,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:35,flight,listing
+User queried flight listing from the city of Santa Clara to the city of San Jose|11/3/2017,13:35,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:44,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:44,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:44,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:48,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:48,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:50,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:50,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:51,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:51,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,13:52,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,14:16,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,14:16,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,14:17,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,14:18,flight,listing
+User queried car listing from the city of  on |11/3/2017,14:19,car,listing
+User queried car listing from the city of San Jose on |11/3/2017,14:19,car,listing
+User queried car listing from the city of San Jose on |11/3/2017,14:19,car,listing
+User queried car listing from the city of New York on |11/3/2017,14:20,car,listing
+User queried car listing from the city of New York on |11/3/2017,14:20,car,listing
+User queried car listing from the city of New York on |11/3/2017,14:32,car,listing
+User queried car listing from the city of New York on |11/3/2017,14:32,car,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,14:34,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,14:35,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,14:36,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,14:39,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:6,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:7,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:11,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:12,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:13,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:15,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:18,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:23,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:25,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:27,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:30,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:31,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:31,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:32,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:43,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:44,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:46,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:48,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:48,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:50,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:53,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:55,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:57,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,15:59,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,16:0,flight,listing
+User booked a Flight from the city of San Joseto the city of Los Angeles|11/3/2017,16:0,flight,buying
+User queried hotel listing for the city of undefined|11/3/2017,16:2,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:4,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:6,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:10,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:12,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:15,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:16,hotel,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,16:19,flight,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:19,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:23,hotel,listing
+User queried car listing from the city of  on |11/3/2017,16:27,car,listing
+User queried car listing from the city of New York on |11/3/2017,16:27,car,listing
+User queried car listing from the city of New York on |11/3/2017,16:27,car,listing
+User queried car listing from the city of New York on |11/3/2017,16:38,car,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:40,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:42,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:42,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:45,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:48,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:55,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:57,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,16:59,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,17:0,hotel,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:5,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:9,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:14,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:16,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:17,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:23,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:23,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:28,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:30,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:32,flight,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:33,flight,listing
+User queried car listing from the city of  on |11/3/2017,17:35,car,listing
+User queried car listing from the city of New York on |11/3/2017,17:35,car,listing
+User queried hotel listing for the city of undefined|11/3/2017,17:35,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,17:38,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,17:38,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,17:39,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,17:40,hotel,listing
+User queried hotel listing for the city of undefined|11/3/2017,17:40,hotel,listing
+User queried flight listing from the city of undefined to the city of undefined|11/3/2017,17:42,flight,listing
