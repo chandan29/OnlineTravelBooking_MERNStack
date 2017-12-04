@@ -91,12 +91,23 @@ class Graphs extends Component {
                 x1: true
               })
           });
+
+
+          API.getClickStream()
+          .then((res) => {
+              console.log(res.arr3);
+              this.setState({
+                m:[{name: 'Header', Header: parseInt(res.arr3[0])},{name: 'Nav', Nav: parseInt(res.arr3[1])},{name: 'Body', Body: parseInt(res.arr3[2])},{name: 'Footer', Footer: parseInt(res.arr3[3])}],
+                m1:true
+              })
+          });
   }
 
   state={
     x: [],
     x1: false,
-    x5:false
+    x5:false,
+    m1:false
   }
 
 
@@ -106,14 +117,14 @@ class Graphs extends Component {
 
 
               {
-                this.state.x1 && this.state.x5
+                this.state.x1 && this.state.x5 && this.state.m1
                 ?
                 <div>
                   <h1> Least seen area on website is {this.state.min}</h1>
                   <SimpleTraceDiagram date={this.state.date} time={this.state.time} type={this.state.type} activity={this.state.activity}/>
-                  <KPieChart/>
+                 <KPieChart/>
                 <KPieChart2/>
-                <KBarChart2 views1={this.state.x2} cars={this.state.cars} flights={this.state.flights} hotels={this.state.hotels}/>
+                <KBarChart2 views1={this.state.x2} views8={this.state.m} cars={this.state.cars} flights={this.state.flights} hotels={this.state.hotels}/>
                 <KBarChart views={this.state.x}/></div>
 
                 :<div>Please</div>

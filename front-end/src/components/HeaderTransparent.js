@@ -10,7 +10,7 @@ class HeaderTransparent extends Component {
 
     render() {
         return (
-            <div className="container-header1" style={{paddingLeft:"2%"}}>
+            <div onClick={this.props.headerCarClick} className="container-header1" style={{paddingLeft:"2%"}}>
                 <div className="body-header" style={{width: "78%",marginLeft: "8%"}}>
                     <div className="logo">
                         <img src={Logo} alt="kayak logo"/>

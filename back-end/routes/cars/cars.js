@@ -11,7 +11,7 @@ var pool  = mysql.createPool({
     connectionLimit : 10,
     host            : 'localhost',
     user            : 'root',
-    password        : '',
+    password        : 'password',
     database        : 'kayak'
 });
 
@@ -22,13 +22,58 @@ carshandler.post('/getCars',function(req,res){
   //Input parameters: from city, from date,to date
   var redis = require("redis"),
       client = redis.createClient();
+      client.set('a',parseInt(0));
+      client.get("a", function(err, reply) {
+        if(err){
+            client.set("a",parseInt(req.body.a));
+          }
+          else{
+           var x=parseInt(reply)+parseInt(req.body.a);
+            client.set("a",x);
+            console.log("Checking redis:"+x);
+          }
+
+        });
+client.set('b',parseInt(0));
+        client.get("b", function(err, reply) {
+          if(err){
+              client.set("b",parseInt(req.body.b));
+            }
+            else{
+             var x=parseInt(reply)+parseInt(req.body.b);
+              client.set("b",x);
+              console.log("Checking redis:"+x);
+            }
+
+          });
+          client.get("c", function(err, reply) {
+            if(err){
+                client.set("c",parseInt(req.body.c));
+              }
+              else{
+               var x=parseInt(reply)+parseInt(req.body.c);
+                client.set("c",x);
+                console.log("Checking redis:"+x);
+              }
+
+            });
+            client.get("d", function(err, reply) {
+              if(err){
+                  client.set("d",parseInt(req.body.d));
+                }
+                else{
+                 var x=parseInt(reply)+parseInt(req.body.d);
+                  client.set("d",x);
+                  console.log("Checking redis:"+x);
+                }
+
+              });
       client.get("chome", function(err, reply) {
         if(err){
             client.set("chome",parseInt(req.body.chome));
           }
           else{
-           //var x=parseInt(reply)+parseInt(req.body.chome);
-            var x =  1 + parseInt(req.body.chome);
+           var x=parseInt(reply)+parseInt(req.body.chome);
             client.set("chome",x);
             console.log("Checking redis:"+x);
           }

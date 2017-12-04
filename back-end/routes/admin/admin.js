@@ -9,7 +9,7 @@ var pool  = mysql.createPool({
     connectionLimit : 10,
     host            : 'localhost',
     user            : 'root',
-    password        : '',
+    password        : 'password',
     database        : 'kayak'
 });
 
@@ -714,7 +714,20 @@ adminhandler.post('/getClicksPerPage',function(req,res){
     })
 });
 
+adminhandler.post('/getClickStream',function(req,res){
+    var redis = require("redis"),
+        client = redis.createClient();
+        client.get("a", function(err, reply) {
+         client.get("b", function(err1, reply1) {
+             client.get("c", function(err2, reply2) {
+                 client.get("d", function(err3, reply3) {
+                        res.status(201).send({arr3:[parseInt(reply),parseInt(reply1),parseInt(reply2),parseInt(reply3)]});
+                 });
+             });
+         });
+          });
 
+});
 adminhandler.post('/getTrace',function(req,res){
     var user="";
     if(req.session.user){
@@ -813,6 +826,7 @@ adminhandler.post('/getUserDetails',function(req,res){
                 connection.release();
                 if (results.length>=1){
                     console.log(JSON.stringify(results));
+
                     res.status(201).send({msg:results[0]});
                 }
                 else{

@@ -5,7 +5,7 @@ import F from './../footer.png';
 class Footer extends Component {
   render(){
     return(
-      <div>
+      <div onClick={this.props.footerCarClick}>
           <img id="footerImage" src={F}/>
       </div>
     );

@@ -31,7 +31,7 @@ class MainBody extends Component {
   render() {
     return (
       <div>
-      <div className="container-mainbody" style={{paddingLeft:"2%"}}>
+      <div className="container-mainbody" onClick={this.props.nav1} style={{paddingLeft:"2%"}}>
             <br />
             <br />
             <div className="displayText">
@@ -138,12 +138,12 @@ class MainBody extends Component {
 
               </div>
       </div>
-      <StayUptoDate />
-      <Carousal1 />
+      <StayUptoDate body1={this.props.body1}/>
+      <Carousal1 body1={this.props.body1}/>
       <br/>
-      <Carousal2 />
+      <Carousal2 body1={this.props.body1}/>
       <br/>
-      <BeautifulDown />
+      <BeautifulDown body1={this.props.body1}/>
       </div>
 );
   }

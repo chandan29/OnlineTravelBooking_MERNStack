@@ -12,7 +12,7 @@ class BeautifulDown extends Component {
 
   render() {
     return (
-      <div className="container-beautifuldown">
+      <div onClick={this.props.body1} className="container-beautifuldown">
         <div className="first">
         <div className="first-top">
             <h2 style={{fontWeight:300}}>Start your travel planning here</h2>

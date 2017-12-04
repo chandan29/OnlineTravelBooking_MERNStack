@@ -30,7 +30,7 @@ var pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'localhost',
   user            : 'root',
-  password        : '',
+  password        : 'password',
   database        : 'kayak'
 });
 // uncomment after placing your favicon in /public
@@ -259,7 +259,7 @@ app.post('/getAdminUserDetail', function(req, res,next) {
 app.post('/modifyAdminUserDetail', function(req, res,next) {
 
     pool.getConnection(function (err, connection) {
-        connection.query("UPDATE users SET firstName='"+req.body.firstName+"',middleName='"+req.body.firstName+"',lastName='"+req.body.lastName+"',creditCard='"+req.body.creditCard+"',contact='"+req.body.contact+"',gender='"+req.body.gender+"',dateOfBirth='"+req.body.dateOfBirth+"',userAddress='"+req.body.userAddress+"',userCity='"+req.body.userCity+"',userState='"+req.body.userState+"',userCountry='"+req.body.userCountry+"',userZip='"+req.body.userZip+"',userPhone='"+req.body.userPhone+"',userAgeCategory='"+req.body.userAgeCategory+"'  where userId='"+req.body.userId+"'", function (err, results) {
+        connection.query("UPDATE users SET firstName='"+req.body.firstName+"',middleName='"+req.body.firstName+"',lastName='"+req.body.lastName+"',creditCard='"+req.body.creditCard+"',contact='"+req.body.contact+"',gender='"+req.body.gender+"',dateOfBirth='"+req.body.dateOfBirth+"',userAddress='"+req.body.userAddress+"',userCity='"+req.body.userCity+"',userState='"+req.body.userState+"',userCountry='"+req.body.userCountry+"',userZip='"+parseInt(req.body.userZip)+"',userAgeCategory='"+req.body.userAgeCategory+"'  where userId='"+parseInt(req.body.userId)+"'", function (err, results) {
             console.log("req body:",req.body);
             if (err) {
 

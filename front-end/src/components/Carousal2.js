@@ -59,7 +59,7 @@ const {
 } = this.state;
 
 return (
-  <div className="container" style={{width: "85%"}}>
+  <div onClick={this.props.body1} className="container" style={{width: "85%"}}>
   <br/>
   <br />
   <div className="text1" style={{marginLeft: "4%"}}>

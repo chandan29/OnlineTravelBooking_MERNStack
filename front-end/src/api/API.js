@@ -798,3 +798,19 @@ export const getRevenuepercity = (payload) =>
                                                             console.log("This is error");
                                                             return error;
                                                         });
+
+
+                                                        export const getClickStream= (payload) =>
+                                                            fetch(`${api}/getClickStream`, {
+                                                                method: 'POST',
+                                                                headers: {
+                                                                    ...headers,
+                                                                },
+                                                                body:payload,
+                                                                credentials: 'include'
+                                                            }).then(res => {
+                                                                return res.json();
+                                                            }).catch(error => {
+                                                                console.log("This is error");
+                                                                return error;
+                                                            });

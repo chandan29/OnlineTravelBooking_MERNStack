@@ -484,21 +484,7 @@ class UserInfo extends Component {
                                             </div>
 
 
-                                            <div className="form-group">
-                                                <label>Phone Number</label>
-                                                <input
-                                                    className="form-control"
-                                                    type="number"
-                                                    label="Phone Number"
-                                                    placeholder="Phone Number"
-                                                    value={this.state.userPhone}
-                                                    onChange={(event) => {
-                                                        this.setState({
-                                                            userPhone: event.target.value
-                                                        });
-                                                    }}
-                                                />
-                                            </div>
+
 
                                             <div className="form-group">
                                                 <label>User Age Catagory</label>

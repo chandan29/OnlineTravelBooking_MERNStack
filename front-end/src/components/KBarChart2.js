@@ -36,6 +36,18 @@ componentWillMount(){
                     <Bar dataKey="FlightClicks" fill="#8884d4" />
                 </BarChart>
 
+                <BarChart width={1500} height={300} data={this.props.views8}
+                          margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+                    <XAxis dataKey="name"/>
+                    <YAxis/>
+                    <CartesianGrid strokeDasharray="3 3"/>
+                    <Tooltip/>
+                    <Bar dataKey="Header" fill="#8884d8" />
+                    <Bar dataKey="Nav" fill="#8884d6" />
+                    <Bar dataKey="Body" fill="#8884d4" />
+                    <Bar dataKey="Footer" fill="#8884d4" />
+                </BarChart>
+
                 <BarChart width={1500} height={300} data={this.props.cars}
                           margin={{top: 15, right: 40, left: 30, bottom: 10}}>
                     <XAxis dataKey="name"/>

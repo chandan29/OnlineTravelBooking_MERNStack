@@ -1,0 +1,2 @@
+User queried flight listing from the city of New York to the city of Los Angeles|11/3/2017,21:52,flight,listing
+User registered on |11/3/2017 at 21:56,register

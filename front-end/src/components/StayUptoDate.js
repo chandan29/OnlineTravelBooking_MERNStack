@@ -12,7 +12,7 @@ class StayUptoDate extends Component {
 
   render() {
     return (
-      <div className="container-stayUptoDate" style={{paddingLeft:"2%", border: "0.7px solid", borderColor: "#f1f1f1"}}>
+      <div onClick={this.props.body1} className="container-stayUptoDate" style={{paddingLeft:"2%", border: "0.7px solid", borderColor: "#f1f1f1"}}>
             <div style={{float:"left"}}>
               <img src={stayuptodate} />
             </div>

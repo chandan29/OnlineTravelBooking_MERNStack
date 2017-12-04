@@ -360,6 +360,10 @@ class NewerHomePage extends Component {
       }
       else{
       payload.chome=this.state.homeCarClick;
+      payload.a=this.state.headerCarClick;
+      payload.b=this.state.navCarClick;
+      payload.c=this.state.midCarClick;
+      payload.d=this.state.footerCarClick;
         API.getCars(payload)
             .then((res) => {
                 this.setState({
@@ -468,19 +472,19 @@ class NewerHomePage extends Component {
     };
 
     headerCarClick=()=>{
-    //  console.log(this.state.headerCarClick++);
+      console.log(this.state.headerCarClick++);
     }
 
     navCarClick=()=>{
-    //  console.log(this.state.navCarClick++);
+      console.log(this.state.navCarClick++);
     }
 
     midCarClick=()=>{
-    //  console.log(this.state.midCarClick++);
+      console.log(this.state.midCarClick++);
     }
 
     footerCarClick=()=>{
-    //  console.log(this.state.footerCarClick++);
+      console.log(this.state.footerCarClick++);
     }
 
     searchCarClick=()=>{
@@ -537,11 +541,11 @@ class NewerHomePage extends Component {
                 <Route exact path="/" render={() => (
                     <div onClick={this.homeCarClick} className="opener-image" style={{backgroundColor: "pink",width:"100%", height:500}}>
 
-                          <HeaderTransparent  handleShowTrips={this.handleShowTrips} handleUserProfile={this.handleUserProfile} handleClickSignup={this.handleClickSignup}
+                          <HeaderTransparent headerCarClick={this.headerCarClick}  handleShowTrips={this.handleShowTrips} handleUserProfile={this.handleUserProfile} handleClickSignup={this.handleClickSignup}
                                               LoginInFlag={this.state.LoginInFlag} handleClickSignin={this.handleClickSignin} redirectToAdmin={this.redirectToAdmin}/>
 
-                          <MainBody handleCarFetch={this.handleCarFetch}/>
-                          <Footer />
+                          <MainBody nav1={this.navCarClick} body1={this.midCarClick} handleCarFetch={this.handleCarFetch}/>
+                          <Footer footerCarClick={this.footerCarClick}/>
                     </div>
                 )}/>
                 <Route exact path="/hotels" render={() => (

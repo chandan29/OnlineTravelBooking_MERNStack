@@ -1,0 +1,15 @@
+User logged in on |11/3/2017,21:56,login
+User queried car listing from the city of Las Vegas on |11/3/2017,22:2,car,listing
+User queried car listing from the city of New York on |11/3/2017,22:2,car,listing
+User queried car listing from the city of New York on |11/3/2017,22:3,car,listing
+User queried car listing from the city of Santa Clara on |11/3/2017,22:6,car,listing
+User queried car listing from the city of New York on |11/3/2017,22:7,car,listing
+User queried car listing from the city of New York on |11/3/2017,22:8,car,listing
+User queried car listing from the city of New York on |11/3/2017,22:9,car,listing
+User queried hotel listing for the city of New York|11/3/2017,22:10,hotel,listing
+User queried flight listing from the city of Los Angeles to the city of New York|11/3/2017,22:11,flight,listing
+User queried car listing from the city of New York on |11/3/2017,22:13,car,listing
+User queried car listing from the city of New York on |11/3/2017,22:15,car,listing
+User booked a car from the city of New Yorkon |11/3/2017,22:16,car,buying
+User queried car listing from the city of New York on |11/3/2017,22:50,car,listing
+User queried car listing from the city of New York on |11/3/2017,22:57,car,listing
