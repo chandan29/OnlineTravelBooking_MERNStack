@@ -20,13 +20,13 @@ class UserBills extends Component {
         var yearMonth = payload.slice(0, 4);
         console.log('yearMonth: ', yearMonth);
 
-        for (var i = 0; i < this.state.billsObj.length; i++) {
-            if (yearMonth === this.state.billsObj[i].date.slice(0, 4)) {
+        for (var i = 0; i < this.state.billsObjCopy.length; i++) {
+            if (yearMonth === this.state.billsObjCopy[i].fromDate.slice(0, 4)) {
                 console.log('year matched');
                 var month = payload.slice(5, 7);
-                if (month === this.state.billsObj[i].date.slice(5, 7)) {
+                if (month === this.state.billsObjCopy[i].fromDate.slice(5, 7)) {
                     console.log('both matched');
-                    this.state.billsObjCopy1.push(this.state.billsObj[i]);
+                    this.state.billsObjCopy1.push(this.state.billsObjCopy[i]);
                     this.setState({
                         billsObjCopy: this.state.billsObjCopy1
                     })
@@ -36,13 +36,35 @@ class UserBills extends Component {
         }
     };
 
+    getAdminBillDetail = (payload) => {
+        API.getAdminBillDetail(payload)
+            .then((res) => {
+
+                if (res.status === 401) {
+                    this.setState({
+                        message: 'Bill Details Not Found',
+                        messageFlag: true
+                    })
+                }
+                else if (res.status === 201) {
+                    this.setState({
+                        billDetailsObj: res.user,
+                        messageFlag: false,
+                        viewBillFlag: false
+                    });
+                    console.log('admin bill details object fetched:', res);
+                }
+            });
+
+    };
+
 
 
     componentWillMount() {
         this.setState({
             viewBillFlag: true
         });
-        API.getAdminBills2({dummy: this.state.message})
+        API.getAdminBills({dummy: this.state.message})
             .then((res) => {
 
                 if (res.wrong === 1) {
@@ -135,7 +157,9 @@ class UserBills extends Component {
                                 <tr>
                                     <th className={'tableHead'}>Type</th>
                                     <th className={'tableHead'}>Date</th>
-                                    <th className={'tableHead'}>Time</th>
+
+                                    <th className={'tableHead'}>City</th>
+
                                     <th className={'tableHead'}>Trip/Bill Id</th>
                                     <th className={'tableHead'}>Bill Amount</th>
                                 </tr>
@@ -146,16 +170,19 @@ class UserBills extends Component {
                                             <tr key={item._id}>
 
                                                 <td className={'tableData'}>{item.type}</td>
-                                                <td className={'tableData'}>{item.date}</td>
-                                                <td className={'tableData'}>{item.time}</td>
+                                                <td className={'tableData'}>{item.fromDate}</td>
+                                                <td className={'tableData'}>{item.fromCity}</td>
                                                 <td className={'tableData tableData1'}>
                                                     <a href={'#'}
                                                     >{item.tripId}</a>
-                                                    <button className={'viewDetail'}>View Details
+                                                    <button className={'viewDetail'} onClick={() => {
+                                                        this.getAdminBillDetail(item);
+                                                        console.log('item:', item)
+                                                    }}>View Details
                                                     </button>
                                                 </td>
 
-                                                <td className={'tableData'}>{item.billamount}</td>
+                                                <td className={'tableData'}>{item.fareDetails}</td>
                                             </tr>
 
 
@@ -188,7 +215,7 @@ class UserBills extends Component {
                                                 <td className={'tableData'}><img className={'itemImage'}
                                                                                  src={'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Car_with_Driver-Silhouette.svg/500px-Car_with_Driver-Silhouette.svg.png'}/><b> {item.carId}</b>
                                                 </td>
-                                                <td className={'tableData'}>{item.city}</td>
+                                                <td className={'tableData'}>{item.fromCity}</td>
                                                 <td className={'tableData'}>{item.fromDate}</td>
                                                 <td className={'tableData'}>{item.toDate}</td>
                                                 <td className={'tableData tableData1'}>

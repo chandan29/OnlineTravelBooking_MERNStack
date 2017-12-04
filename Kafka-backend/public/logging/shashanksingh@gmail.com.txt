@@ -29,3 +29,4 @@ User queried flight listing from the city of New York to the city of Los Angeles
 User booked a Flight from the city of Chicagoto the city of null|11/4/2017,9:19,flight,buying
 User queried flight listing from the city of New York to the city of Philadelphia|11/4/2017,9:32,flight,listing
 User booked a Flight from the city of San Joseto the city of undefined|11/4/2017,9:33,flight,buying
+User logged in on |11/4/2017,9:36,login

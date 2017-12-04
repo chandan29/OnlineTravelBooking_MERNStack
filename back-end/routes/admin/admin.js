@@ -24,7 +24,7 @@ adminhandler.post('/getAdminBills',function(req,res){
         var coll = mongo.collection('userTrips');
         console.log(req.body);
         console.log("Username for session :",req.session.user);
-        coll.find({username: req.session.user}).toArray(function(err, user){
+        coll.find({userEmail: req.session.user}).toArray(function(err, user){
             if (user) {
                 console.log(user);
                 res.json({status:201,user:user, username: req.session.user});

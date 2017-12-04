@@ -40,10 +40,10 @@ class AdminUserBills extends Component {
         console.log('yearMonth: ', yearMonth);
 
         for (var i = 0; i < this.state.billsObj.length; i++) {
-            if (yearMonth === this.state.billsObj[i].date.slice(0, 4)) {
+            if (yearMonth === this.state.billsObj[i].fromDate.slice(0, 4)) {
                 console.log('year matched');
                 var month = payload.slice(5, 7);
-                if (month === this.state.billsObj[i].date.slice(5, 7)) {
+                if (month === this.state.billsObj[i].fromDate.slice(5, 7)) {
                     console.log('both matched');
                     this.state.billsObjCopy1.push(this.state.billsObj[i]);
                     this.setState({
@@ -61,7 +61,7 @@ class AdminUserBills extends Component {
 
 
         for (var i = 0; i < this.state.billsObj.length; i++) {
-            if (payload === this.state.billsObj[i].date) {
+            if (payload === this.state.billsObj[i].fromDate) {
                 console.log('date matched');
                 this.state.billsObjCopy1.push(this.state.billsObj[i]);
                 this.setState({
@@ -183,6 +183,7 @@ class AdminUserBills extends Component {
                                 <tr>
                                     <th className={'tableHead'}>User</th>
                                     <th className={'tableHead'}>Type</th>
+                                    <th className={'tableHead'}>Date</th>
                                     <th className={'tableHead'}>Trip/Bill Id</th>
                                     <th className={'tableHead'}>Bill Amount</th>
                                 </tr>
@@ -196,7 +197,7 @@ class AdminUserBills extends Component {
                                                     src={'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'}/> {item.userEmail}
                                                 </td>
                                                 <td className={'tableData'}>{item.type}</td>
-
+                                                <td className={'tableData'}>{item.fromDate}</td>
                                                 <td className={'tableData tableData1'}>
                                                     <a href={'#'}
                                                     >{item.tripId}</a>
