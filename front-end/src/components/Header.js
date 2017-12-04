@@ -16,10 +16,10 @@ class Header extends Component {
               <img src={Logo} alt="kayak logo"/>
             </div>
             <ul>
-              <li style={{marginLeft:"7%"}}><a href="">Home</a></li>
-              <li><a href="/flight">Flights</a></li>
+              <li style={{marginLeft:"7%"}}><a href="/">Home</a></li>
+              <li><a href="/flights">Flights</a></li>
               <li><a href="/">Cars</a></li>
-              <li><a href="/hotel">Hotels</a></li>
+              <li><a href="/hotels">Hotels</a></li>
               <li onClick={this.props.handleLogout}><span>Logout</span></li>
             </ul>
             <div style={{float: "right", color: "white"}}>

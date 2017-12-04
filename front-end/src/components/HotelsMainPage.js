@@ -47,7 +47,7 @@ class HotelsMainPage extends Component {
                           <path d="M6 7.07V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.07h1V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.07h2V0H4v7.07h2zM21 8.67H4a4.06 4.06 0 0 0-4 4.07v2.43h25v-2.43a4.06 4.06 0 0 0-4-4.07z"></path>
                         </svg>
                      </span>
-                     <span style={{float:"left",marginTop:5,fontSize:13, color: "#ff690f"}}><strong>HOTELS</strong></span>
+                     <span style={{float:"left",marginTop:5,fontSize:13, color: "#ff690f"}}><a href="/hotels"><strong>HOTELS</strong></a></span>
                      </div>
                      <div className="tab">
                       <span style={{float:"left",paddingTop:"5%",marginLeft:"5%"}}>
@@ -56,7 +56,7 @@ class HotelsMainPage extends Component {
                            <path d="M10.73 11.94l1.3-1.3 4.28-4.28 2.8-2.8s1.54-2.12.46-3.17-3.17.47-3.17.47l-2.62 2.62-4.4 4.4L8 9.24a20 20 0 0 0-2.23 3.2l-4.67-.89L0 12.62l3.79 2.65.92.92L7.41 20l1.07-1.1-.91-4.76a20.06 20.06 0 0 0 3.16-2.2z"></path>
                          </svg>
                       </span>
-                      <span style={{float:"left",marginTop:5,fontSize:13}}><strong>FLIGHTS</strong></span>
+                      <span style={{float:"left",marginTop:5,fontSize:13}}><a href="/flights"><strong>FLIGHTS</strong></a></span>
                       </div>
                       <div className="tab">
                        <span style={{float:"left",paddingTop:"6%",paddingLeft:"13%"}}>
@@ -68,7 +68,7 @@ class HotelsMainPage extends Component {
                             <circle cx="6.28" cy="14.04" r="2.36"></circle>
                           </svg>
                        </span>
-                       <span style={{float:"left",marginTop:5,marginLeft: 10,fontSize:13}}><strong>CARS</strong></span>
+                       <span style={{float:"left",marginTop:5,marginLeft: 10,fontSize:13}}><a href="/"><strong>CARS</strong></a></span>
                        </div>
                        <div className="tab">
                         <span style={{float:"left",paddingTop:"6%"}}>

@@ -16,8 +16,8 @@ class HeaderTransparentHotel extends Component {
               <img src={Logo} alt="kayak logo"/>
             </div>
             <ul>
-              <li style={{marginLeft:"3%"}}><a href="">Home</a></li>
-              <li style={{marginLeft:"3%"}}><a href="/flight">Flights</a></li>
+              <li style={{marginLeft:"3%"}}><a href="/">Home</a></li>
+              <li style={{marginLeft:"3%"}}><a href="/flights">Flights</a></li>
               <li style={{marginLeft:"3%"}}><a href="/">Cars</a></li>
               <li style={{marginLeft:"3%" , borderBottom: "2px solid"}}><a href="/hotel">Hotels</a></li>
               <li style={{marginLeft:"3%"}}><a href="/signin" onClick={this.props.handleLogout}>Logout</a></li>
