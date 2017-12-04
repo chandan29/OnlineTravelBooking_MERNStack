@@ -78,7 +78,7 @@ function handle_request(msg, callback) {
             console.log(msg.body);
 
 
-            coll1.insertOne({type: "car",carId:msg.body.cartile.carId,fromCity:msg.body.cartile.carCity,toCity:msg.body.cartile.carCity,fromDate:msg.body.cartile.carFromDate,toDate:msg.body.cartile.carToDate,fareDetails:msg.body.cartile.carOriginalPrice},function(err, user){
+            coll1.insertOne({type: "car",carId:msg.body.cartile.carId,userEmail:msg.session,tripId:msg.body.cartile.carId,fromCity:msg.body.cartile.carCity,toCity:msg.body.cartile.carCity,fromDate:msg.body.cartile.carFromDate,toDate:msg.body.cartile.carToDate,fareDetails:msg.body.cartile.carOriginalPrice},function(err, user){
                 if (user) {
 
                     console.log("Details Saved Successfuly into userTrips DB");

@@ -122,8 +122,14 @@ function handle_request(msg, callback) {
                     console.log("Failed in updating the document");
                 }
             });
-
-            coll2.insertOne({type: "flight",flightId:msg.body.flightId,flightFromCity:msg.body.flightFromCity,flightToCity:msg.body.flightToCity,flightDate:msg.body.flightFromDate,fareDetails:msg.body.flightFareDetails * msg.body.seat},function(err, user){
+            var user="";
+            if(msg.session.user){
+                user=msg.session.user;
+            }
+            else{
+                user="guestuser";
+            }
+            coll2.insertOne({type: "flight",tripId:msg.body.flightId,userEmail:user,flightId:msg.body.flightId,flightFromCity:msg.body.flightFromCity,fromCity:msg.body.flightFromCity,flightToCity:msg.body.flightToCity,flightDate:msg.body.flightFromDate,toDate:msg.body.flightFromDate,fromDate:msg.body.flightFromDate,fareDetails:msg.body.flightFareDetails * msg.body.seat},function(err, user){
                 if (user) {
 
                     console.log("Details Saved Successfuly into userTrips DB");
@@ -139,7 +145,7 @@ function handle_request(msg, callback) {
 
             });
 
-            coll.insertOne({flightId:msg.body.flightId,flightFromCity:msg.body.flightFromCity,flightToCity:msg.body.flighttoCity,flightDate:msg.body.flightFromDate,fareDetails:msg.body.flightFareDetails * msg.body.seat},function(err, user){
+            coll.insertOne({flightId:msg.body.flightId,fromDate:msg.body.flightFromDate,toDate:msg.body.flightFromDate,fromCity:msg.body.flightFromCity,flightFromCity:msg.body.flightFromCity,flightToCity:msg.body.flighttoCity,flightDate:msg.body.flightFromDate,fareDetails:msg.body.flightFareDetails * msg.body.seat},function(err, user){
                 if (user) {
 
                     //res.status(201).json({user: user,username: msg.session.user});

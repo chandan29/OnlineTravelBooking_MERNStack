@@ -11,7 +11,7 @@ var pool  = mysql.createPool({
     connectionLimit : 10,
     host            : 'localhost',
     user            : 'root',
-    password        : 'password',
+    password        : '',
     database        : 'kayak'
 });
 
@@ -149,10 +149,10 @@ carshandler.post('/bookCar',function(req,res){
     if(req.session.user) {
         user = req.session.user;
         console.log("user session: ",req.session.user);
-        console.log("credit card:",req.body.payload.creditCard, "contact:",req.body.payload.contact,"country: ",req.body.payload.userCountry,"city:", req.body.payload.userCity);
+        console.log("credit card:",req.body.payload.creditCard,"country: ",req.body.payload.userCountry,"city:", req.body.payload.userCity);
 
         pool.getConnection(function (err, connection) {
-            connection.query("update users set creditCard='" + req.body.payload.creditCard + "',contact='" + req.body.payload.contact + "',userAddress='" + req.body.payload.userAddress + "', userCountry='" + req.body.payload.userCountry + "',userState='" + req.body.payload.userState + "', userCity='" + req.body.payload.userCity + "' where emailId = '"+ req.session.user +"'", function (error, results, fields) {
+            connection.query("update users set creditCard='" + req.body.payload.creditCard + "',userAddress='" + req.body.payload.userAddress + "', userCountry='" + req.body.payload.userCountry + "',userState='" + req.body.payload.userState + "', userCity='" + req.body.payload.userCity + "' where emailId = '"+ req.session.user +"'", function (error, results, fields) {
 //            connection.query("update users set creditCard='" + req.body.creditCard + "',contact='" + req.body.contact + "',dateOfBirth='" + req.body.dateOfBirth + "',userCountry='" + req.body.userCountry + "',userCity='" + req.body.userCity + "' where emailId = '"+ req.session.user +"'", function (error, results, fields) {
                 if(results.length >= 0)
                     console.log("success");                                                                                                                             //userAddress
@@ -162,11 +162,13 @@ carshandler.post('/bookCar',function(req,res){
         });
     }
 
+
         kafka.make_request('cars_topic', {type: "bookCar", body: req.body,session:user}, function(err, results){
 
         if(results){
             console.log("Booking done through kafka cars");
             console.log(results.value);
+            results.value.username=user;
             res.status(results.status).json(results.value);
             if(err){
                 res.send("error").status(404);

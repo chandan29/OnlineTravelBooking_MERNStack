@@ -160,8 +160,14 @@ function handle_request(msg, callback) {
                     console.log("Failed in updating the document");
                 }
             });
-
-            coll2.insertOne({type: "hotel",hotelId:msg.body.hotelId,fromCity:msg.body.hotelCity,fromDate:msg.body.hotelFromDate,toDate:msg.body.hotelToDate,fareDetails:msg.body.hotelOriginalPrice * msg.body.room},function(err, user){
+            var user="";
+            if(msg.session.user){
+                user=msg.session.user;
+            }
+            else{
+                user="guestuser";
+            }
+            coll2.insertOne({type: "hotel",tripId:msg.body.hotelId,userEmail:user,hotelId:msg.body.hotelId,fromCity:msg.body.hotelCity,fromDate:msg.body.hotelFromDate,toDate:msg.body.hotelToDate,fareDetails:msg.body.hotelOriginalPrice * msg.body.room},function(err, user){
                 if (user) {
 
                     console.log("Details Saved Successfuly into userTrips DB");

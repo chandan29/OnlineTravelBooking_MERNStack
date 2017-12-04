@@ -181,10 +181,8 @@ class AdminUserBills extends Component {
                             <table className="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th className={'tableHead'}>User Id</th>
+                                    <th className={'tableHead'}>User</th>
                                     <th className={'tableHead'}>Type</th>
-                                    <th className={'tableHead'}>Date</th>
-                                    <th className={'tableHead'}>Time</th>
                                     <th className={'tableHead'}>Trip/Bill Id</th>
                                     <th className={'tableHead'}>Bill Amount</th>
                                 </tr>
@@ -195,11 +193,10 @@ class AdminUserBills extends Component {
                                             <tr key={item._id}>
                                                 <td className={'tableData'}><img
                                                     className={'itemImage'}
-                                                    src={'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'}/> {item.userId}
+                                                    src={'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'}/> {item.userEmail}
                                                 </td>
                                                 <td className={'tableData'}>{item.type}</td>
-                                                <td className={'tableData'}>{item.date}</td>
-                                                <td className={'tableData'}>{item.time}</td>
+
                                                 <td className={'tableData tableData1'}>
                                                     <a href={'#'}
                                                     >{item.tripId}</a>
@@ -210,7 +207,7 @@ class AdminUserBills extends Component {
                                                     </button>
                                                 </td>
 
-                                                <td className={'tableData'}>{item.billamount}</td>
+                                                <td className={'tableData'}>{item.fareDetails}</td>
                                             </tr>
 
 
@@ -228,11 +225,10 @@ class AdminUserBills extends Component {
                             <table className="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th className={'tableHead'}>Car Id</th>
+                                    <th className={'tableHead'}>Trip / Bill Id</th>
                                     <th className={'tableHead'}>City</th>
                                     <th className={'tableHead'}>From Date</th>
                                     <th className={'tableHead'}>To Date</th>
-                                    <th className={'tableHead'}>Trip/Bill Id</th>
                                     <th className={'tableHead'}>Fare Details</th>
                                 </tr>
                                 </thead>
@@ -241,15 +237,12 @@ class AdminUserBills extends Component {
                                     this.state.billDetailsObj.map(item => (
                                             <tr key={item.userId}>
                                                 <td className={'tableData'}><img className={'itemImage'}
-                                                                                 src={'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Car_with_Driver-Silhouette.svg/500px-Car_with_Driver-Silhouette.svg.png'}/><b> {item.carId}</b>
+                                                                                 src={'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Car_with_Driver-Silhouette.svg/500px-Car_with_Driver-Silhouette.svg.png'}/><b> {item.tripId}</b>
                                                 </td>
-                                                <td className={'tableData'}>{item.city}</td>
+                                                <td className={'tableData'}>{item.fromCity}</td>
                                                 <td className={'tableData'}>{item.fromDate}</td>
                                                 <td className={'tableData'}>{item.toDate}</td>
-                                                <td className={'tableData tableData1'}>
-                                                    {item.tripId}
 
-                                                </td>
 
                                                 <td className={'tableData'}>{item.fareDetails}</td>
                                             </tr>

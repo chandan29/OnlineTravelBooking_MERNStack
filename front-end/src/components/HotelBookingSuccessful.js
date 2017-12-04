@@ -47,6 +47,7 @@ console.log(this.props.hotelTile);
   <tr>
     <td>Booking type</td>
     <td>hotel Booking</td>
+    <td>Arrow</td>
   </tr>
   <tr>
     <td>Booking Id:</td>

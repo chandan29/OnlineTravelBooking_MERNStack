@@ -196,7 +196,7 @@ zipCode:""
                 <hr/>
                     <h4>Card Details </h4>
                     <input type="text" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Name on Card*"/>
-                    <input type="text" style={{width: "40%",height:35,marginLeft: "3%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Card Number*" onChange={(event) => {
+                    <input type="number" style={{width: "40%",height:35,marginLeft: "3%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Card Number*" onChange={(event) => {
                   this.setState({
                       creditCard: event.target.value
                   });

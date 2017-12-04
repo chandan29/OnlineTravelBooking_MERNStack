@@ -9,7 +9,7 @@ var pool  = mysql.createPool({
     connectionLimit : 10,
     host            : 'localhost',
     user            : 'root',
-    password        : 'password',
+    password        : '',
     database        : 'kayak'
 });
 
@@ -66,24 +66,52 @@ adminhandler.post('/getAdminBills2',function(req,res){
 
 
 adminhandler.post('/getAdminBillDetail',function(req,res){
-    //Input parameters: from city, from date,to date
-    mongo.connect(mongoURL, function(){
-        console.log('Connected to mongo at: ' + mongoURL);
-        var coll = mongo.collection('carTrip');
-        console.log(req.body);
-        coll.find({tripId:parseInt(req.body.tripId)}).toArray(function(err, user){
-            if (user) {
-                console.log(user);
-                res.json({status:201,user:user});
-            } else {
+  mongo.connect(mongoURL, function(){
+         console.log('Connected to mongo at: ' + mongoURL);
 
-                res.json({status:401});
-            }
-        });
-    });
-    console.log(req.param('from'));
-    console.log(req.query.from);
-//  res.status(201).json({from:req.query.from,to:req.query.to,date:req.query.date});
+         if(req.body.type==='car') {
+             var coll = mongo.collection('carTrip');
+             console.log(req.body);
+             coll.find({carId: parseInt(req.body.tripId)}).toArray(function (err, user) {
+                 if (user) {
+                     console.log(user);
+                     res.json({status: 201, user: user});
+                 } else {
+
+                     res.json({status: 401});
+                 }
+             });
+         }
+
+         else if(req.body.type==='hotel'){
+             var coll = mongo.collection('hotelTrip');
+             console.log(req.body);
+             coll.find({hotelId: parseInt(req.body.tripId)}).toArray(function (err, user) {
+                 if (user) {
+                     console.log(user);
+                     res.json({status: 201, user: user});
+                 } else {
+
+                     res.json({status: 401});
+                 }
+             });
+         }
+
+         else if(req.body.type==='flight'){
+             var coll = mongo.collection('flightTrip');
+             console.log(req.body);
+             coll.find({flightId: req.body.tripId}).toArray(function (err, user) {
+                 if (user) {
+                     console.log(user);
+                     res.json({status: 201, user: user});
+                 } else {
+
+                     res.json({status: 401});
+                 }
+             });
+         }
+
+     });
 });
 
 {/********************************************  ADMIN USER APIs   ***************************************************/}

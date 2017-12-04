@@ -30,7 +30,7 @@ var pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'localhost',
   user            : 'root',
-  password        : 'password',
+  password        : '',
   database        : 'kayak'
 });
 // uncomment after placing your favicon in /public
