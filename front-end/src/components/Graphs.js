@@ -120,12 +120,13 @@ class Graphs extends Component {
                 this.state.x1 && this.state.x5 && this.state.m1
                 ?
                 <div>
-                  <h1> Least seen area on website is {this.state.min}</h1>
+                  Trace Diagram:
                   <SimpleTraceDiagram date={this.state.date} time={this.state.time} type={this.state.type} activity={this.state.activity}/>
-                 <KPieChart/>
+                 City wise revenue:
                 <KPieChart2/>
                 <KBarChart2 views1={this.state.x2} views8={this.state.m} cars={this.state.cars} flights={this.state.flights} hotels={this.state.hotels}/>
-                <KBarChart views={this.state.x}/></div>
+                Clicks per page
+              <KBarChart views={this.state.x}/></div>
 
                 :<div>Please</div>
             }

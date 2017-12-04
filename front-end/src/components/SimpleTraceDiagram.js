@@ -38,7 +38,7 @@ class SimpleTraceDiagram extends Component{
                 <XAxis dataKey="name"/>
                 <YAxis dataKey="uv"/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Tooltip/>
+                <Tooltip dataKey="Type"/>
 
                 <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
             </LineChart>

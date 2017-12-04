@@ -25,6 +25,7 @@ componentWillMount(){
     render(){
         return(
             <div>
+                Car, Hotel, Flight comparison:
                 <BarChart width={1500} height={300} data={this.props.views1}
                           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                     <XAxis dataKey="name"/>
@@ -36,6 +37,7 @@ componentWillMount(){
                     <Bar dataKey="FlightClicks" fill="#8884d4" />
                 </BarChart>
 
+                Clickstream:
                 <BarChart width={1500} height={300} data={this.props.views8}
                           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                     <XAxis dataKey="name"/>
@@ -47,7 +49,7 @@ componentWillMount(){
                     <Bar dataKey="Body" fill="#8884d4" />
                     <Bar dataKey="Footer" fill="#8884d4" />
                 </BarChart>
-
+                Top 10 Cars:
                 <BarChart width={1500} height={300} data={this.props.cars}
                           margin={{top: 15, right: 40, left: 30, bottom: 10}}>
                     <XAxis dataKey="name"/>
@@ -58,7 +60,7 @@ componentWillMount(){
                     <Bar dataKey="HotelClicks" fill="#8884d6" />
                     <Bar dataKey="FlightClicks" fill="#8884d4" />
                 </BarChart>
-
+                Top 10 Airlines:
                 <BarChart width={1500} height={300} data={this.props.flights}
                           margin={{top: 15, right: 40, left: 30, bottom: 10}}>
                     <XAxis dataKey="name"/>
@@ -69,7 +71,7 @@ componentWillMount(){
                     <Bar dataKey="HotelClicks" fill="#8884d6" />
                     <Bar dataKey="FlightClicks" fill="#8884d4" />
                 </BarChart>
-
+                Top 10 Hotels:
                 <BarChart width={1500} height={300} data={this.props.hotels}
                           margin={{top: 15, right: 40, left: 30, bottom: 10}}>
                     <XAxis dataKey="name"/>

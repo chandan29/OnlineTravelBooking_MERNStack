@@ -745,6 +745,7 @@ adminhandler.post('/getClicksPerPage',function(req,res){
 adminhandler.post('/getClickStream',function(req,res){
     var redis = require("redis"),
         client = redis.createClient();
+        
         client.get("a", function(err, reply) {
          client.get("b", function(err1, reply1) {
              client.get("c", function(err2, reply2) {
