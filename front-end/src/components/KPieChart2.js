@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import PieChart from 'react-svg-piechart';
 import '../App.css';
@@ -14,12 +15,6 @@ class KPieChart2 extends Component{
                     x:[{label: "San Jose", value: res.arr[0], color: "#3b5998"},{label: "San Francisco", value: res.arr[1], color: "#00aced"},{label: "Boston", value: res.arr[2], color: "#dd4b39"},{label: "Chicago", value: res.arr[3], color: "#cb2027"},{label: "Dallas", value: res.arr[4], color: "#007bb6"},{label: "Denver", value: res.arr[5], color: "#007ba4"},{label: "Los Angeles", value: res.arr[6], color: "#004ba4"},{label: "New York", value: res.arr[7], color: "#001bc4"},{label: "Seattle", value: res.arr[8], color: "#003cb2"},{label: "Denver", value: res.arr[9], color: "#017bc2"}]
                   })
               });
-              /*
-              if(this.state.cityRevenue){
-                this.setState({
-                  cityRevenue:[100,2300,123,123,4134,354,564,454,652,100]
-                })
-              }*/
 
         }
         constructor() {
@@ -56,9 +51,10 @@ class KPieChart2 extends Component{
                         sectorStrokeWidth={2}
                         expandOnHover
                         shrinkOnTouchEnd
+                        style={{float: "left",display: "inline"}}
                     />
 
-                  <div class="col-md-6" style={{textAlign:"center"}}>
+                  <div className="right-chart" style={{textAlign:"center"}}>
                         {
                             data.map((element, i) => (
                                 <div key={i}>
@@ -70,6 +66,7 @@ class KPieChart2 extends Component{
                             ))
                         }
                     </div>
+
 
 
                 </div>

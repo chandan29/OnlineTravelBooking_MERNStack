@@ -2832,6 +2832,10 @@ class AdminDashboard extends Component {
                                                                                         hotelNumberOfReviews: this.state.hotelNumberOfReviews
                                                                                     }
                                                                                 );
+                                                                                this.setState({
+                                                                                    chooseHotelFlag: false,
+                                                                                    createHotelFlag: !this.state.createHotelFlag
+                                                                                });
                                                                             }}
                                                                         >
                                                                             Add to Hotel List

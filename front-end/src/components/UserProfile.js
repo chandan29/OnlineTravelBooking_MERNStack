@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import '../App.css';
@@ -27,6 +28,7 @@ class UserProfile extends Component {
               userCity:x.userCity,
               userAddress:x.userAddress,
               userZip:x.userZip,
+              x1:true,
               bool:true
             })
               console.log(res);
@@ -36,6 +38,9 @@ class UserProfile extends Component {
         reDirectToAdminDashboard: PropTypes.func.isRequired
     };
 
+    state={
+        x1:false
+    }
 
     handleFileUpload = (event) => {
         console.log('handleFileUP function:current user', this.state.username);
@@ -66,6 +71,7 @@ class UserProfile extends Component {
         this.state = {
             username: '',
             password: '',
+
             images:[]
         };
 
@@ -78,72 +84,74 @@ class UserProfile extends Component {
         return (
             <div style={{backgroundColor: "white"}}>
                 <Header/>
-                  <div>
+                <br/>
+                  <div style={{marginLeft: "30%"}}>
                 <ProfileIcon />
                 </div>
+                <br/>
                 {this.state.bool
                   ?
-                  <div>
+                  <div style={{width: "40%",marginLeft: "30%"}}>
 
-                  ID:<input type="text" value={this.state.userId} /><br/>
-                First name<input type="text" value={this.state.firstName} onChange={(event) => {
+                  <label>ID:</label><br/><input type="text" value={this.state.userId} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }} /><br/><br/>
+                <label>First Name:</label><br/><input type="text" value={this.state.firstName} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
               this.setState({
                   firstName: event.target.value
               });
-            }}/><br/>
-              Last name<input type="text" value={this.state.lastName} onChange={(event) => {
+            }}/><br/><br/>
+              <label>Last Name</label><br/><input type="text" value={this.state.lastName} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
             this.setState({
                 lastName: event.target.value
             });
-          }}/><br/>
-            Emailid<input type="email" value={this.state.email} /><br/>
-          Credit card<input type="password" value= {this.state.creditCard} onChange={(event) => {
-        this.setState({
+            }}/><br/><br/>
+            <label>Email Id:</label><br/><input type="email"  style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  value={this.state.email} /><br/><br/>
+            <label>Credit Card:</label><br/><input type="password" value= {this.state.creditCard} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
+            this.setState({
             creditCard: event.target.value
-        });
-      }}/><br/>
-        Gender<input type="text" value={this.state.gender} onChange={(event) => {
-      this.setState({
-          gender: event.target.value
-      });
-    }}/><br/>
-      Contact<input type="text" value={this.state.contact} onChange={(event) => {
+            });
+            }}/><br/><br/>
+            <label>Gender</label><br/><input type="text" value={this.state.gender} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
+            this.setState({
+            gender: event.target.value
+            });
+            }}/><br/><br/>
+            <label>Contact</label><br/><input type="text" value={this.state.contact} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
 
-    this.setState({
-        contact: event.target.value
-    });
-  }}/><br/>
-    Middle name<input type="text" value={this.state.middleName} onChange={(event) => {
-  this.setState({
-      middleName: event.target.value
-  });
-}}/><br/>
-  DOB<input type="text" value={this.state.dateOfBirth} onChange={(event) => {
-this.setState({
-    dateOfBirth: event.target.value
-});
-}}/><br/>
-Country<input type="text" value={this.state.userCountry} onChange={(event) => {
-this.setState({
-  userCountry: event.target.value
-});
-}}/><br/>
-              City<input type="text" value={this.state.userCity} onChange={(event) => {
+            this.setState({
+            contact: event.target.value
+            });
+            }}/><br/><br/>
+            <label>Middle Name</label><br/><input type="text" value={this.state.middleName} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
+            this.setState({
+            middleName: event.target.value
+            });
+            }}/><br/><br/>
+            <label>DOB</label><br/><input type="text" value={this.state.dateOfBirth} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
+            this.setState({
+            dateOfBirth: event.target.value
+            });
+            }}/><br/><br/>
+            <label>Country</label><br/><input type="text" value={this.state.userCountry} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
+            this.setState({
+            userCountry: event.target.value
+            });
+            }}/><br/><br/>
+              <label>City</label><br/><input type="text" value={this.state.userCity} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
             this.setState({
                 userCity: event.target.value
             });
-          }}/><br/>
-            Address<input type="text" value={this.state.userAddress} onChange={(event) => {
-          this.setState({
+            }}/><br/><br/>
+            <label>Address</label><br/><input type="text" value={this.state.userAddress} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }}  onChange={(event) => {
+            this.setState({
               userAddress: event.target.value
-          });
-        }}/><br/>
-          Zip<input type="text" value={this.state.userZip} onChange={(event) => {
-        this.setState({
+            });
+            }}/><br/><br/>
+            <label>Zipcode</label><br/><input type="text" value={this.state.userZip} style={{width: "100%",height:40, border: "1px solid",borderColor: "gray",paddingLeft: 15,borderRadius: 3 }} onChange={(event) => {
+            this.setState({
             userZip: event.target.value
-        });
-      }}/><br/>
-    <button onClick={()=>{this.props.handleProfileUpload({userId:this.state.userId,firstName:this.state.firstName,lastName:this.state.lastName,creditCard:this.state.creditCard,gender:this.state.gender,contact:this.state.contact,middleName:this.state.middleName,dateOfBirth:this.state.dateOfBirth,userCountry:this.state.userCountry,userCity:this.state.userCity,userAddress:this.state.userAddress,userZip:this.state.userZip})}}>Upload Profile</button>
+            });
+            }}/><br/><br/>
+            <button style={{width: 150, height: 40,backgroundColor: "#ff690f"}} onClick={()=>{this.props.handleProfileUpload({userId:this.state.userId,firstName:this.state.firstName,lastName:this.state.lastName,creditCard:this.state.creditCard,gender:this.state.gender,contact:this.state.contact,middleName:this.state.middleName,dateOfBirth:this.state.dateOfBirth,userCountry:this.state.userCountry,userCity:this.state.userCity,userAddress:this.state.userAddress,userZip:this.state.userZip})}}>Update Profile</button>
 
 
                   </div>
@@ -153,11 +161,18 @@ this.setState({
             :<div>Please wait</div>
 
                 }
+                <br/>
+                <div>
 
-                DANGER ZONE:
-                Delete Account
-                <button onClick={()=>{this.props.handleDeleteAccount({userId:this.state.userId})}}>Delete Account</button>
+                {this.state.x1
+                ?
+                <div>
+                <button style={{width: 150, height: 40,backgroundColor: "#ff690f",marginLeft: "30%"}} onClick={()=>{this.props.handleDeleteAccount({userId:this.state.userId})}}>Delete Account</button>
+                </div>
+                :<div></div>
 
+            }
+            </div>
             </div>
         );
     }

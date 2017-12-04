@@ -173,14 +173,9 @@ class UserBills extends Component {
                                                 <td className={'tableData'}>{item.fromDate}</td>
                                                 <td className={'tableData'}>{item.fromCity}</td>
                                                 <td className={'tableData tableData1'}>
-                                                    <a href={'#'}
-                                                    >{item.tripId}</a>
-                                                    <button className={'viewDetail'} onClick={() => {
-                                                        this.getAdminBillDetail(item);
-                                                        console.log('item:', item)
-                                                    }}>View Details
-                                                    </button>
-                                                </td>
+
+                                                    {item.tripId}
+                                                    </td>
 
                                                 <td className={'tableData'}>{item.fareDetails}</td>
                                             </tr>

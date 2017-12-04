@@ -259,11 +259,28 @@ adminhandler.post('/adminAddCarToList',function(req,res){
         console.log('Connected to mongo at: ' + mongoURL);
         var coll = mongo.collection('car');
         console.log(req.body);
-        coll.insertOne({carId:parseInt(req.body.carId),
-            carType:req.body.carType,carCity:req.body.carCity,
-            carAgency:req.body.carAgency,carSpecs:req.body.carSpecs,
-            carAvailability:req.body.carAvailability,carRating:req.body.carRating,
-            carRate:req.body.carRate},function(err, user){
+        coll.insertOne({carId: parseInt(req.body.carId),
+        carType: req.body.carType,
+        carCity: req.body.carCity,
+        carFromDate:req.body.carFromDate,
+        carToDate:req.body.carToDate,
+        carAgency: req.body.carAgency,
+        carAgencyAddress: req.body.carAgencyAddress,
+        carAgencyContact: req.body.carAgencyContact,
+        carCapacity: req.body.carCapacity,
+        carAvailability: req.body.carAvailability,
+        carRating: req.body.carRating,
+        carOldPrice:req.body.carOldPrice,
+        carOriginalPrice:req.body.carOriginalPrice,
+        carName:req.body.carName,
+        carBags:req.body.carBags,
+        carDoors:req.body.carDoors,
+        carColor:req.body.carColor,
+        carClass:req.body.carClass,
+        carMode:req.body.carMode,
+        pickUpLocation:req.body.pickUpLocation,
+        dropOffLocation:req.body.dropOffLocation,
+        carNumber:req.body.carNumber},function(err, user){
             if (user) {
                 res.status(201).json(user);
             } else {
@@ -283,10 +300,27 @@ adminhandler.post('/adminModifyCarToList',function(req,res){
         console.log('Connected to mongo at: ' + mongoURL);
         var coll = mongo.collection('car');
         console.log(req.body);
-        coll.updateOne({carId:parseInt(req.body.carId)},{$set: {carType:req.body.carType,carCity:req.body.carCity,
-                carAgency:req.body.carAgency,carSpecs:req.body.carSpecs,
-                carAvailability:req.body.carAvailability,carRating:req.body.carRating,
-                carRate:req.body.carRate}},function(err, user){
+        coll.updateOne({carId:parseInt(req.body.carId)},{$set: {carType: req.body.carType,
+        carCity: req.body.carCity,
+        carFromDate:req.body.carFromDate,
+        carToDate:req.body.carToDate,
+        carAgency: req.body.carAgency,
+        carAgencyAddress: req.body.carAgencyAddress,
+        carAgencyContact: req.body.carAgencyContact,
+        carCapacity: req.body.carCapacity,
+        carAvailability: req.body.carAvailability,
+        carRating: req.body.carRating,
+        carOldPrice:req.body.carOldPrice,
+        carOriginalPrice:req.body.carOriginalPrice,
+        carName:req.body.carName,
+        carBags:req.body.carBags,
+        carDoors:req.body.carDoors,
+        carColor:req.body.carColor,
+        carClass:req.body.carClass,
+        carMode:req.body.carMode,
+        pickUpLocation:req.body.pickUpLocation,
+        dropOffLocation:req.body.dropOffLocation,
+        carNumber:req.body.carNumber}},function(err, user){
             if (user) {
                 res.status(201).json({status:201,user:user});
             } else {
@@ -369,11 +403,21 @@ adminhandler.post('/adminAddFlightToList',function(req,res){
         var coll = mongo.collection('flight');
         console.log(req.body);
         coll.insertOne({flightId:req.body.flightId,
-            flightClass:req.body.flightClass,fromCity:req.body.fromCity,
-            toCity:req.body.toCity,startTime:req.body.startTime,
-            endTime:req.body.endTime,flightAgency:req.body.flightAgency,
-            flightRating:req.body.flightRating,availableSeats:req.body.availableSeats,
-            fareDetails:req.body.fareDetails},function(err, user){
+            flightClass: req.body.flightClass,
+            flightAgency: req.body.flightAgency,
+            flightRating: req.body.flightRating,
+            flightAvailableSeats: req.body.flightAvailableSeats,
+            flightFareDetails: req.body.flightFareDetails,
+            flightTripType:req.body.flightTripType,
+            flightFromCity:req.body.flightFromCity,
+            flightToCity:req.body.flightToCity,
+            flightDepartureTime:req.body.flightDepartureTime,
+            flightArrivalTime:req.body.flightArrivalTime,
+            flightFromDate:req.body.flightFromDate,
+            flightToDate:req.body.flightToDate,
+            flightCapacity:req.body.flightCapacity,
+            flightDuration:req.body.flightDuration,
+            flightStops:req.body.flightStops},function(err, user){
             if (user) {
                 res.status(201).json(user);
             } else {
@@ -745,7 +789,6 @@ adminhandler.post('/getClicksPerPage',function(req,res){
 adminhandler.post('/getClickStream',function(req,res){
     var redis = require("redis"),
         client = redis.createClient();
-
         client.get("a", function(err, reply) {
          client.get("b", function(err1, reply1) {
              client.get("c", function(err2, reply2) {

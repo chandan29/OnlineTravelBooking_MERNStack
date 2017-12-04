@@ -1,3 +1,4 @@
+
 html,body { height: 100%; margin: 0px; padding: 0px; }
 
 .App {
@@ -1107,7 +1108,7 @@ table {
 .Kpiechart{
     width: 30%;
     height: auto;
-    margin-left: 35%;
+    margin-left: 0%;
 
 }
 
@@ -1162,6 +1163,13 @@ table {
     margin-top: 20px;
 }
 
+.right-chart {
+    display: inline;
+    float: right;
+    margin-right: 30%;
+    margin-top: 5%;
+    font-size: 18px;
+}
 
 .decrement{
     height: 24px;
@@ -1326,7 +1334,7 @@ table {
 .LeftAdmin {
     width: 13%;
     height: auto;
-    background-color: gray;
+    background-color: #f1f1f1;
     color: white;
     float: left;
     display: inline;

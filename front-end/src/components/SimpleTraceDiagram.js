@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import PropTypes from 'prop-types';
@@ -19,7 +20,7 @@ class SimpleTraceDiagram extends Component{
 
     componentDidMount(){
       for(var i=0;i<this.props.activity.length;i++){
-        data.push({name: this.props.activity[i], Type: this.props.type[i], uv: Math.floor(Math.random()*1000), amt: this.props.date[i]})
+        data.push({name: this.props.activity[i], Type: this.props.type[i], uv: Math.floor(Math.random()*1000), amt: this.props.date[i],z:""+this.props.activity[i]+","+this.props.type[i]})
       }
       this.setState({
         x:data,
@@ -35,7 +36,8 @@ class SimpleTraceDiagram extends Component{
             <div id="container-chart">
             <LineChart width={600} height={300} data={this.state.x}
                        margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-                <XAxis dataKey="name"/>
+                <XAxis dataKey="z"/>
+                label ={"Type"}
                 <YAxis dataKey="uv"/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Tooltip dataKey="Type"/>

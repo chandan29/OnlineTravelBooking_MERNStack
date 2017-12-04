@@ -1,4 +1,3 @@
-
 import KPieChart from './KPieChart';
 import KBarChart from './KBarChart';
 import KPieChart2 from './KPieChart2';
@@ -120,13 +119,24 @@ class Graphs extends Component {
                 this.state.x1 && this.state.x5 && this.state.m1
                 ?
                 <div>
-                  Trace Diagram:
+                  <h3 style={{paddingLeft: "42%",backgroundColor:"gray",width:"auto",height: 50,paddingTop:10}}>User Trace Diagram</h3>
+                  <div style={{width: "50%",marginLeft: "25%",padding: 20}}>
                   <SimpleTraceDiagram date={this.state.date} time={this.state.time} type={this.state.type} activity={this.state.activity}/>
-                 City wise revenue:
-                <KPieChart2/>
-                <KBarChart2 views1={this.state.x2} views8={this.state.m} cars={this.state.cars} flights={this.state.flights} hotels={this.state.hotels}/>
-                Clicks per page
-              <KBarChart views={this.state.x}/></div>
+                  </div><hr/>
+                  <h3 style={{paddingLeft: "42%",backgroundColor:"gray",width:"auto",height: 50,paddingTop:10}}>City wise revenue:</h3>
+                 <div style={{width: "80%",marginLeft: "10%",padding: 20}}>
+                    <KPieChart2/>
+                </div><hr/>
+                <h3 style={{paddingLeft: "42%",backgroundColor:"gray",width:"auto",height: 50,paddingTop:10}}>Car, Hotel, Flight Views Comparison</h3>
+                <div style={{width: "60%",padding: 1,marginLeft: "20%"}}>
+                    <KBarChart2 views1={this.state.x2} views8={this.state.m} cars={this.state.cars} flights={this.state.flights} hotels={this.state.hotels}/>
+                </div><hr/>
+                <h3 style={{paddingLeft: "42%",backgroundColor:"gray",width:"auto",height: 50,paddingTop:10}}>Clicks Per Page</h3>
+                <div style={{width: "50%", marginLeft: "25%"}}>
+                  <KBarChart views={this.state.x}/>
+                </div>
+
+              </div>
 
                 :<div>Please</div>
             }
@@ -136,4 +146,4 @@ class Graphs extends Component {
 
 }
 
-export default Graphs
+export default Graphs;

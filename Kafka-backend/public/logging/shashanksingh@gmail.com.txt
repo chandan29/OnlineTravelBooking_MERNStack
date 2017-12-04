@@ -30,3 +30,17 @@ User booked a Flight from the city of Chicagoto the city of null|11/4/2017,9:19,
 User queried flight listing from the city of New York to the city of Philadelphia|11/4/2017,9:32,flight,listing
 User booked a Flight from the city of San Joseto the city of undefined|11/4/2017,9:33,flight,buying
 User logged in on |11/4/2017,9:36,login
+User logged in on |11/4/2017,13:36,login
+User queried car listing from the city of New York on |11/4/2017,13:45,car,listing
+User queried car listing from the city of New York on |11/4/2017,14:5,car,listing
+User booked a car from the city of New Yorkon |11/4/2017,14:6,car,buying
+User queried flight listing from the city of New York to the city of San Jose|11/4/2017,14:7,flight,listing
+User booked a Flight from the city of Chicagoto the city of null|11/4/2017,14:8,flight,buying
+User queried hotel listing for the city of New York|11/4/2017,14:10,hotel,listing
+User queried hotel listing for the city of New York|11/4/2017,14:12,hotel,listing
+User queried car listing from the city of New York on |11/4/2017,14:16,car,listing
+User queried hotel listing for the city of New York|11/4/2017,14:16,hotel,listing
+User queried hotel listing for the city of New York|11/4/2017,14:18,hotel,listing
+User booked a hotel in the city of San Jose|11/4/2017,14:18hotel,buying
+User queried car listing from the city of New York on |11/4/2017,15:21,car,listing
+User booked a car from the city of San Joseon |11/4/2017,15:22,car,buying
