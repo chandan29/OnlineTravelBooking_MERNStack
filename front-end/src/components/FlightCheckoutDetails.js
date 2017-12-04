@@ -4,6 +4,12 @@ import Logo from './../logo.png';
 import Car1 from './../car1.png';
 import Cards from './../CreditCards.png';
 import Flight1 from './../flight1.jpg';
+import Alaska from './../alaska1.png';
+import American from './../american1.jpg';
+import British from './../british1.jpg';
+import Spirit from './../spirit1.JPG';
+import United from './../united1.png';
+import Virgin from './../virgin1.jpg';
 var FontAwesome = require('react-fontawesome');
 
 class FlightCheckoutDetails extends Component {
@@ -37,14 +43,58 @@ class FlightCheckoutDetails extends Component {
 
 
     <div className="outerDiv-flightcheckout1" style={{paddingTop: "1%", paddingLeft: "1%"}}>
-    <div style={{float: "left"}}>
+    <div style={{float: "left", display: "inline",width: "100%"}}>
+    <div style={{float: "left",display:"inline"}}>
         <p style={{lineWidth: "140", fontSize: 18, fontWeight: "bold"}}>{this.props.flightTile.flightFromCity} to {this.props.flightTile.flightToCity}
         <br/>{this.props.flightTile.flightAgency}, one-way, {this.props.flightTile.flightClass}</p>
-        <p style={{fontSize: 18}}>Depart: {this.props.flightTile.flightFromDate}</p>
+        <p style={{fontSize: 18, width: "80%"}}>Depart: {this.props.flightTile.flightFromDate}</p>
+    </div>
+    <div style={{float: "right"}}>
+        {
+            this.props.flightTile.flightAgency === "American Airlines"
+            ?
+            <img src={American}/>
+            :
+            null
+        }
+        {
+            this.props.flightTile.flightAgency === "British Airlines"
+            ?
+            <img src={British}  />
+            :
+            null
+        }
+        {
+            this.props.flightTile.flightAgency === "United Airlines"
+            ?
+            <img src={United}  />
+            :
+            null
+        }
+        {
+            this.props.flightTile.flightAgency === "Spirit Airlines"
+            ?
+            <img src={Spirit}  />
+            :
+            null
+        }
+        {
+            this.props.flightTile.flightAgency === "Alaska Airlines"
+            ?
+            <img src={Alaska} />
+            :
+            null
+        }
+        {
+            this.props.flightTile.flightAgency === "Virgin Airlines"
+            ?
+            <img src={Virgin} />
+            :
+            null
+        }
         </div>
-        <div className="flightLogo">
-            <img src={Flight1} alt="Flight Logo"/>
         </div>
+
     </div>
     <div className="outerDiv-flightcheckout2">
         The booking will be charged in USD. The average ticket price of ${this.props.flightTile.flightFareDetails * this.props.seat}.

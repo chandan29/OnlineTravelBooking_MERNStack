@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Logo from './../logo.png';
-import Hotel1 from './../hotel1.jpg';
+import Metro from './../Metro.jpg';
+import Wingate from './../Wingate.jpg';
+import King from './../King.jpg';
+import Orbit from './../Orbit.jpg';
 import LeftFilterCars from './LeftFilterCars';
 import Slider from 'material-ui/Slider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import SideHotel1 from './../sidehotel1.png';
 import SideHotel2 from './../sidehotel2.png';
 var FontAwesome = require('react-fontawesome');
+var rand = require('unique-random')(0, 7);
 
 
 class HotelTile extends Component {
@@ -23,6 +27,7 @@ class HotelTile extends Component {
         room: room
     });
   }
+
 
   state={
 hotelsCopy: this.props.hotels,
@@ -212,7 +217,34 @@ val:500
     {this.state.hotelsCopy.map(hotel => (
 <div className="outerDiv-hotel">
     <div className="outerDiv-hotel-left">
-
+    {
+        hotel.hotelAgency === " Orbit Agency"
+        ?
+        <img src={Orbit} style={{width: 220, height: 180}}/>
+        :
+        null
+    }
+    {
+        hotel.hotelAgency === "Wingate Agency"
+        ?
+        <img src={Wingate}  style={{width: 220, height: 180}}/>
+        :
+        null
+    }
+    {
+        hotel.hotelAgency === "Metro"
+        ?
+        <img src={Metro}  style={{width: 220, height: 180}}/>
+        :
+        null
+    }
+    {
+        hotel.hotelAgency === "King Agency"
+        ?
+        <img src={King}  style={{width: 220, height: 180}}/>
+        :
+        null
+    }
     </div>
     <div className="outerDiv-hotel-mid">
         <h3>{hotel.hotelName}</h3>

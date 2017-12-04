@@ -13,3 +13,66 @@ User queried car listing from the city of New York on |11/3/2017,22:15,car,listi
 User booked a car from the city of New Yorkon |11/3/2017,22:16,car,buying
 User queried car listing from the city of New York on |11/3/2017,22:50,car,listing
 User queried car listing from the city of New York on |11/3/2017,22:57,car,listing
+User queried hotel listing for the city of New York|11/4/2017,1:7,hotel,listing
+User queried car listing from the city of New York on |11/4/2017,1:19,car,listing
+User queried car listing from the city of New York on |11/4/2017,1:21,car,listing
+User queried car listing from the city of New York on |11/4/2017,1:28,car,listing
+User queried car listing from the city of New York on |11/4/2017,1:29,car,listing
+User queried car listing from the city of New York on |11/4/2017,1:32,car,listing
+User queried car listing from the city of New York on |11/4/2017,1:42,car,listing
+User queried car listing from the city of New York on |11/4/2017,1:45,car,listing
+User queried car listing from the city of New York on |11/4/2017,1:50,car,listing
+User queried flight listing from the city of New York to the city of New York|11/4/2017,2:18,flight,listing
+User queried flight listing from the city of Los Angeles to the city of Los Angeles|11/4/2017,2:20,flight,listing
+User queried flight listing from the city of Los Angeles to the city of Los Angeles|11/4/2017,2:25,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,2:27,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,2:28,flight,listing
+User queried flight listing from the city of Santa Jose to the city of Los Angeles|11/4/2017,2:29,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,2:35,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,2:36,flight,listing
+User queried flight listing from the city of Los Angeles to the city of New York|11/4/2017,3:11,flight,listing
+User queried hotel listing for the city of Santa Clara|11/4/2017,3:12,hotel,listing
+User queried flight listing from the city of New York to the city of Santa Clara|11/4/2017,3:20,flight,listing
+User queried flight listing from the city of San Jose to the city of New York|11/4/2017,3:22,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,3:23,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,3:25,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,3:26,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,3:27,flight,listing
+User queried flight listing from the city of San Jose to the city of New York|11/4/2017,3:30,flight,listing
+User queried flight listing from the city of San Jose to the city of Santa Clara|11/4/2017,3:31,flight,listing
+User queried flight listing from the city of Santa Clara to the city of San Jose|11/4/2017,3:32,flight,listing
+User queried flight listing from the city of Santa Clara to the city of Santa Clara|11/4/2017,3:33,flight,listing
+User queried flight listing from the city of San Jose to the city of Santa Clara|11/4/2017,3:34,flight,listing
+User queried flight listing from the city of San Jose to the city of Santa Clara|11/4/2017,3:35,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,3:36,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,3:37,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,3:38,flight,listing
+User queried flight listing from the city of Los Angeles to the city of Santa Clara|11/4/2017,3:39,flight,listing
+User queried flight listing from the city of San Jose to the city of Los Angeles|11/4/2017,3:40,flight,listing
+User queried flight listing from the city of San Jose to the city of San Francisco|11/4/2017,3:45,flight,listing
+User queried hotel listing for the city of San Jose|11/4/2017,3:48,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:2,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:2,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:3,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:12,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:14,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:23,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:25,hotel,listing
+User queried hotel listing for the city of Santa Clara|11/4/2017,4:27,hotel,listing
+User queried hotel listing for the city of Santa Clara|11/4/2017,4:29,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:30,hotel,listing
+User queried hotel listing for the city of Santa Clara|11/4/2017,4:32,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:33,hotel,listing
+User queried hotel listing for the city of Santa Clara|11/4/2017,4:35,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:44,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:47,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:48,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:49,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,4:56,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,5:0,hotel,listing
+User queried hotel listing for the city of San Jose|11/4/2017,5:1,hotel,listing
+User queried hotel listing for the city of Santa Clara|11/4/2017,5:2,hotel,listing
+User queried hotel listing for the city of Santa Clara|11/4/2017,5:3,hotel,listing
+User queried car listing from the city of New York on |11/4/2017,6:23,car,listing
+User booked a car from the city of San Joseon |11/4/2017,6:24,car,buying
+User queried flight listing from the city of Los Angeles to the city of New York|11/4/2017,6:27,flight,listing

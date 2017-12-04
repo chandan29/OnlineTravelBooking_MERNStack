@@ -4,6 +4,10 @@ import Logo from './../logo.png';
 import Car1 from './../car1.png';
 import Cards from './../CreditCards.png';
 import Hotel1 from './../hotel1.jpg';
+import Metro from './../Metro.jpg';
+import Wingate from './../Wingate.jpg';
+import King from './../King.jpg';
+import Orbit from './../Orbit.jpg';
 var FontAwesome = require('react-fontawesome');
 
 class HotelCheckoutDetails extends Component {
@@ -34,9 +38,43 @@ class HotelCheckoutDetails extends Component {
     <div style={{backgroundColor: "#f1f1f1"}}>
 
       <div className="outerDiv-hotelcheckout1">
-            <div className="outerDiv-hotelcheckout-left" style={{backgroundSize: "cover", backgroundImage: "url(" + Hotel1 + ")"}}>
 
-            </div>
+      {
+          this.props.hotelTile.hotelAgency === " Orbit Agency"
+          ?
+          <div className="outerDiv-hotelcheckout-left" style={{backgroundSize: "cover", backgroundImage: "url(" + Orbit + ")"}}></div>
+          :
+          null
+      }
+      {
+          this.props.hotelTile.hotelAgency === "Wingate Agency"
+          ?
+          <div className="outerDiv-hotelcheckout-left" style={{backgroundSize: "cover", backgroundImage: "url(" + Wingate + ")"}}></div>
+          :
+          null
+      }
+      {
+          this.props.hotelTile.hotelAgency === "Metro"
+          ?
+          <div className="outerDiv-hotelcheckout-left" style={{backgroundSize: "cover", backgroundImage: "url(" + Metro + ")"}}></div>
+          :
+          null
+      }
+      {
+          this.props.hotelTile.hotelAgency === "King Agency"
+          ?
+          <div className="outerDiv-hotelcheckout-left" style={{backgroundSize: "cover", backgroundImage: "url(" + King + ")"}}></div>
+          :
+          null
+      }
+
+
+
+
+
+
+
+
             <div className="outerDiv-hotelcheckout-right">
                 <span style={{lineHeight: "70%",fontSize: 18}}>{this.props.hotelTile.hotelName}</span><p></p>
                 <span style={{lineHeight: "180%", fontSize: 16}}>{this.props.room} room, {this.props.room *2} adults
@@ -181,7 +219,7 @@ Located in the {this.props.hotelTile.hotelCity} theater district with a BART and
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
             </datalist>
-                  <input type="text" style={{width: "10%",height:35,marginLeft: "5%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Country" onChange={(event) => {
+                  <input type="text" style={{width: "10%",height:35,marginLeft: "10%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Country" onChange={(event) => {
                 this.setState({
                     userCountry: event.target.value
                 });

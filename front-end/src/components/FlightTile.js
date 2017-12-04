@@ -8,6 +8,12 @@ import Slider from 'material-ui/Slider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import SideFlight1 from './../sideflight1.png';
 import SideFlight2 from './../sideflight2.png';
+import Alaska from './../alaska.png';
+import American from './../american.png';
+import British from './../british.png';
+import Spirit from './../spirit.png';
+import United from './../united.png';
+import Virgin from './../virgin.png';
 var FontAwesome = require('react-fontawesome');
 
 
@@ -312,7 +318,49 @@ componentWillMount(){
 {this.state.flightsCopy.map(flight => (
 <div className="outerDiv-flight">
     <div className="outerDiv-flight-left">
-        <img src={Flight2}  style={{paddingLeft: "29%", paddingTop: "12%"}}/>
+        {
+            flight.flightAgency === "American Airlines"
+            ?
+            <img src={American}  style={{paddingLeft: "29%", paddingTop: "12%"}}/>
+            :
+            null
+        }
+        {
+            flight.flightAgency === "British Airlines"
+            ?
+            <img src={British}  style={{paddingLeft: "29%", paddingTop: "12%"}}/>
+            :
+            null
+        }
+        {
+            flight.flightAgency === "United Airlines"
+            ?
+            <img src={United}  style={{paddingLeft: "29%", paddingTop: "12%"}}/>
+            :
+            null
+        }
+        {
+            flight.flightAgency === "Spirit Airlines"
+            ?
+            <img src={Spirit}  style={{paddingLeft: "29%", paddingTop: "12%"}}/>
+            :
+            null
+        }
+        {
+            flight.flightAgency === "Alaska Airlines"
+            ?
+            <img src={Alaska}  style={{paddingLeft: "29%", paddingTop: "12%"}}/>
+            :
+            null
+        }
+        {
+            flight.flightAgency === "Virgin Airlines"
+            ?
+            <img src={Virgin}  style={{paddingLeft: "29%", paddingTop: "12%"}}/>
+            :
+            null
+        }
+
     </div>
     <div className="outerDiv-flight-mid">
         <div className="flighttileStrap" style={{height: "43%",paddingTop: "3%"}}>

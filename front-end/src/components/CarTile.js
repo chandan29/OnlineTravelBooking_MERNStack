@@ -8,7 +8,21 @@ import Slider from 'material-ui/Slider';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import SideCar1 from './../sidecar1.png';
 import SideCar2 from './../sidecar2.png';
+
+import car1 from './../Red.jpg';
+import car2 from './../Red2.jpg';
+import car3 from './../White.png';
+import car4 from './../car1.png';
+import car5 from './../Black.jpg';
+import car6 from './../Black2.jpg';
+import car7 from './../Blue.png';
+import car8 from './../Blue2.png';
+import car9 from './../Grey.jpg';
+import car10 from './../Grey2.jpg';
+var carsImgs = [car1, car2, car3, car4, car5, car6, car7, car8, car9, car10];
+
 var FontAwesome = require('react-fontawesome');
+var rand = require('unique-random')(0, 9);
 
 
 class CarTile extends Component {
@@ -16,7 +30,8 @@ class CarTile extends Component {
       console.log(this.props.cars);
       this.setState({
           cars: this.props.cars,
-          carsCopy: this.props.cars
+          carsCopy: this.props.cars,
+          carsImgs: carsImgs
       });
 
           //  localStorage.setItem(this.props.cars, JSON.stringify(this.props.cars));
@@ -29,6 +44,8 @@ class CarTile extends Component {
             console.log("cache data",cachedHits);
         }
     }
+
+    var
 
     state={
         carsCopy: this.props.cars,
@@ -268,6 +285,7 @@ class CarTile extends Component {
 <div className="mid-cartile">
 
       {this.state.carsCopy.map(car => (
+
 <div className="outerDiv">
         <div className="outerDiv-left">
             <div className="outerDiv-left-top">
@@ -292,7 +310,7 @@ class CarTile extends Component {
         <div className="outerDiv-mid" style={{textAlign: "center"}}>
         <button style={{marginTop:"5%",width: "45%",backgroundColor: "#1E90FF",height: "15%", borderTop: 0,borderLeft:0,borderRight:0,borderBottom:0,borderRadius:0,float:"right",marginRight:"2%"}}>Great Deal</button>
         <br/>
-        <img style={{marginLeft:"10%"}} src={Car1}/>
+        <img style={{marginLeft:"10%"}} src={this.state.carsImgs[rand()]}/>
         </div>
         <div className="outerDiv-right">
 

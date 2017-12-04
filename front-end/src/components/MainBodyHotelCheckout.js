@@ -19,9 +19,6 @@ class MainBodyHotelCheckout extends Component {
             <HotelCheckoutDetails hotelTile={this.props.hotelTile} room={this.props.room} handleRedirectBooking1={this.props.handleRedirectBooking1}/>
         </div>
 
-        <div className="right-pane-carcheckout">
-
-        </div>
       </div>
 );
   }

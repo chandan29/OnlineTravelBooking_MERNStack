@@ -1,0 +1,7 @@
+{
+  "app.title": "REACT INTL TRANSLATIONS EXAMPLE",
+  "app.locales_menu_heading": "LOCALES:",
+  "greeting.welcome_message": "WELCOME {name}, YOU HAVE RECEIVED {unreadCount, plural, =0 {NO NEW MESSAGES} one {{formattedUnreadCount} NEW MESSAGE} other {{formattedUnreadCount} NEW MESSAGES}} SINCE {formattedLastLoginTime}.",
+  "menu.item_en_us_description": "THE DEFAULT LOCALE OF THIS EXAMPLE APP.",
+  "menu.item_en_upper_description": "THE FAKE, ALL UPPERCASE \"LOCALE\" FOR THIS EXAMPLE APP."
+}

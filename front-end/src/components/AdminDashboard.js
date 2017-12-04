@@ -560,66 +560,35 @@ class AdminDashboard extends Component {
 
         return (
 
-            <div className="container">
+            <div className="container-fluid" style={{backgroundColor: "#f1f1f1"}}>
 
 
-                <nav className="navbar dashboard navbar-inverse">
-
-                    <div className="navbar-header">
-                        <a className="" href="#"  ><h2>Admin Dashboard</h2></a>
-                    </div>
-                    <ul className="nav navbar-nav">
-                        <li className="uiNav"><a href="#" onClick={()=> this.setState({
-                            showListingFlag:!this.state.showListingFlag,
-                            showUserBillFlag:false,showUserInfoFlag:false,
-                            chooseHotelFlag: false,chooseCarFlag:false,chooseFlightFlag:false
-                        })}><h3>Listing</h3></a></li>
-                        <li><a className="uiNav" href="#" onClick={()=> this.setState({
-                            showUserInfoFlag:!this.state.showUserInfoFlag,
-                            showListingFlag:false,showUserBillFlag:false
-                        })}><h3>UserInfo</h3></a></li>
-
-                        <li><a className="uiNav" href="#" onClick={()=> this.setState({
-                            showUserBillFlag:!this.state.showUserBillFlag,
-                            showListingFlag:false,showUserInfoFlag:false
-                        })}><h3>Userbill</h3></a></li>
-
-                        <li><a href="#" onClick={this.props.handleAdminLogout}><h3><span className="glyphicon glyphicon-log-out"></span>Logout</h3></a></li>
-                    </ul>
-
-                </nav>
-                <div>
-                    {/*<div className="card card1">
-                    <img className="card-img-top" src="https://a1.r9cdn.net/rimg/dimg/4e/7e/38ac4f74-city-8127-153cb9580a1.jpg?s14=1&width=325&height=184&crop=true&xhint=1731&yhint=1245" alt="Card image cap"/>
-                        <div className="card-block">
-                            <h4 className="card-title">Listing</h4>
-                            <p className="card-text">Find Car, Flight and Hotel Listing. Crate and modify them.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                        </div>
+            <div className="LeftAdmin">
+                <div className="navbar-header">
+                    <a className="" href="#"  ><h2>Admin Dashboard</h2></a>
                 </div>
 
-                <div className="card card1">
-                    <img className="card-img-top" src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2013/12/customer-people.jpg" alt="Card image cap"/>
-                    <div className="card-block">
-                        <h4 className="card-title">User Info</h4>
-                        <p className="card-text">Find info about existing users and modify their account. </p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+                <ul className="nav navbar-nav" style={{color: "black"}}>
+                    <li className="abc" style={{color: "black"}}><a href="#" onClick={()=> this.setState({
+                        showListingFlag:!this.state.showListingFlag,
+                        showUserBillFlag:false,showUserInfoFlag:false,
+                        chooseHotelFlag: false,chooseCarFlag:false,chooseFlightFlag:false
+                    })}><h3 style={{color:"black"}}>Listing</h3></a></li>
+                    <li><a className="uiNav" href="#" onClick={()=> this.setState({
+                        showUserInfoFlag:!this.state.showUserInfoFlag,
+                        showListingFlag:false,showUserBillFlag:false
+                    })}><h3 style={{color:"black"}}>UserInfo</h3></a></li>
 
-                <div className="card card1">
-                    <img className="card-img-top" src="https://a1.r9cdn.net/rimg/dimg/4e/7e/38ac4f74-city-8127-153cb9580a1.jpg?s14=1&width=325&height=184&crop=true&xhint=1731&yhint=1245" alt="Card image cap"/>
-                    <div className="card-block">
-                        <h4 className="card-title">User Bills</h4>
-                        <p className="card-text">Find bills and info about a particular bill.</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>*/}
-                </div>
+                    <li><a className="uiNav" href="#" onClick={()=> this.setState({
+                        showUserBillFlag:!this.state.showUserBillFlag,
+                        showListingFlag:false,showUserInfoFlag:false
+                    })}><h3 style={{color:"black"}}>Userbill</h3></a></li>
 
-
-
-                <div>
+                    <li><a href="#" onClick={this.props.handleAdminLogout}><h3 style={{color:"black"}}><span className="glyphicon glyphicon-log-out" style={{color: "black"}}></span>Logout</h3></a></li>
+                </ul>
+            </div>
+            <div className="rightAdmin">
+                <div className="rightAdmin-inside" style={{width: "100%"}}>
 
                     {
                         this.state.showListingFlag
@@ -3355,6 +3324,7 @@ class AdminDashboard extends Component {
                             null
                     }
                 </div>
+
                 <div className={'userbill'}>
 
                     {
@@ -3366,6 +3336,11 @@ class AdminDashboard extends Component {
                     }
                 </div>
             </div>
+        </div>
+
+
+
+
 
 
 
@@ -3380,7 +3355,3 @@ class AdminDashboard extends Component {
 
 
 export default AdminDashboard;
-
-
-
-

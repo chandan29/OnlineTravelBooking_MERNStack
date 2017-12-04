@@ -27,7 +27,7 @@ function handle_request(msg, callback) {
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('car');
             console.log(msg);
-           coll.find({"carCity":msg.carCity, "carFromDate": msg.carFromDate, "carToDate": msg.carToDate}).toArray(function(err, user){
+           coll.find().toArray(function(err, user){
            // coll.find({"carCity":msg.carCity}).toArray(function(err, user){
                //db.car.find({"carCity":'New York',"carFromDate":'2017-12-01',"carToDate":'2017-12-04'});
                 if (user) {
@@ -188,3 +188,5 @@ function handle_request(msg, callback) {
     }
 }
 exports.handle_request = handle_request;
+
+/*{"carCity":msg.carCity, "carFromDate": msg.carFromDate, "carToDate": msg.carToDate} */

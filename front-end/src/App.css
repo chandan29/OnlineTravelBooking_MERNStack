@@ -414,7 +414,7 @@ li>a {
 }
 
 .main-pane-hotelcheckout {
-    width: 60%;
+    width: 70%;
     height: auto;
     float : left;
     margin-left: 15%;
@@ -557,11 +557,9 @@ table {
 }
 
 .bgpage{
-    height: 100%;
-    background-repeat: no-repeat;
-    background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+    width: 100%;
     font-family: 'Oxygen', sans-serif;
-    background-size: cover;
+
 }
 
 
@@ -784,7 +782,7 @@ table {
     margin-top: 1px;
     display: inline;
     float: left;
-    background-image: url('./hotel1.jpg');
+
     background-size: cover;
 }
 
@@ -1320,4 +1318,35 @@ table {
     display: inline;
 
     margin-top: 0.4%;
+}
+
+
+
+
+.LeftAdmin {
+    width: 13%;
+    height: auto;
+    background-color: gray;
+    color: white;
+    float: left;
+    display: inline;
+    text-align: center;
+}
+
+.rightAdmin {
+    width: 82%;
+    min-height: 500px;
+
+    float: left;
+    display: inline;
+    margin-left: 2%;
+    background-color: white;
+}
+
+.rightAdmin-inside {
+    width: 100%;
+    height: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+    float: left;
 }
