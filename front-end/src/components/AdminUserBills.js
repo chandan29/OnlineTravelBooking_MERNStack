@@ -27,6 +27,8 @@ class AdminUserBills extends Component {
                         messageFlag: false,
                         viewBillFlag: !this.state.viewBillFlag
                     });
+
+
                     console.log('admin bill details object fetched:', res);
                 }
             });
@@ -226,7 +228,7 @@ class AdminUserBills extends Component {
                             <table className="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th className={'tableHead'}>Trip / Bill Id</th>
+
                                     <th className={'tableHead'}>City</th>
                                     <th className={'tableHead'}>From Date</th>
                                     <th className={'tableHead'}>To Date</th>
@@ -237,9 +239,7 @@ class AdminUserBills extends Component {
                                 {
                                     this.state.billDetailsObj.map(item => (
                                             <tr key={item.userId}>
-                                                <td className={'tableData'}><img className={'itemImage'}
-                                                                                 src={'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Car_with_Driver-Silhouette.svg/500px-Car_with_Driver-Silhouette.svg.png'}/><b> {item.tripId}</b>
-                                                </td>
+
                                                 <td className={'tableData'}>{item.fromCity}</td>
                                                 <td className={'tableData'}>{item.fromDate}</td>
                                                 <td className={'tableData'}>{item.toDate}</td>

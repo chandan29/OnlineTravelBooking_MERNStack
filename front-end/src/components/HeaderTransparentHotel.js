@@ -1,9 +1,18 @@
 import React, {Component} from 'react';
+import * as API from '../api/API';
 
 import Logo from './../logo.png';
 
 class HeaderTransparentHotel extends Component {
-
+  componentWillMount(){
+    API.getUsername()
+        .then((res) => {
+            this.setState({
+              username:res.username,
+              bool:true
+            })
+        });
+  }
   state={
 
   }
@@ -23,7 +32,9 @@ class HeaderTransparentHotel extends Component {
               <li style={{marginLeft:"3%"}}><a href="/signin" onClick={this.props.handleLogout}>Logout</a></li>
             </ul>
             <div style={{float: "right", color: "white"}}>
-              <span className="glyphicon glyphicon-user"></span>
+              <img className="img-circle" style={{width: 35, height: 35, borderRadius:20}}
+     src={"http://localhost:3001/Userfiles/" + this.state.username + "/" + this.state.username + ".jpg?_=" + Date.now()}
+     alt="No profile picture Available"/>
 
               <div className="dropdown">
                   <span  className="dropbtn" style={{marginLeft: 10}}>My Account</span>

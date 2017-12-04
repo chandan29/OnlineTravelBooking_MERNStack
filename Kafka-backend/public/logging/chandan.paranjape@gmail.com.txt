@@ -128,3 +128,4 @@ User queried car listing from the city of New York on |11/4/2017,10:31,car,listi
 User booked a car from the city of San Joseon |11/4/2017,10:32,car,buying
 User queried flight listing from the city of New York to the city of Los Angeles|11/4/2017,10:32,flight,listing
 User booked a Flight from the city of Chicagoto the city of null|11/4/2017,10:32,flight,buying
+User logged in on |11/4/2017,11:0,login
