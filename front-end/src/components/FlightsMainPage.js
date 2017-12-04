@@ -20,7 +20,12 @@ class FlightsMainPage extends Component {
   }
         state = {
                 carsObj: [],
-                city:''
+                city:'',
+                fromDate:"",
+                toCity:"",
+                fromCity:"",
+                seats:""
+
             };
 
   render() {

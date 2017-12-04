@@ -12,7 +12,7 @@ var FontAwesome = require('react-fontawesome');
 
 
 class HotelTile extends Component {
-    componentWillMount(){
+  /*  componentWillMount(){
       console.log(this.props.flights);
 
       console.log("seats count", this.props.seats)
@@ -27,12 +27,69 @@ class HotelTile extends Component {
           seat: seat
       });
     }
+*/
 
-  state={
-      flightsCopy: this.props.flights,
-      val:500
+componentWillMount(){
+
+  for(var i=0;i<this.props.flights.length;i++){
+    var x=this.props.flights[i].flightDepartureTime.split(' ')[1];
+    if(x=="PM"){
+      var y=this.props.flights[i].flightDepartureTime.split(' ')[0].split(':')[0];
+      var z=this.props.flights[i].flightDepartureTime.split(' ')[0].split(':')[1];
+      if(parseInt(y)<12){
+        var a=parseInt(y)+12;
+        y=a+":"+z;
+        this.props.flights[i].flightDepartureTime=y;
+        console.log(y);
+      }
+    }
+
   }
 
+  //  console.log(this.props.flights[i].flightDepartureTime);
+
+//  console.log(this.props.flights[0].flightDepartureTime);
+
+  console.log("seats count", this.props.seats)
+  var seat = this.props.seats[0];
+  seat = parseInt(seat);
+  console.log("Seats count Integer", seat);
+
+
+  this.setState({
+      flights: this.props.flights,
+      flightsCopy: this.props.flights,
+      flightsDep:this.props.flights,
+      seat: seat
+  });
+
+
+}
+  state={
+      flightsCopy: this.props.flights,
+      val:500,
+      val1:0
+  }
+
+  handleDepartureFilter = (event, value) => {
+
+      console.log("value of slider", value);
+      this.setState({
+          val1: value
+      });
+
+      var dummyFlights = [];
+      for(var i=0;i<this.state.flights.length;i++)
+      {
+          if(parseInt(this.state.flights[i].flightDepartureTime.split(':')[0]) <= value)
+          {
+              dummyFlights.push(this.state.flights[i]);
+          }
+      }
+      this.setState({
+          flightsCopy: dummyFlights
+      });
+  }
 
   handlestar1 = () => {
       var dummyFlights = [];
@@ -191,6 +248,21 @@ class HotelTile extends Component {
               </div>
               <p style={{width: "90%", textAlign: "center",marginTop: 0}}>Current Price range: 0 - {this.state.val}</p>
               <hr/>
+            </div>
+            <div className="departureFilter" style={{marginTop: 30}}>
+            <label style={{display: "inline", float: "left",marginLeft: "7%"}}>0</label>
+            <MuiThemeProvider>
+            <Slider
+              min={0}
+              max={23}
+              step={1}
+              style={{width: "70%",marginLeft: "2%",display:"inline", float: "left"}}
+              value={this.state.val1}
+              onChange={this.handleDepartureFilter}
+            />
+            </MuiThemeProvider>
+            <span style={{float: "left", display: "inline"}}>23</span>
+            <p style={{width: "90%", textAlign: "center",marginTop: 0}}>Current Max Departure time: 0 - {this.state.val1}</p>
             </div>
             <div style={{textAlign: "center",width: "85%",marginTop: 10,marginLeft: "5%",height: 25,fontSize: 18,borderBottom: "1px solid"}}><span style={{float:"left", fontWeight: 700}}>Flight Agency</span></div>
 

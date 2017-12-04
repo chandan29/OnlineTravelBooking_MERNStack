@@ -22,7 +22,10 @@ class MainBody extends Component {
   }
         state = {
                 carsObj: [],
-                city:''
+                city:"",
+                carCity:"",
+                fromDate:"",
+                toDate:""
             };
 
   render() {

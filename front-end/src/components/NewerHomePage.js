@@ -85,21 +85,69 @@ class NewerHomePage extends Component {
     };
 
     handleRedirectBooking = (payload) => {
-      this.state.carTile.clist=this.state.searchCarClick;
-      this.state.carTile.cbooking=this.state.checkoutCarClick;
-      this.state.carTile.payload=payload;
-      console.log(payload);
-      alert(payload);
-      API.getCartile(this.state.carTile)
-          .then((res) => {
-              console.log(res);
-              this.setState({
-                  username:res.username
-              })
-              this.props.history.push("/bookingSuccessful");
+      if(payload.userAddress==""||payload.userCity==""||payload.userCountry==""||payload.userZip==""||payload.creditCard==""){
+        alert('Please enter all the valid details to move forward with your booking');
+        this.props.history.push('/carCheckout');
+      }
+      else{
+      var z="";
+      var z=payload.userZip;
+      if(z.includes('-')){
 
-          });
+        var zip=z.split('-');
+        console.log(zip);
 
+        if(parseInt(zip[0])>=100000||parseInt(zip[0])<=9999){
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/carCheckout');
+        }
+        else if(parseInt(zip[1])>=10000 || parseInt(zip[1])<=999){
+          console.log(zip[1]);
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/carCheckout');
+        }
+        else{
+        this.state.carTile.clist=this.state.searchCarClick;
+        this.state.carTile.cbooking=this.state.checkoutCarClick;
+        this.state.carTile.payload=payload;
+        console.log(payload);
+        API.getCartile(this.state.carTile)
+            .then((res) => {
+                console.log(res);
+                this.setState({
+                    username:res.username
+                })
+                this.props.history.push("/bookingSuccessful");
+
+            });
+
+      }
+
+      }
+      else if(!payload.userZip.includes('-')){
+        if(parseInt(payload.userZip)>=100000 || parseInt(payload.userZip)<=9999){
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/carCheckout');
+        }
+        else{
+        this.state.carTile.clist=this.state.searchCarClick;
+        this.state.carTile.cbooking=this.state.checkoutCarClick;
+        this.state.carTile.payload=payload;
+        console.log(payload);
+        API.getCartile(this.state.carTile)
+            .then((res) => {
+                console.log(res);
+                this.setState({
+                    username:res.username
+                })
+                this.props.history.push("/bookingSuccessful");
+
+            });
+
+      }
+      }
+
+}
     }
 
     handleProfileUpload=(payload)=>{
@@ -117,39 +165,141 @@ class NewerHomePage extends Component {
     }
 
     handleRedirectBooking1 = (payload) => {
-      this.state.hotelTile.hlist=this.state.searchHotelClick;
-      this.state.hotelTile.hbooking=this.state.checkoutHotelClick;
-        this.state.hotelTile.room=this.state.room;
-        this.state.hotelTile.payload = payload
-      API.getHoteltile(this.state.hotelTile)
-          .then((res) => {
-              console.log(res);
-              this.setState({
-                  username: res.username
-              })
-              this.props.history.push("/hotelbookingSuccessful");
+      if(payload.userAddress==""||payload.userCity==""||payload.userCountry==""||payload.userZip==""||payload.creditCard==""){
+        alert('Please enter all the valid details to move forward with your booking');
+        this.props.history.push('/hotelCheckout');
+      }
+      else{
+      var z="";
+      var z=payload.userZip;
+      if(z.includes('-')){
 
-          });
+        var zip=z.split('-');
+        console.log(zip);
 
+        if(parseInt(zip[0])>=100000||parseInt(zip[0])<=9999){
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/hotelCheckout');
+        }
+        else if(parseInt(zip[1])>=10000 || parseInt(zip[1])<=999){
+          console.log(zip[1]);
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/hotelCheckout');
+        }
+        else{
+
+          this.state.hotelTile.hlist=this.state.searchHotelClick;
+          this.state.hotelTile.hbooking=this.state.checkoutHotelClick;
+            this.state.hotelTile.room=this.state.room;
+            this.state.hotelTile.payload = payload
+          API.getHoteltile(this.state.hotelTile)
+              .then((res) => {
+                  console.log(res);
+                  this.setState({
+                      username: res.username
+                  })
+                  this.props.history.push("/hotelbookingSuccessful");
+
+              });
+      }
+
+      }
+      else if(!payload.userZip.includes('-')){
+        if(parseInt(payload.userZip)>=100000 || parseInt(payload.userZip)<=9999){
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/hotelCheckout');
+        }
+        else{
+
+          this.state.hotelTile.hlist=this.state.searchHotelClick;
+          this.state.hotelTile.hbooking=this.state.checkoutHotelClick;
+            this.state.hotelTile.room=this.state.room;
+            this.state.hotelTile.payload = payload
+          API.getHoteltile(this.state.hotelTile)
+              .then((res) => {
+                  console.log(res);
+                  this.setState({
+                      username: res.username
+                  })
+                  this.props.history.push("/hotelbookingSuccessful");
+
+              });
+      }
+      }
+
+}
     }
+
+
+
 
     handleRedirectBooking2 = (payload) => {
-      this.state.flightTile.flist=this.state.searchFlightClick;
-      this.state.flightTile.fbooking=this.state.checkoutFlightClick;
-        this.state.flightTile.seat = this.state.seat;
-        this.state.flightTile.payload = payload
-      API.getFlighttile(this.state.flightTile)
-          .then((res) => {
-              console.log(res);
-              this.setState({
-                  username: res.username
+      if(payload.userAddress==""||payload.userCity==""||payload.userCountry==""||payload.userZip==""||payload.creditCard==""){
+        alert('Please enter all the valid details to move forward with your booking');
+        this.props.history.push('/flightCheckout');
+      }
+      else{
+      var z="";
+      var z=payload.userZip;
+      if(z.includes('-')){
+
+        var zip=z.split('-');
+        console.log(zip);
+
+        if(parseInt(zip[0])>=100000||parseInt(zip[0])<=9999){
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/flightCheckout');
+        }
+        else if(parseInt(zip[1])>=10000 || parseInt(zip[1])<=999){
+          console.log(zip[1]);
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/flightCheckout');
+        }
+        else{
+
+          this.state.flightTile.flist=this.state.searchFlightClick;
+          this.state.flightTile.fbooking=this.state.checkoutFlightClick;
+            this.state.flightTile.seat = this.state.seat;
+            this.state.flightTile.payload = payload
+          API.getFlighttile(this.state.flightTile)
+              .then((res) => {
+                  console.log(res);
+                  this.setState({
+                      username: res.username
+                  });
+                  this.props.history.push("/flightbookingSuccessful");
+
               });
-              this.props.history.push("/flightbookingSuccessful");
 
-          });
+      }
 
+      }
+      else if(!payload.userZip.includes('-')){
+        if(parseInt(payload.userZip)>=100000 || parseInt(payload.userZip)<=9999){
+          alert('Please enter zipcode in format XXXXX or XXXXX-XXXX');
+          this.props.history.push('/flightCheckout');
+        }
+        else{
+
+          this.state.flightTile.flist=this.state.searchFlightClick;
+          this.state.flightTile.fbooking=this.state.checkoutFlightClick;
+            this.state.flightTile.seat = this.state.seat;
+            this.state.flightTile.payload = payload
+          API.getFlighttile(this.state.flightTile)
+              .then((res) => {
+                  console.log(res);
+                  this.setState({
+                      username: res.username
+                  });
+                  this.props.history.push("/flightbookingSuccessful");
+
+              });
+
+      }
+      }
+
+}
     }
-
 
     gotoSignin = () => {
         this.props.history.push('/signin');
@@ -204,6 +354,11 @@ class NewerHomePage extends Component {
     }
 
     handleCarFetch = (payload) => {
+      if(payload.carCity==""||payload.fromDate==""||payload.toDate==""){
+        alert("Please put all the parameters for searching!");
+        this.props.history.push("/");
+      }
+      else{
       payload.chome=this.state.homeCarClick;
         API.getCars(payload)
             .then((res) => {
@@ -213,10 +368,15 @@ class NewerHomePage extends Component {
                 localStorage.setItem("cars", JSON.stringify(this.state.carsObj));
                 this.props.history.push("/searchCar");
             });
-
+        }
     };
 
     handleHotelFetch = (payload) => {
+      if(payload.hotelCity==""||payload.fromDate==""||payload.toDate==""||payload.rooms==""){
+        alert("Please put all the parameters for searching!");
+        this.props.history.push("/hotels");
+      }
+      else{
       payload.hhome=this.state.homeHotelClick;
       API.getHotels(payload)
           .then((res) => {
@@ -227,10 +387,15 @@ class NewerHomePage extends Component {
                   });
                   this.props.history.push("/searchHotel");
           });
-
+        }
     };
 
     handleFlightFetch = (payload) => {
+      if(payload.flightFromCity==""||payload.flightToCity==""||payload.flightDate==""||payload.seats==""){
+        alert("Please put all the parameters for searching!");
+        this.props.history.push("/flights");
+      }
+      else{
       payload.fhome=this.state.homeFlightClick;
         API.getFlights(payload)
             .then((res) => {
@@ -241,6 +406,7 @@ class NewerHomePage extends Component {
                 });
                 this.props.history.push("/searchFlight");
             });
+          }
     }
 
     handleCartileFetch = (payload) => {

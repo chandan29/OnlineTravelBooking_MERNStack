@@ -19,7 +19,11 @@ class HotelsMainPage extends Component {
   }
         state = {
                 carsObj: [],
-                city:''
+                city:"",
+                hotel:"",
+                fromDate:"",
+                toDate:"",
+                rooms:""
             };
 
 

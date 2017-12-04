@@ -9,7 +9,15 @@ var FontAwesome = require('react-fontawesome');
 class HotelCheckoutDetails extends Component {
 
   state={
-
+    firstName:"",
+    lastName:"",
+    contact:"",
+    userAddress:"",
+    userCity:"",
+    userCountry:"",
+    userState:"",
+    creditCard:"",
+    zipCode:""
   }
 
   static PropTypes={
@@ -109,16 +117,75 @@ Located in the {this.props.hotelTile.hotelCity} theater district with a BART and
                 });
             }}/>
             <p></p>
-            <input type="text" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="State" onChange={(event) => {
+            <input type="text" required   style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Zip Code" onChange={(event) => {
+                this.setState({
+                    zipCode: event.target.value
+                });
+            }}/>
+                  <p></p>
+            <input type="text" list="states" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="State" onChange={(event) => {
                 this.setState({
                     userState: event.target.value
                 });
             }}/>
-            <input type="text" style={{width: "40%",height:35,marginLeft: "10%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Country" onChange={(event) => {
+            <datalist id="states">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </datalist>
+                  <input type="text" style={{width: "10%",height:35,marginLeft: "5%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Country" onChange={(event) => {
                 this.setState({
                     userCountry: event.target.value
                 });
-            }}/>
+              }}/>
             <hr/>
             <h4>Card Details </h4>
             <input type="text" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Name on Card*"/>
@@ -136,7 +203,7 @@ Located in the {this.props.hotelTile.hotelCity} theater district with a BART and
             <hr/>
             <div style={{height: 120,paddingBottom:10,marginBottom: 10}}>
             <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay ${this.props.hotelTile.hotelOriginalPrice * this.props.room + (this.props.hotelTile.hotelOriginalPrice * this.props.room)/10} USD today.</span></h5>
-                <button  onClick={()=>{this.props.handleRedirectBooking1({firstName:this.state.firstName,lastName:this.state.lastName,contact:this.state.contact,userAddress:this.state.userAddress,userCity:this.state.userCity,userCountry:this.state.userCountry,userState:this.state.userState,creditCard:this.state.creditCard})}} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
+                <button  onClick={()=>{this.props.handleRedirectBooking1({firstName:this.state.firstName,lastName:this.state.lastName,contact:this.state.contact,userAddress:this.state.userAddress,userCity:this.state.userCity,userCountry:this.state.userCountry,userState:this.state.userState,creditCard:this.state.creditCard,userZip:this.state.zipCode})}} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "orange"}}>Book Now</button>
             </div>
 
         </div>

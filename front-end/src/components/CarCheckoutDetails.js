@@ -8,7 +8,15 @@ var FontAwesome = require('react-fontawesome');
 class CarCheckoutDetails extends Component {
 
   state={
-
+firstName:"",
+lastName:"",
+contact:"",
+userAddress:"",
+userCity:"",
+userCountry:"",
+userState:"",
+creditCard:"",
+zipCode:""
   }
 
   static PropTypes={
@@ -114,7 +122,7 @@ class CarCheckoutDetails extends Component {
                 }}/>
               {/*Adding a field of zipcode*/}
               <p></p>
-              <input type="number" required min={this.x} pattern="[0-9]{5}" style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Zip Code" onChange={(event) => {
+              <input type="text" required   style={{width: "40%",height:35,marginLeft: "1%",border: "1px solid",borderColor: "#ebebed",padding:1,paddingLeft: 10}} placeholder="Zip Code" onChange={(event) => {
                   this.setState({
                       zipCode: event.target.value
                   });
@@ -202,7 +210,7 @@ class CarCheckoutDetails extends Component {
                 <hr/>
                     <div style={{height: 120,paddingBottom:10,marginBottom: 10}}>
                         <h5 style={{display: "inline"}}><span style={{color: "green"}}>Pay ${this.props.carTile.cartile.carOriginalPrice + this.props.carTile.cartile.carOriginalPrice/10} USD today.</span> Pay ${this.props.carTile.cartile.carOriginalPrice + this.props.carTile.cartile.carOriginalPrice/10} USD at pick-up.</h5>
-                        <button  onClick={()=>{this.props.handleRedirectBooking({firstName:this.state.firstName,lastName:this.state.lastName,contact:this.state.contact,userAddress:this.state.userAddress,userCity:this.state.userCity,userCountry:this.state.userCountry,userState:this.state.userState,creditCard:this.state.creditCard})}} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "#ff4f3a"}}>Book Now</button>
+                        <button  onClick={()=>{this.props.handleRedirectBooking({userAddress:this.state.userAddress,userCity:this.state.userCity,userCountry:this.state.userCountry,userState:this.state.userState,creditCard:this.state.creditCard,userZip:this.state.zipCode})}} style={{display:"inline",marginLeft: "45%",width: "15%", height: 30,marginBottom: 10, border: "none", backgroundColor: "#ff4f3a"}}>Book Now</button>
                     </div>
 
           </div>
