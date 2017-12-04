@@ -814,3 +814,24 @@ export const getRevenuepercity = (payload) =>
                                                                 console.log("This is error");
                                                                 return error;
                                                             });
+
+
+
+
+
+                                                                export const handleDeleteAccount= (payload) =>
+                                                                    fetch(`${api}/handleDeleteAccount`, {
+                                                                        method: 'POST',
+                                                                        headers: {
+                                                                            ...headers,
+                                                                            'Content-Type': 'application/json'
+                                                                        },
+                                                                        credentials:'include',
+                                                                        body: JSON.stringify(payload)
+                                                                    }).then(res => {
+                                                                        return res.json();
+                                                                    })
+                                                                        .catch(error => {
+                                                                            console.log("This is error");
+                                                                            return error;
+                                                                        });

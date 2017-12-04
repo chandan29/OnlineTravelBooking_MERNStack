@@ -60,7 +60,6 @@ class UserProfile extends Component {
 
 
 
-
     constructor(props) {
         super(props);
 
@@ -155,7 +154,9 @@ this.setState({
 
                 }
 
-
+                DANGER ZONE:
+                Delete Account
+                <button onClick={()=>{this.props.handleDeleteAccount({userId:this.state.userId})}}>Delete Account</button>
 
             </div>
         );

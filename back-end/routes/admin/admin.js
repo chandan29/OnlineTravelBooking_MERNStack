@@ -75,7 +75,7 @@ adminhandler.post('/getAdminBillDetail',function(req,res){
              coll.find({carId: parseInt(req.body.tripId)}).toArray(function (err, user) {
                  if (user) {
                      console.log(user);
-                     res.json({status: 201, user: user});
+                     res.json({status: 201, user: user[0]});
                  } else {
 
                      res.json({status: 401});
@@ -89,7 +89,7 @@ adminhandler.post('/getAdminBillDetail',function(req,res){
              coll.find({hotelId: parseInt(req.body.tripId)}).toArray(function (err, user) {
                  if (user) {
                      console.log(user);
-                     res.json({status: 201, user: user});
+                     res.json({status: 201, user: user[0]});
                  } else {
 
                      res.json({status: 401});
@@ -103,7 +103,7 @@ adminhandler.post('/getAdminBillDetail',function(req,res){
              coll.find({flightId: req.body.tripId}).toArray(function (err, user) {
                  if (user) {
                      console.log(user);
-                     res.json({status: 201, user: user});
+                     res.json({status: 201, user: user[0]});
                  } else {
 
                      res.json({status: 401});
@@ -745,7 +745,7 @@ adminhandler.post('/getClicksPerPage',function(req,res){
 adminhandler.post('/getClickStream',function(req,res){
     var redis = require("redis"),
         client = redis.createClient();
-        
+
         client.get("a", function(err, reply) {
          client.get("b", function(err1, reply1) {
              client.get("c", function(err2, reply2) {
@@ -909,5 +909,22 @@ adminhandler.post('/profileUpload',function(req,res){
         });
     });
     //res.status(201).send({1:1});
+})
+
+
+adminhandler.post('/handleDeleteAccount',function(req,res){
+  pool.getConnection(function(err, connection) {
+    console.log(req.body.userId);
+      connection.query("delete from users where userId="+req.body.userId, function (error, results,fields) {
+          connection.release();
+          if (error){
+              res.status(401).send({msg:"Unsuccessfull"});
+          }
+          else{
+            req.session.destroy();
+              res.status(201).send({msg:"Successfully deleted user profile"});
+          }
+      });
+  });
 })
 module.exports = adminhandler;

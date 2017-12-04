@@ -535,6 +535,13 @@ class NewerHomePage extends Component {
       console.log(this.state.checkoutFlightClick++);
     }
 
+    handleDeleteAccount=(payload)=>{
+      API.handleDeleteAccount(payload)
+          .then((res) => {
+              this.props.history.push("/signin");
+          });
+        }
+
     render() {
         return (
             <div className="container-fluid" style={{backgroundColor:"white"}}>
@@ -713,7 +720,7 @@ class NewerHomePage extends Component {
 
                 <Route exact path="/userProfile" render={() => (
                     <div>
-                        <UserProfile handleProfileUpload={this.handleProfileUpload}/>
+                        <UserProfile handleDeleteAccount={this.handleDeleteAccount} handleProfileUpload={this.handleProfileUpload}/>
                     </div>
                 )}/>
             </div>
