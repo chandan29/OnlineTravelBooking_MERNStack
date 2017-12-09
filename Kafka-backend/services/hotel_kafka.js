@@ -71,7 +71,7 @@ function handle_request(msg, callback) {
             console.log(msg.body);
             console.log(msg.body.rooms);
             var rooms = msg.body.rooms;
-            coll.find().toArray(function(err, user){
+            coll.find({"hotelCity":msg.body.hotelCity}).toArray(function(err, user){
                 if (user) {
                  //   res.status(201).json({user:user,rooms:msg.body.rooms});
                     res.status = 201;
@@ -195,8 +195,8 @@ function handle_request(msg, callback) {
                     var bill = `                                                                                  Receipt
 
 
-
-
+                                Name:Chandan Paranjape
+                                Method of Payment: Credit Card
                                 Hotel in:  `+hotelCity+`
 
                                   Price:`+hotelRate+`

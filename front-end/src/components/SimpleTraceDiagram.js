@@ -38,7 +38,7 @@ class SimpleTraceDiagram extends Component{
                        margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                 <XAxis dataKey="z"/>
                 label ={"Type"}
-                <YAxis dataKey="uv"/>
+                
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Tooltip dataKey="Type"/>
 

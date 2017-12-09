@@ -1,9 +1,9 @@
                                                                                   Receipt
 
 
+                                Name:Chandan Paranjape
+                                Method of Payment: Credit Card
+                                Hotel in:  undefined
 
-
-                                Hotel in:  San Jose
-
-                                  Price:858
+                                  Price:NaN
                                 

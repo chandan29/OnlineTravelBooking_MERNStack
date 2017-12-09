@@ -31,7 +31,7 @@ function handle_request(msg, callback) {
             console.log(msg.body);
             var seats = msg.body.seats;
             console.log("Seats are:"+msg.body.seats);
-            coll.find().toArray(function(err, user){
+            coll.find({}).toArray(function(err, user){
                 if (user) {
                     console.log(user);
                   //  res.status(201).json({user:user,seats:msg.body.seats});

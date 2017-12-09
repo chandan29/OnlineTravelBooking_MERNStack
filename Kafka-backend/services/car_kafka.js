@@ -27,7 +27,7 @@ function handle_request(msg, callback) {
             console.log('Connected to mongo at: ' + mongoURL);
             var coll = mongo.collection('car');
             console.log(msg);
-           coll.find().toArray(function(err, user){
+           coll.find({"carCity":msg.carCity,"dummy":"dummy"}).toArray(function(err, user){
            // coll.find({"carCity":msg.carCity}).toArray(function(err, user){
                //db.car.find({"carCity":'New York',"carFromDate":'2017-12-01',"carToDate":'2017-12-04'});
                 if (user) {
@@ -47,7 +47,7 @@ function handle_request(msg, callback) {
                     fs.appendFile("./public/logging/"+user+".txt", "User queried car listing from the city of "+carCity+" on |"+date+","+curTime+",car,listing\n", function(err) {
                         if(err) {
                             //res.status({});
-
+res.status(201).json({wrong:1});
                         }
 
                         console.log("The file was saved!");
@@ -59,6 +59,7 @@ function handle_request(msg, callback) {
 
 
             });
+
         });
 
     }
@@ -76,6 +77,14 @@ function handle_request(msg, callback) {
             var coll = mongo.collection('carTrip');
             var coll1 = mongo.collection('userTrips');
             console.log(msg.body);
+            var coll1 = mongo.collection('car');
+            coll1.update(
+                { carId:msg.body.cartile.carId },
+                {
+                    "dummy":"not dummy"
+                },
+                { upsert: true }
+            )
 
 
             coll1.insertOne({type: "car",carId:msg.body.cartile.carId,userEmail:msg.session,tripId:msg.body.cartile.carId,fromCity:msg.body.cartile.carCity,toCity:msg.body.cartile.carCity,fromDate:msg.body.cartile.carFromDate,toDate:msg.body.cartile.carToDate,fareDetails:msg.body.cartile.carOriginalPrice},function(err, user){

@@ -7,7 +7,7 @@ var connected = false;
  * Connects to the MongoDB Database with the provided URL
  */
 exports.connect = function(url, callback){
-    MongoClient.connect(url,{poolSize:1000}, function(err, _db){
+    MongoClient.connect(url,{poolSize:300}, function(err, _db){
       if (err) { throw new Error('Could not connect: '+err); }
       db = _db;
       connected = true;

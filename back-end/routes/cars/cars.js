@@ -22,7 +22,6 @@ carshandler.post('/getCars',function(req,res){
   //Input parameters: from city, from date,to date
   var redis = require("redis"),
       client = redis.createClient();
-      client.set('a',parseInt(0));
       client.get("a", function(err, reply) {
         if(err){
             client.set("a",parseInt(req.body.a));
@@ -34,7 +33,7 @@ carshandler.post('/getCars',function(req,res){
           }
 
         });
-client.set('b',parseInt(0));
+
         client.get("b", function(err, reply) {
           if(err){
               client.set("b",parseInt(req.body.b));
@@ -46,6 +45,7 @@ client.set('b',parseInt(0));
             }
 
           });
+          client.set('c',parseInt(10));
           client.get("c", function(err, reply) {
             if(err){
                 client.set("c",parseInt(req.body.c));
@@ -57,6 +57,7 @@ client.set('b',parseInt(0));
               }
 
             });
+            client.set('d',parseInt(4));
             client.get("d", function(err, reply) {
               if(err){
                   client.set("d",parseInt(req.body.d));
@@ -68,6 +69,7 @@ client.set('b',parseInt(0));
                 }
 
               });
+
       client.get("chome", function(err, reply) {
         if(err){
             client.set("chome",parseInt(req.body.chome));
